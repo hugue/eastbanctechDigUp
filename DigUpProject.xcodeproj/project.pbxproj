@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		577F35BEA4DB620CEC2D7B42 /* libPods-DigUpProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6F6F49FD7004E48D0327AB /* libPods-DigUpProject.a */; };
+		F33D40F91BAFFA5900F5A903 /* checkbox_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = F33D40F81BAFFA5900F5A903 /* checkbox_empty.png */; };
+		F33D40FB1BAFFA6100F5A903 /* checkbox_full.png in Resources */ = {isa = PBXBuildFile; fileRef = F33D40FA1BAFFA6100F5A903 /* checkbox_full.png */; };
+		F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */; };
+		F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41001BAFFBB200F5A903 /* CheckBoxView.m */; };
+		F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41031BB00A8600F5A903 /* ImageViewModel.m */; };
+		F3E01F701BA170EB005028A4 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E01F6F1BA170EB005028A4 /* exo.json */; };
+		F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F721BA175F4005028A4 /* MaterialViewModel.m */; };
+		F3E01F761BA179CC005028A4 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F751BA179CC005028A4 /* MainViewModel.m */; };
+		F3E01F791BA179F1005028A4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F781BA179F1005028A4 /* MainViewController.m */; };
+		F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F7E1BA180E7005028A4 /* MaterialView.m */; };
+		F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F811BA1A6E6005028A4 /* TextFrameView.m */; };
+		F3E01F851BA1B294005028A4 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F841BA1B294005028A4 /* ImageView.m */; };
+		F3EA5B381BA97466001F4554 /* CellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EA5B371BA97466001F4554 /* CellViewModel.m */; };
 		F3ECBE6F1B9D452E0000A656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE6E1B9D452E0000A656 /* main.m */; };
 		F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE711B9D452E0000A656 /* AppDelegate.m */; };
-		F3ECBE751B9D452E0000A656 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE741B9D452E0000A656 /* ViewController.m */; };
 		F3ECBE781B9D452E0000A656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE761B9D452E0000A656 /* Main.storyboard */; };
 		F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE791B9D452E0000A656 /* Assets.xcassets */; };
 		F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */; };
@@ -32,8 +45,33 @@
 		F3ECBED81B9D8B270000A656 /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBED21B9D8B270000A656 /* btnCheck@2x.png */; };
 		F3ECBED91B9D8B270000A656 /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBED41B9D8B270000A656 /* HUD.m */; };
 		F3ECBEDA1B9D8B270000A656 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBED61B9D8B270000A656 /* MBProgressHUD.m */; };
+		F3F36E3F1BAAD7D400B7D885 /* RichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F36E3E1BAAD7D400B7D885 /* RichTextView.m */; };
+		F3F36E421BAAE7E900B7D885 /* RichTextViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F36E411BAAE7E900B7D885 /* RichTextViewModel.m */; };
+		F3F487091BA7D8E900FCA8A6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */; };
+		F3F4870D1BA8088600FCA8A6 /* TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F4870C1BA8088600FCA8A6 /* TableView.m */; };
+		F3F487101BA811A100FCA8A6 /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F4870F1BA811A100FCA8A6 /* TableViewModel.m */; };
+		F3F4871B1BA8297900FCA8A6 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F487161BA8297900FCA8A6 /* TFHpple.m */; };
+		F3F4871C1BA8297900FCA8A6 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F487181BA8297900FCA8A6 /* TFHppleElement.m */; };
+		F3F4871D1BA8297900FCA8A6 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F4871A1BA8297900FCA8A6 /* XPathQuery.m */; };
+		F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */; };
+		F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */; };
+		F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */; };
+		F3F5A8531BAC37D800D35CA6 /* AudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A8521BAC37D800D35CA6 /* AudioView.m */; };
+		F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A8581BAC41FE00D35CA6 /* AudioController.m */; };
+		F3F5A85F1BAC4F6E00D35CA6 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F5A85E1BAC4F6E00D35CA6 /* libxml2.tbd */; };
+		F3F5A8611BAC4FC100D35CA6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F5A8601BAC4FC100D35CA6 /* AVFoundation.framework */; };
+		F3F5A8631BAC4FD200D35CA6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F5A8621BAC4FD200D35CA6 /* WebKit.framework */; };
+		F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A391BA68A5100B9231D /* RadioButtonsController.m */; };
+		F3F64A3D1BA6F54700B9231D /* TextInputViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */; };
+		F3F64A401BA6F56400B9231D /* TextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A3F1BA6F56400B9231D /* TextInputView.m */; };
+		F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A421BA6FAED00B9231D /* RectangleView.m */; };
 		F3F84D671B9EA37800876424 /* RadioButton-Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F84D661B9EA37800876424 /* RadioButton-Unselected.png */; };
-		F3F84FE61B9EA89100876424 /* Image 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F84FE51B9EA89100876424 /* Image 1.png */; };
+		F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E881BA28880004648B6 /* RadioButtonView.m */; };
+		F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */; };
+		F3F89E951BA30913004648B6 /* RadioButton-Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F89E941BA30913004648B6 /* RadioButton-Selected.png */; };
+		F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */; };
+		F3FA7EFC1BAFBF8F00432037 /* Audio-Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FA7EFB1BAFBF8F00432037 /* Audio-Unselected.png */; };
+		F3FA7EFE1BAFC09200432037 /* Audio-Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FA7EFD1BAFC09200432037 /* Audio-Selected.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +91,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F3E01EDE1BA16B74005028A4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0E6F6F49FD7004E48D0327AB /* libPods-DigUpProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigUpProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D73C66D096650E2F90BED57 /* Pods-DigUpProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigUpProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigUpProject/Pods-DigUpProject.debug.xcconfig"; sourceTree = "<group>"; };
+		E67205341C11DA0471D1DCA4 /* Pods-DigUpProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigUpProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigUpProject/Pods-DigUpProject.release.xcconfig"; sourceTree = "<group>"; };
+		F33D40F81BAFFA5900F5A903 /* checkbox_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_empty.png; sourceTree = "<group>"; };
+		F33D40FA1BAFFA6100F5A903 /* checkbox_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_full.png; sourceTree = "<group>"; };
+		F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxViewModel.h; sourceTree = "<group>"; };
+		F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxViewModel.m; sourceTree = "<group>"; };
+		F33D40FF1BAFFBB200F5A903 /* CheckBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxView.h; sourceTree = "<group>"; };
+		F33D41001BAFFBB200F5A903 /* CheckBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxView.m; sourceTree = "<group>"; };
+		F33D41021BB00A8600F5A903 /* ImageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewModel.h; sourceTree = "<group>"; };
+		F33D41031BB00A8600F5A903 /* ImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewModel.m; sourceTree = "<group>"; };
+		F3E01F6F1BA170EB005028A4 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = ../exo.json; sourceTree = "<group>"; };
+		F3E01F711BA175F4005028A4 /* MaterialViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewModel.h; sourceTree = "<group>"; };
+		F3E01F721BA175F4005028A4 /* MaterialViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewModel.m; sourceTree = "<group>"; };
+		F3E01F741BA179CC005028A4 /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
+		F3E01F751BA179CC005028A4 /* MainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
+		F3E01F771BA179F1005028A4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F3E01F781BA179F1005028A4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F3E01F7D1BA180E7005028A4 /* MaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialView.h; sourceTree = "<group>"; };
+		F3E01F7E1BA180E7005028A4 /* MaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialView.m; sourceTree = "<group>"; };
+		F3E01F801BA1A6E6005028A4 /* TextFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFrameView.h; sourceTree = "<group>"; };
+		F3E01F811BA1A6E6005028A4 /* TextFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFrameView.m; sourceTree = "<group>"; };
+		F3E01F831BA1B294005028A4 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
+		F3E01F841BA1B294005028A4 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
+		F3EA5B361BA97466001F4554 /* CellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellViewModel.h; sourceTree = "<group>"; };
+		F3EA5B371BA97466001F4554 /* CellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellViewModel.m; sourceTree = "<group>"; };
 		F3ECBE6A1B9D452E0000A656 /* DigUpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigUpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ECBE6E1B9D452E0000A656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3ECBE701B9D452E0000A656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3ECBE711B9D452E0000A656 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F3ECBE731B9D452E0000A656 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F3ECBE741B9D452E0000A656 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F3ECBE771B9D452E0000A656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3ECBE791B9D452E0000A656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3ECBE7C1B9D452E0000A656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +178,53 @@
 		F3ECBED41B9D8B270000A656 /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
 		F3ECBED51B9D8B270000A656 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		F3ECBED61B9D8B270000A656 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		F3F36E3D1BAAD7D400B7D885 /* RichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextView.h; sourceTree = "<group>"; };
+		F3F36E3E1BAAD7D400B7D885 /* RichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextView.m; sourceTree = "<group>"; };
+		F3F36E401BAAE7E900B7D885 /* RichTextViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextViewModel.h; sourceTree = "<group>"; };
+		F3F36E411BAAE7E900B7D885 /* RichTextViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextViewModel.m; sourceTree = "<group>"; };
+		F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		F3F4870B1BA8088600FCA8A6 /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
+		F3F4870C1BA8088600FCA8A6 /* TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableView.m; sourceTree = "<group>"; };
+		F3F4870E1BA811A100FCA8A6 /* TableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewModel.h; sourceTree = "<group>"; };
+		F3F4870F1BA811A100FCA8A6 /* TableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewModel.m; sourceTree = "<group>"; };
+		F3F487151BA8297900FCA8A6 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		F3F487161BA8297900FCA8A6 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		F3F487171BA8297900FCA8A6 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		F3F487181BA8297900FCA8A6 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		F3F487191BA8297900FCA8A6 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		F3F4871A1BA8297900FCA8A6 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		F3F5A8461BABCACB00D35CA6 /* DragNDropController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragNDropController.h; sourceTree = "<group>"; };
+		F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragNDropController.m; sourceTree = "<group>"; };
+		F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragElementRecognizer.h; sourceTree = "<group>"; };
+		F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragElementRecognizer.m; sourceTree = "<group>"; };
+		F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewModel.h; sourceTree = "<group>"; };
+		F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewModel.m; sourceTree = "<group>"; };
+		F3F5A8511BAC37D800D35CA6 /* AudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioView.h; sourceTree = "<group>"; };
+		F3F5A8521BAC37D800D35CA6 /* AudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioView.m; sourceTree = "<group>"; };
+		F3F5A8571BAC41FE00D35CA6 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		F3F5A8581BAC41FE00D35CA6 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		F3F5A85E1BAC4F6E00D35CA6 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		F3F5A8601BAC4FC100D35CA6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F3F5A8621BAC4FD200D35CA6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F3F64A381BA68A5100B9231D /* RadioButtonsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonsController.h; sourceTree = "<group>"; };
+		F3F64A391BA68A5100B9231D /* RadioButtonsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsController.m; sourceTree = "<group>"; };
+		F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewModel.h; sourceTree = "<group>"; };
+		F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewModel.m; sourceTree = "<group>"; };
+		F3F64A3E1BA6F56400B9231D /* TextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputView.h; sourceTree = "<group>"; };
+		F3F64A3F1BA6F56400B9231D /* TextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputView.m; sourceTree = "<group>"; };
+		F3F64A411BA6FAED00B9231D /* RectangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleView.h; sourceTree = "<group>"; };
+		F3F64A421BA6FAED00B9231D /* RectangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectangleView.m; sourceTree = "<group>"; };
 		F3F84D661B9EA37800876424 /* RadioButton-Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RadioButton-Unselected.png"; sourceTree = "<group>"; };
-		F3F84FE51B9EA89100876424 /* Image 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Image 1.png"; path = "../../../Downloads/Image 1.png"; sourceTree = "<group>"; };
+		F3F89E871BA28880004648B6 /* RadioButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonView.h; sourceTree = "<group>"; };
+		F3F89E881BA28880004648B6 /* RadioButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonView.m; sourceTree = "<group>"; };
+		F3F89E911BA306A3004648B6 /* ExerciseCorrector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseCorrector.h; sourceTree = "<group>"; };
+		F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCorrector.m; sourceTree = "<group>"; };
+		F3F89E941BA30913004648B6 /* RadioButton-Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "RadioButton-Selected.png"; path = "../../../Downloads/RadioButtonWithUIKit-master-2/RadioButton/RadioButton-Selected.png"; sourceTree = "<group>"; };
+		F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonViewModel.h; sourceTree = "<group>"; };
+		F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonViewModel.m; sourceTree = "<group>"; };
+		F3FA7EFB1BAFBF8F00432037 /* Audio-Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio-Unselected.png"; sourceTree = "<group>"; };
+		F3FA7EFD1BAFC09200432037 /* Audio-Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio-Selected.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +232,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F5A8631BAC4FD200D35CA6 /* WebKit.framework in Frameworks */,
+				F3F5A8611BAC4FC100D35CA6 /* AVFoundation.framework in Frameworks */,
+				F3F5A85F1BAC4F6E00D35CA6 /* libxml2.tbd in Frameworks */,
+				577F35BEA4DB620CEC2D7B42 /* libPods-DigUpProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,13 +256,90 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D76C14DED1AF0A2E0EEE808 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D73C66D096650E2F90BED57 /* Pods-DigUpProject.debug.xcconfig */,
+				E67205341C11DA0471D1DCA4 /* Pods-DigUpProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E5E74C7A3BD5FFA228B46182 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3F5A8621BAC4FD200D35CA6 /* WebKit.framework */,
+				F3F5A8601BAC4FC100D35CA6 /* AVFoundation.framework */,
+				F3F5A85E1BAC4F6E00D35CA6 /* libxml2.tbd */,
+				0E6F6F49FD7004E48D0327AB /* libPods-DigUpProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3E01F7A1BA17BB5005028A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3ECBECD1B9D814B0000A656 /* ExerciceModel.h */,
+				F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */,
+				F3ECBECA1B9D64EE0000A656 /* MaterialModel.h */,
+				F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F3E01F7B1BA17BD5005028A4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
+				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
+				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
+				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
+				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
+				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
+				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
+				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
+				F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */,
+				F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */,
+				F3F36E401BAAE7E900B7D885 /* RichTextViewModel.h */,
+				F3F36E411BAAE7E900B7D885 /* RichTextViewModel.m */,
+				F3F4870E1BA811A100FCA8A6 /* TableViewModel.h */,
+				F3F4870F1BA811A100FCA8A6 /* TableViewModel.m */,
+				F3EA5B361BA97466001F4554 /* CellViewModel.h */,
+				F3EA5B371BA97466001F4554 /* CellViewModel.m */,
+				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
+				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
+				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
+				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		F3E01F7C1BA17BEE005028A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */,
+				F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */,
+				F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */,
+				F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */,
+				F3E01F771BA179F1005028A4 /* MainViewController.h */,
+				F3E01F781BA179F1005028A4 /* MainViewController.m */,
+				F3E01F7D1BA180E7005028A4 /* MaterialView.h */,
+				F3E01F7E1BA180E7005028A4 /* MaterialView.m */,
+				F3F4870A1BA8084400FCA8A6 /* MaterialViews */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		F3ECBE611B9D452E0000A656 = {
 			isa = PBXGroup;
 			children = (
+				F3E01F6F1BA170EB005028A4 /* exo.json */,
 				F3ECBE6C1B9D452E0000A656 /* DigUpProject */,
 				F3ECBE861B9D452E0000A656 /* DigUpProjectTests */,
 				F3ECBE911B9D452E0000A656 /* DigUpProjectUITests */,
 				F3ECBE6B1B9D452E0000A656 /* Products */,
+				7D76C14DED1AF0A2E0EEE808 /* Pods */,
+				E5E74C7A3BD5FFA228B46182 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,20 +358,16 @@
 			children = (
 				F3ECBE701B9D452E0000A656 /* AppDelegate.h */,
 				F3ECBE711B9D452E0000A656 /* AppDelegate.m */,
-				F3ECBE731B9D452E0000A656 /* ViewController.h */,
-				F3ECBE741B9D452E0000A656 /* ViewController.m */,
-				F3ECBEA01B9D4D5B0000A656 /* WebSearcherController.h */,
-				F3ECBEA11B9D4D5B0000A656 /* WebSearcherController.m */,
-				F3ECBECD1B9D814B0000A656 /* ExerciceModel.h */,
-				F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */,
-				F3F84FE51B9EA89100876424 /* Image 1.png */,
-				F3F84D661B9EA37800876424 /* RadioButton-Unselected.png */,
-				F3ECBECA1B9D64EE0000A656 /* MaterialModel.h */,
-				F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */,
+				F3F89E901BA30670004648B6 /* TaskControllers */,
+				F3E01F7A1BA17BB5005028A4 /* Models */,
+				F3E01F7B1BA17BD5005028A4 /* ViewModels */,
+				F3E01F7C1BA17BEE005028A4 /* Views */,
 				F3ECBE761B9D452E0000A656 /* Main.storyboard */,
 				F3ECBE791B9D452E0000A656 /* Assets.xcassets */,
 				F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */,
 				F3ECBE7E1B9D452E0000A656 /* Info.plist */,
+				F3FA7EFF1BAFC26100432037 /* Ressources */,
+				F3F487141BA828D300FCA8A6 /* HTMLParser */,
 				F3ECBED01B9D8B270000A656 /* HUD */,
 				F3ECBEA31B9D546C0000A656 /* JSONModel */,
 				F3ECBE6D1B9D452E0000A656 /* Supporting Files */,
@@ -277,6 +474,74 @@
 			path = HUD;
 			sourceTree = "<group>";
 		};
+		F3F4870A1BA8084400FCA8A6 /* MaterialViews */ = {
+			isa = PBXGroup;
+			children = (
+				F3F64A411BA6FAED00B9231D /* RectangleView.h */,
+				F3F64A421BA6FAED00B9231D /* RectangleView.m */,
+				F3F89E871BA28880004648B6 /* RadioButtonView.h */,
+				F3F89E881BA28880004648B6 /* RadioButtonView.m */,
+				F33D40FF1BAFFBB200F5A903 /* CheckBoxView.h */,
+				F33D41001BAFFBB200F5A903 /* CheckBoxView.m */,
+				F3F64A3E1BA6F56400B9231D /* TextInputView.h */,
+				F3F64A3F1BA6F56400B9231D /* TextInputView.m */,
+				F3F36E3D1BAAD7D400B7D885 /* RichTextView.h */,
+				F3F36E3E1BAAD7D400B7D885 /* RichTextView.m */,
+				F3E01F801BA1A6E6005028A4 /* TextFrameView.h */,
+				F3E01F811BA1A6E6005028A4 /* TextFrameView.m */,
+				F3E01F831BA1B294005028A4 /* ImageView.h */,
+				F3E01F841BA1B294005028A4 /* ImageView.m */,
+				F3F4870B1BA8088600FCA8A6 /* TableView.h */,
+				F3F4870C1BA8088600FCA8A6 /* TableView.m */,
+				F3F5A8511BAC37D800D35CA6 /* AudioView.h */,
+				F3F5A8521BAC37D800D35CA6 /* AudioView.m */,
+			);
+			name = MaterialViews;
+			sourceTree = "<group>";
+		};
+		F3F487141BA828D300FCA8A6 /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				F3F487151BA8297900FCA8A6 /* TFHpple.h */,
+				F3F487161BA8297900FCA8A6 /* TFHpple.m */,
+				F3F487171BA8297900FCA8A6 /* TFHppleElement.h */,
+				F3F487181BA8297900FCA8A6 /* TFHppleElement.m */,
+				F3F487191BA8297900FCA8A6 /* XPathQuery.h */,
+				F3F4871A1BA8297900FCA8A6 /* XPathQuery.m */,
+			);
+			name = HTMLParser;
+			sourceTree = "<group>";
+		};
+		F3F89E901BA30670004648B6 /* TaskControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3ECBEA01B9D4D5B0000A656 /* WebSearcherController.h */,
+				F3ECBEA11B9D4D5B0000A656 /* WebSearcherController.m */,
+				F3F5A8571BAC41FE00D35CA6 /* AudioController.h */,
+				F3F5A8581BAC41FE00D35CA6 /* AudioController.m */,
+				F3F64A381BA68A5100B9231D /* RadioButtonsController.h */,
+				F3F64A391BA68A5100B9231D /* RadioButtonsController.m */,
+				F3F5A8461BABCACB00D35CA6 /* DragNDropController.h */,
+				F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */,
+				F3F89E911BA306A3004648B6 /* ExerciseCorrector.h */,
+				F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */,
+			);
+			name = TaskControllers;
+			sourceTree = "<group>";
+		};
+		F3FA7EFF1BAFC26100432037 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				F33D40F81BAFFA5900F5A903 /* checkbox_empty.png */,
+				F33D40FA1BAFFA6100F5A903 /* checkbox_full.png */,
+				F3FA7EFB1BAFBF8F00432037 /* Audio-Unselected.png */,
+				F3FA7EFD1BAFC09200432037 /* Audio-Selected.png */,
+				F3F84D661B9EA37800876424 /* RadioButton-Unselected.png */,
+				F3F89E941BA30913004648B6 /* RadioButton-Selected.png */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,9 +549,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3ECBE971B9D452E0000A656 /* Build configuration list for PBXNativeTarget "DigUpProject" */;
 			buildPhases = (
+				73B3C30E105A827756EB9228 /* Check Pods Manifest.lock */,
 				F3ECBE661B9D452E0000A656 /* Sources */,
 				F3ECBE671B9D452E0000A656 /* Frameworks */,
 				F3ECBE681B9D452E0000A656 /* Resources */,
+				F3E01EDE1BA16B74005028A4 /* Embed Frameworks */,
+				1601070D2DB9F3B174D12DE2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -380,13 +648,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33D40F91BAFFA5900F5A903 /* checkbox_empty.png in Resources */,
 				F3ECBED81B9D8B270000A656 /* btnCheck@2x.png in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,
 				F3ECBED71B9D8B270000A656 /* btnCheck.png in Resources */,
+				F3F89E951BA30913004648B6 /* RadioButton-Selected.png in Resources */,
 				F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */,
+				F33D40FB1BAFFA6100F5A903 /* checkbox_full.png in Resources */,
+				F3E01F701BA170EB005028A4 /* exo.json in Resources */,
+				F3FA7EFC1BAFBF8F00432037 /* Audio-Unselected.png in Resources */,
+				F3FA7EFE1BAFC09200432037 /* Audio-Selected.png in Resources */,
 				F3ECBE781B9D452E0000A656 /* Main.storyboard in Resources */,
 				F3F84D671B9EA37800876424 /* RadioButton-Unselected.png in Resources */,
-				F3F84FE61B9EA89100876424 /* Image 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,29 +679,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1601070D2DB9F3B174D12DE2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DigUpProject/Pods-DigUpProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73B3C30E105A827756EB9228 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F3ECBE661B9D452E0000A656 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F3ECBEC01B9D546C0000A656 /* JSONModelError.m in Sources */,
+				F3F36E3F1BAAD7D400B7D885 /* RichTextView.m in Sources */,
 				F3ECBEC11B9D546C0000A656 /* NSArray+JSONModel.m in Sources */,
 				F3ECBEBF1B9D546C0000A656 /* JSONModelClassProperty.m in Sources */,
+				F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */,
+				F3E01F761BA179CC005028A4 /* MainViewModel.m in Sources */,
+				F3E01F791BA179F1005028A4 /* MainViewController.m in Sources */,
 				F3ECBECF1B9D814B0000A656 /* ExerciceModel.m in Sources */,
-				F3ECBE751B9D452E0000A656 /* ViewController.m in Sources */,
 				F3ECBEA21B9D4D5B0000A656 /* WebSearcherController.m in Sources */,
+				F3F4871D1BA8297900FCA8A6 /* XPathQuery.m in Sources */,
 				F3ECBEC51B9D546C0000A656 /* JSONKeyMapper.m in Sources */,
+				F3F4870D1BA8088600FCA8A6 /* TableView.m in Sources */,
+				F3F4871B1BA8297900FCA8A6 /* TFHpple.m in Sources */,
 				F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */,
+				F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */,
+				F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */,
+				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
+				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
+				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
+				F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */,
+				F3F487101BA811A100FCA8A6 /* TableViewModel.m in Sources */,
+				F3E01F851BA1B294005028A4 /* ImageView.m in Sources */,
+				F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */,
 				F3ECBEBE1B9D546C0000A656 /* JSONModelArray.m in Sources */,
+				F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */,
 				F3ECBEC41B9D546C0000A656 /* JSONModel+networking.m in Sources */,
 				F3ECBED91B9D8B270000A656 /* HUD.m in Sources */,
+				F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */,
+				F3F487091BA7D8E900FCA8A6 /* MenuViewController.m in Sources */,
+				F3F4871C1BA8297900FCA8A6 /* TFHppleElement.m in Sources */,
 				F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */,
+				F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */,
+				F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */,
+				F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */,
+				F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */,
 				F3ECBE6F1B9D452E0000A656 /* main.m in Sources */,
 				F3ECBEDA1B9D8B270000A656 /* MBProgressHUD.m in Sources */,
+				F3EA5B381BA97466001F4554 /* CellViewModel.m in Sources */,
+				F3F64A401BA6F56400B9231D /* TextInputView.m in Sources */,
 				F3ECBEC21B9D546C0000A656 /* JSONAPI.m in Sources */,
+				F3F36E421BAAE7E900B7D885 /* RichTextViewModel.m in Sources */,
+				F3F64A3D1BA6F54700B9231D /* TextInputViewModel.m in Sources */,
 				F3ECBEC61B9D546C0000A656 /* JSONValueTransformer.m in Sources */,
+				F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */,
 				F3ECBEC31B9D546C0000A656 /* JSONHTTPClient.m in Sources */,
 				F3ECBEBD1B9D546C0000A656 /* JSONModel.m in Sources */,
+				F3F5A8531BAC37D800D35CA6 /* AudioView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +838,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -546,6 +882,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -565,25 +902,47 @@
 		};
 		F3ECBE981B9D452E0000A656 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D73C66D096650E2F90BED57 /* Pods-DigUpProject.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa/ReactiveCocoa\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = DigUpProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eastbanchtech.DigUpProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		F3ECBE991B9D452E0000A656 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E67205341C11DA0471D1DCA4 /* Pods-DigUpProject.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa/ReactiveCocoa\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = DigUpProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eastbanchtech.DigUpProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

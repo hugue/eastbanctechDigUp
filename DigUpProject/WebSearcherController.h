@@ -13,9 +13,11 @@
 @property (nonatomic, strong) id delegate;
 @property (nonatomic, strong) NSString * urlToReach;
 @property (nonatomic, strong) NSMutableData * receivedData;
+@property (nonatomic, strong) NSString * imageURL;
 
 - (id) init;
 - (void) launchSession;
+
 @end
 
 

@@ -13,7 +13,7 @@
 - (id) init {
     self = [super init];
     if (self) {
-        self.urlToReach = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2020L&$expand=Shapes&";
+        self.urlToReach = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&";
     }
     return self;
 }
@@ -30,7 +30,6 @@
         NSLog(@"Can't open the connection");
     }
 }
-
 
 #pragma mark - NSURLSession delegate methods
 

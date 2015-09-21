@@ -23,7 +23,7 @@
                 NSLog(@"%@", initError );
             }
             NSLog(@"%@", [material class]);
-            [self.materialsObject   addObject:material];
+            [self.materialsObject addObject:material];
         }
     }
     return self;
