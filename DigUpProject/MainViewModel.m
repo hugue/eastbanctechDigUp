@@ -128,6 +128,15 @@
     self.exerciseLoaded = @YES;
 }
 
+- (void) audioBarTapped {
+    if (self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer.playing) {
+        
+    }
+    else {
+        
+    }
+}
+
 
 #pragma mark - WebSearcherControllerDelegate Methods
 

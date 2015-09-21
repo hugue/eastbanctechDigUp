@@ -33,5 +33,6 @@
 @property (nonatomic, strong) NSNumber * exerciseLoaded;
 
 - (void) parseExercise;
+- (void) audioBarTapped;
 
 @end

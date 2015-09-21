@@ -13,6 +13,8 @@
 		F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */; };
 		F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41001BAFFBB200F5A903 /* CheckBoxView.m */; };
 		F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41031BB00A8600F5A903 /* ImageViewModel.m */; };
+		F33D41061BB0364B00F5A903 /* Play_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = F33D41051BB0364B00F5A903 /* Play_Button.png */; };
+		F33D41081BB0365800F5A903 /* Pause_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = F33D41071BB0365800F5A903 /* Pause_Button.png */; };
 		F3E01F701BA170EB005028A4 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E01F6F1BA170EB005028A4 /* exo.json */; };
 		F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F721BA175F4005028A4 /* MaterialViewModel.m */; };
 		F3E01F761BA179CC005028A4 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F751BA179CC005028A4 /* MainViewModel.m */; };
@@ -116,6 +118,8 @@
 		F33D41001BAFFBB200F5A903 /* CheckBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxView.m; sourceTree = "<group>"; };
 		F33D41021BB00A8600F5A903 /* ImageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewModel.h; sourceTree = "<group>"; };
 		F33D41031BB00A8600F5A903 /* ImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewModel.m; sourceTree = "<group>"; };
+		F33D41051BB0364B00F5A903 /* Play_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play_Button.png; sourceTree = "<group>"; };
+		F33D41071BB0365800F5A903 /* Pause_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause_Button.png; sourceTree = "<group>"; };
 		F3E01F6F1BA170EB005028A4 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = ../exo.json; sourceTree = "<group>"; };
 		F3E01F711BA175F4005028A4 /* MaterialViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewModel.h; sourceTree = "<group>"; };
 		F3E01F721BA175F4005028A4 /* MaterialViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewModel.m; sourceTree = "<group>"; };
@@ -532,6 +536,8 @@
 		F3FA7EFF1BAFC26100432037 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				F33D41051BB0364B00F5A903 /* Play_Button.png */,
+				F33D41071BB0365800F5A903 /* Pause_Button.png */,
 				F33D40F81BAFFA5900F5A903 /* checkbox_empty.png */,
 				F33D40FA1BAFFA6100F5A903 /* checkbox_full.png */,
 				F3FA7EFB1BAFBF8F00432037 /* Audio-Unselected.png */,
@@ -650,7 +656,9 @@
 			files = (
 				F33D40F91BAFFA5900F5A903 /* checkbox_empty.png in Resources */,
 				F3ECBED81B9D8B270000A656 /* btnCheck@2x.png in Resources */,
+				F33D41061BB0364B00F5A903 /* Play_Button.png in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,
+				F33D41081BB0365800F5A903 /* Pause_Button.png in Resources */,
 				F3ECBED71B9D8B270000A656 /* btnCheck.png in Resources */,
 				F3F89E951BA30913004648B6 /* RadioButton-Selected.png in Resources */,
 				F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */,

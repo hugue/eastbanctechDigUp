@@ -14,12 +14,13 @@
     self = [super init];
     if (self) {
         self.beingPlayedID = @0;
+        self.audioPlayers = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
 - (void) addNewAudio:(AudioViewModel *)audio {
-    
+    [self.audioPlayers setObject:audio forKey:audio.materialID];
     RACChannelTerminal * controllerTerminal = RACChannelTo(self, beingPlayedID);
     RACChannelTerminal * buttonTerminal = RACChannelTo(audio, selectedID);
     

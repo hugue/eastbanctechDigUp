@@ -90,6 +90,7 @@
     //[self.scrollView setNeedsDisplay];
         });
     }
+    dispatch_async(dispatch_get_main_queue(), ^{[self configureAudioView];});
 }
 
 - (void) createMaterialViewWithModel:(MaterialViewModel *) materialViewModel atIndex:(NSUInteger) index{
@@ -132,8 +133,25 @@
         CheckBoxView * checkBox = [[CheckBoxView alloc] initWithViewModel:materialViewModel];
         self.materialsViews[index] = checkBox;
     }
+}
 
+#pragma AudioBar
 
+- (void) configureAudioView {
+    CGRect frame = CGRectMake(0.0, self.scrollView.frame.size.height - 80, self.scrollView.frame.size.width, 60);
+    UIView * audioBar = [[UIView alloc] initWithFrame:frame];
+    audioBar.backgroundColor = [UIColor blueColor];
+    
+    CGRect frameButton = CGRectMake(0.0, self.scrollView.frame.size.height - 70, self.scrollView.frame.size.width, 50);
+    UIButton * audioButton = [[UIButton alloc] initWithFrame:frameButton];
+    [audioButton setImage:[UIImage imageNamed:@"PlayButton"] forState:UIControlStateNormal];
+    [audioButton addTarget:self action:@selector(handleAudioTap:) forControlEvents:UIControlEventTouchDown];
+    
+    [self.scrollView addSubview:audioBar];
+}
+
+- (void) handleAudioTap:(id) sender {
+    [self.viewModel audioBarTapped];
 }
 
 #pragma mark UIRecognizer methods
