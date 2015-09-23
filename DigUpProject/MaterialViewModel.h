@@ -15,6 +15,13 @@
 @property (nonatomic, strong) MaterialModel * material;
 @property (nonatomic) NSNumber * materialID;
 
+@property (nonatomic) CGPoint position;
+@property (nonatomic) CGPoint posForDraggedMaterial;
+@property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * droppedElements;
+@property (nonatomic, strong) MaterialViewModel * currentDropTarget;
+
 - (id) initWithModel:(MaterialModel *) materialModel;
+- (void) positionNewDraggedMaterial:(MaterialViewModel *) draggedMaterial;
+- (void) removeDroppedElement:(MaterialViewModel *) removedElement;
 
 @end

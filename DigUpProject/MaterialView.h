@@ -16,9 +16,9 @@
 
 @property (nonatomic, strong) MaterialViewModel * viewModel;
 @property (nonatomic, strong) UIView * viewDisplayed;
-//@property (nonatomic, strong) UIPanGestureRecognizer * dragRecognizer;
 @property (nonatomic) CGPoint position;
 
 - (void) addVisualToView:(UIView *) superView;
+- (void) configureDropElement;
 
 @end

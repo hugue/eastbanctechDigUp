@@ -41,21 +41,21 @@
         }
         [self configureText];
     }
-    NSLog(@"Text created : %@", self.viewDisplayed.text);
     return self;
 }
 
 - (void) configureText {
     //Analyse text style
     if ([self.textStyle isEqualToString:@"text-u1"]) {
-        [self.viewDisplayed setFont:[UIFont boldSystemFontOfSize:18]];
+        [self.viewDisplayed setFont:[UIFont fontWithName:@"ForwardSans-Bold" size:18]];
         self.viewDisplayed.textColor = [UIColor blueColor];
     }
     else if([self.textStyle isEqualToString:@"text-number_big"]) {
-        [self.viewDisplayed setFont:[UIFont systemFontOfSize:40]];
+        [self.viewDisplayed setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:50]];
+        //self.viewDisplayed.textColor = [UIColor blueColor];
     }
     else if([self.textStyle isEqualToString:@""]) {
-       // [self.viewDisplayed setFont:[UIFont systemFontOfSize:18]];
+        [self.viewDisplayed setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
     }
 }
 @end

@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSMutableDictionary * dragDropElements;
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * targetElements;
 
-- (BOOL) pointIsInTargetElement:(CGPoint) point;
+- (BOOL) pointIsInTargetElement:(CGPoint) point forMaterial:(MaterialViewModel *) draggedMaterial;
 - (id) init;
 
 @end

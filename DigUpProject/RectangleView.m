@@ -7,6 +7,9 @@
 //
 
 #import "RectangleView.h"
+@interface RectangleView ()
+@property (nonatomic, strong) CAShapeLayer * specialBorder;
+@end
 
 @implementation RectangleView
 @dynamic viewDisplayed;
@@ -21,8 +24,18 @@
         self.viewDisplayed = [[UIView alloc] initWithFrame:frame];
         [self applyStyle:self.viewModel.material.Style ToView:self.viewDisplayed];
 
-        if ([self.viewModel.material.Behavior isEqualToString:@"DropElement"]) {
-            //[self.viewDisplayed addGestureRecognizer:self.dragRecognizer];
+        //Add the dashed border if is a target
+        if ([self.viewModel.material.Behavior isEqualToString:@"DropTarget"]) {
+            self.specialBorder = [CAShapeLayer layer];
+            self.specialBorder.strokeColor = [UIColor colorWithRed:67/255.0f green:37/255.0f blue:83/255.0f alpha:1].CGColor;
+            self.specialBorder.fillColor = nil;
+            self.specialBorder.lineDashPattern = @[@4, @2];
+            self.specialBorder.path = [UIBezierPath bezierPathWithRect:self.viewDisplayed.bounds].CGPath;
+            self.specialBorder.frame = self.viewDisplayed.bounds;
+            [self.viewDisplayed.layer addSublayer:self.specialBorder];
+        }
+        else if([self.viewModel.material.Behavior isEqualToString:@"DropElement"]) {
+            //[self configureDropElement];
         }
     }
     return self;
@@ -40,5 +53,6 @@
         view.backgroundColor = [UIColor colorWithRed:210.0/255.0 green:180.0/255.0 blue:140.0/255.0 alpha:1];
     }
 }
+
 
 @end

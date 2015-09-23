@@ -19,17 +19,26 @@
 }
 
 /*
- Check if a point is in a target, returns the target's model view if yes
- else returns nil.
+ Check if a point is in a target 
  - To be used with the point matching the finger's position
+ -The material is used for later correction of the exercise and deciding frame
  */
-- (BOOL) pointIsInTargetElement:(CGPoint)point {
+- (BOOL) pointIsInTargetElement:(CGPoint)point forMaterial:(MaterialViewModel *) draggedMaterial{
+    if (draggedMaterial.currentDropTarget) {
+        //Notify the target that the element has been moved
+        [draggedMaterial.currentDropTarget removeDroppedElement:draggedMaterial];
+    }
     for (MaterialViewModel * target in self.targetElements) {
         CGRect frameTarget = CGRectMake(target.material.X, target.material.Y, target.material.Width, target.material.Height);
+        
         if (CGRectContainsPoint(frameTarget, point)) {
+            draggedMaterial.currentDropTarget = target;
+            [target.droppedElements addObject:draggedMaterial];
+            [target positionNewDraggedMaterial:draggedMaterial];
             return YES;
         }
     }
+    draggedMaterial.currentDropTarget = nil;
     return NO;
 }
 

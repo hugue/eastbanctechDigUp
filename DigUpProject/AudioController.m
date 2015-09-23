@@ -30,6 +30,9 @@
     self.audioPlayers = [[NSMutableDictionary alloc] init];
     self.currentlyPlaying = nil;
     self.currentAudioTime = 0;
+    self.audioDuration = 0;
+    self.isPlaying = NO;
+    self.currentAudioVolum = 0.5;
     
    self.updatingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target:self selector:@selector(updateCurrentTime:) userInfo:nil repeats:YES];
 }
@@ -49,18 +52,37 @@
             [audio.audioPlayer stop];
         }
     }] subscribe:buttonTerminal];
- //Problem here ??
     [[buttonTerminal doNext:^(id x) {
         if ([x isEqualToNumber:audio.materialID]) {
+            self.audioDuration = floor(audio.audioPlayer.duration);
             [audio.audioPlayer play];
             }
     }]subscribe:controllerTerminal];
+  
+    RAC(audio, audioPlayer.volume) = RACObserve(self, currentAudioVolum);
+
 }
 
 - (void) updateCurrentTime: (id) sender {
     if (self.audioPlayers[self.beingPlayedID].audioPlayer.isPlaying) {
         self.currentAudioTime = lroundf(self.audioPlayers[self.beingPlayedID].audioPlayer.currentTime);
     }
+}
+
+- (void) setTimeCurrentAudio:(long)currentAudioTime {
+    //[self pauseCurrentAudio];
+    [self.audioPlayers[self.beingPlayedID].audioPlayer setCurrentTime:currentAudioTime];
+    //if (self.isPlaying) {
+    //[self playCurrentAudio];
+   // }
+}
+
+- (void) pauseCurrentAudio {
+    [self.audioPlayers[self.beingPlayedID].audioPlayer pause];
+}
+
+- (void) playCurrentAudio {
+    [self.audioPlayers[self.beingPlayedID].audioPlayer play];
 }
 
 @end

@@ -15,7 +15,7 @@
     if (self) {
         self.viewModel = materialViewModel;
         if ([self.viewModel.material.Behavior isEqualToString:@"DropElement"]) {
-            //self.dragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleDrag:)];
+            [self configureDropElement];
         }
     }
     return self;
@@ -23,6 +23,14 @@
 
 - (void) addVisualToView:(UIView *)superView {
     [superView addSubview:self.viewDisplayed];
+}
+
+- (void) configureDropElement {
+    RAC(self, position) = [[RACObserve(self.viewModel, position) skip:1] doNext:^(id x) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.viewDisplayed.frame = CGRectMake(self.position.x, self.position.y, self.viewDisplayed.frame.size.width, self.viewDisplayed.frame.size.height);
+        });
+    }];
 }
 /*
 - (void) handleDrag:(UIGestureRecognizer *) recognizer {

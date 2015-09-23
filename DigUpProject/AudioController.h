@@ -13,15 +13,17 @@
 
 @property (nonatomic, strong) NSNumber * beingPlayedID;
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, AudioViewModel *> * audioPlayers;
-#warning change the way it works from dictionary to element
 @property (nonatomic, strong) AudioViewModel * currentlyPlaying;
 
 @property (nonatomic) long currentAudioTime;
+@property (nonatomic) long audioDuration;
 @property (nonatomic) BOOL isPlaying;
+@property (nonatomic) float currentAudioVolum;
 
 - (id) init;
 - (void) addNewAudio:(AudioViewModel *)audio;
-
-//- (NSString *) currentFormattedTime:(float) value;
+- (void) pauseCurrentAudio;
+- (void) playCurrentAudio;
+- (void) setTimeCurrentAudio:(long)currentAudioTime;
 
 @end

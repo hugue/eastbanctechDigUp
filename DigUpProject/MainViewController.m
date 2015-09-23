@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
     MainViewModel * mainViewModel = [[MainViewModel alloc] init];
     self.viewModel = mainViewModel;
@@ -63,17 +64,6 @@
             [self displayExercise];
        // });
     }];
- 
-    //Configuration for the audio controls
-   /* RACSignal * validMusicSignal = [[RACObserve(self.viewModel.audioController, beingPlayedID)
-                                     map:^id(NSNumber * ID) {
-                                         return @(![ID isEqualToNumber:@(0)]);
-                                     }]
-                                    distinctUntilChanged];
-    
-    [validMusicSignal subscribeNext:^(id x) {
-        NSLog(@"search text is valid %@", x);
-    }];*/
 }
 
 - (void) displayExercise {
@@ -92,19 +82,17 @@
  
         dispatch_async(dispatch_get_main_queue(), ^{
     
-        [materialView addVisualToView:self.scrollView];
+            [materialView addVisualToView:self.scrollView];
         
-        if ((width + x) > self.scrollView.contentSize.width/2) {
-            self.scrollView.contentSize = CGSizeMake((width + x), self.scrollView.frame.size.height);
-        }
-        if ((height + y) > self.scrollView.contentSize.height/2) {
-            self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, (height + y));
-        }
-    
-    //[self.scrollView setNeedsDisplay];
+            if ((width + x) > self.scrollView.contentSize.width/2) {
+                self.scrollView.contentSize = CGSizeMake((width + x), self.scrollView.frame.size.height);
+            }
+            if ((height + y) > self.scrollView.contentSize.height/2) {
+                self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, (height + y));
+            }
         });
     }
-    dispatch_async(dispatch_get_main_queue(), ^{[self configureAudioView];});
+    dispatch_async(dispatch_get_main_queue(), ^{[self configureAudioPlayerView];});
 }
 
 - (void) createMaterialViewWithModel:(MaterialViewModel *) materialViewModel atIndex:(NSUInteger) index{
@@ -151,7 +139,7 @@
 
 #pragma AudioBar
 
-- (void) configureAudioView {
+- (void) configureAudioPlayerView {
     self.currentAudioTime = 0;
     
     //Main Bar
@@ -160,7 +148,7 @@
     audioBar.backgroundColor = [UIColor blueColor];
     
     //Control Bar
-    CGRect controlBarFrame = CGRectMake(10.0, 5, frame.size.width/2, 50);
+    CGRect controlBarFrame = CGRectMake(10.0, 5, 500, 50);
     UIView * controlBarView = [[UIView alloc] initWithFrame:controlBarFrame];
     controlBarView.layer.cornerRadius = 20.0;
     controlBarView.layer.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8].CGColor;
@@ -179,20 +167,25 @@
     CGRect frameSlider = CGRectMake(55, 0, 200, controlBarFrame.size.height);
     UISlider * currentTimeSlider = [[UISlider alloc] initWithFrame:frameSlider];
     currentTimeSlider.backgroundColor = [UIColor clearColor];
-    //currentTimeSlider.enabled = YES;
-    //[currentTimeSlider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+    //currentTimeSlider.continuous = NO;
+    
+    RAC(currentTimeSlider, maximumValue) = RACObserve(self.viewModel.audioController, audioDuration);
+    
+    //[[currentTimeSlider rac_signalForControlEvents:UIControlEventTouchDown] subscribeNext:^(id x) {
+    //    [self.viewModel.audioController pauseCurrentAudio];
+    //}];
+    
     RACChannelTerminal * sliderTerminal = [currentTimeSlider rac_newValueChannelWithNilValue:@0];
     RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
     
-    [sliderTerminal subscribe:modelTerminal];
+    [[[sliderTerminal doNext:^(id x) {
+        [self.viewModel.audioController setTimeCurrentAudio:currentTimeSlider.value];
+    } ]distinctUntilChanged]subscribe:modelTerminal];
     [modelTerminal subscribe:sliderTerminal];
     
     [controlBarView addSubview:currentTimeSlider];
     
     //Time Label
-    if (![self.viewModel.audioController.beingPlayedID isEqualToNumber:@0]) {
-        //Here create a signal to observe the audio Time
-    }
     CGRect timeLableFrame = CGRectMake(260, 0, 75, controlBarFrame.size.height);
     UILabel * timeLabel = [[UILabel alloc] initWithFrame:timeLableFrame];
     timeLabel.text = @"0:00";
@@ -201,20 +194,28 @@
     [controlBarView addSubview:timeLabel];
     
     RAC(self, currentAudioTime) = [RACObserve(self.viewModel.audioController, currentAudioTime) doNext:^(id x) {
-        int minutes = floor(self.currentAudioTime/60);
-        int seconds = self.currentAudioTime - minutes*60;
+        long minutes = floor(self.currentAudioTime/60);
+        long seconds = self.currentAudioTime - minutes*60;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            timeLabel.text = [NSString stringWithFormat:@"%d:%02d", minutes, seconds];
+            timeLabel.text = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
         });
     }];
     
+    //Volum slider
+    CGRect frameVolumSlider = CGRectMake(340, 0, 150, controlBarFrame.size.height);
+   
+    UISlider * volumSlider = [[UISlider alloc] initWithFrame:frameVolumSlider];
+    volumSlider.backgroundColor = [UIColor clearColor];
+    volumSlider.maximumValue = 1.0;
+    volumSlider.value = 1.0;
+    RAC(self.viewModel.audioController, currentAudioVolum) = [RACObserve(volumSlider, value) distinctUntilChanged];
+    
+    [controlBarView addSubview:volumSlider];
+    
+    
     [audioBar addSubview:controlBarView];
     [self.scrollView addSubview:audioBar];
-}
-
-- (void) sliderAction:(id) sender {
-
 }
 
 - (void) handleAudioTap:(id) sender {
@@ -251,7 +252,8 @@
         recognizer.draggedMaterial.position = newCoord;
     }
     else if(recognizer.state == UIGestureRecognizerStateEnded) {
-        if(![self.viewModel.dropController pointIsInTargetElement:recognizer.draggedMaterial.position]) {
+        if(![self.viewModel.dropController pointIsInTargetElement:recognizer.draggedMaterial.position forMaterial:recognizer.draggedMaterial.viewModel]) {
+            //Put the element to its original position
             recognizer.draggedMaterial.viewDisplayed.frame = CGRectMake(recognizer.draggedMaterial.viewModel.material.X,
                                                                         recognizer.draggedMaterial.viewModel.material.Y,
                                                                         recognizer.draggedMaterial.viewDisplayed.frame.size.width,
@@ -277,7 +279,6 @@
 /*Returns the first material view that can be dragged and is found under the touch*/
 - (MaterialView *) touchIsOnDraggableMaterial:(UITouch *) touch {
     CGPoint locationTouch = [touch locationInView:self.scrollView];
-    NSLog(@"%f and %f", locationTouch.x, locationTouch.y);
     for (MaterialView * element in self.materialsViews) {
         if ([element.viewModel.material.Behavior isEqualToString:@"DropElement"] &&
             CGRectContainsPoint(element.viewDisplayed.frame, locationTouch)) {
