@@ -9,13 +9,13 @@
 #import "MaterialView.h"
 #import "TableViewModel.h"
 #import "CellViewModel.h"
-//#import <WebKit/WebKit.h>
+#import <WebKit/WebKit.h>
 
-@interface TableView : MaterialView
+@interface TableView : MaterialView <UIWebViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray<UIView *> * cellViewsDisplayed;
-@property (nonatomic, strong) UIView * viewDisplayed;
-//@property (nonatomic, strong) WKWebView * viewDisplayed;
+//@property (nonatomic, strong) UIView * viewDisplayed;
+@property (nonatomic, strong) UIWebView * viewDisplayed;
 @property (nonatomic, strong) TableViewModel * viewModel;
 
 @end

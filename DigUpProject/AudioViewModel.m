@@ -55,6 +55,7 @@
     NSData * data = [NSData dataWithContentsOfURL:location];
     self.audioData = [data copy];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithData:self.audioData error:nil];
+    self.audioPlayer.delegate = self;
     self.audioLoaded = @YES;
 
 }

@@ -67,6 +67,13 @@
 		F3F64A3D1BA6F54700B9231D /* TextInputViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */; };
 		F3F64A401BA6F56400B9231D /* TextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A3F1BA6F56400B9231D /* TextInputView.m */; };
 		F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A421BA6FAED00B9231D /* RectangleView.m */; };
+		F3F7B51C1BB1121600781D90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F7B51B1BB1121600781D90 /* QuartzCore.framework */; };
+		F3F7B51E1BB1165800781D90 /* PlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F7B51D1BB1165800781D90 /* PlayButton.png */; };
+		F3F7B5261BB15B4800781D90 /* toastr.css in Resources */ = {isa = PBXBuildFile; fileRef = F3F7B5211BB15B4800781D90 /* toastr.css */; };
+		F3F7B5271BB15B4800781D90 /* site.css in Resources */ = {isa = PBXBuildFile; fileRef = F3F7B5221BB15B4800781D90 /* site.css */; };
+		F3F7B5281BB15B4800781D90 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = F3F7B5231BB15B4800781D90 /* main.css */; };
+		F3F7B5291BB15B4800781D90 /* jquery-ui-1.10.3.custom.css in Resources */ = {isa = PBXBuildFile; fileRef = F3F7B5241BB15B4800781D90 /* jquery-ui-1.10.3.custom.css */; };
+		F3F7B52A1BB15B4800781D90 /* elements.css in Resources */ = {isa = PBXBuildFile; fileRef = F3F7B5251BB15B4800781D90 /* elements.css */; };
 		F3F84D671B9EA37800876424 /* RadioButton-Unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F84D661B9EA37800876424 /* RadioButton-Unselected.png */; };
 		F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E881BA28880004648B6 /* RadioButtonView.m */; };
 		F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */; };
@@ -219,6 +226,13 @@
 		F3F64A3F1BA6F56400B9231D /* TextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputView.m; sourceTree = "<group>"; };
 		F3F64A411BA6FAED00B9231D /* RectangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleView.h; sourceTree = "<group>"; };
 		F3F64A421BA6FAED00B9231D /* RectangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectangleView.m; sourceTree = "<group>"; };
+		F3F7B51B1BB1121600781D90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F3F7B51D1BB1165800781D90 /* PlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton.png; sourceTree = "<group>"; };
+		F3F7B5211BB15B4800781D90 /* toastr.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = toastr.css; sourceTree = "<group>"; };
+		F3F7B5221BB15B4800781D90 /* site.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = site.css; sourceTree = "<group>"; };
+		F3F7B5231BB15B4800781D90 /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		F3F7B5241BB15B4800781D90 /* jquery-ui-1.10.3.custom.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery-ui-1.10.3.custom.css"; sourceTree = "<group>"; };
+		F3F7B5251BB15B4800781D90 /* elements.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = elements.css; sourceTree = "<group>"; };
 		F3F84D661B9EA37800876424 /* RadioButton-Unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RadioButton-Unselected.png"; sourceTree = "<group>"; };
 		F3F89E871BA28880004648B6 /* RadioButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonView.h; sourceTree = "<group>"; };
 		F3F89E881BA28880004648B6 /* RadioButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonView.m; sourceTree = "<group>"; };
@@ -236,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F7B51C1BB1121600781D90 /* QuartzCore.framework in Frameworks */,
 				F3F5A8631BAC4FD200D35CA6 /* WebKit.framework in Frameworks */,
 				F3F5A8611BAC4FC100D35CA6 /* AVFoundation.framework in Frameworks */,
 				F3F5A85F1BAC4F6E00D35CA6 /* libxml2.tbd in Frameworks */,
@@ -272,6 +287,7 @@
 		E5E74C7A3BD5FFA228B46182 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3F7B51B1BB1121600781D90 /* QuartzCore.framework */,
 				F3F5A8621BAC4FD200D35CA6 /* WebKit.framework */,
 				F3F5A8601BAC4FC100D35CA6 /* AVFoundation.framework */,
 				F3F5A85E1BAC4F6E00D35CA6 /* libxml2.tbd */,
@@ -370,6 +386,7 @@
 				F3ECBE791B9D452E0000A656 /* Assets.xcassets */,
 				F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */,
 				F3ECBE7E1B9D452E0000A656 /* Info.plist */,
+				F3F7B5201BB15B2E00781D90 /* css */,
 				F3FA7EFF1BAFC26100432037 /* Ressources */,
 				F3F487141BA828D300FCA8A6 /* HTMLParser */,
 				F3ECBED01B9D8B270000A656 /* HUD */,
@@ -516,6 +533,18 @@
 			name = HTMLParser;
 			sourceTree = "<group>";
 		};
+		F3F7B5201BB15B2E00781D90 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				F3F7B5211BB15B4800781D90 /* toastr.css */,
+				F3F7B5221BB15B4800781D90 /* site.css */,
+				F3F7B5231BB15B4800781D90 /* main.css */,
+				F3F7B5241BB15B4800781D90 /* jquery-ui-1.10.3.custom.css */,
+				F3F7B5251BB15B4800781D90 /* elements.css */,
+			);
+			name = css;
+			sourceTree = "<group>";
+		};
 		F3F89E901BA30670004648B6 /* TaskControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +565,7 @@
 		F3FA7EFF1BAFC26100432037 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				F3F7B51D1BB1165800781D90 /* PlayButton.png */,
 				F33D41051BB0364B00F5A903 /* Play_Button.png */,
 				F33D41071BB0365800F5A903 /* Pause_Button.png */,
 				F33D40F81BAFFA5900F5A903 /* checkbox_empty.png */,
@@ -656,17 +686,23 @@
 			files = (
 				F33D40F91BAFFA5900F5A903 /* checkbox_empty.png in Resources */,
 				F3ECBED81B9D8B270000A656 /* btnCheck@2x.png in Resources */,
+				F3F7B5281BB15B4800781D90 /* main.css in Resources */,
 				F33D41061BB0364B00F5A903 /* Play_Button.png in Resources */,
+				F3F7B52A1BB15B4800781D90 /* elements.css in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,
+				F3F7B51E1BB1165800781D90 /* PlayButton.png in Resources */,
 				F33D41081BB0365800F5A903 /* Pause_Button.png in Resources */,
 				F3ECBED71B9D8B270000A656 /* btnCheck.png in Resources */,
 				F3F89E951BA30913004648B6 /* RadioButton-Selected.png in Resources */,
+				F3F7B5271BB15B4800781D90 /* site.css in Resources */,
 				F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */,
 				F33D40FB1BAFFA6100F5A903 /* checkbox_full.png in Resources */,
 				F3E01F701BA170EB005028A4 /* exo.json in Resources */,
+				F3F7B5291BB15B4800781D90 /* jquery-ui-1.10.3.custom.css in Resources */,
 				F3FA7EFC1BAFBF8F00432037 /* Audio-Unselected.png in Resources */,
 				F3FA7EFE1BAFC09200432037 /* Audio-Selected.png in Resources */,
 				F3ECBE781B9D452E0000A656 /* Main.storyboard in Resources */,
+				F3F7B5261BB15B4800781D90 /* toastr.css in Resources */,
 				F3F84D671B9EA37800876424 /* RadioButton-Unselected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

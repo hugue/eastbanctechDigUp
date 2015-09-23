@@ -12,6 +12,9 @@
 
 @property (nonatomic, strong) MainViewModel * viewModel;
 @property (nonatomic, strong) UITextField * activeField;
+@property (nonatomic) long currentAudioTime;
+
+@property (nonatomic, strong) UIButton * playPauseButton;
 
 @end
 
@@ -60,6 +63,17 @@
             [self displayExercise];
        // });
     }];
+ 
+    //Configuration for the audio controls
+   /* RACSignal * validMusicSignal = [[RACObserve(self.viewModel.audioController, beingPlayedID)
+                                     map:^id(NSNumber * ID) {
+                                         return @(![ID isEqualToNumber:@(0)]);
+                                     }]
+                                    distinctUntilChanged];
+    
+    [validMusicSignal subscribeNext:^(id x) {
+        NSLog(@"search text is valid %@", x);
+    }];*/
 }
 
 - (void) displayExercise {
@@ -138,20 +152,79 @@
 #pragma AudioBar
 
 - (void) configureAudioView {
+    self.currentAudioTime = 0;
+    
+    //Main Bar
     CGRect frame = CGRectMake(0.0, self.scrollView.frame.size.height - 80, self.scrollView.frame.size.width, 60);
     UIView * audioBar = [[UIView alloc] initWithFrame:frame];
     audioBar.backgroundColor = [UIColor blueColor];
     
-    CGRect frameButton = CGRectMake(0.0, self.scrollView.frame.size.height - 70, self.scrollView.frame.size.width, 50);
-    UIButton * audioButton = [[UIButton alloc] initWithFrame:frameButton];
-    [audioButton setImage:[UIImage imageNamed:@"PlayButton"] forState:UIControlStateNormal];
-    [audioButton addTarget:self action:@selector(handleAudioTap:) forControlEvents:UIControlEventTouchDown];
+    //Control Bar
+    CGRect controlBarFrame = CGRectMake(10.0, 5, frame.size.width/2, 50);
+    UIView * controlBarView = [[UIView alloc] initWithFrame:controlBarFrame];
+    controlBarView.layer.cornerRadius = 20.0;
+    controlBarView.layer.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8].CGColor;
     
+    //Play-Pause button
+    CGRect frameButton = CGRectMake(0.0, 0.0, 50,controlBarFrame.size.height);
+    self.playPauseButton = [[UIButton alloc] initWithFrame:frameButton];
+    
+    [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
+    [self.playPauseButton addTarget:self action:@selector(handleAudioTap:) forControlEvents:UIControlEventTouchDown];
+    self.playPauseButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    
+    [controlBarView addSubview:self.playPauseButton];
+    
+    //Time slider
+    CGRect frameSlider = CGRectMake(55, 0, 200, controlBarFrame.size.height);
+    UISlider * currentTimeSlider = [[UISlider alloc] initWithFrame:frameSlider];
+    currentTimeSlider.backgroundColor = [UIColor clearColor];
+    //currentTimeSlider.enabled = YES;
+    //[currentTimeSlider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+    RACChannelTerminal * sliderTerminal = [currentTimeSlider rac_newValueChannelWithNilValue:@0];
+    RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
+    
+    [sliderTerminal subscribe:modelTerminal];
+    [modelTerminal subscribe:sliderTerminal];
+    
+    [controlBarView addSubview:currentTimeSlider];
+    
+    //Time Label
+    if (![self.viewModel.audioController.beingPlayedID isEqualToNumber:@0]) {
+        //Here create a signal to observe the audio Time
+    }
+    CGRect timeLableFrame = CGRectMake(260, 0, 75, controlBarFrame.size.height);
+    UILabel * timeLabel = [[UILabel alloc] initWithFrame:timeLableFrame];
+    timeLabel.text = @"0:00";
+    timeLabel.textColor = [UIColor whiteColor];
+    
+    [controlBarView addSubview:timeLabel];
+    
+    RAC(self, currentAudioTime) = [RACObserve(self.viewModel.audioController, currentAudioTime) doNext:^(id x) {
+        int minutes = floor(self.currentAudioTime/60);
+        int seconds = self.currentAudioTime - minutes*60;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            timeLabel.text = [NSString stringWithFormat:@"%d:%02d", minutes, seconds];
+        });
+    }];
+    
+    [audioBar addSubview:controlBarView];
     [self.scrollView addSubview:audioBar];
 }
 
+- (void) sliderAction:(id) sender {
+
+}
+
 - (void) handleAudioTap:(id) sender {
-    [self.viewModel audioBarTapped];
+    BOOL isPlaying = [self.viewModel audioBarTapped];
+    if(isPlaying) {
+        [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
+    }
+    else {
+        [self.playPauseButton setImage:[UIImage imageNamed:@"Play_Button"] forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark UIRecognizer methods

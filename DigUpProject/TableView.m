@@ -20,7 +20,7 @@
 
 
 
-/*- (id) initWithViewModel:(MaterialViewModel *)materialViewModel {
+- (id) initWithViewModel:(MaterialViewModel *)materialViewModel {
     self = [super initWithViewModel:materialViewModel];
     if (self) {
         CGRect frame =  CGRectMake(self.viewModel.material.X,
@@ -28,14 +28,18 @@
                                    self.viewModel.material.Width,
                                    self.viewModel.material.Height);
         
-        self.viewDisplayed = [[WKWebView alloc] initWithFrame:frame];
-        //NSString * htmlString = [NSString stringWithFormat:@"<html> %@ </html>", self.viewModel.material.Text];
-        NSString * htmlString = @"<html>hello here</html>";
-        [self.viewDisplayed  loadHTMLString:htmlString baseURL:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.viewDisplayed = [[UIWebView alloc] initWithFrame:frame];
+            NSString *path = [[NSBundle mainBundle] bundlePath];
+            NSURL *baseURL = [NSURL fileURLWithPath:path];
+            NSString * htmlString = [NSString stringWithFormat:@"<html> %@ </html>", self.viewModel.material.Text];
+            //NSString * htmlString = @"<html>hello<br>hu</html>";
+            [self.viewDisplayed  loadHTMLString:htmlString baseURL: baseURL];
+        });
     }
     return self;
-}*/
-
+}
+/*
 - (id) initWithViewModel:(MaterialViewModel *)materialViewModel {
     self = [super initWithViewModel:materialViewModel];
     if (self) {
@@ -97,5 +101,5 @@
         }
     }
 }
-
+*/
 @end

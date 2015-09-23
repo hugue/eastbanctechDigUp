@@ -39,8 +39,9 @@
 
 - (void) handleTap:(id) sender {
     [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Selected"] forState: UIControlStateNormal];
+ //[self.viewModel handleTap];
     self.isSelected = @YES;
-    //[self.viewModel handleTap];
+    
 }
 
 - (void) applyModelToView {

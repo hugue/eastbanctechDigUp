@@ -128,12 +128,14 @@
     self.exerciseLoaded = @YES;
 }
 
-- (void) audioBarTapped {
+- (BOOL) audioBarTapped {
     if (self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer.playing) {
-        
+        [self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer pause];
+        return NO;
     }
     else {
-        
+        [self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer play];
+        return YES;
     }
 }
 

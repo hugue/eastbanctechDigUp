@@ -8,11 +8,13 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import <AVKit/AVKit.h>
+
 #import "HUD/HUD.h"
 #import "MainViewModel.h"
 #import "MaterialView.h"
 #import "DragElementRecognizer.h"
-#import <AVKit/AVKit.h>
 
 #import "TextFrameView.h"
 #import "ImageView.h"

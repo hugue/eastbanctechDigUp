@@ -11,7 +11,7 @@
 #import "MaterialViewModel.h"
 
 
-@interface AudioViewModel : MaterialViewModel <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
+@interface AudioViewModel : MaterialViewModel <NSURLSessionDelegate, NSURLSessionDownloadDelegate, AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) NSNumber * selectedID;
 @property (nonatomic, strong) AVAudioPlayer * audioPlayer;
