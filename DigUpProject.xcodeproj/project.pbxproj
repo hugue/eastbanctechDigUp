@@ -378,8 +378,8 @@
 			children = (
 				F3ECBE701B9D452E0000A656 /* AppDelegate.h */,
 				F3ECBE711B9D452E0000A656 /* AppDelegate.m */,
-				F3F89E901BA30670004648B6 /* TaskControllers */,
 				F3E01F7A1BA17BB5005028A4 /* Models */,
+				F3F89E901BA30670004648B6 /* TaskControllers */,
 				F3E01F7B1BA17BD5005028A4 /* ViewModels */,
 				F3E01F7C1BA17BEE005028A4 /* Views */,
 				F3ECBE761B9D452E0000A656 /* Main.storyboard */,

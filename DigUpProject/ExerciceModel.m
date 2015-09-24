@@ -22,7 +22,9 @@
             if (initError) {
                 NSLog(@"%@", initError );
             }
-            NSLog(@"%@", [material class]);
+            NSLog(@"Identifier is %d", material.$id );
+            NSLog(@"%@",material.DropTarget);
+            
             [self.materialsObject addObject:material];
         }
     }
