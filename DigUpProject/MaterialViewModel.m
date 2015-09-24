@@ -16,7 +16,9 @@
         self.material = materialModel;
         self.materialID = materialModel.Id;
         
-        self.position = CGPointMake(materialModel.X, materialModel.Y);
+        self.position = CGPointMake([materialModel.X floatValue], [materialModel.Y floatValue]);
+        self.materialHeight = [self.material.Height floatValue];
+        self.materialWidth = [self.material.Width floatValue];
         self.posForDraggedMaterial = self.position;
         self.currentDropTarget = nil;
         self.droppedElements = [[NSMutableArray alloc] init];
@@ -27,12 +29,12 @@
 - (void) positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial {
     draggedMaterial.position = self.posForDraggedMaterial;
     //Update the position for next dragged element
-    self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y + draggedMaterial.material.Height);
+    self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y + draggedMaterial.materialHeight);
 }
 
 - (void) removeDroppedElement:(MaterialViewModel *)removedElement {
     int index = [self.droppedElements indexOfObjectIdenticalTo:removedElement];
-    float removedHeight = removedElement.material.Height;
+    float removedHeight = removedElement.materialHeight;
     for (int i = index +1; i < self.droppedElements.count; i++) {
         self.droppedElements[i].position = CGPointMake(self.droppedElements[i].position.x, self.droppedElements[i].position.y - removedHeight);
     }

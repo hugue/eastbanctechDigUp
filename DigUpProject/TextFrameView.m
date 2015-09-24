@@ -22,10 +22,10 @@
     if (self) {
         self.textStyle = self.viewModel.material.Style;
         
-       CGRect  frame =  CGRectMake( self.viewModel.material.X,
-                                    self.viewModel.material.Y,
-                                    self.viewModel.material.Width,
-                                    self.viewModel.material.Height);
+       CGRect  frame =  CGRectMake( self.viewModel.position.x,
+                                    self.viewModel.position.y,
+                                    self.viewModel.materialWidth,
+                                    self.viewModel.materialHeight);
         self.viewDisplayed = [[UILabel alloc] initWithFrame:frame];
         self.viewDisplayed.numberOfLines = 0;
         

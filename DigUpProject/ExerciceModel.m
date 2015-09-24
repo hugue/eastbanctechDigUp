@@ -8,6 +8,13 @@
 
 #import "ExerciceModel.h"
 
+@interface ExerciceModel()
+
+@property (nonatomic, strong) NSArray<MaterialModel> * materials;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, MaterialModel *> * referencedModels;
+
+@end
+
 @implementation ExerciceModel
 
 - (id) initWithData:(NSData *)data error:(NSError *)error {
@@ -15,20 +22,57 @@
     if (self) {
         self.materials = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
         self.materialsObject = [[NSMutableArray alloc] initWithCapacity:[self.materials count]];
+        self.referencedModels = [[NSMutableDictionary alloc] init];
         
         for (int i = 0; i < self.materials.count; i++) {
             NSError * initError;
-            MaterialModel * material = [[MaterialModel  alloc] initWithDictionary:self.materials[i] error: &initError];
+            NSLog(@"%@", self.materials[i]);
+            MaterialModel * material = [self addNewMaterialWithDictionary:self.materials[i]];
             if (initError) {
                 NSLog(@"%@", initError );
             }
-            NSLog(@"Identifier is %d", material.$id );
-            NSLog(@"%@",material.DropTarget);
             
             [self.materialsObject addObject:material];
+            NSLog(@"%@", self.materialsObject[i]);
         }
     }
     return self;
 }
 
+- (MaterialModel *) addNewMaterialWithDictionary:(NSDictionary *) materialInfo {
+    //This is a reference, so look at the info in the dicionary for referenced models
+    if (materialInfo[@"$ref"]) {
+        MaterialModel * referencedModel = self.referencedModels[materialInfo[@"$ref"]];
+       // NSLog(@"%@ for key %@", referencedModel, referencedModel);
+        [self createReferencedModels:referencedModel];
+        return referencedModel;
+    }
+    
+    NSError * initError;
+    MaterialModel * material = [[MaterialModel alloc] initWithDictionary:materialInfo error:&initError];
+    if (initError) {
+        NSLog(@"%@", initError );
+    }
+
+    [self createReferencedModels:material];
+    return material;
+}
+
+- (void) createReferencedModels:(MaterialModel *) material {
+    //If this material creates other materials, register it in the dictionary so we know were to look at when we find the references
+    if (material.DropElements) {
+        for(MaterialModel * referencedMaterial in material.DropElements) {
+            //If this is not a reference but a real model, store it
+            if(referencedMaterial.$id) {
+                [self.referencedModels setObject:referencedMaterial forKey:referencedMaterial.$id];
+            }
+        }
+    }
+    else if(material.DropTarget) {
+        //If this is not a reference but a real model, store it
+        if(material.DropTarget.$id) {
+            [self.referencedModels setObject:material.DropTarget forKey:material.DropTarget.$id];
+        }
+    }
+}
 @end

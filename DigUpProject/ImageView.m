@@ -19,10 +19,10 @@
 - (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
-        CGRect  frame =  CGRectMake(self.viewModel.material.X ,
-                                    self.viewModel.material.Y,
-                                    self.viewModel.material.Width,
-                                    self.viewModel.material.Height);
+        CGRect  frame =  CGRectMake(self.viewModel.position.x ,
+                                    self.viewModel.position.y,
+                                    self.viewModel.materialWidth,
+                                    self.viewModel.materialHeight);
         self.viewDisplayed = [[UIImageView alloc] initWithFrame:frame];
         
         //NSString * imageName = materialViewModel.material.Name;

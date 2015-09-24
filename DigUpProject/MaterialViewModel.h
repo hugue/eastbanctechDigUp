@@ -17,6 +17,8 @@
 
 @property (nonatomic) CGPoint position;
 @property (nonatomic) CGPoint posForDraggedMaterial;
+@property (nonatomic) float materialHeight;
+@property (nonatomic) float materialWidth;
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * droppedElements;
 @property (nonatomic, strong) MaterialViewModel * currentDropTarget;
 

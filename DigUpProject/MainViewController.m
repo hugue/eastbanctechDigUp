@@ -254,8 +254,8 @@
     else if(recognizer.state == UIGestureRecognizerStateEnded) {
         if(![self.viewModel.dropController pointIsInTargetElement:recognizer.draggedMaterial.position forMaterial:recognizer.draggedMaterial.viewModel]) {
             //Put the element to its original position
-            recognizer.draggedMaterial.viewDisplayed.frame = CGRectMake(recognizer.draggedMaterial.viewModel.material.X,
-                                                                        recognizer.draggedMaterial.viewModel.material.Y,
+            recognizer.draggedMaterial.viewDisplayed.frame = CGRectMake([recognizer.draggedMaterial.viewModel.material.X floatValue],
+                                                                        [recognizer.draggedMaterial.viewModel.material.Y floatValue],
                                                                         recognizer.draggedMaterial.viewDisplayed.frame.size.width,
                                                                         recognizer.draggedMaterial.viewDisplayed.frame.size.height);
         }

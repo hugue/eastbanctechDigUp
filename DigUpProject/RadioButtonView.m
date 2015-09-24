@@ -24,8 +24,8 @@
 - (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
-        CGRect  frame =  CGRectMake(self.viewModel.material.X ,
-                                    self.viewModel.material.Y,
+        CGRect  frame =  CGRectMake(self.viewModel.position.x,
+                                    self.viewModel.position.y,
                                     20,
                                     20);
                                     //self.viewModel.material.Width,

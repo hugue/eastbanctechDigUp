@@ -29,7 +29,7 @@
         [draggedMaterial.currentDropTarget removeDroppedElement:draggedMaterial];
     }
     for (MaterialViewModel * target in self.targetElements) {
-        CGRect frameTarget = CGRectMake(target.material.X, target.material.Y, target.material.Width, target.material.Height);
+        CGRect frameTarget = CGRectMake(target.position.x, target.position.y, target.materialWidth, target.materialHeight);
         
         if (CGRectContainsPoint(frameTarget, point)) {
             draggedMaterial.currentDropTarget = target;
