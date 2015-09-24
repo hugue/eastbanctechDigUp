@@ -59,7 +59,10 @@
             }
     }]subscribe:controllerTerminal];
   
-    RAC(audio, audioPlayer.volume) = RACObserve(self, currentAudioVolum);
+    RAC(audio, audioPlayer.volume) = [RACObserve(self, currentAudioVolum) map:^id(id value) {
+        NSLog(@"Sound Value : %@", value);
+        return value;
+    }];
 
 }
 

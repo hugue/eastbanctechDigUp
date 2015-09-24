@@ -16,6 +16,7 @@
 @property (nonatomic) NSNumber * materialID;
 
 @property (nonatomic) CGPoint position;
+@property (nonatomic) NSUInteger zPosition;
 @property (nonatomic) CGPoint posForDraggedMaterial;
 @property (nonatomic) float materialHeight;
 @property (nonatomic) float materialWidth;

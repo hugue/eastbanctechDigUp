@@ -32,6 +32,9 @@
 @property (nonatomic, strong) DragNDropController * dropController;
 @property (nonatomic, strong) NSNumber * exerciseLoaded;
 
+@property (nonatomic) NSUInteger maxZPosition;
+@property (nonatomic) NSUInteger maxTargetZPosition;
+
 - (void) parseExercise;
 - (BOOL) audioBarTapped;
 

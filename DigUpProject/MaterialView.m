@@ -23,6 +23,7 @@
 
 - (void) addVisualToView:(UIView *)superView {
     [superView addSubview:self.viewDisplayed];
+    self.viewDisplayed.layer.zPosition = self.viewModel.zPosition;
 }
 
 - (void) configureDropElement {

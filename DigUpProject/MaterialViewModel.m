@@ -17,8 +17,11 @@
         self.materialID = materialModel.Id;
         
         self.position = CGPointMake([materialModel.X floatValue], [materialModel.Y floatValue]);
+        self.zPosition = [materialModel.Z integerValue];
+        
         self.materialHeight = [self.material.Height floatValue];
         self.materialWidth = [self.material.Width floatValue];
+        
         self.posForDraggedMaterial = self.position;
         self.currentDropTarget = nil;
         self.droppedElements = [[NSMutableArray alloc] init];

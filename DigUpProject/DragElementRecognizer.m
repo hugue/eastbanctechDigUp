@@ -14,6 +14,7 @@
     self = [super initWithTarget:target action:action];
     if (self) {
         self.draggedMaterial = nil;
+        self.maximumNumberOfTouches = 1;
     }
     return self;
 }

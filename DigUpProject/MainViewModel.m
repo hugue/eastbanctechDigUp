@@ -20,6 +20,10 @@
 
 - (void) initialize {
     self.exerciseLoaded = @NO;
+    
+    self.maxZPosition = 0;
+    self.maxTargetZPosition = 0;
+    
     self.webSearcherController  = [[WebSearcherController alloc] init];
     self.webSearcherController.delegate = self;
     self.buttonControllers = [[NSMutableDictionary alloc] init];
@@ -109,6 +113,13 @@
     
     if ([materialModel.Behavior isEqualToString:@"DropTarget"]){
         [self.dropController.targetElements addObject:materialViewModel];
+        if (self.maxTargetZPosition < materialViewModel.zPosition) {
+            self.maxTargetZPosition = materialViewModel.zPosition;
+        }
+    }
+    
+    if (self.maxZPosition < materialViewModel.zPosition) {
+        self.maxZPosition = materialViewModel.zPosition;
     }
         return materialViewModel;
     

@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 
+#import <ReactiveCocoa/RACEXTScope.h>
+
 @interface MainViewController ()
 
 @property (nonatomic, strong) MainViewModel * viewModel;
@@ -75,10 +77,10 @@
     NSUInteger y;
     
     for (materialView in self.materialsViews) {
-        width = materialView.viewModel.material.Width;
-        height = materialView.viewModel.material.Height;
-        x = materialView.viewModel.material.X;
-        y = materialView.viewModel.material.Y;
+        width = materialView.viewModel.materialWidth;
+        height = materialView.viewModel.materialHeight;
+        x = materialView.viewModel.position.x;
+        y = materialView.viewModel.position.y;
  
         dispatch_async(dispatch_get_main_queue(), ^{
     
@@ -209,13 +211,29 @@
     volumSlider.backgroundColor = [UIColor clearColor];
     volumSlider.maximumValue = 1.0;
     volumSlider.value = 1.0;
-    RAC(self.viewModel.audioController, currentAudioVolum) = [RACObserve(volumSlider, value) distinctUntilChanged];
+    volumSlider.continuous = YES;
+    [volumSlider addTarget:self action:@selector(volumValueChanged:) forControlEvents:UIControlEventValueChanged];
+    RAC(volumSlider, value) = RACObserve(self.viewModel.audioController, currentAudioVolum);
     
     [controlBarView addSubview:volumSlider];
     
     
     [audioBar addSubview:controlBarView];
     [self.scrollView addSubview:audioBar];
+    
+//---
+    
+    @weakify(self);
+    RAC(volumSlider, value) = [RACObserve(self.viewModel.audioController, currentAudioVolum) map:^id(id value) {
+       @strongify(self);
+        NSNumber *newValue = @(self.activeField.text.length);
+        return newValue;
+    }];
+    
+}
+
+- (void)volumValueChanged:(UISlider *)sender {
+    self.viewModel.audioController.currentAudioVolum = sender.value;
 }
 
 - (void) handleAudioTap:(id) sender {
@@ -235,7 +253,8 @@
     {
         // Store the initial touch so when we change positions we do not snap
         recognizer.draggedMaterial.position = [recognizer locationInView:recognizer.view];
-        [recognizer.draggedMaterial.viewDisplayed bringSubviewToFront:recognizer.view];
+        //[recognizer.draggedMaterial.viewDisplayed bringSubviewToFront:self.scrollView];
+        recognizer.draggedMaterial.viewDisplayed.layer.zPosition = self.viewModel.maxZPosition + self.viewModel.maxTargetZPosition + 1;
         
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged) {
@@ -258,7 +277,12 @@
                                                                         [recognizer.draggedMaterial.viewModel.material.Y floatValue],
                                                                         recognizer.draggedMaterial.viewDisplayed.frame.size.width,
                                                                         recognizer.draggedMaterial.viewDisplayed.frame.size.height);
+            
+            recognizer.draggedMaterial.viewDisplayed.layer.zPosition = recognizer.draggedMaterial.viewModel.zPosition + self.viewModel.maxTargetZPosition;
+            
         }
+        //Put back the recognizer in listening mode
+        recognizer.draggedMaterial = nil;
     }
 
 }
@@ -273,6 +297,16 @@
     if (gestureRecognizer.draggedMaterial) {
         return YES;
     }
+    /*
+    if (gestureRecognizer.draggedMaterial) {
+        return NO;
+    }
+    else {
+        gestureRecognizer.draggedMaterial = [self touchIsOnDraggableMaterial:touch];
+        if(gestureRecognizer.draggedMaterial) {
+            return YES;
+        }
+    }*/
     return NO;
 }
 

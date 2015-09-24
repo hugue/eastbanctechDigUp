@@ -43,6 +43,7 @@
 
 - (void) applyStyle:(NSString *) style ToView:(UIView *) view {
     if([style isEqualToString:@"box-default"]) {
+        view.backgroundColor = [UIColor whiteColor];
         view.layer.borderColor = [UIColor blackColor].CGColor;
         view.layer.borderWidth = 1.0f;
     }
