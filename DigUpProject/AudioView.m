@@ -18,7 +18,7 @@
 @dynamic viewModel;
 
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
         CGRect  frame =  CGRectMake(self.viewModel.position.x ,
@@ -37,24 +37,26 @@
     return self;
 }
 
-- (void) handleTap:(id) sender {
+- (void)handleTap:(id)sender {
     [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Selected"] forState: UIControlStateNormal];
- //[self.viewModel handleTap];
     self.isSelected = @YES;
     
 }
 
-- (void) applyModelToView {
+- (void)applyModelToView {
     RACSignal * audioLoadedSignal = RACObserve(self.viewModel, audioLoaded);
     [[audioLoadedSignal filter:^BOOL(id value) {
         return [value boolValue];
     }]subscribeNext:^(id x) {
         NSLog(@"File downloaded");
     }];
+    
     RACChannelTerminal * viewTerminal = RACChannelTo(self, isSelected);
     RACChannelTerminal * modelTerminal = RACChannelTo(self.viewModel, selectedID);
     
+    @weakify(self)
     [[modelTerminal map:^id(id value) {
+        @strongify(self)
         if ([value isEqualToNumber:self.viewModel.materialID]) {
             [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Selected"] forState: UIControlStateNormal];
             return @YES;
@@ -68,7 +70,8 @@
     [[[viewTerminal filter:^BOOL(id value) {
         return [value boolValue];
     }]map:^id(id value) {
-            return self.viewModel.materialID;
+        @strongify(self)
+        return self.viewModel.materialID;
     }]subscribe:modelTerminal];
 }
 

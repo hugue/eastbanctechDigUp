@@ -21,15 +21,14 @@
 @dynamic viewModel;
 @dynamic viewDisplayed;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
         CGRect  frame =  CGRectMake(self.viewModel.position.x ,
                                     self.viewModel.position.y,
                                     20,
                                     20);
-        //self.viewModel.material.Width,
-        //self.viewModel.material.Height);
+
         self.isSelected = NO;
         self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
@@ -40,7 +39,7 @@
     return self;
 }
 
-- (void) handleTap:(id) sender {
+- (void)handleTap:(id)sender {
     if (self.isSelected) {
         self.isSelected = NO;
         [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
@@ -52,7 +51,7 @@
 }
 
 
-- (void) applyModelToView {
+- (void)applyModelToView {
     RACSignal * checkSignal = RACObserve(self, isSelected);
     RAC(self.viewModel, isClicked) = checkSignal;
 }

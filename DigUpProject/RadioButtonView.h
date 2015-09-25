@@ -15,6 +15,6 @@
 @property (nonatomic, strong) RadioButtonViewModel * viewModel;
 @property (nonatomic, strong) UIButton * viewDisplayed;
 
-- (void) applyModelToView;
+- (void)applyModelToView;
 
 @end

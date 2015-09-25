@@ -45,7 +45,7 @@
 }
 
 //Is not used I think
-- (id) initWithViewModel: (MainViewModel *) mainViewModel {
+- (id)initWithViewModel:(MainViewModel *)mainViewModel {
     self = [super init];
     if (self) {
         self.viewModel = mainViewModel;
@@ -55,20 +55,20 @@
     return self;
 }
 
-- (void) applyModelToView {
+- (void)applyModelToView {
+    @weakify(self);
     [[[RACObserve(self.viewModel, exerciseLoaded) distinctUntilChanged] filter:^BOOL(NSNumber * stateExercise) {
         return [stateExercise boolValue];
     }] subscribeNext:^(id x) {
+        @strongify(self)
         for (int i = 0; i < self.viewModel.materialsModels.count; i++) {
             [self createMaterialViewWithModel:self.viewModel.materialsModels[i] atIndex: i];
         }
-        //dispatch_async(dispatch_get_main_queue(), ^{
             [self displayExercise];
-       // });
     }];
 }
 
-- (void) displayExercise {
+- (void)displayExercise {
     MaterialView * materialView;
     
     NSUInteger width;
@@ -97,16 +97,13 @@
     dispatch_async(dispatch_get_main_queue(), ^{[self configureAudioPlayerView];});
 }
 
-- (void) createMaterialViewWithModel:(MaterialViewModel *) materialViewModel atIndex:(NSUInteger) index{
+- (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel atIndex:(NSUInteger)index {
     NSString * type = materialViewModel.material.Type;
     NSLog(@"Creating new view : %@", type);
     
-    if ([type isEqualToString:@"Text"] || [type isEqualToString:@"RichText"]) {
+    if ([type isEqualToString:@"Text"]) {
         TextFrameView * textLabel = [[TextFrameView alloc] initWithViewModel: materialViewModel];
         self.materialsViews[index] = textLabel;
-    }
-    else if([type isEqualToString:@"RichText"]) {
-        
     }
     else if ([type isEqualToString:@"RadioButton"]) {
         RadioButtonView * radioButton = [[RadioButtonView alloc] initWithViewModel: materialViewModel];
@@ -125,10 +122,6 @@
         textInput.viewDisplayed.delegate = self;
         self.materialsViews[index] = textInput;        
     }
-    else if([type isEqualToString:@"Table"]) {
-        TableView * table = [[TableView alloc] initWithViewModel:materialViewModel];
-        self.materialsViews[index] = table;
-    }
     else if([type isEqualToString:@"Audio"]) {
         AudioView * audio = [[AudioView alloc] initWithViewModel:materialViewModel];
         self.materialsViews[index] = audio;
@@ -141,102 +134,93 @@
 
 #pragma AudioBar
 
-- (void) configureAudioPlayerView {
+- (void)configureAudioPlayerView {
     self.currentAudioTime = 0;
+    //Create the audiobar only if there are audio files in the test
+    if (self.viewModel.audioController.audioPlayers.count > 0) {
+        //Main Bar
+        CGRect mainAudioBarFrame = CGRectMake(0.0, self.scrollView.frame.size.height - 80, self.scrollView.frame.size.width, 60);
+        UIView * mainAudioBar = [[UIView alloc] initWithFrame:mainAudioBarFrame];
+        mainAudioBar.backgroundColor = [UIColor blueColor];
     
-    //Main Bar
-    CGRect frame = CGRectMake(0.0, self.scrollView.frame.size.height - 80, self.scrollView.frame.size.width, 60);
-    UIView * audioBar = [[UIView alloc] initWithFrame:frame];
-    audioBar.backgroundColor = [UIColor blueColor];
+        //Control Bar
+        CGRect controlAudioBarFrame = CGRectMake(10.0, 5, 500, 50);
+        UIView * controlAudioBar = [[UIView alloc] initWithFrame:controlAudioBarFrame];
+        controlAudioBar.layer.cornerRadius = 20.0;
+        controlAudioBar.layer.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8].CGColor;
     
-    //Control Bar
-    CGRect controlBarFrame = CGRectMake(10.0, 5, 500, 50);
-    UIView * controlBarView = [[UIView alloc] initWithFrame:controlBarFrame];
-    controlBarView.layer.cornerRadius = 20.0;
-    controlBarView.layer.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8].CGColor;
+        //Play-Pause button
+        CGRect playPauseButtonFrame = CGRectMake(0.0, 0.0, 50,controlAudioBarFrame.size.height);
+        self.playPauseButton = [[UIButton alloc] initWithFrame:playPauseButtonFrame];
     
-    //Play-Pause button
-    CGRect frameButton = CGRectMake(0.0, 0.0, 50,controlBarFrame.size.height);
-    self.playPauseButton = [[UIButton alloc] initWithFrame:frameButton];
+        [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
+        [self.playPauseButton addTarget:self action:@selector(playPauseButtonClicked:) forControlEvents:UIControlEventTouchDown];
+        self.playPauseButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
     
-    [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
-    [self.playPauseButton addTarget:self action:@selector(handleAudioTap:) forControlEvents:UIControlEventTouchDown];
-    self.playPauseButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+        [controlAudioBar addSubview:self.playPauseButton];
     
-    [controlBarView addSubview:self.playPauseButton];
-    
-    //Time slider
-    CGRect frameSlider = CGRectMake(55, 0, 200, controlBarFrame.size.height);
-    UISlider * currentTimeSlider = [[UISlider alloc] initWithFrame:frameSlider];
-    currentTimeSlider.backgroundColor = [UIColor clearColor];
-    //currentTimeSlider.continuous = NO;
-    
-    RAC(currentTimeSlider, maximumValue) = RACObserve(self.viewModel.audioController, audioDuration);
-    
-    //[[currentTimeSlider rac_signalForControlEvents:UIControlEventTouchDown] subscribeNext:^(id x) {
-    //    [self.viewModel.audioController pauseCurrentAudio];
-    //}];
-    
-    RACChannelTerminal * sliderTerminal = [currentTimeSlider rac_newValueChannelWithNilValue:@0];
-    RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
-    
-    [[[sliderTerminal doNext:^(id x) {
-        [self.viewModel.audioController setTimeCurrentAudio:currentTimeSlider.value];
-    } ]distinctUntilChanged]subscribe:modelTerminal];
-    [modelTerminal subscribe:sliderTerminal];
-    
-    [controlBarView addSubview:currentTimeSlider];
-    
-    //Time Label
-    CGRect timeLableFrame = CGRectMake(260, 0, 75, controlBarFrame.size.height);
-    UILabel * timeLabel = [[UILabel alloc] initWithFrame:timeLableFrame];
-    timeLabel.text = @"0:00";
-    timeLabel.textColor = [UIColor whiteColor];
-    
-    [controlBarView addSubview:timeLabel];
-    
-    RAC(self, currentAudioTime) = [RACObserve(self.viewModel.audioController, currentAudioTime) doNext:^(id x) {
-        long minutes = floor(self.currentAudioTime/60);
-        long seconds = self.currentAudioTime - minutes*60;
+        //Time slider
+        CGRect audioTimeSliderFrame = CGRectMake(55, 0, 200, controlAudioBarFrame.size.height);
+        UISlider * audioTimeSlider = [[UISlider alloc] initWithFrame:audioTimeSliderFrame];
+        audioTimeSlider.backgroundColor = [UIColor clearColor];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            timeLabel.text = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
-        });
-    }];
+        RAC(audioTimeSlider, maximumValue) = RACObserve(self.viewModel.audioController, audioDuration);
     
-    //Volum slider
-    CGRect frameVolumSlider = CGRectMake(340, 0, 150, controlBarFrame.size.height);
+        RACChannelTerminal * sliderTerminal = [audioTimeSlider rac_newValueChannelWithNilValue:@0];
+        RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
    
-    UISlider * volumSlider = [[UISlider alloc] initWithFrame:frameVolumSlider];
-    volumSlider.backgroundColor = [UIColor clearColor];
-    volumSlider.maximumValue = 1.0;
-    volumSlider.value = 1.0;
-    volumSlider.continuous = YES;
-    [volumSlider addTarget:self action:@selector(volumValueChanged:) forControlEvents:UIControlEventValueChanged];
-    RAC(volumSlider, value) = RACObserve(self.viewModel.audioController, currentAudioVolum);
+        @weakify(self);
+        [[[sliderTerminal doNext:^(id x) {
+            @strongify(self);
+            [self.viewModel.audioController setTimeCurrentAudio:audioTimeSlider.value];
+        } ]distinctUntilChanged]subscribe:modelTerminal];
+        [modelTerminal subscribe:sliderTerminal];
     
-    [controlBarView addSubview:volumSlider];
+        [controlAudioBar addSubview:audioTimeSlider];
     
+        //Time Label
+        CGRect timeLableFrame = CGRectMake(260, 0, 75, controlAudioBarFrame.size.height);
+        UILabel * timeLabel = [[UILabel alloc] initWithFrame:timeLableFrame];
+        timeLabel.text = @"0:00";
+        timeLabel.textColor = [UIColor whiteColor];
     
-    [audioBar addSubview:controlBarView];
-    [self.scrollView addSubview:audioBar];
+        [controlAudioBar addSubview:timeLabel];
     
-//---
+        RAC(self, currentAudioTime) = [RACObserve(self.viewModel.audioController, currentAudioTime) doNext:^(id x) {
+            @strongify(self);
+            long minutes = floor(self.currentAudioTime/60);
+            long seconds = self.currentAudioTime - minutes*60;
+        
+            dispatch_async(dispatch_get_main_queue(), ^{
+                timeLabel.text = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
+            });
+        }];
     
-    @weakify(self);
-    RAC(volumSlider, value) = [RACObserve(self.viewModel.audioController, currentAudioVolum) map:^id(id value) {
-       @strongify(self);
-        NSNumber *newValue = @(self.activeField.text.length);
-        return newValue;
-    }];
+        //Volum slider
+        CGRect volumeSliderFrame = CGRectMake(340, 0, 150, controlAudioBarFrame.size.height);
+   
+        UISlider * volumeSlider = [[UISlider alloc] initWithFrame:volumeSliderFrame];
+        volumeSlider.backgroundColor = [UIColor clearColor];
+        volumeSlider.maximumValue = 1.0;
+        volumeSlider.value = 1.0;
+        volumeSlider.continuous = YES;
+        [volumeSlider addTarget:self action:@selector(volumeValueChanged:) forControlEvents:UIControlEventValueChanged];
+        RAC(volumeSlider, value) = RACObserve(self.viewModel.audioController, currentAudioVolum);
+    
+        [controlAudioBar addSubview:volumeSlider];
+    
+        [mainAudioBar addSubview:controlAudioBar];
+        [self.scrollView addSubview:mainAudioBar];
+
+    }
     
 }
 
-- (void)volumValueChanged:(UISlider *)sender {
+- (void)volumeValueChanged:(UISlider *)sender {
     self.viewModel.audioController.currentAudioVolum = sender.value;
 }
 
-- (void) handleAudioTap:(id) sender {
+- (void)playPauseButtonClicked:(UIButton *)sender {
     BOOL isPlaying = [self.viewModel audioBarTapped];
     if(isPlaying) {
         [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
@@ -248,7 +232,7 @@
 
 #pragma mark UIRecognizer methods
 
-- (void) handleDragging:(DragElementRecognizer *) recognizer {
+- (void)handleDragging:(DragElementRecognizer *)recognizer {
     if(recognizer.state == UIGestureRecognizerStateBegan)
     {
         // Store the initial touch so when we change positions we do not snap
@@ -311,7 +295,7 @@
 }
 
 /*Returns the first material view that can be dragged and is found under the touch*/
-- (MaterialView *) touchIsOnDraggableMaterial:(UITouch *) touch {
+- (MaterialView *)touchIsOnDraggableMaterial:(UITouch *)touch {
     CGPoint locationTouch = [touch locationInView:self.scrollView];
     for (MaterialView * element in self.materialsViews) {
         if ([element.viewModel.material.Behavior isEqualToString:@"DropElement"] &&
@@ -323,7 +307,7 @@
 }
 
 #pragma mark UITextField delegate methods
-- (void) registerForKeyboardNotifications {
+- (void)registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeShown:)
                                                  name:UIKeyboardWillShowNotification
@@ -335,7 +319,7 @@
                                                object:nil];
 }
 
-- (void) keyboardWillBeShown: (NSNotification *) aNotification {
+- (void)keyboardWillBeShown:(NSNotification *)aNotification {
     
     NSDictionary * info = [aNotification userInfo];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -352,13 +336,13 @@
     }
 }
 
-- (void) keyboardWillBeHidden:(NSNotification *) aNotification {
+- (void)keyboardWillBeHidden:(NSNotification *)aNotification {
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
-- (void) textFieldDidBeginEditing: (UITextField *) textField {
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.activeField = textField;
 }
 

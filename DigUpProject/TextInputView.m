@@ -13,7 +13,7 @@
 @dynamic viewModel;
 @dynamic viewDisplayed;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
         CGRect  frame =  CGRectMake(self.viewModel.position.x,
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (void) applyModelToView {
+- (void)applyModelToView {
     RAC(self.viewModel, givenAnswer) = self.viewDisplayed.rac_textSignal;
 }
 

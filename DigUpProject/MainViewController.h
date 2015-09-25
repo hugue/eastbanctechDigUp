@@ -32,7 +32,7 @@
 @property (nonatomic, strong) DragElementRecognizer * dragRecongnizer;
 @property (strong, nonatomic) NSMutableArray<MaterialView *>* materialsViews;
 
-- (id) initWithViewModel:(MainViewModel *) mainViewModel;
-- (void) displayExercise;
+- (id)initWithViewModel:(MainViewModel *)mainViewModel;
+- (void)displayExercise;
 
 @end

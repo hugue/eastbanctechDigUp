@@ -17,7 +17,7 @@
 
 @dynamic viewDisplayed;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
         self.textStyle = self.viewModel.material.Style;
@@ -44,7 +44,7 @@
     return self;
 }
 
-- (void) configureText {
+- (void)configureText {
     //Analyse text style
     if ([self.textStyle isEqualToString:@"text-u1"]) {
         [self.viewDisplayed setFont:[UIFont fontWithName:@"ForwardSans-Bold" size:18]];

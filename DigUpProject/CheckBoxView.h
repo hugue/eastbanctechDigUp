@@ -14,6 +14,6 @@
 @property (nonatomic, strong) CheckBoxViewModel * viewModel;
 @property (nonatomic, strong) UIButton * viewDisplayed;
 
-- (void) applyModelToView;
+- (void)applyModelToView;
 
 @end

@@ -16,7 +16,7 @@
 @dynamic viewDisplayed;
 @dynamic viewModel;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
         CGRect  frame =  CGRectMake(self.viewModel.position.x ,
@@ -25,19 +25,18 @@
                                     self.viewModel.materialHeight);
         self.viewDisplayed = [[UIImageView alloc] initWithFrame:frame];
         
-        //NSString * imageName = materialViewModel.material.Name;
-        //UIImage * image = [UIImage imageNamed:imageName];
-        //[self.viewDisplayed setImage:image];
         [self applyModelToView];
     }
     return self;
 }
 
-- (void) applyModelToView {
+- (void)applyModelToView {
+    @weakify(self)
     RACSignal * imageLoadedSignal = RACObserve(self.viewModel, imageLoaded);
     [[imageLoadedSignal filter:^BOOL(id value) {
         return [value boolValue];
     }]subscribeNext:^(id x) {
+        @strongify(self)
         UIImage * downloadedImage = [UIImage imageWithData:self.viewModel.imageData];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.viewDisplayed setImage:downloadedImage];});

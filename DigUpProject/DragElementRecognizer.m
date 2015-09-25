@@ -10,7 +10,7 @@
 
 @implementation DragElementRecognizer
 
-- (id) initWithTarget:(nullable id)target action:(nullable SEL)action {
+- (id)initWithTarget:(nullable id)target action:(nullable SEL)action {
     self = [super initWithTarget:target action:action];
     if (self) {
         self.draggedMaterial = nil;

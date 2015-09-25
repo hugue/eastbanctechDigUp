@@ -15,6 +15,6 @@
 @property (nonatomic, strong) TextInputViewModel * viewModel;
 @property (nonatomic, strong) UITextField * viewDisplayed;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel;
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel;
 
 @end

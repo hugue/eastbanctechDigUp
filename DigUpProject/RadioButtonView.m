@@ -21,7 +21,7 @@
 @dynamic viewModel;
 @dynamic viewDisplayed;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
         CGRect  frame =  CGRectMake(self.viewModel.position.x,
@@ -40,16 +40,18 @@
     return self;
 }
 
-- (void) handleTap:(id) sender {
+- (void)handleTap:(id)sender {
         self.isSelected = @YES;
         [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Selected"] forState: UIControlStateNormal];
 }
 
-- (void) applyModelToView {
+- (void)applyModelToView {
     RACChannelTerminal * viewTerminal = RACChannelTo(self, isSelected);
     RACChannelTerminal * modelTerminal = RACChannelTo(self.viewModel, selectedID);
 
+    @weakify(self)
     [[modelTerminal map:^id(id value) {
+        @strongify(self)
         if ([value isEqualToNumber:self.viewModel.materialID]) {
             [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Selected"] forState: UIControlStateNormal];
             return @YES;
@@ -63,6 +65,7 @@
     [[[viewTerminal filter:^BOOL(id value) {
         return [value boolValue];
     }]map:^id(id value) {
+        @strongify(self)
         return self.viewModel.materialID;
     }]subscribe:modelTerminal];
 }

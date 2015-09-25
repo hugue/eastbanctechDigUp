@@ -14,7 +14,7 @@
 @implementation RectangleView
 @dynamic viewDisplayed;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel; {
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
         CGRect  frame =  CGRectMake(self.viewModel.position.x,
@@ -41,7 +41,7 @@
     return self;
 }
 
-- (void) applyStyle:(NSString *) style ToView:(UIView *) view {
+- (void)applyStyle:(NSString *)style ToView:(UIView *)view {
     if([style isEqualToString:@"box-default"]) {
         view.backgroundColor = [UIColor whiteColor];
         view.layer.borderColor = [UIColor blackColor].CGColor;

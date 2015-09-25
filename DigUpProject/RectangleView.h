@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) UIView * viewDisplayed;
 
-- (id) initWithViewModel:(MaterialViewModel *)materialViewModel;
+- (id)initWithViewModel:(MaterialViewModel *)materialViewModel;
 
 @end

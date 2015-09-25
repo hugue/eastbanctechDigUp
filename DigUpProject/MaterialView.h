@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MaterialViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 
 @interface MaterialView : NSObject
 
@@ -18,7 +19,7 @@
 @property (nonatomic, strong) UIView * viewDisplayed;
 @property (nonatomic) CGPoint position;
 
-- (void) addVisualToView:(UIView *) superView;
-- (void) configureDropElement;
+- (void)addVisualToView:(UIView *)superView;
+- (void)configureDropElement;
 
 @end
