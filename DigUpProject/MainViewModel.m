@@ -79,6 +79,7 @@
             newButtonController = self.buttonControllers[materialViewModel.groupID];
         }
         [newButtonController addNewRadioButton:materialViewModel];
+        [self processDragNDropElement:materialViewModel];
         return materialViewModel;
     }
     else if ([type isEqualToString:@"Rectangle"]) {
@@ -107,17 +108,9 @@
         NSLog(@"Exercise do not conform to the expected standard");
     }
     
-    if ([materialModel.Behavior isEqualToString:@"DropTarget"]){
-        [self.dropController.targetElements addObject:materialViewModel];
-        if (self.maxTargetZPosition < materialViewModel.zPosition) {
-            self.maxTargetZPosition = materialViewModel.zPosition;
-        }
-    }
+    [self processDragNDropElement:materialViewModel];
     
-    if (self.maxZPosition < materialViewModel.zPosition) {
-        self.maxZPosition = materialViewModel.zPosition;
-    }
-        return materialViewModel;
+    return materialViewModel;
     
 }
 
@@ -147,6 +140,22 @@
     }
 }
 
+- (void)processDragNDropElement:(MaterialViewModel *) materialViewModel {
+    if ([materialViewModel.material.Behavior isEqualToString:@"DropTarget"]){
+        [self.dropController.targetElements addObject:materialViewModel];
+        if (self.maxTargetZPosition < materialViewModel.zPosition) {
+            self.maxTargetZPosition = materialViewModel.zPosition;
+        }
+    }
+    else if([materialViewModel.material.Behavior isEqualToString:@"DropElement"]) {
+        [self.dropController.dropElements addObject:materialViewModel];
+    }
+    
+    if (self.maxZPosition < materialViewModel.zPosition) {
+        self.maxZPosition = materialViewModel.zPosition;
+    }
+
+}
 #pragma mark - Functions to process the different phases of the test (testing/Correction/solution)
 
 - (void)restartExerciseAsked {
@@ -211,7 +220,7 @@
 
 //DragNDrop
 - (void)correctingDragNDrop {
-    
+    [self.dropController correctionAsked];
 }
 
 - (void)restartingDragNDrop {

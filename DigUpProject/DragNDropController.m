@@ -44,7 +44,16 @@
 }
 
 - (void)correctionAsked {
-    
+    for (MaterialViewModel * droppedElement in self.dropElements) {
+        if (droppedElement.currentDropTarget) {
+            if ((droppedElement.correctDropTargetID) && [droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]){
+                droppedElement.answerMode = isCorrect;
+            }
+            else {
+                droppedElement.answerMode = isNotCorrect;
+            }
+        }
+    }
 }
 
 - (void)solutionAsked {
