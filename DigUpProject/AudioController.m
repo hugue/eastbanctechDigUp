@@ -32,7 +32,8 @@
     self.currentAudioTime = 0;
     self.audioDuration = 0;
     self.isPlaying = NO;
-    self.currentAudioVolum = 0.5;
+    self.currentAudioVolum = 1.0;
+    //self.controllerTerminal = RACChannelTo(self, beingPlayedID);
     
    self.updatingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target:self selector:@selector(updateCurrentTime:) userInfo:nil repeats:YES];
 }
@@ -44,25 +45,25 @@
     RACChannelTerminal * controllerTerminal = RACChannelTo(self, beingPlayedID);
     RACChannelTerminal * buttonTerminal = RACChannelTo(audio, selectedID);
     
-    [[controllerTerminal doNext:^(id x) {
-        if ([x isEqualToNumber:audio.materialID]) {
-            [audio.audioPlayer play];
-        }
-        else {
-            [audio.audioPlayer stop];
-        }
-    }] subscribe:buttonTerminal];
+    [controllerTerminal subscribe:buttonTerminal];
     
     @weakify(self)
     [[buttonTerminal doNext:^(id x) {
         @strongify(self)
         if ([x isEqualToNumber:audio.materialID]) {
             self.audioDuration = floor(audio.audioPlayer.duration);
+            NSLog(@"Volum - %f", audio.audioPlayer.volume);
+            self.currentAudioVolum = audio.audioPlayer.volume;
+            [self stopCurrentAudio];
             [audio.audioPlayer play];
-            }
+        }
     }]subscribe:controllerTerminal];
   
-    RAC(audio, audioPlayer.volume) = RACObserve(self, currentAudioVolum);
+    RAC(audio, audioPlayer.volume) = [RACObserve(self, currentAudioVolum) filter:^BOOL(id value) {
+        @strongify(self)
+        NSLog(@"Current Volume - %f / Volume - %@ / audio ID - %@ / selected ID - %@ / controller ID - %@", audio.audioPlayer.volume, value, audio.materialID, audio.selectedID, self.beingPlayedID);
+        return ([audio.materialID isEqualToNumber:audio.selectedID]);
+    }];
 
 }
 
@@ -78,6 +79,10 @@
 
 - (void)pauseCurrentAudio {
     [self.audioPlayers[self.beingPlayedID].audioPlayer pause];
+}
+
+- (void)stopCurrentAudio {
+    [self.audioPlayers[self.beingPlayedID].audioPlayer stop];
 }
 
 - (void)playCurrentAudio {

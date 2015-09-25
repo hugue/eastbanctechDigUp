@@ -26,14 +26,12 @@
         
         for (int i = 0; i < self.materials.count; i++) {
             NSError * initError;
-            NSLog(@"%@", self.materials[i]);
             MaterialModel * material = [self addNewMaterialWithDictionary:self.materials[i]];
             if (initError) {
                 NSLog(@"%@", initError );
             }
             
             [self.materialsObject addObject:material];
-            NSLog(@"%@", self.materialsObject[i]);
         }
     }
     return self;

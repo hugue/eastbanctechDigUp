@@ -174,6 +174,7 @@
             @strongify(self);
             [self.viewModel.audioController setTimeCurrentAudio:audioTimeSlider.value];
         } ]distinctUntilChanged]subscribe:modelTerminal];
+        
         [modelTerminal subscribe:sliderTerminal];
     
         [controlAudioBar addSubview:audioTimeSlider];
