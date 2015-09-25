@@ -224,7 +224,7 @@
 }
 
 - (void)restartingDragNDrop {
-    
+    [self.dropController restartAsked];
 }
 
 - (void)displayingSolutionForDragNDrop {

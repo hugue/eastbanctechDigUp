@@ -61,7 +61,15 @@
 }
 
 - (void)restartAsked {
-    
+    for (MaterialViewModel * droppedElement in self.dropElements) {
+        droppedElement.currentDropTarget = nil;
+        [droppedElement resetPosition];
+        droppedElement.answerMode = isUndefined;
+    }
+    for (MaterialViewModel * target in self.targetElements) {
+        target.posForDraggedMaterial = target.position;
+        [target.droppedElements removeAllObjects];
+    }
 }
 
 @end
