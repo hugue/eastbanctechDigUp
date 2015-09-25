@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         self.targetElements = [[NSMutableArray alloc] init];
+        self.dropElements = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -40,6 +41,18 @@
     }
     draggedMaterial.currentDropTarget = nil;
     return NO;
+}
+
+- (void)correctionAsked {
+    
+}
+
+- (void)solutionAsked {
+    
+}
+
+- (void)restartAsked {
+    
 }
 
 @end

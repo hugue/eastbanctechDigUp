@@ -153,20 +153,25 @@
     self.currentExerciseState = testingGoingOn;
     [self restartingButtonsControllers];
     [self restartingCheckBoxes];
+    [self restartingDragNDrop];
 }
 
 - (void)correctionAsked {
     self.currentExerciseState = correctionAsked;
     [self correctingButtonsControllers];
     [self correctingCheckBoxes];
+    [self correctingDragNDrop];
 }
 
 - (void)solutionAsked {
     self.currentExerciseState = solutionAsked;
     [self displayingSolutionForButtonsControllers];
     [self displayingSolutionForCheckboxes];
+    [self displayingSolutionForDragNDrop];
 }
 
+//Correcting functions for different materials
+//Radio Buttons
 - (void)correctingButtonsControllers {
     for (NSString * controllerID in self.buttonControllers.allKeys) {
         [self.buttonControllers[controllerID] correctionAsked];
@@ -185,6 +190,7 @@
     }
 }
 
+//CheckBoxes
 - (void)correctingCheckBoxes {
     for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
         [self.exerciseCheckboxes[i] correctionAsked];
@@ -201,6 +207,19 @@
     for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
         [self.exerciseCheckboxes[i] solutionAsked];
     }
+}
+
+//DragNDrop
+- (void)correctingDragNDrop {
+    
+}
+
+- (void)restartingDragNDrop {
+    
+}
+
+- (void)displayingSolutionForDragNDrop {
+    
 }
 
 #pragma mark - WebSearcherControllerDelegate Methods

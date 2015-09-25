@@ -16,6 +16,7 @@
         self.material = materialModel;
         self.materialID = materialModel.Id;
         self.answerMode = isUndefined;
+        self.correctDropTargetID = self.material.DropTargetId;
         
         self.position = CGPointMake([materialModel.X floatValue], [materialModel.Y floatValue]);
         self.zPosition = [materialModel.Z integerValue];
@@ -44,6 +45,10 @@
     }
     self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y - removedHeight);
     [self.droppedElements removeObject:removedElement];
+}
+
+- (void)resetPosition {
+    self.position = CGPointMake([self.material.X floatValue], [self.material.Y floatValue]);
 }
 
 @end
