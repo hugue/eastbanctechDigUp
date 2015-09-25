@@ -60,8 +60,8 @@
     }]subscribe:controllerTerminal];
   
     RAC(audio, audioPlayer.volume) = [RACObserve(self, currentAudioVolum) filter:^BOOL(id value) {
-        @strongify(self)
-        NSLog(@"Current Volume - %f / Volume - %@ / audio ID - %@ / selected ID - %@ / controller ID - %@", audio.audioPlayer.volume, value, audio.materialID, audio.selectedID, self.beingPlayedID);
+        //@strongify(self)
+        //NSLog(@"Current Volume - %f / Volume - %@ / audio ID - %@ / selected ID - %@ / controller ID - %@", audio.audioPlayer.volume, value, audio.materialID, audio.selectedID, self.beingPlayedID);
         return ([audio.materialID isEqualToNumber:audio.selectedID]);
     }];
 

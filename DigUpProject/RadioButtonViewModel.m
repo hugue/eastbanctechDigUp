@@ -21,7 +21,6 @@
         self.isTrue = [self.material.Value  isEqualToString:@"true"];
         
         self.groupID = self.material.Text;
-        //self.isClicked = @NO;
         self.selectedID = @0;
     }
     return self;

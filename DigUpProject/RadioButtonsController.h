@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+
 #import "RadioButtonViewModel.h"
 
 @interface RadioButtonsController : NSObject
@@ -16,5 +18,6 @@
 
 - (id)init;
 - (void)addNewRadioButton:(RadioButtonViewModel *)radioButton;
+- (void)correctionAsked;
 
 @end
