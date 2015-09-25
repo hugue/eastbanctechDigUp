@@ -12,9 +12,12 @@
 
 @property (nonatomic) BOOL isTrue;
 @property (nonatomic, strong) NSString * groupID;
-@property (nonatomic) BOOL isClicked;
+@property (nonatomic) BOOL isSelected;
 
 - (id)initWithModel:(MaterialModel *)materialModel;
-- (void)viewChanged:(NSNumber *)newState;
+
+- (void)solutionAsked;
+- (void)correctionAsked;
+- (void)restartAsked;
 
 @end

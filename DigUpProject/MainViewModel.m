@@ -7,6 +7,11 @@
 //
 
 #import "MainViewModel.h"
+@interface MainViewModel ()
+
+@property (nonatomic, strong) NSMutableArray<CheckBoxViewModel *> * exerciseCheckboxes;
+
+@end
 
 @implementation MainViewModel
 
@@ -27,7 +32,8 @@
     self.webSearcherController  = [[WebSearcherController alloc] init];
     self.webSearcherController.delegate = self;
     self.buttonControllers = [[NSMutableDictionary alloc] init];
-    self.materialsModels = [[NSMutableArray alloc]init];
+    self.materialsModels = [[NSMutableArray alloc] init];
+    self.exerciseCheckboxes = [[NSMutableArray alloc] init];
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
     
@@ -93,6 +99,7 @@
     }
     else if([type isEqualToString:@"CheckBox"]) {
         materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
+        [self.exerciseCheckboxes addObject:(CheckBoxViewModel *)materialViewModel];
         //return materialViewModel;
     }
 
@@ -145,16 +152,19 @@
 - (void)restartExerciseAsked {
     self.currentExerciseState = testingGoingOn;
     [self restartingButtonsControllers];
+    [self restartingCheckBoxes];
 }
 
 - (void)correctionAsked {
     self.currentExerciseState = correctionAsked;
     [self correctingButtonsControllers];
+    [self correctingCheckBoxes];
 }
 
 - (void)solutionAsked {
     self.currentExerciseState = solutionAsked;
     [self displayingSolutionForButtonsControllers];
+    [self displayingSolutionForCheckboxes];
 }
 
 - (void)correctingButtonsControllers {
@@ -174,6 +184,25 @@
         [self.buttonControllers[controllerID] solutionAsked];
     }
 }
+
+- (void)correctingCheckBoxes {
+    for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
+        [self.exerciseCheckboxes[i] correctionAsked];
+    }
+}
+
+- (void)restartingCheckBoxes {
+    for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
+        [self.exerciseCheckboxes[i] restartAsked];
+    }
+}
+
+- (void)displayingSolutionForCheckboxes {
+    for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
+        [self.exerciseCheckboxes[i] solutionAsked];
+    }
+}
+
 #pragma mark - WebSearcherControllerDelegate Methods
 
 - (void)webSearcherController:(WebSearcherController *)webSearcherController didReceiveData:(nullable NSData *)data withError: (nullable NSError *) error{

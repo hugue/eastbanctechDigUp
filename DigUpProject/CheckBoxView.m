@@ -10,7 +10,7 @@
 
 @interface CheckBoxView ()
 
-@property (nonatomic) BOOL isSelected;
+@property (nonatomic) BOOL isClicked;
 
 - (void) handleTap:(id) sender;
 
@@ -29,7 +29,7 @@
                                     20,
                                     20);
 
-        self.isSelected = NO;
+        self.isClicked = NO;
         self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
         
@@ -40,20 +40,35 @@
 }
 
 - (void)handleTap:(id)sender {
-    if (self.isSelected) {
-        self.isSelected = NO;
-        [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
-    }
-    else{
-        self.isSelected = YES;
-        [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_full"] forState: UIControlStateNormal];
-    }
+    self.isClicked = !self.isClicked;
 }
 
 
 - (void)applyModelToView {
-    RACSignal * checkSignal = RACObserve(self, isSelected);
-    RAC(self.viewModel, isClicked) = checkSignal;
+    
+    RACChannelTerminal * viewTerminal = RACChannelTo(self, isClicked);
+    RACChannelTerminal * modelTerminal = RACChannelTo(self.viewModel, isSelected);
+    
+    @weakify(self)
+    [[modelTerminal doNext:^(id x) {
+        @strongify(self);
+        if ([x boolValue]) {
+            [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_full"] forState: UIControlStateNormal];
+        }
+        else {
+            [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
+        }
+    }] subscribe:viewTerminal];
+    
+    [[viewTerminal doNext:^(id x) {
+        @strongify(self);
+        if ([x boolValue]) {
+            [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_full"] forState: UIControlStateNormal];
+        }
+        else {
+            [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
+        }
+    }]subscribe:modelTerminal];
 }
 
 

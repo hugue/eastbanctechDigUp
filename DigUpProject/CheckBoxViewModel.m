@@ -17,14 +17,36 @@
         self.isTrue = [self.material.Value  isEqualToString:@"true"];
         
         self.groupID = self.material.Text;
-        self.isClicked = @NO;
+        self.isSelected = NO;
     }
     return self;
 }
 
-- (void)viewChanged:(NSNumber *)newState {
-    if ([newState isEqualToNumber:@(YES)]) {
+- (void)correctionAsked {
+    if (self.isTrue) {
+        if (self.isSelected) {
+            self.answerMode = isCorrect;
+        }
+        else {
+            self.answerMode = isNotCorrect;
+        }
+    }
+    else {
+        if (self.isSelected) {
+            self.answerMode = isNotCorrect;
+        }
     }
 }
 
+- (void)restartAsked {
+    self.isSelected = NO;
+    self.answerMode = isUndefined;
+}
+
+- (void)solutionAsked {
+    if (self.answerMode == isNotCorrect) {
+        self.answerMode = isUndefined;
+        self.isSelected = !self.isSelected;
+    }
+}
 @end
