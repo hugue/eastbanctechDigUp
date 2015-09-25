@@ -10,7 +10,7 @@
 
 @implementation DragNDropController
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self) {
         self.targetElements = [[NSMutableArray alloc] init];
@@ -23,7 +23,7 @@
  - To be used with the point matching the finger's position
  -The material is used for later correction of the exercise and deciding frame
  */
-- (BOOL) pointIsInTargetElement:(CGPoint)point forMaterial:(MaterialViewModel *) draggedMaterial{
+- (BOOL)pointIsInTargetElement:(CGPoint)point forMaterial:(MaterialViewModel *)draggedMaterial {
     if (draggedMaterial.currentDropTarget) {
         //Notify the target that the element has been moved
         [draggedMaterial.currentDropTarget removeDroppedElement:draggedMaterial];

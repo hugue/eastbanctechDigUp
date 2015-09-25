@@ -17,7 +17,7 @@
 
 @implementation AudioController
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self) {
         [self initialize];
@@ -25,7 +25,7 @@
     return self;
 }
 
-- (void) initialize {
+- (void)initialize {
     self.beingPlayedID = @0;
     self.audioPlayers = [[NSMutableDictionary alloc] init];
     self.currentlyPlaying = nil;
@@ -38,7 +38,7 @@
 }
 
 
-- (void) addNewAudio:(AudioViewModel *)audio {
+- (void)addNewAudio:(AudioViewModel *)audio {
     [self.audioPlayers setObject:audio forKey:audio.materialID];
     //Channel to manage several audio files
     RACChannelTerminal * controllerTerminal = RACChannelTo(self, beingPlayedID);
@@ -52,39 +52,35 @@
             [audio.audioPlayer stop];
         }
     }] subscribe:buttonTerminal];
+    
+    @weakify(self)
     [[buttonTerminal doNext:^(id x) {
+        @strongify(self)
         if ([x isEqualToNumber:audio.materialID]) {
             self.audioDuration = floor(audio.audioPlayer.duration);
             [audio.audioPlayer play];
             }
     }]subscribe:controllerTerminal];
   
-    RAC(audio, audioPlayer.volume) = [RACObserve(self, currentAudioVolum) map:^id(id value) {
-        NSLog(@"Sound Value : %@", value);
-        return value;
-    }];
+    RAC(audio, audioPlayer.volume) = RACObserve(self, currentAudioVolum);
 
 }
 
-- (void) updateCurrentTime: (id) sender {
+- (void)updateCurrentTime:(id)sender {
     if (self.audioPlayers[self.beingPlayedID].audioPlayer.isPlaying) {
         self.currentAudioTime = lroundf(self.audioPlayers[self.beingPlayedID].audioPlayer.currentTime);
     }
 }
 
-- (void) setTimeCurrentAudio:(long)currentAudioTime {
-    //[self pauseCurrentAudio];
+- (void)setTimeCurrentAudio:(long)currentAudioTime {
     [self.audioPlayers[self.beingPlayedID].audioPlayer setCurrentTime:currentAudioTime];
-    //if (self.isPlaying) {
-    //[self playCurrentAudio];
-   // }
 }
 
-- (void) pauseCurrentAudio {
+- (void)pauseCurrentAudio {
     [self.audioPlayers[self.beingPlayedID].audioPlayer pause];
 }
 
-- (void) playCurrentAudio {
+- (void)playCurrentAudio {
     [self.audioPlayers[self.beingPlayedID].audioPlayer play];
 }
 

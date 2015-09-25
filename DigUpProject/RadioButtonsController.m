@@ -9,7 +9,7 @@
 #import "RadioButtonsController.h"
 
 @implementation RadioButtonsController
-- (id) init {
+- (id)init {
     self = [super init];
     if (self) {
         self.currentlySelectedButtonID = @0;
@@ -17,7 +17,7 @@
     return self;
 }
 
-- (void) addNewRadioButton:(RadioButtonViewModel *)radioButton {
+- (void)addNewRadioButton:(RadioButtonViewModel *)radioButton {
     
     RACChannelTerminal * controllerTerminal = RACChannelTo(self, currentlySelectedButtonID);
     RACChannelTerminal * buttonTerminal = RACChannelTo(radioButton, selectedID);

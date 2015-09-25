@@ -7,6 +7,7 @@
 //
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 #import "AudioViewModel.h"
 
 @interface AudioController : NSObject
@@ -20,10 +21,10 @@
 @property (nonatomic) BOOL isPlaying;
 @property (nonatomic) float currentAudioVolum;
 
-- (id) init;
-- (void) addNewAudio:(AudioViewModel *)audio;
-- (void) pauseCurrentAudio;
-- (void) playCurrentAudio;
-- (void) setTimeCurrentAudio:(long)currentAudioTime;
+- (id)init;
+- (void)addNewAudio:(AudioViewModel *)audio;
+- (void)pauseCurrentAudio;
+- (void)playCurrentAudio;
+- (void)setTimeCurrentAudio:(long)currentAudioTime;
 
 @end

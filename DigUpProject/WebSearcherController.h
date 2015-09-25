@@ -15,8 +15,8 @@
 @property (nonatomic, strong) NSMutableData * receivedData;
 @property (nonatomic, strong) NSString * imageURL;
 
-- (id) init;
-- (void) launchSession;
+- (id)init;
+- (void)launchSession;
 
 @end
 
@@ -24,6 +24,6 @@
 @protocol WebSearcherControllerDelegate <NSObject>
 
 @required
-- (void) WebSearcherController:(WebSearcherController *) webSearcherController didReceiveData:(nullable NSData *) data withError:(nullable NSError *) error;
+- (void) webSearcherController:(WebSearcherController *) webSearcherController didReceiveData:(nullable NSData *) data withError:(nullable NSError *) error;
 
 @end

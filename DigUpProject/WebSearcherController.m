@@ -10,7 +10,7 @@
 
 @implementation WebSearcherController
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self) {
         self.urlToReach = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&";
@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void) launchSession {
+- (void)launchSession {
     self.receivedData = nil;
     NSURL *url = [NSURL URLWithString:self.urlToReach];
     NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -36,7 +36,7 @@
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
     NSData * data = [NSData dataWithContentsOfURL:location];
     self.receivedData = [data copy];
-    [self.delegate WebSearcherController:self didReceiveData:self.receivedData withError:nil];
+    [self.delegate webSearcherController:self didReceiveData:self.receivedData withError:nil];
 }
 
 
