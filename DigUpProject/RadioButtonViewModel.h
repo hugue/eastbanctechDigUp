@@ -15,6 +15,6 @@
 @property (nonatomic, strong) NSString * groupID;
 @property (nonatomic, strong) NSNumber * selectedID;
 
-- (id) initWithModel:(MaterialModel *)materialModel;
-- (void) viewChanged:(NSNumber *) newState;
+- (id)initWithModel:(MaterialModel *)materialModel;
+- (void)viewChanged:(NSNumber *)newState;
 @end

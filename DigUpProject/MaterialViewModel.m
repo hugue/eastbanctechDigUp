@@ -10,7 +10,7 @@
 
 @implementation MaterialViewModel
 
-- (id) initWithModel:(MaterialModel *) materialModel {
+- (id)initWithModel:(MaterialModel *)materialModel {
     self = [super init];
     if (self) {
         self.material = materialModel;
@@ -29,13 +29,13 @@
     return self;
 }
 
-- (void) positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial {
+- (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial {
     draggedMaterial.position = self.posForDraggedMaterial;
     //Update the position for next dragged element
     self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y + draggedMaterial.materialHeight);
 }
 
-- (void) removeDroppedElement:(MaterialViewModel *)removedElement {
+- (void)removeDroppedElement:(MaterialViewModel *)removedElement {
     int index = [self.droppedElements indexOfObjectIdenticalTo:removedElement];
     float removedHeight = removedElement.materialHeight;
     for (int i = index +1; i < self.droppedElements.count; i++) {

@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void) initialize {
+- (void)initialize {
     self.exerciseLoaded = @NO;
     
     self.maxZPosition = 0;
@@ -32,11 +32,9 @@
     self.audioController = [[AudioController alloc] init];
     
     [self.webSearcherController launchSession];
-    
-    //self.currentExercise = [self LoadDataFromFile:@"exo"];
 }
 
-- (ExerciceModel *) LoadDataFromFile:(NSString *) fileName {
+- (ExerciceModel *)LoadDataFromFile:(NSString *)fileName {
     NSString * filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
     NSError * error;
     NSData * data = [[NSData  alloc] initWithContentsOfFile:filePath options:kNilOptions error:&error];
@@ -53,16 +51,12 @@
 }
 
 
-- (MaterialViewModel *) createMaterialViewModelWithModel:(MaterialModel *) materialModel{
+- (MaterialViewModel *)createMaterialViewModelWithModel:(MaterialModel *)materialModel{
     
     NSString * type = materialModel.Type;
     MaterialViewModel * materialViewModel;
     if ([type isEqualToString:@"Text"]) {
         materialViewModel = [[MaterialViewModel alloc] initWithModel:materialModel];
-        //return materialViewModel;
-    }
-    else if([type isEqualToString:@"RichText"]) {
-        materialViewModel = [[RichTextViewModel alloc] initWithModel:materialModel];
         //return materialViewModel;
     }
     else if ([type isEqualToString:@"RadioButton"]) {
@@ -93,11 +87,6 @@
         materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
         //return materialViewModel;
     }
-    else if ([type isEqualToString:@"Table"]) {
-        materialViewModel = [[TableViewModel alloc] initWithModel:materialModel];
-        //materialViewModel.buttonsControllers = self.buttonControllers;
-        //return materialViewModel;
-    }
     else if ([type isEqualToString:@"Audio"]) {
         materialViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:(AudioViewModel *) materialViewModel];
@@ -125,7 +114,7 @@
     
 }
 
-- (void) parseExercise {
+- (void)parseExercise {
     if (self.currentExercise == nil) {
         NSLog(@"Error, no exercise found");
         return;
@@ -139,7 +128,7 @@
     self.exerciseLoaded = @YES;
 }
 
-- (BOOL) audioBarTapped {
+- (BOOL)audioBarTapped {
     if (self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer.playing) {
         [self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer pause];
         return NO;
@@ -153,7 +142,7 @@
 
 #pragma mark - WebSearcherControllerDelegate Methods
 
-- (void) WebSearcherController:(WebSearcherController *)webSearcherController didReceiveData:(nullable NSData *)data withError: (nullable NSError *) error{
+- (void)webSearcherController:(WebSearcherController *)webSearcherController didReceiveData:(nullable NSData *)data withError: (nullable NSError *) error{
     if (error) {
         NSLog(@"Connection stopped with error : %@", error);
     }

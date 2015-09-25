@@ -10,7 +10,7 @@
 
 @implementation AudioViewModel
 
-- (id) initWithModel:(MaterialModel *)materialModel {
+- (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
     if (self) {
@@ -19,24 +19,24 @@
     return self;
 }
 
-- (void) initialize {
+- (void)initialize {
     self.selectedID = @0;
     self.audioLoaded = @NO;
-    self.BlobID = self.material.BlobId;
+    self.blobID = self.material.BlobId;
     self.audioData = nil;
     self.audioURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
     
-    [self downLoadImageWithBlobId:self.BlobID];
+    [self downLoadAudioWithBlobId:self.blobID];
 }
 
-- (void) handleTap {
+- (void)handleTap {
     NSLog (@"Now SelectedID : %@, materialID : %@", self.selectedID, self.materialID);
     self.selectedID = self.materialID;
     NSLog (@"Then SelectedID : %@, materialID : %@", self.selectedID, self.materialID);
 }
 
-- (void) downLoadImageWithBlobId: (NSNumber *) imageBlobId{
-    NSURL * downloadURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.audioURL, imageBlobId]];
+- (void)downLoadAudioWithBlobId:(NSNumber *)audioBlobId {
+    NSURL * downloadURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.audioURL, audioBlobId]];
     
     NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession * session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];

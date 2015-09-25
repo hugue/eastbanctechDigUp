@@ -324,8 +324,6 @@
 				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
 				F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */,
 				F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */,
-				F3F36E401BAAE7E900B7D885 /* RichTextViewModel.h */,
-				F3F36E411BAAE7E900B7D885 /* RichTextViewModel.m */,
 				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
 				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
 				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
@@ -386,12 +384,12 @@
 				F3ECBE791B9D452E0000A656 /* Assets.xcassets */,
 				F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */,
 				F3ECBE7E1B9D452E0000A656 /* Info.plist */,
-				F3F570731BB2B49600EAD4A3 /* NotUsed */,
+				F3ECBE6D1B9D452E0000A656 /* Supporting Files */,
+				F3ECBEA31B9D546C0000A656 /* JSONModel */,
 				F3FA7EFF1BAFC26100432037 /* Ressources */,
+				F3F570731BB2B49600EAD4A3 /* NotUsed */,
 				F3F487141BA828D300FCA8A6 /* HTMLParser */,
 				F3ECBED01B9D8B270000A656 /* HUD */,
-				F3ECBEA31B9D546C0000A656 /* JSONModel */,
-				F3ECBE6D1B9D452E0000A656 /* Supporting Files */,
 			);
 			path = DigUpProject;
 			sourceTree = "<group>";
@@ -533,6 +531,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F4870E1BA811A100FCA8A6 /* TableViewModel.h */,
+				F3F36E401BAAE7E900B7D885 /* RichTextViewModel.h */,
+				F3F36E411BAAE7E900B7D885 /* RichTextViewModel.m */,
 				F3F4870F1BA811A100FCA8A6 /* TableViewModel.m */,
 				F3EA5B361BA97466001F4554 /* CellViewModel.h */,
 				F3EA5B371BA97466001F4554 /* CellViewModel.m */,

@@ -11,7 +11,7 @@
 @implementation ImageViewModel
 
 
-- (id) initWithModel:(MaterialModel *)materialModel {
+- (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
     if (self) {
@@ -20,7 +20,7 @@
     return self;
 }
 
-- (void) initialize {
+- (void)initialize {
     self.imageLoaded = @NO;
     self.BlobID = self.material.BlobId;
     self.imageData = nil;
@@ -29,7 +29,7 @@
     [self downLoadImageWithBlobId:self.BlobID];
 }
 
-- (void) downLoadImageWithBlobId: (NSNumber *) imageBlobId{
+- (void)downLoadImageWithBlobId:(NSNumber *)imageBlobId {
     NSURL * downloadURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.imageURL, imageBlobId]];
     
     NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];

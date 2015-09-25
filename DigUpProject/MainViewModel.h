@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "MaterialViewModel.h"
+#import "TextInputViewModel.h"
+#import "CheckBoxViewModel.h"
+#import "ImageViewModel.h"
 
 #import "ExerciceModel.h"
 #import "WebSearcherController.h"
@@ -16,11 +19,8 @@
 #import "DragNDropController.h"
 #import "AudioController.h"
 
-#import "TextInputViewModel.h"
-#import "TableViewModel.h"
-#import "RichTextViewModel.h"
-#import "CheckBoxViewModel.h"
-#import "ImageViewModel.h"
+
+
 @interface MainViewModel : NSObject <WebSearcherControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
@@ -35,7 +35,7 @@
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;
 
-- (void) parseExercise;
-- (BOOL) audioBarTapped;
+- (void)parseExercise;
+- (BOOL)audioBarTapped;
 
 @end

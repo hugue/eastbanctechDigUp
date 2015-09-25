@@ -15,6 +15,6 @@
 @property (nonatomic, strong) NSString * imageURL;
 @property (nonatomic, strong) NSNumber * imageLoaded;
 
-- (id) initWithModel:(MaterialModel *)materialModel;
+- (id)initWithModel:(MaterialModel *)materialModel;
 
 @end

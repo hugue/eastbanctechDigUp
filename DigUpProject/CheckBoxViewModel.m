@@ -10,7 +10,7 @@
 
 @implementation CheckBoxViewModel
 
-- (id) initWithModel:(MaterialModel *)materialModel {
+- (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
     if (self) {
@@ -22,7 +22,7 @@
     return self;
 }
 
-- (void) viewChanged:(NSNumber *)newState {
+- (void)viewChanged:(NSNumber *)newState {
     if ([newState isEqualToNumber:@(YES)]) {
     }
 }

@@ -18,9 +18,9 @@
 @property (nonatomic, strong) NSData * audioData;
 @property (nonatomic, strong) NSNumber * audioLoaded;
 @property (nonatomic, strong) NSString * audioURL;
-@property (nonatomic, strong) NSNumber * BlobID;
+@property (nonatomic, strong) NSNumber * blobID;
 
-- (id) initWithModel:(MaterialModel *)materialModel;
-- (void) handleTap;
+- (id)initWithModel:(MaterialModel *)materialModel;
+- (void)handleTap;
 
 @end

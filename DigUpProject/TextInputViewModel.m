@@ -10,7 +10,7 @@
 
 @implementation TextInputViewModel
 
-- (id) initWithModel:(MaterialModel *)materialModel {
+- (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
     if (self) {
@@ -19,7 +19,7 @@
     }
     return self;
 }
-- (void) initialize {
+- (void)initialize {
     self.answer = self.material.Reply;
     self.givenAnswer = @"Write Answer Here";
 }

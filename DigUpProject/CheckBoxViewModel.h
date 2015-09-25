@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString * groupID;
 @property (nonatomic) BOOL isClicked;
 
-- (id) initWithModel:(MaterialModel *)materialModel;
-- (void) viewChanged:(NSNumber *) newState;
+- (id)initWithModel:(MaterialModel *)materialModel;
+- (void)viewChanged:(NSNumber *)newState;
 
 @end

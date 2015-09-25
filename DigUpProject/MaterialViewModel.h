@@ -23,8 +23,8 @@
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * droppedElements;
 @property (nonatomic, strong) MaterialViewModel * currentDropTarget;
 
-- (id) initWithModel:(MaterialModel *) materialModel;
-- (void) positionNewDraggedMaterial:(MaterialViewModel *) draggedMaterial;
-- (void) removeDroppedElement:(MaterialViewModel *) removedElement;
+- (id)initWithModel:(MaterialModel *)materialModel;
+- (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial;
+- (void)removeDroppedElement:(MaterialViewModel *)removedElement;
 
 @end

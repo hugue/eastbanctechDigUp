@@ -10,7 +10,7 @@
 
 @implementation RichTextViewModel
 
-- (id) initWithModel:(MaterialModel *)materialModel {
+- (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
     if (self) {
