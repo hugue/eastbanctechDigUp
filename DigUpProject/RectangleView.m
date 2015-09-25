@@ -34,9 +34,6 @@
             self.specialBorder.frame = self.viewDisplayed.bounds;
             [self.viewDisplayed.layer addSublayer:self.specialBorder];
         }
-        else if([self.viewModel.material.Behavior isEqualToString:@"DropElement"]) {
-            //[self configureDropElement];
-        }
     }
     return self;
 }

@@ -29,8 +29,6 @@
                                     self.viewModel.position.y,
                                     20,
                                     20);
-                                    //self.viewModel.materialWidth,
-                                    //elf.viewModel.materialHeight);
         
         self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Unselected"] forState: UIControlStateNormal];
@@ -69,28 +67,6 @@
         @strongify(self)
         return self.viewModel.materialID;
     }]subscribe:modelTerminal];
-    
-    //Look on model to display answer state (correct/notCorrect/undefined)
-    [RACObserve(self.viewModel, answerMode) subscribeNext:^(id x) {
-       @strongify(self)
-        if ([x integerValue] == isUndefined) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.viewDisplayed.layer.borderWidth = 0.0f;
-            });
-        }
-        else if ([x integerValue] == isCorrect) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.viewDisplayed.layer.borderColor = [UIColor greenColor].CGColor;
-                self.viewDisplayed.layer.borderWidth = 1.0f;
-            });
-        }
-        else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.viewDisplayed.layer.borderColor = [UIColor redColor].CGColor;
-                self.viewDisplayed.layer.borderWidth = 1.0f;
-            });
-        }
-    }];
 }
 
 @end
