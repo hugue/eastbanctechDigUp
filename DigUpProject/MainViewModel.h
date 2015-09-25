@@ -42,5 +42,6 @@ enum TestState : NSUInteger {
 - (void)parseExercise;
 - (BOOL)audioBarTapped;
 - (void)correctionAsked;
+- (void)restartExerciseAsked;
 
 @end

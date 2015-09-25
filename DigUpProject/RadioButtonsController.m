@@ -49,4 +49,12 @@
     }
 }
 
+- (void)restartAsked {
+    if (self.currentlyClikedButton) {
+        self.currentlyClikedButton.answerMode = isUndefined;
+        self.currentlySelectedButtonID = @0;
+        self.currentlyClikedButton = nil;
+    }
+}
+
  @end

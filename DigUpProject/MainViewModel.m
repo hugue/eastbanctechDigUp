@@ -140,6 +140,11 @@
     }
 }
 
+- (void)restartExerciseAsked {
+    self.currentExerciseState = testingGoingOn;
+    [self restartingButtonsControllers];
+}
+
 - (void)correctionAsked {
     self.currentExerciseState = correctionAsked;
     [self correctingButtonsControllers];
@@ -149,6 +154,13 @@
     for (NSString * controllerID in self.buttonControllers.allKeys) {
         [self.buttonControllers[controllerID] correctionAsked];
     }
+}
+
+- (void)restartingButtonsControllers {
+    for (NSString * controllerID in self.buttonControllers.allKeys) {
+        [self.buttonControllers[controllerID] restartAsked];
+    }
+
 }
 #pragma mark - WebSearcherControllerDelegate Methods
 

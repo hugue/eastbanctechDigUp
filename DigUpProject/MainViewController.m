@@ -250,7 +250,7 @@
     [self.scrollView addSubview:correctionButton];
     
     //Button Once again
-    CGRect restartButtonFrame = CGRectMake((self.scrollView.frame.size.width - 290.0), (self.scrollView.frame.size.height - 130.0) , 80.0, 40.0);
+    CGRect restartButtonFrame = CGRectMake((self.scrollView.frame.size.width - 190.0), (self.scrollView.frame.size.height - 130.0) , 100.0, 40.0);
     UIButton * restartButton = [[UIButton alloc] initWithFrame:restartButtonFrame];
     
     [restartButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
@@ -259,9 +259,10 @@
     
     restartButton.layer.borderColor = [UIColor blueColor].CGColor;
     restartButton.layer.borderWidth = 1.0f;
+    [restartButton addTarget:self action:@selector(restartExerciseAsked:) forControlEvents:UIControlEventTouchDown];
     
     //Button Solution
-    CGRect solutionButtonFrame = CGRectMake((self.scrollView.frame.size.width - 190.0), (self.scrollView.frame.size.height - 130.0) , 100.0, 40.0);
+    CGRect solutionButtonFrame = CGRectMake((self.scrollView.frame.size.width - 290.0), (self.scrollView.frame.size.height - 130.0) , 90.0, 40.0);
     UIButton * solutionButton = [[UIButton alloc] initWithFrame:solutionButtonFrame];
     
     [solutionButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
@@ -290,6 +291,10 @@
 
 - (void)correctionAsked:(UIButton *)sender {
     [self.viewModel correctionAsked];
+}
+
+- (void)restartExerciseAsked:(UIButton *)sender {
+    [self.viewModel restartExerciseAsked];
 }
 
 #pragma mark UIRecognizer methods
