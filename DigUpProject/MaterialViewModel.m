@@ -7,6 +7,10 @@
 //
 
 #import "MaterialViewModel.h"
+@interface MaterialViewModel ()
+@property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * droppedElements;
+
+@end
 
 @implementation MaterialViewModel
 
@@ -32,11 +36,13 @@
 }
 
 - (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial {
+    //[self.droppedElements addObject:draggedMaterial];
     draggedMaterial.position = self.posForDraggedMaterial;
     //Update the position for next dragged element
     self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y + draggedMaterial.materialHeight);
 }
 
+/*
 - (void)removeDroppedElement:(MaterialViewModel *)removedElement {
     int index = [self.droppedElements indexOfObjectIdenticalTo:removedElement];
     float removedHeight = removedElement.materialHeight;
@@ -46,7 +52,7 @@
     self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y - removedHeight);
     [self.droppedElements removeObject:removedElement];
 }
-
+*/
 - (void)resetPosition {
     self.position = CGPointMake([self.material.X floatValue], [self.material.Y floatValue]);
 }

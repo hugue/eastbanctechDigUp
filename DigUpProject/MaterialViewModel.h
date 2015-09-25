@@ -29,13 +29,12 @@ enum MaterialAnswerMode : NSUInteger {
 @property (nonatomic) CGPoint posForDraggedMaterial;
 
 @property (nonatomic) enum MaterialAnswerMode answerMode;
-@property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * droppedElements;
 @property (nonatomic, strong) MaterialViewModel * currentDropTarget;
 @property (nonatomic, strong) NSNumber  * correctDropTargetID;
 
 - (id)initWithModel:(MaterialModel *)materialModel;
 - (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial;
-- (void)removeDroppedElement:(MaterialViewModel *)removedElement;
+//- (void)removeDroppedElement:(MaterialViewModel *)removedElement;
 - (void)resetPosition;
 
 @end

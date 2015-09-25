@@ -142,7 +142,7 @@
 
 - (void)processDragNDropElement:(MaterialViewModel *) materialViewModel {
     if ([materialViewModel.material.Behavior isEqualToString:@"DropTarget"]){
-        [self.dropController.targetElements addObject:materialViewModel];
+        [self.dropController.targetElements setObject:materialViewModel forKey:materialViewModel.materialID];
         if (self.maxTargetZPosition < materialViewModel.zPosition) {
             self.maxTargetZPosition = materialViewModel.zPosition;
         }
@@ -228,7 +228,7 @@
 }
 
 - (void)displayingSolutionForDragNDrop {
-    
+    [self.dropController solutionAsked];
 }
 
 #pragma mark - WebSearcherControllerDelegate Methods

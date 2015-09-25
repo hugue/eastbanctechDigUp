@@ -40,6 +40,7 @@
 - (MaterialModel *) addNewMaterialWithDictionary:(NSDictionary *) materialInfo {
     //This is a reference, so look at the info in the dicionary for referenced models
     if (materialInfo[@"$ref"]) {
+        //NSLog(@"ref - %@", materialInfo[@"$ref"]);
         MaterialModel * referencedModel = self.referencedModels[materialInfo[@"$ref"]];
        // NSLog(@"%@ for key %@", referencedModel, referencedModel);
         [self createReferencedModels:referencedModel];
@@ -59,10 +60,12 @@
 - (void) createReferencedModels:(MaterialModel *) material {
     //If this material creates other materials, register it in the dictionary so we know were to look at when we find the references
     if (material.DropElements) {
+        //NSLog(@"material ID - %@ / count sons - %lu", material.Id, (unsigned long)material.DropElements.count);
         for(MaterialModel * referencedMaterial in material.DropElements) {
             //If this is not a reference but a real model, store it
             if(referencedMaterial.$id) {
                 [self.referencedModels setObject:referencedMaterial forKey:referencedMaterial.$id];
+                [self createReferencedModels:referencedMaterial];
             }
         }
     }
@@ -70,6 +73,7 @@
         //If this is not a reference but a real model, store it
         if(material.DropTarget.$id) {
             [self.referencedModels setObject:material.DropTarget forKey:material.DropTarget.$id];
+            [self createReferencedModels:material.DropTarget];
         }
     }
 }
