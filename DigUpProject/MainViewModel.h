@@ -21,7 +21,8 @@
 
 enum TestState : NSUInteger {
     testingGoingOn = 0,
-    correctionAsked = 1
+    correctionAsked = 1,
+    solutionAsked = 2
 };
 
 @interface MainViewModel : NSObject <WebSearcherControllerDelegate>
@@ -43,5 +44,6 @@ enum TestState : NSUInteger {
 - (BOOL)audioBarTapped;
 - (void)correctionAsked;
 - (void)restartExerciseAsked;
+- (void)solutionAsked;
 
 @end

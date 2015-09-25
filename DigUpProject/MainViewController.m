@@ -272,6 +272,8 @@
     solutionButton.layer.borderColor = [UIColor blueColor].CGColor;
     solutionButton.layer.borderWidth = 1.0f;
     
+    [solutionButton addTarget:self action:@selector(solutionAsked:) forControlEvents:UIControlEventTouchDown];
+    
     //Signal to display the buttons at the right time (not when testing)
     [RACObserve(self.viewModel, currentExerciseState) subscribeNext:^(id x) {
         if ([x integerValue] == testingGoingOn) {
@@ -286,6 +288,11 @@
                 [self.scrollView addSubview:restartButton];
             });
         }
+        else if ([x integerValue] == solutionAsked) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [solutionButton removeFromSuperview];
+            });
+        }
     }];
 }
 
@@ -295,6 +302,10 @@
 
 - (void)restartExerciseAsked:(UIButton *)sender {
     [self.viewModel restartExerciseAsked];
+}
+
+- (void)solutionAsked:(UIButton *)sender {
+    [self.viewModel solutionAsked];
 }
 
 #pragma mark UIRecognizer methods

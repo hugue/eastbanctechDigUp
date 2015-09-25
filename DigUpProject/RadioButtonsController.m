@@ -11,6 +11,7 @@
 
 //Reference needed for later correction
 @property (nonatomic, strong) RadioButtonViewModel * currentlyClikedButton;
+@property (nonatomic, strong) NSNumber * correctButtonID;
 
 @end
 
@@ -19,6 +20,7 @@
     self = [super init];
     if (self) {
         self.currentlySelectedButtonID = @0;
+        self.correctButtonID = @0;
         self.currentlyClikedButton = nil;
     }
     return self;
@@ -26,12 +28,21 @@
 
 - (void)addNewRadioButton:(RadioButtonViewModel *)radioButton {
     
+    if (radioButton.isTrue) {
+        self.correctButtonID = radioButton.materialID;
+    }
+    
     RACChannelTerminal * controllerTerminal = RACChannelTo(self, currentlySelectedButtonID);
     RACChannelTerminal * buttonTerminal = RACChannelTo(radioButton, selectedID);
+     @weakify(self);
+    [[controllerTerminal doNext:^(id x) {
+        @strongify(self);
+        if ([x isEqualToNumber:radioButton.materialID]) {
+            self.currentlyClikedButton = radioButton;
+        }
+    }]subscribe:buttonTerminal];
     
-    [controllerTerminal subscribe:buttonTerminal];
-    
-    @weakify(self);
+   
     [[[buttonTerminal  skip :1] doNext:^(id x) {
         @strongify(self);
         self.currentlyClikedButton = radioButton;
@@ -54,6 +65,13 @@
         self.currentlyClikedButton.answerMode = isUndefined;
         self.currentlySelectedButtonID = @0;
         self.currentlyClikedButton = nil;
+    }
+}
+
+- (void)solutionAsked {
+    if (self.currentlyClikedButton.answerMode == isNotCorrect) {
+        self.currentlyClikedButton.answerMode = isUndefined;
+        self.currentlySelectedButtonID = self.correctButtonID;
     }
 }
 

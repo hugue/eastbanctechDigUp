@@ -140,6 +140,8 @@
     }
 }
 
+#pragma mark - Functions to process the different phases of the test (testing/Correction/solution)
+
 - (void)restartExerciseAsked {
     self.currentExerciseState = testingGoingOn;
     [self restartingButtonsControllers];
@@ -148,6 +150,11 @@
 - (void)correctionAsked {
     self.currentExerciseState = correctionAsked;
     [self correctingButtonsControllers];
+}
+
+- (void)solutionAsked {
+    self.currentExerciseState = solutionAsked;
+    [self displayingSolutionForButtonsControllers];
 }
 
 - (void)correctingButtonsControllers {
@@ -160,7 +167,12 @@
     for (NSString * controllerID in self.buttonControllers.allKeys) {
         [self.buttonControllers[controllerID] restartAsked];
     }
+}
 
+- (void)displayingSolutionForButtonsControllers {
+    for (NSString * controllerID in self.buttonControllers.allKeys) {
+        [self.buttonControllers[controllerID] solutionAsked];
+    }
 }
 #pragma mark - WebSearcherControllerDelegate Methods
 

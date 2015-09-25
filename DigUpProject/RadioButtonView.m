@@ -30,7 +30,7 @@
                                     20,
                                     20);
                                     //self.viewModel.materialWidth,
-                                    //self.viewModel.materialHeight);
+                                    //elf.viewModel.materialHeight);
         
         self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Unselected"] forState: UIControlStateNormal];

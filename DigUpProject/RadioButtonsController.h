@@ -20,5 +20,6 @@
 - (void)addNewRadioButton:(RadioButtonViewModel *)radioButton;
 - (void)correctionAsked;
 - (void)restartAsked;
+- (void)solutionAsked;
 
 @end
