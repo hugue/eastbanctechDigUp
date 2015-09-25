@@ -15,6 +15,7 @@
     if (self) {
         self.material = materialModel;
         self.materialID = materialModel.Id;
+        self.answerMode = isUndefined;
         
         self.position = CGPointMake([materialModel.X floatValue], [materialModel.Y floatValue]);
         self.zPosition = [materialModel.Z integerValue];

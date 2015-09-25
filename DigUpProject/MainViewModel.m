@@ -126,6 +126,7 @@
         [self.materialsModels addObject:materialViewModel];
     }
     self.exerciseLoaded = @YES;
+    self.currentExerciseState = testingGoingOn;
 }
 
 - (BOOL)audioBarTapped {
@@ -139,7 +140,16 @@
     }
 }
 
+- (void)correctionAsked {
+    self.currentExerciseState = correctionAsked;
+    [self correctingButtonsControllers];
+}
 
+- (void)correctingButtonsControllers {
+    for (NSString * controllerID in self.buttonControllers.allKeys) {
+        [self.buttonControllers[controllerID] correctionAsked];
+    }
+}
 #pragma mark - WebSearcherControllerDelegate Methods
 
 - (void)webSearcherController:(WebSearcherController *)webSearcherController didReceiveData:(nullable NSData *)data withError: (nullable NSError *) error{

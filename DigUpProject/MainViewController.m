@@ -86,15 +86,18 @@
     
             [materialView addVisualToView:self.scrollView];
         
-            if ((width + x) > self.scrollView.contentSize.width/2) {
+            if ((width + x) > self.scrollView.contentSize.width) {
                 self.scrollView.contentSize = CGSizeMake((width + x), self.scrollView.frame.size.height);
             }
-            if ((height + y) > self.scrollView.contentSize.height/2) {
+            if ((height + y) > self.scrollView.contentSize.height) {
                 self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, (height + y));
             }
         });
     }
-    dispatch_async(dispatch_get_main_queue(), ^{[self configureAudioPlayerView];});
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self configureAudioPlayerView];
+        [self addCorrectionButtons];
+    });
 }
 
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel atIndex:(NSUInteger)index {
@@ -229,6 +232,64 @@
     else {
         [self.playPauseButton setImage:[UIImage imageNamed:@"Play_Button"] forState:UIControlStateNormal];
     }
+}
+
+- (void)addCorrectionButtons {
+    //Button Right?
+    CGRect correctionButtonFrame = CGRectMake((self.scrollView.frame.size.width - 80.0), (self.scrollView.frame.size.height - 130.0) , 70.0, 40.0);
+    UIButton * correctionButton = [[UIButton alloc] initWithFrame:correctionButtonFrame];
+    
+    [correctionButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+    [correctionButton setTitle:@"Right?" forState:UIControlStateNormal];
+    [correctionButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    correctionButton.layer.borderColor = [UIColor blueColor].CGColor;
+    correctionButton.layer.borderWidth = 1.0f;
+    
+    [correctionButton addTarget:self action:@selector(correctionAsked:) forControlEvents:UIControlEventTouchDown];
+    [self.scrollView addSubview:correctionButton];
+    
+    //Button Once again
+    CGRect restartButtonFrame = CGRectMake((self.scrollView.frame.size.width - 290.0), (self.scrollView.frame.size.height - 130.0) , 80.0, 40.0);
+    UIButton * restartButton = [[UIButton alloc] initWithFrame:restartButtonFrame];
+    
+    [restartButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+    [restartButton setTitle:@"Once again" forState:UIControlStateNormal];
+    [restartButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    restartButton.layer.borderColor = [UIColor blueColor].CGColor;
+    restartButton.layer.borderWidth = 1.0f;
+    
+    //Button Solution
+    CGRect solutionButtonFrame = CGRectMake((self.scrollView.frame.size.width - 190.0), (self.scrollView.frame.size.height - 130.0) , 100.0, 40.0);
+    UIButton * solutionButton = [[UIButton alloc] initWithFrame:solutionButtonFrame];
+    
+    [solutionButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+    [solutionButton setTitle:@"Solution" forState:UIControlStateNormal];
+    [solutionButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    solutionButton.layer.borderColor = [UIColor blueColor].CGColor;
+    solutionButton.layer.borderWidth = 1.0f;
+    
+    //Signal to display the buttons at the right time (not when testing)
+    [RACObserve(self.viewModel, currentExerciseState) subscribeNext:^(id x) {
+        if ([x integerValue] == testingGoingOn) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [solutionButton removeFromSuperview];
+                [restartButton removeFromSuperview];
+            });
+        }
+        else if ([x integerValue] == correctionAsked) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.scrollView addSubview:solutionButton];
+                [self.scrollView addSubview:restartButton];
+            });
+        }
+    }];
+}
+
+- (void)correctionAsked:(UIButton *)sender {
+    [self.viewModel correctionAsked];
 }
 
 #pragma mark UIRecognizer methods
