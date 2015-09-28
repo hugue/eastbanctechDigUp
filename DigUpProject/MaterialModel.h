@@ -48,7 +48,6 @@
 @property (nonatomic, strong)      NSString<Optional> * Text;
 @property (nonatomic, strong)      NSString<Optional> * Value;
 @property (nonatomic, strong)      NSString<Optional> * Style;
-@property (nonatomic, strong)      NSString<Optional> * Reply;
 @property (nonatomic)              NSString<Optional> * AutoPlay;
 @property (nonatomic)              NSString<Optional> * Show;
 

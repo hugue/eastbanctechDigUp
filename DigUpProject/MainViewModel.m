@@ -9,7 +9,7 @@
 #import "MainViewModel.h"
 @interface MainViewModel ()
 
-@property (nonatomic, strong) NSMutableArray<CheckBoxViewModel *> * exerciseCheckboxes;
+@property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * selfCorrectingMaterials;
 
 @end
 
@@ -33,7 +33,7 @@
     self.webSearcherController.delegate = self;
     self.buttonControllers = [[NSMutableDictionary alloc] init];
     self.materialsModels = [[NSMutableArray alloc] init];
-    self.exerciseCheckboxes = [[NSMutableArray alloc] init];
+    self.selfCorrectingMaterials = [[NSMutableArray alloc] init];
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
     
@@ -92,6 +92,7 @@
     }
     else if ([type isEqualToString:@"InputField"]) {
         materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
+        [self.selfCorrectingMaterials addObject:materialViewModel];
         //return materialViewModel;
     }
     else if ([type isEqualToString:@"Audio"]) {
@@ -100,7 +101,7 @@
     }
     else if([type isEqualToString:@"CheckBox"]) {
         materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
-        [self.exerciseCheckboxes addObject:(CheckBoxViewModel *)materialViewModel];
+        [self.selfCorrectingMaterials addObject:materialViewModel];
         //return materialViewModel;
     }
 
@@ -161,22 +162,25 @@
 - (void)restartExerciseAsked {
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
     [self restartingButtonsControllers];
-    [self restartingCheckBoxes];
+    //[self restartingCheckBoxes];
     [self restartingDragNDrop];
+    [self restartingSelfCorrectingMaterials];
 }
 
 - (void)correctionAsked {
     self.currentExerciseState = ExerciseCurrentStateCorrectionAsked;
     [self correctingButtonsControllers];
-    [self correctingCheckBoxes];
+    //[self correctingCheckBoxes];
     [self correctingDragNDrop];
+    [self correctingSelfCorrectingMaterials];
 }
 
 - (void)solutionAsked {
     self.currentExerciseState = ExerciseCurrentStateSolutionAsked;
     [self displayingSolutionForButtonsControllers];
-    [self displayingSolutionForCheckboxes];
+    //[self displayingSolutionForCheckboxes];
     [self displayingSolutionForDragNDrop];
+    [self displayingSolutionSelfCorrectingMaterials];
 }
 
 //Correcting functions for different materials
@@ -199,25 +203,6 @@
     }
 }
 
-//CheckBoxes
-- (void)correctingCheckBoxes {
-    for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
-        [self.exerciseCheckboxes[i] correctionAsked];
-    }
-}
-
-- (void)restartingCheckBoxes {
-    for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
-        [self.exerciseCheckboxes[i] restartAsked];
-    }
-}
-
-- (void)displayingSolutionForCheckboxes {
-    for (int i = 0; i < self.exerciseCheckboxes.count; i ++) {
-        [self.exerciseCheckboxes[i] solutionAsked];
-    }
-}
-
 //DragNDrop
 - (void)correctingDragNDrop {
     [self.dropController correctionAsked];
@@ -231,6 +216,24 @@
     [self.dropController solutionAsked];
 }
 
+//Make correction for self correcting materials (Checkbox, textField...)
+- (void)correctingSelfCorrectingMaterials {
+    for (MaterialViewModel * materialViewModel in self.selfCorrectingMaterials) {
+        [materialViewModel correctionAsked];
+    }
+}
+
+- (void)displayingSolutionSelfCorrectingMaterials {
+    for (MaterialViewModel * materialViewModel in self.selfCorrectingMaterials) {
+        [materialViewModel solutionAsked];
+    }
+}
+
+- (void)restartingSelfCorrectingMaterials {
+    for (MaterialViewModel * materialViewModel in self.selfCorrectingMaterials) {
+        [materialViewModel restartAsked];
+    }
+}
 #pragma mark - WebSearcherControllerDelegate Methods
 
 - (void)webSearcherController:(WebSearcherController *)webSearcherController didReceiveData:(nullable NSData *)data withError: (nullable NSError *) error{

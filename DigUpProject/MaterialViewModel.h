@@ -36,6 +36,9 @@ typedef NS_ENUM(NSInteger, MaterialAnswerMode) {
 - (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial;
 //- (void)removeDroppedElement:(MaterialViewModel *)removedElement;
 - (void)resetPosition;
+- (void)correctionAsked;
+- (void)solutionAsked;
+- (void)restartAsked;
 
 @end
 
