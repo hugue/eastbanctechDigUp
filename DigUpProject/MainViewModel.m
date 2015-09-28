@@ -131,12 +131,12 @@
 }
 
 - (BOOL)audioBarTapped {
-    if (self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer.playing) {
-        [self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer pause];
+    if (self.audioController.currentlyPlaying.audioPlayer.playing) {
+        [self.audioController.currentlyPlaying.audioPlayer pause];
         return NO;
     }
     else {
-        [self.audioController.audioPlayers[self.audioController.beingPlayedID].audioPlayer play];
+        [self.audioController.currentlyPlaying.audioPlayer play];
         return YES;
     }
 }

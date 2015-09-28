@@ -25,6 +25,9 @@
     self.blobID = self.material.BlobId;
     self.audioData = nil;
     self.audioURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
+    self.showAudioSymbol = [self.material.Show boolValue];
+    self.autoPlay = [self.material.Autoplay boolValue];
+    NSLog(@"Show symbol - %@", self.material.Show);
     
     [self downLoadAudioWithBlobId:self.blobID];
 }

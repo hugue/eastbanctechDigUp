@@ -13,13 +13,14 @@
 @interface AudioController : NSObject
 
 @property (nonatomic, strong) NSNumber * beingPlayedID;
-@property (nonatomic, strong) NSMutableDictionary<NSNumber *, AudioViewModel *> * audioPlayers;
+//@property (nonatomic, strong) NSMutableDictionary<NSNumber *, AudioViewModel *> * audioPlayers;
 @property (nonatomic, strong) AudioViewModel * currentlyPlaying;
 
 @property (nonatomic) long currentAudioTime;
 @property (nonatomic) long audioDuration;
 @property (nonatomic) BOOL isPlaying;
 @property (nonatomic) float currentAudioVolum;
+@property (nonatomic) BOOL isNeeded;
 
 - (id)init;
 - (void)addNewAudio:(AudioViewModel *)audio;

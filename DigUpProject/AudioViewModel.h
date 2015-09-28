@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSNumber * audioLoaded;
 @property (nonatomic, strong) NSString * audioURL;
 @property (nonatomic, strong) NSNumber * blobID;
+@property (nonatomic) BOOL showAudioSymbol;
+@property (nonatomic) BOOL autoPlay;
 
 - (id)initWithModel:(MaterialModel *)materialModel;
 - (void)handleTap;

@@ -140,7 +140,7 @@
 - (void)configureAudioPlayerView {
     self.currentAudioTime = 0;
     //Create the audiobar only if there are audio files in the test
-    if (self.viewModel.audioController.audioPlayers.count > 0) {
+    if (self.viewModel.audioController.isNeeded) {
         //Main Bar
         CGRect mainAudioBarFrame = CGRectMake(0.0, self.scrollView.frame.size.height - 80, self.scrollView.frame.size.width, 60);
         UIView * mainAudioBar = [[UIView alloc] initWithFrame:mainAudioBarFrame];

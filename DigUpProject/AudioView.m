@@ -21,18 +21,20 @@
 - (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
-        CGRect  frame =  CGRectMake(self.viewModel.position.x ,
-                                    self.viewModel.position.y,
-                                    self.viewModel.materialWidth,
-                                    self.viewModel.materialHeight);
-        
-        self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         self.isSelected = @NO;
-        [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Unselected"] forState: UIControlStateNormal];
+        if (self.viewModel.showAudioSymbol) {
+            CGRect  frame =  CGRectMake(self.viewModel.position.x ,
+                                        self.viewModel.position.y,
+                                        self.viewModel.materialWidth,
+                                        self.viewModel.materialHeight);
         
-        //Initializing the real button
-        [self.viewDisplayed addTarget:self action:@selector(handleTap:) forControlEvents:UIControlEventTouchUpInside];
-        [self applyModelToView];
+            self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
+            [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Unselected"] forState: UIControlStateNormal];
+        
+            //Initializing the real button
+            [self.viewDisplayed addTarget:self action:@selector(handleTap:) forControlEvents:UIControlEventTouchUpInside];
+            [self applyModelToView];
+        }
     }
     return self;
 }
