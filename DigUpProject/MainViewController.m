@@ -103,7 +103,7 @@
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel atIndex:(NSUInteger)index {
     NSString * type = materialViewModel.material.Type;
     NSLog(@"Creating new view : %@", type);
-    
+        
     if ([type isEqualToString:@"Text"]) {
         TextFrameView * textLabel = [[TextFrameView alloc] initWithViewModel: materialViewModel];
         self.materialsViews[index] = textLabel;

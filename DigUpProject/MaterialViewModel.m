@@ -19,7 +19,7 @@
     if (self) {
         self.material = materialModel;
         self.materialID = materialModel.Id;
-        self.answerMode = MaterialAnswerModeIsUndefined;
+        self.answerState = MaterialAnswerStateIsTesting;
         self.correctDropTargetID = self.material.DropTargetId;
         
         self.position = CGPointMake([materialModel.X floatValue], [materialModel.Y floatValue]);

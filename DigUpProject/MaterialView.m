@@ -36,19 +36,19 @@
     }];
 }
 
-- (void)applyBorderStyleForAnswerMode:(MaterialAnswerMode) materialAnswerMode {
-    if (materialAnswerMode == MaterialAnswerModeIsUndefined) {
+- (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState {
+    if ((materialAnswerState == MaterialAnswerStateIsUndefined) || (materialAnswerState == MaterialAnswerStateIsTesting)) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderWidth = 0.0f;
         });
     }
-    else if (materialAnswerMode == MaterialAnswerModeIsCorrect) {
+    else if (materialAnswerState == MaterialAnswerStateIsCorrect) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor greenColor].CGColor;
             self.viewDisplayed.layer.borderWidth = 1.0f;
         });
     }
-    else if (materialAnswerMode == MaterialAnswerModeIsAlternative) {
+    else if (materialAnswerState == MaterialAnswerStateIsAlternative) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor orangeColor].CGColor;
             self.viewDisplayed.layer.borderWidth = 1.0f;
@@ -68,9 +68,9 @@
     }    
     @weakify(self);
     //Look on model to display answer state (correct/notCorrect/undefined)
-    [RACObserve(self.viewModel, answerMode) subscribeNext:^(id x) {
+    [RACObserve(self.viewModel, answerState) subscribeNext:^(id x) {
         @strongify(self);
-        [self applyBorderStyleForAnswerMode:[x integerValue]];
+        [self applyBorderStyleForAnswerState:[x integerValue]];
     }];
 
 }

@@ -52,9 +52,9 @@
     }
 }
 
-- (void)applyBorderStyleForAnswerMode:(MaterialAnswerMode)materialAnswerMode {
-    [super applyBorderStyleForAnswerMode:materialAnswerMode];
-    if (materialAnswerMode == MaterialAnswerModeIsUndefined) {
+- (void)applyBorderStyleForAnswerState:(MaterialAnswerState)materialAnswerState {
+    [super applyBorderStyleForAnswerState:materialAnswerState];
+    if (materialAnswerState == MaterialAnswerStateIsUndefined) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor blackColor].CGColor;
             self.viewDisplayed.layer.borderWidth = 1.0f;

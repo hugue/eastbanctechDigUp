@@ -11,11 +11,12 @@
 #import "MaterialModel.h"
 
 
-typedef NS_ENUM(NSInteger, MaterialAnswerMode) {
-    MaterialAnswerModeIsUndefined ,
-    MaterialAnswerModeIsCorrect,
-    MaterialAnswerModeIsAlternative,
-    MaterialAnswerModeIsNotCorrect
+typedef NS_ENUM(NSInteger, MaterialAnswerState) {
+    MaterialAnswerStateIsTesting,
+    MaterialAnswerStateIsUndefined ,
+    MaterialAnswerStateIsCorrect,
+    MaterialAnswerStateIsAlternative,
+    MaterialAnswerStateIsNotCorrect
 };
 
 @interface MaterialViewModel : NSObject
@@ -29,7 +30,7 @@ typedef NS_ENUM(NSInteger, MaterialAnswerMode) {
 @property (nonatomic) float materialWidth;
 @property (nonatomic) CGPoint posForDraggedMaterial;
 
-@property (nonatomic) enum MaterialAnswerMode answerMode;
+@property (nonatomic) enum MaterialAnswerState answerState;
 @property (nonatomic, strong) MaterialViewModel * currentDropTarget;
 @property (nonatomic, strong) NSNumber  * correctDropTargetID;
 

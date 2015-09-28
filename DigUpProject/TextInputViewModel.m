@@ -45,29 +45,29 @@
         }
         if (isMatching) {
             if ([possibleAnswer[@"rang"] integerValue] == 1) {
-                self.answerMode = MaterialAnswerModeIsCorrect;
+                self.answerState = MaterialAnswerStateIsCorrect;
             }
             else if([possibleAnswer[@"rang"] integerValue] == 2) {
-                self.answerMode = MaterialAnswerModeIsAlternative;
+                self.answerState = MaterialAnswerStateIsAlternative;
             }
             else {
-                self.answerMode = MaterialAnswerModeIsNotCorrect;
+                self.answerState = MaterialAnswerStateIsNotCorrect;
             }
             return;
         }
     }
-    self.answerMode = MaterialAnswerModeIsNotCorrect;
+    self.answerState = MaterialAnswerStateIsNotCorrect;
 }
 
 - (void)solutionAsked {
     self.givenAnswer = self.answer;
-    if (!(self.answerMode == MaterialAnswerModeIsCorrect)) {
-        self.answerMode = MaterialAnswerModeIsUndefined;
+    if (!(self.answerState == MaterialAnswerStateIsCorrect)) {
+        self.answerState = MaterialAnswerStateIsUndefined;
     }
 }
 
 - (void)restartAsked {
-    self.answerMode = MaterialAnswerModeIsUndefined;
+    self.answerState = MaterialAnswerStateIsTesting;
     self.givenAnswer = @"";
 }
 
