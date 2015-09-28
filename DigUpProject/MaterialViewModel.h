@@ -11,10 +11,10 @@
 #import "MaterialModel.h"
 
 
-enum MaterialAnswerMode : NSUInteger {
-    isUndefined = 0,
-    isCorrect = 1,
-    isNotCorrect = 2
+typedef NS_ENUM(NSInteger, MaterialAnswerMode) {
+    MaterialAnswerModeIsUndefined ,
+    MaterialAnswerModeIsCorrect,
+    MaterialAnswerModeIsNotCorrect
 };
 
 @interface MaterialViewModel : NSObject

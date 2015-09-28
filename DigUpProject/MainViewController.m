@@ -276,19 +276,19 @@
     
     //Signal to display the buttons at the right time (not when testing)
     [RACObserve(self.viewModel, currentExerciseState) subscribeNext:^(id x) {
-        if ([x integerValue] == testingGoingOn) {
+        if ([x integerValue] == ExerciseCurrentStateIsGoingOn) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [solutionButton removeFromSuperview];
                 [restartButton removeFromSuperview];
             });
         }
-        else if ([x integerValue] == correctionAsked) {
+        else if ([x integerValue] == ExerciseCurrentStateCorrectionAsked) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.scrollView addSubview:solutionButton];
                 [self.scrollView addSubview:restartButton];
             });
         }
-        else if ([x integerValue] == solutionAsked) {
+        else if ([x integerValue] == ExerciseCurrentStateSolutionAsked) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [solutionButton removeFromSuperview];
             });

@@ -52,25 +52,25 @@
 - (void)correctionAsked{
     if(self.currentlyClikedButton) {
         if(self.currentlyClikedButton.isTrue) {
-            self.currentlyClikedButton.answerMode = isCorrect;
+            self.currentlyClikedButton.answerMode = MaterialAnswerModeIsCorrect;
         }
         else {
-            self.currentlyClikedButton.answerMode = isNotCorrect;
+            self.currentlyClikedButton.answerMode = MaterialAnswerModeIsNotCorrect;
         }
     }
 }
 
 - (void)restartAsked {
     if (self.currentlyClikedButton) {
-        self.currentlyClikedButton.answerMode = isUndefined;
+        self.currentlyClikedButton.answerMode = MaterialAnswerModeIsUndefined;
         self.currentlySelectedButtonID = @0;
         self.currentlyClikedButton = nil;
     }
 }
 
 - (void)solutionAsked {
-    if (self.currentlyClikedButton.answerMode == isNotCorrect) {
-        self.currentlyClikedButton.answerMode = isUndefined;
+    if (self.currentlyClikedButton.answerMode == MaterialAnswerModeIsNotCorrect) {
+        self.currentlyClikedButton.answerMode = MaterialAnswerModeIsUndefined;
         self.currentlySelectedButtonID = self.correctButtonID;
     }
 }

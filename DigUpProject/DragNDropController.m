@@ -60,10 +60,10 @@
     for (MaterialViewModel * droppedElement in self.dropElements) {
         if (droppedElement.currentDropTarget) {
             if ((droppedElement.correctDropTargetID) && [droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]){
-                droppedElement.answerMode = isCorrect;
+                droppedElement.answerMode = MaterialAnswerModeIsCorrect;
             }
             else {
-                droppedElement.answerMode = isNotCorrect;
+                droppedElement.answerMode = MaterialAnswerModeIsNotCorrect;
             }
         }
     }
@@ -72,14 +72,14 @@
 - (void)solutionAsked {
     for(MaterialViewModel * droppedElement in self.dropElements) {
         //The element has been placed
-        if (droppedElement.answerMode == isNotCorrect) {
+        if (droppedElement.answerMode == MaterialAnswerModeIsNotCorrect) {
             [self removeFromTargetElement:droppedElement];
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
                 //[droppedElement.currentDropTarget removeDroppedElement:droppedElement];
                // [correctTarget.droppedElements addObject:droppedElement];
                 [correctTarget positionNewDraggedMaterial:droppedElement];
-                droppedElement.answerMode = isUndefined;
+                droppedElement.answerMode = MaterialAnswerModeIsUndefined;
                 droppedElement.currentDropTarget = correctTarget;
             }
             else {
@@ -88,7 +88,7 @@
             }
         }
         //Means the element has not been placed on a target
-        else if (droppedElement.answerMode == isUndefined) {
+        else if (droppedElement.answerMode == MaterialAnswerModeIsUndefined) {
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
                 //[correctTarget.droppedElements addObject:droppedElement];
@@ -103,7 +103,7 @@
         for (MaterialViewModel * droppedElement in self.dropElements) {
             droppedElement.currentDropTarget = nil;
             [droppedElement resetPosition];
-            droppedElement.answerMode = isUndefined;
+            droppedElement.answerMode = MaterialAnswerModeIsUndefined;
         }
         for (MaterialViewModel * target in self.targetElements.allValues) {
             target.posForDraggedMaterial = CGPointMake(target.position.x, target.position.y);

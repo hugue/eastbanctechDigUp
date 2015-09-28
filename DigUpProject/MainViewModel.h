@@ -19,10 +19,10 @@
 #import "DragNDropController.h"
 #import "AudioController.h"
 
-enum TestState : NSUInteger {
-    testingGoingOn = 0,
-    correctionAsked = 1,
-    solutionAsked = 2
+typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
+    ExerciseCurrentStateIsGoingOn,
+    ExerciseCurrentStateCorrectionAsked,
+    ExerciseCurrentStateSolutionAsked
 };
 
 @interface MainViewModel : NSObject <WebSearcherControllerDelegate>
@@ -35,7 +35,7 @@ enum TestState : NSUInteger {
 @property (nonatomic, strong) AudioController * audioController;
 @property (nonatomic, strong) DragNDropController * dropController;
 @property (nonatomic, strong) NSNumber * exerciseLoaded;
-@property (nonatomic) enum TestState currentExerciseState;
+@property (nonatomic) enum ExerciseCurrentState currentExerciseState;
 
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;

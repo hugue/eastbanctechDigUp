@@ -43,12 +43,12 @@
     //Look on model to display answer state (correct/notCorrect/undefined)
     [RACObserve(self.viewModel, answerMode) subscribeNext:^(id x) {
         @strongify(self)
-        if ([x integerValue] == isUndefined) {
+        if ([x integerValue] == MaterialAnswerModeIsUndefined) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.viewDisplayed.layer.borderWidth = 0.0f;
             });
         }
-        else if ([x integerValue] == isCorrect) {
+        else if ([x integerValue] == MaterialAnswerModeIsCorrect) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.viewDisplayed.layer.borderColor = [UIColor greenColor].CGColor;
                 self.viewDisplayed.layer.borderWidth = 1.0f;
