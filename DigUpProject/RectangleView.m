@@ -52,5 +52,13 @@
     }
 }
 
+- (void)applyBorderStyleForAnswerMode:(MaterialAnswerMode)materialAnswerMode {
+    [super applyBorderStyleForAnswerMode:materialAnswerMode];
+    if ([self.viewModel.material.Style isEqualToString:@"box-default"]) {
+        self.viewDisplayed.layer.borderColor = [UIColor blackColor].CGColor;
+        self.viewDisplayed.layer.borderWidth = 1.0f;
+    }
+}
+
 
 @end

@@ -17,9 +17,10 @@
 
 @property (nonatomic, strong) MaterialViewModel * viewModel;
 @property (nonatomic, strong) UIView * viewDisplayed;
+@property (nonatomic, strong) UIView * shadowDisplayed;
 @property (nonatomic) CGPoint position;
 
 - (void)addVisualToView:(UIView *)superView;
 - (void)configureDropElement;
-
+- (void)applyBorderStyleForAnswerMode:(MaterialAnswerMode) materialAnswerMode;
 @end

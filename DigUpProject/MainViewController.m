@@ -352,7 +352,7 @@
 
 - (BOOL)gestureRecognizer:(DragElementRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     gestureRecognizer.draggedMaterial = [self touchIsOnDraggableMaterial:touch];
-    if (gestureRecognizer.draggedMaterial) {
+    if (gestureRecognizer.draggedMaterial && (self.viewModel.currentExerciseState == ExerciseCurrentStateIsGoingOn)) {
         return YES;
     }
     /*

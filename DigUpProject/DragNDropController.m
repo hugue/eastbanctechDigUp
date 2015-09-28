@@ -40,6 +40,18 @@
             return YES;
         }
     }
+    //Check if we are on a placed element, if so, place the dragged material on the same target
+    for (MaterialViewModel * placedElement in self.dropElements) {
+        CGRect framePlacedElement = CGRectMake(placedElement.position.x, placedElement.position.y, placedElement.materialWidth, placedElement.materialHeight);
+        
+        if (CGRectContainsPoint(framePlacedElement, point)) {
+            if (placedElement.currentDropTarget) {
+                draggedMaterial.currentDropTarget = placedElement.currentDropTarget;
+                [placedElement.currentDropTarget positionNewDraggedMaterial:draggedMaterial];
+                return YES;
+            }
+        }
+    }
     draggedMaterial.currentDropTarget = nil;
     return NO;
 }
@@ -73,7 +85,9 @@
     for(MaterialViewModel * droppedElement in self.dropElements) {
         //The element has been placed
         if (droppedElement.answerMode == MaterialAnswerModeIsNotCorrect) {
-            [self removeFromTargetElement:droppedElement];
+            if (droppedElement.currentDropTarget) {
+                [self removeFromTargetElement:droppedElement];
+            }
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
                 //[droppedElement.currentDropTarget removeDroppedElement:droppedElement];
