@@ -31,7 +31,22 @@
 }
 
 - (void)applyModelToView {
-    RAC(self.viewModel, givenAnswer) = self.viewDisplayed.rac_textSignal;
+    RACChannelTerminal * viewTerminal = [self.viewDisplayed rac_newTextChannel];
+    RACChannelTerminal * modelTerminal = RACChannelTo(self.viewModel, givenAnswer);
+    
+    [viewTerminal subscribe:modelTerminal];
+    [modelTerminal subscribe:viewTerminal];
+}
+
+
+- (void)applyBorderStyleForAnswerMode:(MaterialAnswerMode) materialAnswerMode {
+    [super applyBorderStyleForAnswerMode:materialAnswerMode];
+    if (materialAnswerMode == MaterialAnswerModeIsUndefined) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.viewDisplayed.layer.borderColor = [UIColor grayColor].CGColor;
+            self.viewDisplayed.layer.borderWidth = 1.0f;
+        });
+    }
 }
 
 @end

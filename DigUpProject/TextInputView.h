@@ -16,5 +16,6 @@
 @property (nonatomic, strong) UITextField * viewDisplayed;
 
 - (id)initWithViewModel:(MaterialViewModel *)materialViewModel;
+- (void)applyBorderStyleForAnswerMode:(MaterialAnswerMode)materialAnswerMode;
 
 @end

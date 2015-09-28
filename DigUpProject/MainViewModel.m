@@ -162,7 +162,6 @@
 - (void)restartExerciseAsked {
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
     [self restartingButtonsControllers];
-    //[self restartingCheckBoxes];
     [self restartingDragNDrop];
     [self restartingSelfCorrectingMaterials];
 }
@@ -170,7 +169,6 @@
 - (void)correctionAsked {
     self.currentExerciseState = ExerciseCurrentStateCorrectionAsked;
     [self correctingButtonsControllers];
-    //[self correctingCheckBoxes];
     [self correctingDragNDrop];
     [self correctingSelfCorrectingMaterials];
 }
@@ -178,7 +176,6 @@
 - (void)solutionAsked {
     self.currentExerciseState = ExerciseCurrentStateSolutionAsked;
     [self displayingSolutionForButtonsControllers];
-    //[self displayingSolutionForCheckboxes];
     [self displayingSolutionForDragNDrop];
     [self displayingSolutionSelfCorrectingMaterials];
 }

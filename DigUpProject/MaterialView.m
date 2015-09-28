@@ -48,6 +48,12 @@
             self.viewDisplayed.layer.borderWidth = 1.0f;
         });
     }
+    else if (materialAnswerMode == MaterialAnswerModeIsAlternative) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.viewDisplayed.layer.borderColor = [UIColor orangeColor].CGColor;
+            self.viewDisplayed.layer.borderWidth = 1.0f;
+        });
+    }
     else {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor redColor].CGColor;

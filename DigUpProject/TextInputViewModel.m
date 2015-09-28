@@ -7,6 +7,11 @@
 //
 
 #import "TextInputViewModel.h"
+@interface TextInputViewModel()
+
+@property (nonatomic, strong) NSDictionary * answerInfo;
+
+@end
 
 @implementation TextInputViewModel
 
@@ -21,22 +26,44 @@
 }
 - (void)initialize {
     self.answer = self.material.Value;
-    self.givenAnswer = @"Write Answer Here";
     NSError * error;
-    //NSDictionary * answerInfo = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:self.material.Text] options:kNilOptions error:&error];
+    NSData * answerData = [self.material.Text dataUsingEncoding:NSUTF8StringEncoding];
+    self.answerInfo = [NSJSONSerialization JSONObjectWithData:answerData options:kNilOptions error:&error];
 }
 
 - (void)correctionAsked {
-    if ([self.givenAnswer isEqualToString:self.answer]) {
-        self.answerMode = MaterialAnswerModeIsCorrect;
+    if ([self.givenAnswer isEqualToString:@""]) {
+        return;
     }
-    else {
-        self.answerMode = MaterialAnswerModeIsNotCorrect;
+    for (NSDictionary * possibleAnswer in self.answerInfo[@"answers"]) {
+        BOOL isMatching = NO;
+        if (![possibleAnswer[@"caseSensitive"] boolValue]) {
+            isMatching = ([self.givenAnswer caseInsensitiveCompare:possibleAnswer[@"value"]] == NSOrderedSame);
+        }
+        else {
+            isMatching = [self.givenAnswer isEqualToString:possibleAnswer[@"value"]];
+        }
+        if (isMatching) {
+            if ([possibleAnswer[@"rang"] integerValue] == 1) {
+                self.answerMode = MaterialAnswerModeIsCorrect;
+            }
+            else if([possibleAnswer[@"rang"] integerValue] == 2) {
+                self.answerMode = MaterialAnswerModeIsAlternative;
+            }
+            else {
+                self.answerMode = MaterialAnswerModeIsNotCorrect;
+            }
+            return;
+        }
     }
+    self.answerMode = MaterialAnswerModeIsNotCorrect;
 }
 
 - (void)solutionAsked {
-    
+    self.givenAnswer = self.answer;
+    if (!(self.answerMode == MaterialAnswerModeIsCorrect)) {
+        self.answerMode = MaterialAnswerModeIsUndefined;
+    }
 }
 
 - (void)restartAsked {
