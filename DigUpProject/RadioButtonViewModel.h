@@ -15,5 +15,5 @@
 @property (nonatomic, strong) NSNumber * selectedID;
 
 - (id)initWithModel:(MaterialModel *)materialModel;
-- (void)viewChanged:(NSNumber *)newState;
+- (void)buttonSelectedOnView;
 @end

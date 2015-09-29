@@ -26,8 +26,8 @@
     return self;
 }
 
-- (void)viewChanged:(NSNumber *)newState {
-    if ([newState isEqualToNumber:@(YES)]) {
+- (void)buttonSelectedOnView {
+    if (![self.selectedID isEqualToNumber:self.materialID]) {
         self.selectedID = self.materialID;
     }
 }

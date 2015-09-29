@@ -10,10 +10,7 @@
 
 @interface RadioButtonView ()
 
-@property (nonatomic) NSNumber * isSelected;
-
 - (void)handleTap:(id)sender;
-
 
 @end
 
@@ -40,33 +37,23 @@
 }
 
 - (void)handleTap:(id)sender {
-        self.isSelected = @YES;
-        [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Selected"] forState: UIControlStateNormal];
+    [self.viewModel buttonSelectedOnView];
 }
 
 - (void)applyModelToView {
-    RACChannelTerminal * viewTerminal = RACChannelTo(self, isSelected);
-    RACChannelTerminal * modelTerminal = RACChannelTo(self.viewModel, selectedID);
-
     @weakify(self)
-    [[modelTerminal map:^id(id value) {
+    [[RACObserve(self.viewModel, selectedID) map:^id(id value) {
         @strongify(self)
-        if ([value isEqualToNumber:self.viewModel.materialID]) {
+        return @([value isEqualToNumber:self.viewModel.materialID]);
+    }]subscribeNext:^(id x) {
+        @strongify(self)
+        if ([x boolValue]) {
             [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Selected"] forState: UIControlStateNormal];
-            return @YES;
         }
         else {
             [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Unselected"] forState: UIControlStateNormal];
-            return @NO;
         }
-    }] subscribe:viewTerminal];
-    
-    [[[viewTerminal filter:^BOOL(id value) {
-        return [value boolValue];
-    }]map:^id(id value) {
-        @strongify(self)
-        return self.viewModel.materialID;
-    }]subscribe:modelTerminal];
+    }];
 }
 
 - (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState {
