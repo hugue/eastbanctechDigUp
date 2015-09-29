@@ -43,7 +43,9 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 @property (nonatomic, strong) DragNDropController * dropController;
 @property (nonatomic, strong) NSNumber * exerciseLoaded;
 @property (nonatomic) enum ExerciseCurrentState currentExerciseState;
+
 @property (nonatomic) float bottomOfView;
+@property (nonatomic) float rightBorderOfView;
 
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;

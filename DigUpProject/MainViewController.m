@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     // Do any additional setup after loading the view, typically from a nib.
     MainViewModel * mainViewModel = [[MainViewModel alloc] init];
     self.viewModel = mainViewModel;
@@ -74,6 +74,18 @@
     NSUInteger x;
     NSUInteger y;
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.scrollView.contentSize.width < self.viewModel.rightBorderOfView) {
+            self.scrollView.contentSize = CGSizeMake(self.viewModel.rightBorderOfView, self.scrollView.frame.size.height);
+        }
+        if (self.scrollView.contentSize.height < self.viewModel.bottomOfView + 100) {
+            self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.viewModel.bottomOfView + 100);
+        }
+        
+        [self configureAudioPlayerView];
+        [self addCorrectionButtons];
+    });
+    
     for (materialView in self.materialsViews) {
         width = materialView.viewModel.materialWidth;
         height = materialView.viewModel.materialHeight;
@@ -81,21 +93,9 @@
         y = materialView.viewModel.position.y;
  
         dispatch_async(dispatch_get_main_queue(), ^{
-    
             [materialView addVisualToView:self.scrollView];
-        
-            if ((width + x) > self.scrollView.contentSize.width) {
-                self.scrollView.contentSize = CGSizeMake((width + x), self.scrollView.frame.size.height);
-            }
-            if ((height + y) > self.scrollView.contentSize.height) {
-                self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, (height + y));
-            }
         });
     }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self configureAudioPlayerView];
-        [self addCorrectionButtons];
-    });
 }
 
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel atIndex:(NSUInteger)index {
@@ -139,8 +139,9 @@
     //Create the audiobar only if there are audio files in the test
     if (self.viewModel.audioController.isNeeded) {
         float positionX = 5.0;
+        float extremRight = MAX(self.scrollView.frame.size.width, self.scrollView.contentSize.width);
         //Main Bar
-        CGRect mainAudioBarFrame = CGRectMake(0.0, self.viewModel.bottomOfView + 50, self.scrollView.frame.size.width, 60);
+        CGRect mainAudioBarFrame = CGRectMake(0.0, self.viewModel.bottomOfView + 60, extremRight, 60);
         UIView * mainAudioBar = [[UIView alloc] initWithFrame:mainAudioBarFrame];
         mainAudioBar.backgroundColor = [UIColor blueColor];
     
@@ -169,10 +170,12 @@
         [controlAudioBar addSubview:playPauseButton];
     
         //Time slider
-        positionX += playPauseButtonFrame.size.width + 5;
-        CGRect audioTimeSliderFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/2, controlAudioBarFrame.size.height);
+        positionX += playPauseButtonFrame.size.width + 10;
+        CGRect audioTimeSliderFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/3, controlAudioBarFrame.size.height);
         UISlider * audioTimeSlider = [[UISlider alloc] initWithFrame:audioTimeSliderFrame];
         audioTimeSlider.backgroundColor = [UIColor clearColor];
+        audioTimeSlider.minimumTrackTintColor = [UIColor whiteColor];
+        audioTimeSlider.maximumTrackTintColor = [UIColor blackColor];
         
         RAC(audioTimeSlider, maximumValue) = RACObserve(self.viewModel.audioController, audioDuration);
     
@@ -190,7 +193,7 @@
         [controlAudioBar addSubview:audioTimeSlider];
     
         //Time Label
-        positionX += audioTimeSliderFrame.size.width + 5;
+        positionX += audioTimeSliderFrame.size.width + 10;
         CGRect timeLableFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/12, controlAudioBarFrame.size.height);
         UILabel * timeLabel = [[UILabel alloc] initWithFrame:timeLableFrame];
         timeLabel.text = @"0:00";
@@ -208,7 +211,7 @@
             });
         }];
         //Volume button
-        positionX += timeLableFrame.size.width + 5;
+        positionX += timeLableFrame.size.width + 10;
         CGRect volumeButtonFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/12, controlAudioBarFrame.size.height);
         UIButton * volumeButton = [[UIButton alloc] initWithFrame:volumeButtonFrame];
         [volumeButton setImage:[UIImage imageNamed:@"HighVolume"] forState:UIControlStateNormal];
@@ -249,7 +252,7 @@
         [controlAudioBar addSubview:volumeButton];
         
         //Volume slider
-        positionX += volumeButtonFrame.size.width + 5;
+        positionX += volumeButtonFrame.size.width + 10;
         CGRect volumeSliderFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/5, controlAudioBarFrame.size.height);
    
         UISlider * volumeSlider = [[UISlider alloc] initWithFrame:volumeSliderFrame];
@@ -257,6 +260,8 @@
         volumeSlider.maximumValue = 1.0;
         volumeSlider.value = 1.0;
         volumeSlider.continuous = YES;
+        volumeSlider.minimumTrackTintColor = [UIColor whiteColor];
+        volumeSlider.maximumTrackTintColor = [UIColor blackColor];
         [volumeSlider addTarget:self action:@selector(volumeValueChanged:) forControlEvents:UIControlEventValueChanged];
         RAC(volumeSlider, value) = RACObserve(self.viewModel.audioController, currentAudioVolum);
     
@@ -289,8 +294,9 @@
 }
 
 - (void)addCorrectionButtons {
+    float extremRight = MAX(self.scrollView.frame.size.width, self.scrollView.contentSize.width);
     //Button Right?
-    CGRect correctionButtonFrame = CGRectMake((self.scrollView.frame.size.width - 80.0), (self.scrollView.frame.size.height - 130.0) , 70.0, 40.0);
+    CGRect correctionButtonFrame = CGRectMake(extremRight - 80.0, (self.viewModel.bottomOfView + 10.0) , 70.0, 40.0);
     UIButton * correctionButton = [[UIButton alloc] initWithFrame:correctionButtonFrame];
     
     [correctionButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
@@ -304,7 +310,7 @@
     [self.scrollView addSubview:correctionButton];
     
     //Button Once again
-    CGRect restartButtonFrame = CGRectMake((self.scrollView.frame.size.width - 190.0), (self.scrollView.frame.size.height - 130.0) , 100.0, 40.0);
+    CGRect restartButtonFrame = CGRectMake((extremRight - 190.0), (self.viewModel.bottomOfView + 10.0) , 100.0, 40.0);
     UIButton * restartButton = [[UIButton alloc] initWithFrame:restartButtonFrame];
     
     [restartButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
@@ -316,7 +322,7 @@
     [restartButton addTarget:self action:@selector(restartExerciseAsked:) forControlEvents:UIControlEventTouchDown];
     
     //Button Solution
-    CGRect solutionButtonFrame = CGRectMake((self.scrollView.frame.size.width - 290.0), (self.scrollView.frame.size.height - 130.0) , 90.0, 40.0);
+    CGRect solutionButtonFrame = CGRectMake((extremRight - 290.0), (self.viewModel.bottomOfView + 10.0) , 90.0, 40.0);
     UIButton * solutionButton = [[UIButton alloc] initWithFrame:solutionButtonFrame];
     
     [solutionButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];

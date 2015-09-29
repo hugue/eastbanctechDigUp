@@ -29,6 +29,7 @@
     self.maxZPosition = 0;
     self.maxTargetZPosition = 0;
     self.bottomOfView = 0;
+    self.rightBorderOfView = 0;
     
     self.webSearcherController  = [[WebSearcherController alloc] init];
     self.webSearcherController.delegate = self;
@@ -113,6 +114,9 @@
     //This attribute is needed to place the audio bar and correction buttons at the right place
     if (self.bottomOfView < (materialViewModel.materialHeight + materialViewModel.position.y)) {
         self.bottomOfView = (materialViewModel.materialHeight + materialViewModel.position.y);
+    }
+    if (self.rightBorderOfView < (materialViewModel.materialWidth + materialViewModel.position.x)) {
+        self.rightBorderOfView = (materialViewModel.materialWidth + materialViewModel.position.x);
     }
     
     return materialViewModel;
