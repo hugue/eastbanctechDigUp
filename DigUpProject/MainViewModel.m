@@ -113,6 +113,12 @@
     
 }
 
+- (void)playPauseAudioChangedOnView {
+    if (self.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
+        [self.audioController playPauseChangedOnView];
+    }
+}
+
 - (void)parseExercise {
     if (self.currentExercise == nil) {
         NSLog(@"Error, no exercise found");
@@ -158,6 +164,7 @@
 
 - (void)restartExerciseAsked {
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
+    [self.audioController restartAsked];
     [self restartingDragNDrop];
     [self restartingSelfCorrectingMaterials];
 }

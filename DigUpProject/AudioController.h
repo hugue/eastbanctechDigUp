@@ -13,7 +13,6 @@
 @interface AudioController : NSObject
 
 @property (nonatomic, strong) NSNumber * beingPlayedID;
-//@property (nonatomic, strong) NSMutableDictionary<NSNumber *, AudioViewModel *> * audioPlayers;
 @property (nonatomic, strong) AudioViewModel * currentlyPlaying;
 
 @property (nonatomic) long currentAudioTime;
@@ -29,5 +28,8 @@
 - (void)stopCurrentAudio;
 
 - (void)setTimeCurrentAudio:(long)currentAudioTime;
+- (void)playPauseChangedOnView;
+
+- (void)restartAsked;
 
 @end

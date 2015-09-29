@@ -50,10 +50,11 @@
         @strongify(self);
         if ([x isEqualToNumber:audio.materialID]) {
             [self stopCurrentAudio];
+            
             self.currentlyPlaying = audio;
             self.currentAudioVolum = audio.audioPlayer.volume;
             self.audioDuration = floor(audio.audioPlayer.duration);
-            [audio.audioPlayer play];
+            [self playCurrentAudio];
         }
     }]subscribe:controllerTerminal];
   
@@ -73,7 +74,7 @@
             self.audioDuration = audio.audioPlayer.duration;
             
             if (audio.autoPlay) {
-                [audio.audioPlayer play];
+                [self playCurrentAudio];
             }
         }];
     }
@@ -91,14 +92,35 @@
 
 - (void)pauseCurrentAudio {
     [self.currentlyPlaying.audioPlayer pause];
+    self.isPlaying = NO;
 }
 
 - (void)stopCurrentAudio {
     [self.currentlyPlaying.audioPlayer stop];
+    self.isPlaying = NO;
 }
 
 - (void)playCurrentAudio {
     [self.currentlyPlaying.audioPlayer play];
+    self.isPlaying = YES;
+}
+
+- (void)playPauseChangedOnView {
+    if (self.isPlaying) {
+        [self pauseCurrentAudio];
+    }
+    else {
+        [self playCurrentAudio];
+    }
+}
+
+- (void)restartAsked {
+    self.currentlyPlaying = nil;
+    self.audioDuration = 0;
+    self.currentAudioVolum = 1.0;
+    self.currentAudioTime = 0;
+    self.isPlaying = NO;
+    self.beingPlayedID = @0;
 }
 
 @end

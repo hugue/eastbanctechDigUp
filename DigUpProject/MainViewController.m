@@ -159,6 +159,17 @@
         [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
         [self.playPauseButton addTarget:self action:@selector(playPauseButtonClicked:) forControlEvents:UIControlEventTouchDown];
         self.playPauseButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+        
+        @weakify(self)
+        [RACObserve(self.viewModel.audioController, isPlaying) subscribeNext:^(id x) {
+            @strongify(self)
+            if ([x boolValue]) {
+                [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
+            }
+            else {
+                [self.playPauseButton setImage:[UIImage imageNamed:@"Play_Button"] forState:UIControlStateNormal];
+            }
+        }];
     
         [controlAudioBar addSubview:self.playPauseButton];
     
@@ -172,9 +183,9 @@
         RACChannelTerminal * sliderTerminal = [audioTimeSlider rac_newValueChannelWithNilValue:@0];
         RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
    
-        @weakify(self);
+        
         [[[sliderTerminal doNext:^(id x) {
-            @strongify(self);
+            @strongify(self)
             [self.viewModel.audioController setTimeCurrentAudio:audioTimeSlider.value];
         } ]distinctUntilChanged]subscribe:modelTerminal];
         
@@ -225,13 +236,7 @@
 }
 
 - (void)playPauseButtonClicked:(UIButton *)sender {
-    BOOL isPlaying = [self.viewModel audioBarTapped];
-    if(isPlaying) {
-        [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
-    }
-    else {
-        [self.playPauseButton setImage:[UIImage imageNamed:@"Play_Button"] forState:UIControlStateNormal];
-    }
+    [self.viewModel playPauseAudioChangedOnView];
 }
 
 - (void)addCorrectionButtons {

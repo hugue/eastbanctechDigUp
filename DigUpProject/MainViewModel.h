@@ -45,5 +45,6 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
 - (void)correctionAsked;
 - (void)restartExerciseAsked;
 - (void)solutionAsked;
+- (void)playPauseAudioChangedOnView;
 
 @end
