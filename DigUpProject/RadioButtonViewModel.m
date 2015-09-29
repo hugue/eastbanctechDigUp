@@ -31,4 +31,31 @@
         self.selectedID = self.materialID;
     }
 }
+
+- (void)correctionAsked {
+    if ([self.selectedID isEqualToNumber:self.materialID] && self.isTrue) {
+        self.answerState = MaterialAnswerStateIsCorrect;
+    }
+    else if ([self.selectedID isEqualToNumber:self.materialID] && (!self.isTrue)) {
+        self.answerState = MaterialAnswerStateIsNotCorrect;
+    }
+    else  {
+        self.answerState = MaterialAnswerStateIsUndefined;
+    }
+}
+
+- (void)solutionAsked {
+    if (self.answerState == MaterialAnswerStateIsNotCorrect) {
+        self.answerState = MaterialAnswerStateIsUndefined;
+    }
+    else if (self.isTrue && (self.answerState == MaterialAnswerStateIsUndefined)) {
+        self.selectedID = self.materialID;
+    }
+}
+
+- (void)restartAsked {
+    self.selectedID = @0;
+    self.answerState = MaterialAnswerStateIsTesting;
+}
+
 @end

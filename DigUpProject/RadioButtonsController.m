@@ -49,30 +49,4 @@
     }] subscribe:controllerTerminal];
 }
 
-- (void)correctionAsked{
-    if(self.currentlyClikedButton) {
-        if(self.currentlyClikedButton.isTrue) {
-            self.currentlyClikedButton.answerState = MaterialAnswerStateIsCorrect;
-        }
-        else {
-            self.currentlyClikedButton.answerState = MaterialAnswerStateIsNotCorrect;
-        }
-    }
-}
-
-- (void)restartAsked {
-    if (self.currentlyClikedButton) {
-        self.currentlyClikedButton.answerState = MaterialAnswerStateIsUndefined;
-        self.currentlySelectedButtonID = @0;
-        self.currentlyClikedButton = nil;
-    }
-}
-
-- (void)solutionAsked {
-    if (self.currentlyClikedButton.answerState == MaterialAnswerStateIsNotCorrect) {
-        self.currentlyClikedButton.answerState = MaterialAnswerStateIsUndefined;
-        self.currentlySelectedButtonID = self.correctButtonID;
-    }
-}
-
- @end
+@end

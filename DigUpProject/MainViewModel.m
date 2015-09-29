@@ -80,6 +80,8 @@
         }
         [newButtonController addNewRadioButton:materialViewModel];
         [self processDragNDropElement:materialViewModel];
+        [self.selfCorrectingMaterials addObject:materialViewModel];
+        
         return materialViewModel;
     }
     else if ([type isEqualToString:@"Rectangle"]) {
@@ -161,45 +163,23 @@
 
 - (void)restartExerciseAsked {
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
-    [self restartingButtonsControllers];
     [self restartingDragNDrop];
     [self restartingSelfCorrectingMaterials];
 }
 
 - (void)correctionAsked {
     self.currentExerciseState = ExerciseCurrentStateCorrectionAsked;
-    [self correctingButtonsControllers];
     [self correctingDragNDrop];
     [self correctingSelfCorrectingMaterials];
 }
 
 - (void)solutionAsked {
     self.currentExerciseState = ExerciseCurrentStateSolutionAsked;
-    [self displayingSolutionForButtonsControllers];
     [self displayingSolutionForDragNDrop];
     [self displayingSolutionSelfCorrectingMaterials];
 }
 
 //Correcting functions for different materials
-//Radio Buttons
-- (void)correctingButtonsControllers {
-    for (NSString * controllerID in self.buttonControllers.allKeys) {
-        [self.buttonControllers[controllerID] correctionAsked];
-    }
-}
-
-- (void)restartingButtonsControllers {
-    for (NSString * controllerID in self.buttonControllers.allKeys) {
-        [self.buttonControllers[controllerID] restartAsked];
-    }
-}
-
-- (void)displayingSolutionForButtonsControllers {
-    for (NSString * controllerID in self.buttonControllers.allKeys) {
-        [self.buttonControllers[controllerID] solutionAsked];
-    }
-}
-
 //DragNDrop
 - (void)correctingDragNDrop {
     [self.dropController correctionAsked];

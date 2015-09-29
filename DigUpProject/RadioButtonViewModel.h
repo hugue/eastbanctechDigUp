@@ -16,4 +16,8 @@
 
 - (id)initWithModel:(MaterialModel *)materialModel;
 - (void)buttonSelectedOnView;
+- (void)correctionAsked;
+- (void)solutionAsked;
+- (void)restartAsked;
+
 @end
