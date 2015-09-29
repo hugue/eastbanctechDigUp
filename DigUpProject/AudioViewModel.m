@@ -31,8 +31,10 @@
     [self downLoadAudioWithBlobId:self.blobID];
 }
 
-- (void)handleTap {
-    self.selectedID = self.materialID;
+- (void)audioSelectedOnView {
+    if (![self.selectedID isEqualToNumber:self.materialID]) {
+        self.selectedID = self.materialID;
+    }    
 }
 
 - (void)downLoadAudioWithBlobId:(NSNumber *)audioBlobId {

@@ -23,7 +23,7 @@
 @property (nonatomic) BOOL autoPlay;
 
 - (id)initWithModel:(MaterialModel *)materialModel;
-- (void)handleTap;
+- (void)audioSelectedOnView;
 - (void)correctionAsked;
 - (void)solutionAsked;
 - (void)restartAsked;

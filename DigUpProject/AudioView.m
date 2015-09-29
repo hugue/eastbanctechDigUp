@@ -9,11 +9,10 @@
 #import "AudioView.h"
 @interface AudioView ()
 
-@property (nonatomic, strong) NSNumber * isSelected;
-
 @end
 
 @implementation AudioView
+
 @dynamic viewDisplayed;
 @dynamic viewModel;
 
@@ -21,7 +20,6 @@
 - (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
-        self.isSelected = @NO;
         if (self.viewModel.showAudioSymbol) {
             CGRect  frame =  CGRectMake(self.viewModel.position.x ,
                                         self.viewModel.position.y,
@@ -40,9 +38,7 @@
 }
 
 - (void)handleTap:(id)sender {
-    [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Selected"] forState: UIControlStateNormal];
-    self.isSelected = @YES;
-    
+    [self.viewModel audioSelectedOnView];
 }
 
 - (void)applyModelToView {
@@ -53,28 +49,20 @@
         NSLog(@"File downloaded");
     }];
     
-    RACChannelTerminal * viewTerminal = RACChannelTo(self, isSelected);
-    RACChannelTerminal * modelTerminal = RACChannelTo(self.viewModel, selectedID);
-    
     @weakify(self)
-    [[modelTerminal map:^id(id value) {
+    [[RACObserve(self.viewModel, selectedID) map:^id(id value) {
         @strongify(self)
-        if ([value isEqualToNumber:self.viewModel.materialID]) {
+        return @([value isEqualToNumber:self.viewModel.materialID]);
+    }]subscribeNext:^(id x) {
+        @strongify(self)
+        if ([x boolValue]) {
             [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Selected"] forState: UIControlStateNormal];
-            return @YES;
         }
         else {
             [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Unselected"] forState: UIControlStateNormal];
-            return @NO;
         }
-    }]subscribe:viewTerminal];
-    
-    [[[viewTerminal filter:^BOOL(id value) {
-        return [value boolValue];
-    }]map:^id(id value) {
-        @strongify(self)
-        return self.viewModel.materialID;
-    }]subscribe:modelTerminal];
+    }];
+
 }
 
 - (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState {
