@@ -36,25 +36,25 @@
 }
 
 - (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial {
-    //[self.droppedElements addObject:draggedMaterial];
     draggedMaterial.position = self.posForDraggedMaterial;
     //Update the position for next dragged element
     self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y + draggedMaterial.materialHeight);
 }
 
-/*
-- (void)removeDroppedElement:(MaterialViewModel *)removedElement {
-    int index = [self.droppedElements indexOfObjectIdenticalTo:removedElement];
-    float removedHeight = removedElement.materialHeight;
-    for (int i = index +1; i < self.droppedElements.count; i++) {
-        self.droppedElements[i].position = CGPointMake(self.droppedElements[i].position.x, self.droppedElements[i].position.y - removedHeight);
-    }
-    self.posForDraggedMaterial = CGPointMake(self.posForDraggedMaterial.x, self.posForDraggedMaterial.y - removedHeight);
-    [self.droppedElements removeObject:removedElement];
-}
-*/
 - (void)resetPosition {
     self.position = CGPointMake([self.material.X floatValue], [self.material.Y floatValue]);
+}
+
+- (void)correctionAsked {
+    
+}
+
+- (void)solutionAsked {
+    
+}
+
+- (void)restartAsked {
+    
 }
 
 @end

@@ -27,15 +27,12 @@
     self.audioURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
     self.showAudioSymbol = [self.material.Show boolValue];
     self.autoPlay = [self.material.Autoplay boolValue];
-    NSLog(@"Show symbol - %@", self.material.Show);
     
     [self downLoadAudioWithBlobId:self.blobID];
 }
 
 - (void)handleTap {
-    NSLog (@"Now SelectedID : %@, materialID : %@", self.selectedID, self.materialID);
     self.selectedID = self.materialID;
-    NSLog (@"Then SelectedID : %@, materialID : %@", self.selectedID, self.materialID);
 }
 
 - (void)downLoadAudioWithBlobId:(NSNumber *)audioBlobId {
@@ -52,6 +49,21 @@
     }
 }
 
+- (void)solutionAsked {
+    
+}
+
+- (void)correctionAsked {
+    self.answerState = MaterialAnswerStateIsUndefined;
+}
+
+- (void)restartAsked {
+    self.audioPlayer.currentTime = 0;
+    self.audioPlayer.volume = 1.0;
+    self.selectedID = @0;
+    self.answerState = MaterialAnswerStateIsTesting;
+}
+
 #pragma mark - NSURLSession delegate methods
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
@@ -62,7 +74,6 @@
     self.audioLoaded = @YES;
 
 }
-
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
 }
@@ -77,6 +88,5 @@ didCompleteWithError:(nullable NSError *)error {
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes {
     
 }
-
 
 @end

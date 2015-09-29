@@ -24,5 +24,8 @@
 
 - (id)initWithModel:(MaterialModel *)materialModel;
 - (void)handleTap;
+- (void)correctionAsked;
+- (void)solutionAsked;
+- (void)restartAsked;
 
 @end

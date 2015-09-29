@@ -77,5 +77,15 @@
     }]subscribe:modelTerminal];
 }
 
+- (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState {
+    [super applyBorderStyleForAnswerState:materialAnswerState];
+    if (materialAnswerState == MaterialAnswerStateIsTesting) {
+        self.viewDisplayed.enabled = YES;
+    }
+    else {
+        self.viewDisplayed.enabled = NO;
+    }
+}
+
 
 @end

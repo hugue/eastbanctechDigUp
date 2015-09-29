@@ -26,6 +26,8 @@
 - (void)addNewAudio:(AudioViewModel *)audio;
 - (void)pauseCurrentAudio;
 - (void)playCurrentAudio;
+- (void)stopCurrentAudio;
+
 - (void)setTimeCurrentAudio:(long)currentAudioTime;
 
 @end

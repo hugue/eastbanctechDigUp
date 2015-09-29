@@ -63,7 +63,6 @@
     MaterialViewModel * materialViewModel;
     if ([type isEqualToString:@"Text"]) {
         materialViewModel = [[MaterialViewModel alloc] initWithModel:materialModel];
-        //return materialViewModel;
     }
     else if ([type isEqualToString:@"RadioButton"]) {
         RadioButtonViewModel * materialViewModel = [[RadioButtonViewModel alloc] initWithModel:materialModel];
@@ -86,25 +85,22 @@
     }
     else if ([type isEqualToString:@"Rectangle"]) {
         materialViewModel = [[MaterialViewModel alloc] initWithModel:materialModel];
-        //return materialViewModel;
     }
     else if ([type isEqualToString:@"Image"]) {
         materialViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
-        //return materialViewModel;
     }
     else if ([type isEqualToString:@"InputField"]) {
         materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
         [self.selfCorrectingMaterials addObject:materialViewModel];
-        //return materialViewModel;
     }
     else if ([type isEqualToString:@"Audio"]) {
         materialViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:(AudioViewModel *) materialViewModel];
+        [self.selfCorrectingMaterials addObject:materialViewModel];
     }
     else if([type isEqualToString:@"CheckBox"]) {
         materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
         [self.selfCorrectingMaterials addObject:materialViewModel];
-        //return materialViewModel;
     }
 
     else {
@@ -123,7 +119,6 @@
         return;
     }
     NSUInteger numberMaterials = self.currentExercise.materialsObject.count;
-   // [self.materialsModels removeAllObjects];
     for (int i = 0; i < numberMaterials; i++) {
         MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:self.currentExercise.materialsObject[i]];
         [self.materialsModels addObject:materialViewModel];
@@ -169,6 +164,7 @@
 
 - (void)correctionAsked {
     self.currentExerciseState = ExerciseCurrentStateCorrectionAsked;
+    [self.audioController stopCurrentAudio];
     [self correctingDragNDrop];
     [self correctingSelfCorrectingMaterials];
 }
