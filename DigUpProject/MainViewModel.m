@@ -28,6 +28,7 @@
     
     self.maxZPosition = 0;
     self.maxTargetZPosition = 0;
+    self.bottomOfView = 0;
     
     self.webSearcherController  = [[WebSearcherController alloc] init];
     self.webSearcherController.delegate = self;
@@ -109,8 +110,22 @@
     
     [self processDragNDropElement:materialViewModel];
     
+    //This attribute is needed to place the audio bar and correction buttons at the right place
+    if (self.bottomOfView < (materialViewModel.materialHeight + materialViewModel.position.y)) {
+        self.bottomOfView = (materialViewModel.materialHeight + materialViewModel.position.y);
+    }
+    
     return materialViewModel;
     
+}
+
+- (void)volumeAudioChangedOnViewByButton {
+    if (self.audioController.currentAudioVolum == 0) {
+        self.audioController.currentAudioVolum = 1.0;
+    }
+    else {
+        self.audioController.currentAudioVolum = 0;
+    }
 }
 
 - (void)playPauseAudioChangedOnView {

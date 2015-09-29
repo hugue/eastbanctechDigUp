@@ -16,8 +16,6 @@
 @property (nonatomic, strong) UITextField * activeField;
 @property (nonatomic) long currentAudioTime;
 
-@property (nonatomic, strong) UIButton * playPauseButton;
-
 @end
 
 @implementation MainViewController
@@ -102,7 +100,6 @@
 
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel atIndex:(NSUInteger)index {
     NSString * type = materialViewModel.material.Type;
-    NSLog(@"Creating new view : %@", type);
         
     if ([type isEqualToString:@"Text"]) {
         TextFrameView * textLabel = [[TextFrameView alloc] initWithViewModel: materialViewModel];
@@ -141,40 +138,39 @@
     self.currentAudioTime = 0;
     //Create the audiobar only if there are audio files in the test
     if (self.viewModel.audioController.isNeeded) {
+        float positionX = 5.0;
         //Main Bar
-        CGRect mainAudioBarFrame = CGRectMake(0.0, self.scrollView.frame.size.height - 80, self.scrollView.frame.size.width, 60);
+        CGRect mainAudioBarFrame = CGRectMake(0.0, self.viewModel.bottomOfView + 50, self.scrollView.frame.size.width, 60);
         UIView * mainAudioBar = [[UIView alloc] initWithFrame:mainAudioBarFrame];
         mainAudioBar.backgroundColor = [UIColor blueColor];
     
         //Control Bar
-        CGRect controlAudioBarFrame = CGRectMake(10.0, 5, 500, 50);
+        CGRect controlAudioBarFrame = CGRectMake(10.0, 5, mainAudioBarFrame.size.width/1.5, 50);
         UIView * controlAudioBar = [[UIView alloc] initWithFrame:controlAudioBarFrame];
-        controlAudioBar.layer.cornerRadius = 20.0;
+        controlAudioBar.layer.cornerRadius = 10.0;
         controlAudioBar.layer.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8].CGColor;
     
         //Play-Pause button
-        CGRect playPauseButtonFrame = CGRectMake(0.0, 0.0, 50,controlAudioBarFrame.size.height);
-        self.playPauseButton = [[UIButton alloc] initWithFrame:playPauseButtonFrame];
+        CGRect playPauseButtonFrame = CGRectMake(positionX, 0.0, controlAudioBarFrame.size.width/10, controlAudioBarFrame.size.height);
+        UIButton * playPauseButton = [[UIButton alloc] initWithFrame:playPauseButtonFrame];
     
-        [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
-        [self.playPauseButton addTarget:self action:@selector(playPauseButtonClicked:) forControlEvents:UIControlEventTouchDown];
-        self.playPauseButton.layer.backgroundColor = [UIColor whiteColor].CGColor;
+        [playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
+        [playPauseButton addTarget:self action:@selector(playPauseButtonClicked:) forControlEvents:UIControlEventTouchDown];
         
-        @weakify(self)
         [RACObserve(self.viewModel.audioController, isPlaying) subscribeNext:^(id x) {
-            @strongify(self)
             if ([x boolValue]) {
-                [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
+                [playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
             }
             else {
-                [self.playPauseButton setImage:[UIImage imageNamed:@"Play_Button"] forState:UIControlStateNormal];
+                [playPauseButton setImage:[UIImage imageNamed:@"Play_Button"] forState:UIControlStateNormal];
             }
         }];
     
-        [controlAudioBar addSubview:self.playPauseButton];
+        [controlAudioBar addSubview:playPauseButton];
     
         //Time slider
-        CGRect audioTimeSliderFrame = CGRectMake(55, 0, 200, controlAudioBarFrame.size.height);
+        positionX += playPauseButtonFrame.size.width + 5;
+        CGRect audioTimeSliderFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/2, controlAudioBarFrame.size.height);
         UISlider * audioTimeSlider = [[UISlider alloc] initWithFrame:audioTimeSliderFrame];
         audioTimeSlider.backgroundColor = [UIColor clearColor];
         
@@ -183,7 +179,7 @@
         RACChannelTerminal * sliderTerminal = [audioTimeSlider rac_newValueChannelWithNilValue:@0];
         RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
    
-        
+        @weakify(self)
         [[[sliderTerminal doNext:^(id x) {
             @strongify(self)
             [self.viewModel.audioController setTimeCurrentAudio:audioTimeSlider.value];
@@ -194,7 +190,8 @@
         [controlAudioBar addSubview:audioTimeSlider];
     
         //Time Label
-        CGRect timeLableFrame = CGRectMake(260, 0, 75, controlAudioBarFrame.size.height);
+        positionX += audioTimeSliderFrame.size.width + 5;
+        CGRect timeLableFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/12, controlAudioBarFrame.size.height);
         UILabel * timeLabel = [[UILabel alloc] initWithFrame:timeLableFrame];
         timeLabel.text = @"0:00";
         timeLabel.textColor = [UIColor whiteColor];
@@ -210,9 +207,50 @@
                 timeLabel.text = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
             });
         }];
-    
-        //Volum slider
-        CGRect volumeSliderFrame = CGRectMake(340, 0, 150, controlAudioBarFrame.size.height);
+        //Volume button
+        positionX += timeLableFrame.size.width + 5;
+        CGRect volumeButtonFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/12, controlAudioBarFrame.size.height);
+        UIButton * volumeButton = [[UIButton alloc] initWithFrame:volumeButtonFrame];
+        [volumeButton setImage:[UIImage imageNamed:@"HighVolume"] forState:UIControlStateNormal];
+        
+        [[[RACObserve(self.viewModel.audioController, currentAudioVolum) map:^id(id value) {
+                if ([value floatValue] == 0) {
+                    return @(AudioVolumeIntervalMute);
+                }
+                else if (([value floatValue] <= 0.75) && ([value floatValue] > 0.35)) {
+                    return @(AudioVolumeIntervalMedium);
+                }
+                else if (([value floatValue] <= 0.35) && ([value floatValue] > 0)) {
+                    return @(AudioVolumeIntervalLow);
+                }
+                else {
+                    return @(AudioVolumeIntervalHigh);
+                }
+            }
+        ] distinctUntilChanged] subscribeNext:^(id x) {
+            switch ([x integerValue]) {
+                case AudioVolumeIntervalHigh:
+                    [volumeButton setImage:[UIImage imageNamed:@"HighVolume"] forState:UIControlStateNormal];
+                    break;
+                case AudioVolumeIntervalMedium:
+                    [volumeButton setImage:[UIImage imageNamed:@"MediumVolume"] forState:UIControlStateNormal];
+                    break;
+                case AudioVolumeIntervalLow:
+                    [volumeButton setImage:[UIImage imageNamed:@"LowVolume"] forState:UIControlStateNormal];
+                    break;
+                case AudioVolumeIntervalMute:
+                    [volumeButton setImage:[UIImage imageNamed:@"MuteVolume"] forState:UIControlStateNormal];
+                    break;
+                default:
+                    break;
+            }
+        }];
+        [volumeButton addTarget:self action:@selector(volumeValueChangedByButton:) forControlEvents:UIControlEventTouchDown];
+        [controlAudioBar addSubview:volumeButton];
+        
+        //Volume slider
+        positionX += volumeButtonFrame.size.width + 5;
+        CGRect volumeSliderFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/5, controlAudioBarFrame.size.height);
    
         UISlider * volumeSlider = [[UISlider alloc] initWithFrame:volumeSliderFrame];
         volumeSlider.backgroundColor = [UIColor clearColor];
@@ -224,15 +262,26 @@
     
         [controlAudioBar addSubview:volumeSlider];
     
-        [mainAudioBar addSubview:controlAudioBar];
         [self.scrollView addSubview:mainAudioBar];
-
+        
+        //Add the control audio bar only if an audio file is selected
+        [RACObserve(self.viewModel.audioController, currentlyPlaying) subscribeNext:^(id x) {
+            if (x) {
+                [mainAudioBar addSubview:controlAudioBar];
+            }
+            else {
+                [controlAudioBar removeFromSuperview];
+            }
+        }];
     }
-    
 }
 
 - (void)volumeValueChanged:(UISlider *)sender {
     self.viewModel.audioController.currentAudioVolum = sender.value;
+}
+
+- (void)volumeValueChangedByButton:(UIButton *) sender {
+    [self.viewModel volumeAudioChangedOnViewByButton];
 }
 
 - (void)playPauseButtonClicked:(UIButton *)sender {
@@ -425,5 +474,8 @@
     self.activeField = textField;
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    NSLog(@"Screen turned");
+}
 
 @end

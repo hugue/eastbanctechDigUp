@@ -25,6 +25,13 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
     ExerciseCurrentStateSolutionAsked
 };
 
+typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
+    AudioVolumeIntervalMute,
+    AudioVolumeIntervalLow,
+    AudioVolumeIntervalMedium,
+    AudioVolumeIntervalHigh
+};
+
 @interface MainViewModel : NSObject <WebSearcherControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
@@ -36,6 +43,7 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
 @property (nonatomic, strong) DragNDropController * dropController;
 @property (nonatomic, strong) NSNumber * exerciseLoaded;
 @property (nonatomic) enum ExerciseCurrentState currentExerciseState;
+@property (nonatomic) float bottomOfView;
 
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;
@@ -46,5 +54,6 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
 - (void)restartExerciseAsked;
 - (void)solutionAsked;
 - (void)playPauseAudioChangedOnView;
+- (void)volumeAudioChangedOnViewByButton;
 
 @end
