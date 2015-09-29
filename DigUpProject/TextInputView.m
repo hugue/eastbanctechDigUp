@@ -22,9 +22,11 @@
                                     self.viewModel.materialHeight);
         
         self.viewDisplayed = [[UITextField alloc] initWithFrame:frame];
-        self.viewDisplayed.clearButtonMode = UITextFieldViewModeAlways;
+       //self.viewDisplayed.clearButtonMode = UITextFieldViewModeAlways;
         self.viewDisplayed.layer.borderColor = [UIColor grayColor].CGColor;
         self.viewDisplayed.layer.borderWidth = 1.0f;
+        
+        [self applyStyle:self.viewModel.material.Style toTextField:self.viewDisplayed];
         [self applyModelToView];
     }
     return self;
@@ -56,4 +58,22 @@
     }
 }
 
+- (void)applyStyle:(NSString *)style toTextField:(UITextField *) textField{
+    if ([style isEqualToString:@"paragraph-small"]) {
+        textField.textAlignment = NSTextAlignmentLeft;
+        [textField setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:12]];
+    }
+    else if ([style isEqualToString:@"paragraph-right"]) {
+        textField.textAlignment = NSTextAlignmentRight;
+        [textField setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+    }
+    else if ([style isEqualToString:@"paragraph-center"]) {
+        textField.textAlignment = NSTextAlignmentCenter;
+        [textField setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+    }
+    else {
+        textField.textAlignment = NSTextAlignmentLeft;
+        [textField setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+    }
+}
 @end

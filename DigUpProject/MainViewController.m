@@ -138,7 +138,7 @@
     self.currentAudioTime = 0;
     //Create the audiobar only if there are audio files in the test
     if (self.viewModel.audioController.isNeeded) {
-        float positionX = 5.0;
+        float positionX = 10.0;
         float extremRight = MAX(self.scrollView.frame.size.width, self.scrollView.contentSize.width);
         //Main Bar
         CGRect mainAudioBarFrame = CGRectMake(0.0, self.viewModel.bottomOfView + 60, extremRight, 60);

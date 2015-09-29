@@ -27,8 +27,10 @@
 - (void)initialize {
     self.answer = self.material.Value;
     NSError * error;
-    NSData * answerData = [self.material.Text dataUsingEncoding:NSUTF8StringEncoding];
-    self.answerInfo = [NSJSONSerialization JSONObjectWithData:answerData options:kNilOptions error:&error];
+    if (self.material.Text) {
+        NSData * answerData = [self.material.Text dataUsingEncoding:NSUTF8StringEncoding];
+        self.answerInfo = [NSJSONSerialization JSONObjectWithData:answerData options:kNilOptions error:&error];
+    }
 }
 
 - (void)correctionAsked {

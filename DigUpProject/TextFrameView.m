@@ -39,23 +39,24 @@
         if(htmlError) {
             NSLog(@"Unable to parse label text: %@", htmlError);
         }
-        [self configureText];
+        [self applyStyle:self.viewModel.material.Style toLabel:self.viewDisplayed];
     }
     return self;
 }
 
-- (void)configureText {
-    //Analyse text style
-    if ([self.textStyle isEqualToString:@"text-u1"]) {
-        [self.viewDisplayed setFont:[UIFont fontWithName:@"ForwardSans-Bold" size:18]];
-        self.viewDisplayed.textColor = [UIColor blueColor];
+-(void)applyStyle:(NSString *)style toLabel:(UILabel *)label {
+    if ([style isEqualToString:@"text-u1"]) {
+        [label setFont:[UIFont fontWithName:@"ForwardSans-Bold" size:18]];
+        label.textColor = [UIColor blueColor];
     }
-    else if([self.textStyle isEqualToString:@"text-number_big"]) {
-        [self.viewDisplayed setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:50]];
-        //self.viewDisplayed.textColor = [UIColor blueColor];
+    else if([style isEqualToString:@"text-number_big"]) {
+        [label setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:50]];
+        //label.textColor = [UIColor blueColor];
     }
-    else if([self.textStyle isEqualToString:@""]) {
-        [self.viewDisplayed setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+    else if([style isEqualToString:@""]) {
+        [label setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
     }
+
 }
+
 @end
