@@ -8,7 +8,7 @@
 
 #import "AudioView.h"
 @interface AudioView ()
-
+@property (nonatomic, weak) UIActivityIndicatorView  * downloadingIndicator;
 @end
 
 @implementation AudioView
@@ -28,7 +28,7 @@
         
             self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
             [self.viewDisplayed setImage:[UIImage imageNamed:@"Audio-Unselected"] forState: UIControlStateNormal];
-        
+            self.viewDisplayed.enabled = NO;
             //Initializing the real button
             [self.viewDisplayed addTarget:self action:@selector(handleTap:) forControlEvents:UIControlEventTouchUpInside];
             [self applyModelToView];
@@ -43,10 +43,10 @@
 
 - (void)applyModelToView {
     RACSignal * audioLoadedSignal = RACObserve(self.viewModel, audioLoaded);
-    [[audioLoadedSignal filter:^BOOL(id value) {
+    [[[audioLoadedSignal filter:^BOOL(id value) {
         return [value boolValue];
-    }]subscribeNext:^(id x) {
-        NSLog(@"File downloaded");
+    }] take: 1] subscribeNext:^(id x) {
+        self.viewDisplayed.enabled = YES;
     }];
     
     @weakify(self)
