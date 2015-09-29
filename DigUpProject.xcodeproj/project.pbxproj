@@ -11,7 +11,6 @@
 		F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */; };
 		F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41001BAFFBB200F5A903 /* CheckBoxView.m */; };
 		F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41031BB00A8600F5A903 /* ImageViewModel.m */; };
-		F3E01F701BA170EB005028A4 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3E01F6F1BA170EB005028A4 /* exo.json */; };
 		F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F721BA175F4005028A4 /* MaterialViewModel.m */; };
 		F3E01F761BA179CC005028A4 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F751BA179CC005028A4 /* MainViewModel.m */; };
 		F3E01F791BA179F1005028A4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F781BA179F1005028A4 /* MainViewController.m */; };
@@ -38,6 +37,7 @@
 		F3ECBEC61B9D546C0000A656 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEBC1B9D546C0000A656 /* JSONValueTransformer.m */; };
 		F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */; };
 		F3ECBECF1B9D814B0000A656 /* ExerciceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */; };
+		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
 		F3F487091BA7D8E900FCA8A6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
@@ -99,7 +99,6 @@
 		F33D41001BAFFBB200F5A903 /* CheckBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxView.m; sourceTree = "<group>"; };
 		F33D41021BB00A8600F5A903 /* ImageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewModel.h; sourceTree = "<group>"; };
 		F33D41031BB00A8600F5A903 /* ImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewModel.m; sourceTree = "<group>"; };
-		F3E01F6F1BA170EB005028A4 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = ../exo.json; sourceTree = "<group>"; };
 		F3E01F711BA175F4005028A4 /* MaterialViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewModel.h; sourceTree = "<group>"; };
 		F3E01F721BA175F4005028A4 /* MaterialViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewModel.m; sourceTree = "<group>"; };
 		F3E01F741BA179CC005028A4 /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
@@ -153,6 +152,7 @@
 		F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialModel.m; sourceTree = "<group>"; };
 		F3ECBECD1B9D814B0000A656 /* ExerciceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciceModel.h; sourceTree = "<group>"; };
 		F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciceModel.m; sourceTree = "<group>"; };
+		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
 		F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Regular.otf"; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		F3ECBE611B9D452E0000A656 = {
 			isa = PBXGroup;
 			children = (
-				F3E01F6F1BA170EB005028A4 /* exo.json */,
+				F3F320A81BBA6B560029F565 /* exo.json */,
 				F3ECBE6C1B9D452E0000A656 /* DigUpProject */,
 				F3ECBE861B9D452E0000A656 /* DigUpProjectTests */,
 				F3ECBE911B9D452E0000A656 /* DigUpProjectUITests */,
@@ -570,9 +570,9 @@
 			files = (
 				F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */,
 				F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */,
+				F3F320A91BBA6B560029F565 /* exo.json in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,
 				F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */,
-				F3E01F701BA170EB005028A4 /* exo.json in Resources */,
 				F3ECBE781B9D452E0000A656 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
