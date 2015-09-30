@@ -67,7 +67,7 @@
 
 - (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState {
     [super applyBorderStyleForAnswerState:materialAnswerState];
-    if (materialAnswerState == MaterialAnswerStateIsTesting) {
+    if (materialAnswerState == MaterialAnswerStateIsTesting && self.viewModel.audioLoaded) {
         self.viewDisplayed.enabled = YES;
     }
     else {

@@ -84,6 +84,9 @@
     if (self.currentlyPlaying.audioPlayer.isPlaying) {
         self.currentAudioTime = self.currentlyPlaying.audioPlayer.currentTime;
     }
+    else if (!self.currentlyPlaying.audioPlayer.isPlaying) {
+        self.isPlaying = NO;
+    }
 }
 
 - (void)setTimeCurrentAudio:(long)currentAudioTime {
