@@ -37,6 +37,7 @@
 		F3ECBEC61B9D546C0000A656 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEBC1B9D546C0000A656 /* JSONValueTransformer.m */; };
 		F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */; };
 		F3ECBECF1B9D814B0000A656 /* ExerciceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */; };
+		F3F1ED6E1BBBFE040069D950 /* DigUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F3F1ED6D1BBBFE040069D950 /* DigUp.png */; };
 		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
 		F3F487091BA7D8E900FCA8A6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
@@ -152,6 +153,7 @@
 		F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialModel.m; sourceTree = "<group>"; };
 		F3ECBECD1B9D814B0000A656 /* ExerciceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciceModel.h; sourceTree = "<group>"; };
 		F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciceModel.m; sourceTree = "<group>"; };
+		F3F1ED6D1BBBFE040069D950 /* DigUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DigUp.png; sourceTree = "<group>"; };
 		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
 		F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
 				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
 				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
+				F3F1ED6D1BBBFE040069D950 /* DigUp.png */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */,
+				F3F1ED6E1BBBFE040069D950 /* DigUp.png in Resources */,
 				F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */,
 				F3F320A91BBA6B560029F565 /* exo.json in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,

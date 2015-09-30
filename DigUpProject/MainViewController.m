@@ -300,7 +300,7 @@
     UIButton * correctionButton = [[UIButton alloc] initWithFrame:correctionButtonFrame];
     
     [correctionButton.titleLabel setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
-    [correctionButton setTitle:@"Right?" forState:UIControlStateNormal];
+    [correctionButton setTitle:@"Check" forState:UIControlStateNormal];
     [correctionButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     correctionButton.layer.borderColor = [UIColor blueColor].CGColor;
