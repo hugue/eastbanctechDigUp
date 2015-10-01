@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 #import "MaterialViewModel.h"
 
 
-@interface AudioViewModel : MaterialViewModel <NSURLSessionDelegate, NSURLSessionDownloadDelegate, AVAudioPlayerDelegate>
+@interface AudioViewModel : MaterialViewModel <AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) NSNumber * selectedID;
 @property (nonatomic, strong) AVAudioPlayer * audioPlayer;
@@ -27,5 +28,6 @@
 - (void)correctionAsked;
 - (void)solutionAsked;
 - (void)restartAsked;
+- (void)applyDataToMaterial:(NSData *)data;
 
 @end

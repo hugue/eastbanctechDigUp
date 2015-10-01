@@ -7,16 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+#import "MaterialViewModel.h"
 
 @interface WebSearcherController : NSObject <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 
 @property (nonatomic, strong) id delegate;
 @property (nonatomic, strong) NSString * urlToReach;
 @property (nonatomic, strong) NSMutableData * receivedData;
-@property (nonatomic, strong) NSString * imageURL;
+@property (nonatomic, strong) NSString * mediaURL;
 
 - (id)init;
 - (void)launchSession;
+- (void)registerNewViewToDownloadMedia:(MaterialViewModel *) materialViewModel forBlobId:(NSNumber *)blobID;
+- (void)launchDownloadingMediaSession;
 
 @end
 

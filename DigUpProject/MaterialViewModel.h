@@ -42,5 +42,7 @@ typedef NS_ENUM(NSInteger, MaterialAnswerState) {
 - (void)solutionAsked;
 - (void)restartAsked;
 
+- (void)applyDataToMaterial:(NSData *)data;
+
 @end
 

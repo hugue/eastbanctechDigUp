@@ -28,7 +28,7 @@
     self.showAudioSymbol = [self.material.Show boolValue];
     self.autoPlay = [self.material.Autoplay boolValue];
     
-    [self downLoadAudioWithBlobId:self.blobID];
+    //[self downLoadAudioWithBlobId:self.blobID];
 }
 
 - (void)audioSelectedOnView {
@@ -44,11 +44,24 @@
     NSURLSession * session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
     
     NSURLSessionDownloadTask * downloadTask = [session downloadTaskWithURL:downloadURL];
+    @weakify(self)
+    [RACObserve(downloadTask, state) subscribeNext:^(id x) {
+        @strongify(self)
+        NSLog(@"TaskState - %d and materialID - %@", [x integerValue], self.materialID);
+    }];
     
     [downloadTask resume];
     if(!session) {
         NSLog(@"Can't open the connection");
     }
+}
+
+- (void)applyDataToMaterial:(NSData *)data {
+    NSLog(@"Apply data to material");
+    self.audioData = [data copy];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:self.audioData error:nil];
+    self.audioPlayer.delegate = self;
+    self.audioLoaded = @YES;
 }
 
 - (void)solutionAsked {
@@ -64,31 +77,6 @@
     self.audioPlayer.volume = 1.0;
     self.selectedID = @0;
     self.answerState = MaterialAnswerStateIsTesting;
-}
-
-#pragma mark - NSURLSession delegate methods
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
-    NSData * data = [NSData dataWithContentsOfURL:location];
-    self.audioData = [data copy];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:self.audioData error:nil];
-    self.audioPlayer.delegate = self;
-    self.audioLoaded = @YES;
-
-}
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
-}
-
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-didCompleteWithError:(nullable NSError *)error {
-    if (error) {
-        NSLog(@"%@", error);
-    }
-}
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes {
-    
 }
 
 @end

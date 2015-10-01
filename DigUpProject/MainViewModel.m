@@ -90,6 +90,7 @@
     }
     else if ([type isEqualToString:@"Image"]) {
         materialViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
+        [self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
     }
     else if ([type isEqualToString:@"InputField"]) {
         materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
@@ -99,6 +100,7 @@
         materialViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:(AudioViewModel *) materialViewModel];
         [self.selfCorrectingMaterials addObject:materialViewModel];
+        [self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
     }
     else if([type isEqualToString:@"CheckBox"]) {
         materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
@@ -118,7 +120,6 @@
     if (self.rightBorderOfView < (materialViewModel.materialWidth + materialViewModel.position.x)) {
         self.rightBorderOfView = (materialViewModel.materialWidth + materialViewModel.position.x);
     }
-    
     return materialViewModel;
     
 }
@@ -148,6 +149,7 @@
         MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:self.currentExercise.materialsObject[i]];
         [self.materialsModels addObject:materialViewModel];
     }
+    [self.webSearcherController launchDownloadingMediaSession];
     self.exerciseLoaded = @YES;
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }

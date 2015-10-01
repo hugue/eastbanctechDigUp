@@ -8,7 +8,7 @@
 
 #import "MaterialViewModel.h"
 
-@interface ImageViewModel : MaterialViewModel <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
+@interface ImageViewModel : MaterialViewModel 
 
 @property (nonatomic, strong) NSNumber * BlobID;
 @property (nonatomic, strong) NSData * imageData;
@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSNumber * imageLoaded;
 
 - (id)initWithModel:(MaterialModel *)materialModel;
+- (void)applyDataToMaterial:(NSData *)data;
 
 @end
