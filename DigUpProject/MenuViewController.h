@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+#import "MenuViewModel.h"
 
-@interface MenuViewController : UIViewController
-- (IBAction)fetchExercise:(id)sender;
+@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) MenuViewModel * viewModel;
+@property (weak, nonatomic) IBOutlet UITableView *detailCourseTableView;
+@property (weak, nonatomic) IBOutlet UITableView *courseTableView;
 
 @end

@@ -17,6 +17,7 @@
 		F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F7E1BA180E7005028A4 /* MaterialView.m */; };
 		F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F811BA1A6E6005028A4 /* TextFrameView.m */; };
 		F3E01F851BA1B294005028A4 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F841BA1B294005028A4 /* ImageView.m */; };
+		F3EC8C811BBD5226008AD87A /* MenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EC8C801BBD5226008AD87A /* MenuViewModel.m */; };
 		F3ECBE6F1B9D452E0000A656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE6E1B9D452E0000A656 /* main.m */; };
 		F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE711B9D452E0000A656 /* AppDelegate.m */; };
 		F3ECBE781B9D452E0000A656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE761B9D452E0000A656 /* Main.storyboard */; };
@@ -111,6 +112,8 @@
 		F3E01F811BA1A6E6005028A4 /* TextFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFrameView.m; sourceTree = "<group>"; };
 		F3E01F831BA1B294005028A4 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
 		F3E01F841BA1B294005028A4 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
+		F3EC8C7F1BBD5226008AD87A /* MenuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewModel.h; sourceTree = "<group>"; };
+		F3EC8C801BBD5226008AD87A /* MenuViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewModel.m; sourceTree = "<group>"; };
 		F3ECBE6A1B9D452E0000A656 /* DigUpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigUpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ECBE6E1B9D452E0000A656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3ECBE701B9D452E0000A656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 			children = (
 				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
 				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
+				F3EC8C7F1BBD5226008AD87A /* MenuViewModel.h */,
+				F3EC8C801BBD5226008AD87A /* MenuViewModel.m */,
 				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
 				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
 				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
@@ -646,6 +651,7 @@
 				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
 				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
+				F3EC8C811BBD5226008AD87A /* MenuViewModel.m in Sources */,
 				F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */,
 				F3E01F851BA1B294005028A4 /* ImageView.m in Sources */,
 				F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */,
