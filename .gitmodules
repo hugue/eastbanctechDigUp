@@ -1,0 +1,3 @@
+[submodule "Externals"]
+	path = Externals
+	url = ssh://git@gitlab.eastbanctech.ru:11022/v.yelagin/ios-utils.git

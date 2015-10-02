@@ -11,6 +11,11 @@
 		F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */; };
 		F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41001BAFFBB200F5A903 /* CheckBoxView.m */; };
 		F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41031BB00A8600F5A903 /* ImageViewModel.m */; };
+		F35274971BBE8F430089FB6F /* MyCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F35274961BBE8F430089FB6F /* MyCoursesViewController.m */; };
+		F352749A1BBE91000089FB6F /* MyCoursesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35274991BBE91000089FB6F /* MyCoursesViewModel.m */; };
+		F352749D1BBE9C990089FB6F /* CoursesTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F352749C1BBE9C990089FB6F /* CoursesTableViewModel.m */; };
+		F35274A01BBE9FF90089FB6F /* CoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */; };
+		F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */; };
 		F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F721BA175F4005028A4 /* MaterialViewModel.m */; };
 		F3E01F761BA179CC005028A4 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F751BA179CC005028A4 /* MainViewModel.m */; };
 		F3E01F791BA179F1005028A4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F781BA179F1005028A4 /* MainViewController.m */; };
@@ -60,6 +65,81 @@
 		F3F986A61BBE405400E94F60 /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986A51BBE405400E94F60 /* CourseViewController.m */; };
 		F3F986AB1BBE47B400E94F60 /* partition.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AA1BBE47B400E94F60 /* partition.pdf */; };
 		F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AC1BBE604800E94F60 /* Main.storyboard */; };
+		F3F9874A1BBE6D1300E94F60 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F3F986B11BBE6D1300E94F60 /* .gitignore */; };
+		F3F9874B1BBE6D1300E94F60 /* ETRActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986B31BBE6D1300E94F60 /* ETRActionSheet.m */; };
+		F3F9874C1BBE6D1300E94F60 /* ETRAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986B51BBE6D1300E94F60 /* ETRAlertView.m */; };
+		F3F9874D1BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986B81BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m */; };
+		F3F9874E1BBE6D1300E94F60 /* NSArray+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986BA1BBE6D1300E94F60 /* NSArray+ETRUtils.m */; };
+		F3F9874F1BBE6D1300E94F60 /* NSBlockOperation+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986BC1BBE6D1300E94F60 /* NSBlockOperation+ETRUtils.m */; };
+		F3F987501BBE6D1300E94F60 /* NSError+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986BE1BBE6D1300E94F60 /* NSError+ETRUtils.m */; };
+		F3F987511BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986C01BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.m */; };
+		F3F987521BBE6D1300E94F60 /* NSMutableArray+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986C21BBE6D1300E94F60 /* NSMutableArray+ETRUtils.m */; };
+		F3F987531BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986C41BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m */; };
+		F3F987541BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986C61BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m */; };
+		F3F987551BBE6D1300E94F60 /* NSMutableString+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986C81BBE6D1300E94F60 /* NSMutableString+ETRUtils.m */; };
+		F3F987561BBE6D1300E94F60 /* NSNumber+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986CA1BBE6D1300E94F60 /* NSNumber+ETRUtils.m */; };
+		F3F987571BBE6D1300E94F60 /* NSString+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986CC1BBE6D1300E94F60 /* NSString+ETRUtils.m */; };
+		F3F987581BBE6D1300E94F60 /* NSTimer+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986CE1BBE6D1300E94F60 /* NSTimer+ETRUtils.m */; };
+		F3F987591BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986D01BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m */; };
+		F3F9875A1BBE6D1300E94F60 /* UICollectionView+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986D21BBE6D1300E94F60 /* UICollectionView+ETRUtils.m */; };
+		F3F9875B1BBE6D1300E94F60 /* UIColor+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986D41BBE6D1300E94F60 /* UIColor+ETRUtils.m */; };
+		F3F9875C1BBE6D1300E94F60 /* UIImage+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986D61BBE6D1300E94F60 /* UIImage+ETRUtils.m */; };
+		F3F9875D1BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986D81BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.m */; };
+		F3F9875E1BBE6D1300E94F60 /* UITableView+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986DA1BBE6D1300E94F60 /* UITableView+ETRUtils.m */; };
+		F3F9875F1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986DC1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m */; };
+		F3F987601BBE6D1300E94F60 /* UIView+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986DE1BBE6D1300E94F60 /* UIView+ETRUtils.m */; };
+		F3F987611BBE6D1300E94F60 /* UIViewController+ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986E01BBE6D1300E94F60 /* UIViewController+ETRUtils.m */; };
+		F3F987621BBE6D1300E94F60 /* ETRCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986E21BBE6D1300E94F60 /* ETRCGUtils.m */; };
+		F3F987631BBE6D1300E94F60 /* ETRCollectionChange.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986E61BBE6D1300E94F60 /* ETRCollectionChange.m */; };
+		F3F987641BBE6D1300E94F60 /* ETRCollectionChangeBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986E81BBE6D1300E94F60 /* ETRCollectionChangeBatch.m */; };
+		F3F987651BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986EA1BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m */; };
+		F3F987661BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986EC1BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m */; };
+		F3F987671BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986EE1BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m */; };
+		F3F987681BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986F01BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m */; };
+		F3F987691BBE6D1300E94F60 /* ETRCollectionChangeItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986F21BBE6D1300E94F60 /* ETRCollectionChangeItems.m */; };
+		F3F9876A1BBE6D1300E94F60 /* ETRCollectionChangeReload.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986F41BBE6D1300E94F60 /* ETRCollectionChangeReload.m */; };
+		F3F9876B1BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986F61BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.m */; };
+		F3F9876C1BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986F81BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m */; };
+		F3F9876D1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986FA1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m */; };
+		F3F9876E1BBE6D1300E94F60 /* ETRCollectionChangeSections.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986FC1BBE6D1300E94F60 /* ETRCollectionChangeSections.m */; };
+		F3F9876F1BBE6D1300E94F60 /* ETRCompositeCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986FF1BBE6D1300E94F60 /* ETRCompositeCollectionModel.m */; };
+		F3F987701BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987011BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.m */; };
+		F3F987711BBE6D1300E94F60 /* ETRHidingCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987031BBE6D1300E94F60 /* ETRHidingCollectionModel.m */; };
+		F3F987721BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987051BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m */; };
+		F3F987731BBE6D1300E94F60 /* ETRProxyCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987071BBE6D1300E94F60 /* ETRProxyCollectionModel.m */; };
+		F3F987741BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987091BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.m */; };
+		F3F987751BBE6D1300E94F60 /* ETRCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9870B1BBE6D1300E94F60 /* ETRCollectionModel.m */; };
+		F3F987761BBE6D1300E94F60 /* ETRCollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9870D1BBE6D1300E94F60 /* ETRCollectionUtils.m */; };
+		F3F987771BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987121BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m */; };
+		F3F987781BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987141BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m */; };
+		F3F987791BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987161BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m */; };
+		F3F9877A1BBE6D1300E94F60 /* ETRSimpleCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987181BBE6D1300E94F60 /* ETRSimpleCollectionModel.m */; };
+		F3F9877B1BBE6D1300E94F60 /* ETRStaticCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9871A1BBE6D1300E94F60 /* ETRStaticCellModel.m */; };
+		F3F9877C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9871C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m */; };
+		F3F9877D1BBE6D1300E94F60 /* ETRStaticCollectionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9871E1BBE6D1300E94F60 /* ETRStaticCollectionSection.m */; };
+		F3F9877E1BBE6D1300E94F60 /* ETRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987211BBE6D1300E94F60 /* ETRCollectionViewCell.m */; };
+		F3F9877F1BBE6D1300E94F60 /* ETRCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987231BBE6D1300E94F60 /* ETRCollectionViewController.m */; };
+		F3F987801BBE6D1300E94F60 /* ETRReuseIdentifierMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987251BBE6D1300E94F60 /* ETRReuseIdentifierMatching.m */; };
+		F3F987811BBE6D1300E94F60 /* ETRSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987271BBE6D1300E94F60 /* ETRSearchResults.m */; };
+		F3F987821BBE6D1300E94F60 /* ETRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987291BBE6D1300E94F60 /* ETRTableViewCell.m */; };
+		F3F987831BBE6D1300E94F60 /* ETRTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9872B1BBE6D1300E94F60 /* ETRTableViewController.m */; };
+		F3F987841BBE6D1300E94F60 /* ETRImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9872D1BBE6D1300E94F60 /* ETRImagePickerController.m */; };
+		F3F987851BBE6D1300E94F60 /* ETRKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9872F1BBE6D1300E94F60 /* ETRKVO.m */; };
+		F3F987861BBE6D1300E94F60 /* ETRLazyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987321BBE6D1300E94F60 /* ETRLazyPromise.m */; };
+		F3F987871BBE6D1300E94F60 /* ETRPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987341BBE6D1300E94F60 /* ETRPromise.m */; };
+		F3F987881BBE6D1300E94F60 /* ETRResolvablePromise.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987361BBE6D1300E94F60 /* ETRResolvablePromise.m */; };
+		F3F987891BBE6D1300E94F60 /* ETRTrivialPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987381BBE6D1300E94F60 /* ETRTrivialPromise.m */; };
+		F3F9878A1BBE6D1300E94F60 /* ETRRACAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9873A1BBE6D1300E94F60 /* ETRRACAdditions.m */; };
+		F3F9878B1BBE6D1300E94F60 /* ETRStoryboardLink.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9873D1BBE6D1300E94F60 /* ETRStoryboardLink.m */; };
+		F3F9878C1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9873F1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m */; };
+		F3F9878D1BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987411BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.m */; };
+		F3F9878E1BBE6D1300E94F60 /* ETRStoryboardPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987431BBE6D1300E94F60 /* ETRStoryboardPushSegue.m */; };
+		F3F9878F1BBE6D1300E94F60 /* ETRStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987451BBE6D1300E94F60 /* ETRStoryboardSegue.m */; };
+		F3F987901BBE6D1300E94F60 /* ETRStringDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987471BBE6D1300E94F60 /* ETRStringDecorator.m */; };
+		F3F987911BBE6D1300E94F60 /* ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987491BBE6D1300E94F60 /* ETRUtils.m */; };
+		F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987931BBE6DAE00E94F60 /* LoginViewController.m */; };
+		F3F987971BBE6E9D00E94F60 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */; };
+		F3F987991BBE877500E94F60 /* DigUpProject.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +182,16 @@
 		F33D41001BAFFBB200F5A903 /* CheckBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxView.m; sourceTree = "<group>"; };
 		F33D41021BB00A8600F5A903 /* ImageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewModel.h; sourceTree = "<group>"; };
 		F33D41031BB00A8600F5A903 /* ImageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewModel.m; sourceTree = "<group>"; };
+		F35274951BBE8F430089FB6F /* MyCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoursesViewController.h; sourceTree = "<group>"; };
+		F35274961BBE8F430089FB6F /* MyCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoursesViewController.m; sourceTree = "<group>"; };
+		F35274981BBE91000089FB6F /* MyCoursesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoursesViewModel.h; sourceTree = "<group>"; };
+		F35274991BBE91000089FB6F /* MyCoursesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoursesViewModel.m; sourceTree = "<group>"; };
+		F352749B1BBE9C990089FB6F /* CoursesTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesTableViewModel.h; sourceTree = "<group>"; };
+		F352749C1BBE9C990089FB6F /* CoursesTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesTableViewModel.m; sourceTree = "<group>"; };
+		F352749E1BBE9FF90089FB6F /* CoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesTableViewController.h; sourceTree = "<group>"; };
+		F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesTableViewController.m; sourceTree = "<group>"; };
+		F35274A11BBEC0790089FB6F /* CourseCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCellViewModel.h; sourceTree = "<group>"; };
+		F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCellViewModel.m; sourceTree = "<group>"; };
 		F3E01F711BA175F4005028A4 /* MaterialViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewModel.h; sourceTree = "<group>"; };
 		F3E01F721BA175F4005028A4 /* MaterialViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewModel.m; sourceTree = "<group>"; };
 		F3E01F741BA179CC005028A4 /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
@@ -193,6 +283,156 @@
 		F3F986A51BBE405400E94F60 /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
 		F3F986AA1BBE47B400E94F60 /* partition.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = partition.pdf; sourceTree = "<group>"; };
 		F3F986AD1BBE604800E94F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DigUpProject/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3F986B11BBE6D1300E94F60 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F3F986B21BBE6D1300E94F60 /* ETRActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRActionSheet.h; sourceTree = "<group>"; };
+		F3F986B31BBE6D1300E94F60 /* ETRActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRActionSheet.m; sourceTree = "<group>"; };
+		F3F986B41BBE6D1300E94F60 /* ETRAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRAlertView.h; sourceTree = "<group>"; };
+		F3F986B51BBE6D1300E94F60 /* ETRAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRAlertView.m; sourceTree = "<group>"; };
+		F3F986B71BBE6D1300E94F60 /* ETRCollectionModel+Flatten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ETRCollectionModel+Flatten.h"; sourceTree = "<group>"; };
+		F3F986B81BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ETRCollectionModel+Flatten.m"; sourceTree = "<group>"; };
+		F3F986B91BBE6D1300E94F60 /* NSArray+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986BA1BBE6D1300E94F60 /* NSArray+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986BB1BBE6D1300E94F60 /* NSBlockOperation+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBlockOperation+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986BC1BBE6D1300E94F60 /* NSBlockOperation+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBlockOperation+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986BD1BBE6D1300E94F60 /* NSError+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986BE1BBE6D1300E94F60 /* NSError+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986BF1BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986C01BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986C11BBE6D1300E94F60 /* NSMutableArray+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986C21BBE6D1300E94F60 /* NSMutableArray+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986C31BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986C41BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986C51BBE6D1300E94F60 /* NSMutableSet+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986C61BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986C71BBE6D1300E94F60 /* NSMutableString+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986C81BBE6D1300E94F60 /* NSMutableString+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986C91BBE6D1300E94F60 /* NSNumber+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986CA1BBE6D1300E94F60 /* NSNumber+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986CB1BBE6D1300E94F60 /* NSString+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986CC1BBE6D1300E94F60 /* NSString+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986CD1BBE6D1300E94F60 /* NSTimer+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986CE1BBE6D1300E94F60 /* NSTimer+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986CF1BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986D01BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986D11BBE6D1300E94F60 /* UICollectionView+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986D21BBE6D1300E94F60 /* UICollectionView+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986D31BBE6D1300E94F60 /* UIColor+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986D41BBE6D1300E94F60 /* UIColor+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986D51BBE6D1300E94F60 /* UIImage+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986D61BBE6D1300E94F60 /* UIImage+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986D71BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986D81BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986D91BBE6D1300E94F60 /* UITableView+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986DA1BBE6D1300E94F60 /* UITableView+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986DB1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986DC1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986DD1BBE6D1300E94F60 /* UIView+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986DE1BBE6D1300E94F60 /* UIView+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986DF1BBE6D1300E94F60 /* UIViewController+ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ETRUtils.h"; sourceTree = "<group>"; };
+		F3F986E01BBE6D1300E94F60 /* UIViewController+ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ETRUtils.m"; sourceTree = "<group>"; };
+		F3F986E11BBE6D1300E94F60 /* ETRCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCGUtils.h; sourceTree = "<group>"; };
+		F3F986E21BBE6D1300E94F60 /* ETRCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCGUtils.m; sourceTree = "<group>"; };
+		F3F986E51BBE6D1300E94F60 /* ETRCollectionChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChange.h; sourceTree = "<group>"; };
+		F3F986E61BBE6D1300E94F60 /* ETRCollectionChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChange.m; sourceTree = "<group>"; };
+		F3F986E71BBE6D1300E94F60 /* ETRCollectionChangeBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeBatch.h; sourceTree = "<group>"; };
+		F3F986E81BBE6D1300E94F60 /* ETRCollectionChangeBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeBatch.m; sourceTree = "<group>"; };
+		F3F986E91BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeItemDelete.h; sourceTree = "<group>"; };
+		F3F986EA1BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeItemDelete.m; sourceTree = "<group>"; };
+		F3F986EB1BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeItemInsert.h; sourceTree = "<group>"; };
+		F3F986EC1BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeItemInsert.m; sourceTree = "<group>"; };
+		F3F986ED1BBE6D1300E94F60 /* ETRCollectionChangeItemMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeItemMove.h; sourceTree = "<group>"; };
+		F3F986EE1BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeItemMove.m; sourceTree = "<group>"; };
+		F3F986EF1BBE6D1300E94F60 /* ETRCollectionChangeItemReload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeItemReload.h; sourceTree = "<group>"; };
+		F3F986F01BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeItemReload.m; sourceTree = "<group>"; };
+		F3F986F11BBE6D1300E94F60 /* ETRCollectionChangeItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeItems.h; sourceTree = "<group>"; };
+		F3F986F21BBE6D1300E94F60 /* ETRCollectionChangeItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeItems.m; sourceTree = "<group>"; };
+		F3F986F31BBE6D1300E94F60 /* ETRCollectionChangeReload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeReload.h; sourceTree = "<group>"; };
+		F3F986F41BBE6D1300E94F60 /* ETRCollectionChangeReload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeReload.m; sourceTree = "<group>"; };
+		F3F986F51BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeSectionDelete.h; sourceTree = "<group>"; };
+		F3F986F61BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeSectionDelete.m; sourceTree = "<group>"; };
+		F3F986F71BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeSectionInsert.h; sourceTree = "<group>"; };
+		F3F986F81BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeSectionInsert.m; sourceTree = "<group>"; };
+		F3F986F91BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeSectionReload.h; sourceTree = "<group>"; };
+		F3F986FA1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeSectionReload.m; sourceTree = "<group>"; };
+		F3F986FB1BBE6D1300E94F60 /* ETRCollectionChangeSections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionChangeSections.h; sourceTree = "<group>"; };
+		F3F986FC1BBE6D1300E94F60 /* ETRCollectionChangeSections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionChangeSections.m; sourceTree = "<group>"; };
+		F3F986FE1BBE6D1300E94F60 /* ETRCompositeCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCompositeCollectionModel.h; sourceTree = "<group>"; };
+		F3F986FF1BBE6D1300E94F60 /* ETRCompositeCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCompositeCollectionModel.m; sourceTree = "<group>"; };
+		F3F987001BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRFlattenUnionCollectionModel.h; sourceTree = "<group>"; };
+		F3F987011BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRFlattenUnionCollectionModel.m; sourceTree = "<group>"; };
+		F3F987021BBE6D1300E94F60 /* ETRHidingCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRHidingCollectionModel.h; sourceTree = "<group>"; };
+		F3F987031BBE6D1300E94F60 /* ETRHidingCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRHidingCollectionModel.m; sourceTree = "<group>"; };
+		F3F987041BBE6D1300E94F60 /* ETROuterUnionCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETROuterUnionCollectionModel.h; sourceTree = "<group>"; };
+		F3F987051BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETROuterUnionCollectionModel.m; sourceTree = "<group>"; };
+		F3F987061BBE6D1300E94F60 /* ETRProxyCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRProxyCollectionModel.h; sourceTree = "<group>"; };
+		F3F987071BBE6D1300E94F60 /* ETRProxyCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRProxyCollectionModel.m; sourceTree = "<group>"; };
+		F3F987081BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRProxyItemsCollectionModel.h; sourceTree = "<group>"; };
+		F3F987091BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRProxyItemsCollectionModel.m; sourceTree = "<group>"; };
+		F3F9870A1BBE6D1300E94F60 /* ETRCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionModel.h; sourceTree = "<group>"; };
+		F3F9870B1BBE6D1300E94F60 /* ETRCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionModel.m; sourceTree = "<group>"; };
+		F3F9870C1BBE6D1300E94F60 /* ETRCollectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionUtils.h; sourceTree = "<group>"; };
+		F3F9870D1BBE6D1300E94F60 /* ETRCollectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionUtils.m; sourceTree = "<group>"; };
+		F3F9870E1BBE6D1300E94F60 /* ETRFilteredCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRFilteredCollectionModel.h; sourceTree = "<group>"; };
+		F3F9870F1BBE6D1300E94F60 /* ETRFlatternCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRFlatternCollectionModel.h; sourceTree = "<group>"; };
+		F3F987111BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRAutoDiffCollectionModel.h; sourceTree = "<group>"; };
+		F3F987121BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRAutoDiffCollectionModel.m; sourceTree = "<group>"; };
+		F3F987131BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRFetchedResultsCollectionModel.h; sourceTree = "<group>"; };
+		F3F987141BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRFetchedResultsCollectionModel.m; sourceTree = "<group>"; };
+		F3F987151BBE6D1300E94F60 /* ETRRelationshipCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRRelationshipCollectionModel.h; sourceTree = "<group>"; };
+		F3F987161BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRRelationshipCollectionModel.m; sourceTree = "<group>"; };
+		F3F987171BBE6D1300E94F60 /* ETRSimpleCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRSimpleCollectionModel.h; sourceTree = "<group>"; };
+		F3F987181BBE6D1300E94F60 /* ETRSimpleCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRSimpleCollectionModel.m; sourceTree = "<group>"; };
+		F3F987191BBE6D1300E94F60 /* ETRStaticCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStaticCellModel.h; sourceTree = "<group>"; };
+		F3F9871A1BBE6D1300E94F60 /* ETRStaticCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStaticCellModel.m; sourceTree = "<group>"; };
+		F3F9871B1BBE6D1300E94F60 /* ETRStaticCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStaticCollectionModel.h; sourceTree = "<group>"; };
+		F3F9871C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStaticCollectionModel.m; sourceTree = "<group>"; };
+		F3F9871D1BBE6D1300E94F60 /* ETRStaticCollectionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStaticCollectionSection.h; sourceTree = "<group>"; };
+		F3F9871E1BBE6D1300E94F60 /* ETRStaticCollectionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStaticCollectionSection.m; sourceTree = "<group>"; };
+		F3F987201BBE6D1300E94F60 /* ETRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionViewCell.h; sourceTree = "<group>"; };
+		F3F987211BBE6D1300E94F60 /* ETRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionViewCell.m; sourceTree = "<group>"; };
+		F3F987221BBE6D1300E94F60 /* ETRCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRCollectionViewController.h; sourceTree = "<group>"; };
+		F3F987231BBE6D1300E94F60 /* ETRCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRCollectionViewController.m; sourceTree = "<group>"; };
+		F3F987241BBE6D1300E94F60 /* ETRReuseIdentifierMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRReuseIdentifierMatching.h; sourceTree = "<group>"; };
+		F3F987251BBE6D1300E94F60 /* ETRReuseIdentifierMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRReuseIdentifierMatching.m; sourceTree = "<group>"; };
+		F3F987261BBE6D1300E94F60 /* ETRSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRSearchResults.h; sourceTree = "<group>"; };
+		F3F987271BBE6D1300E94F60 /* ETRSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRSearchResults.m; sourceTree = "<group>"; };
+		F3F987281BBE6D1300E94F60 /* ETRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTableViewCell.h; sourceTree = "<group>"; };
+		F3F987291BBE6D1300E94F60 /* ETRTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRTableViewCell.m; sourceTree = "<group>"; };
+		F3F9872A1BBE6D1300E94F60 /* ETRTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTableViewController.h; sourceTree = "<group>"; };
+		F3F9872B1BBE6D1300E94F60 /* ETRTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRTableViewController.m; sourceTree = "<group>"; };
+		F3F9872C1BBE6D1300E94F60 /* ETRImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRImagePickerController.h; sourceTree = "<group>"; };
+		F3F9872D1BBE6D1300E94F60 /* ETRImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRImagePickerController.m; sourceTree = "<group>"; };
+		F3F9872E1BBE6D1300E94F60 /* ETRKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRKVO.h; sourceTree = "<group>"; };
+		F3F9872F1BBE6D1300E94F60 /* ETRKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRKVO.m; sourceTree = "<group>"; };
+		F3F987311BBE6D1300E94F60 /* ETRLazyPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRLazyPromise.h; sourceTree = "<group>"; };
+		F3F987321BBE6D1300E94F60 /* ETRLazyPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRLazyPromise.m; sourceTree = "<group>"; };
+		F3F987331BBE6D1300E94F60 /* ETRPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRPromise.h; sourceTree = "<group>"; };
+		F3F987341BBE6D1300E94F60 /* ETRPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRPromise.m; sourceTree = "<group>"; };
+		F3F987351BBE6D1300E94F60 /* ETRResolvablePromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRResolvablePromise.h; sourceTree = "<group>"; };
+		F3F987361BBE6D1300E94F60 /* ETRResolvablePromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRResolvablePromise.m; sourceTree = "<group>"; };
+		F3F987371BBE6D1300E94F60 /* ETRTrivialPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTrivialPromise.h; sourceTree = "<group>"; };
+		F3F987381BBE6D1300E94F60 /* ETRTrivialPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRTrivialPromise.m; sourceTree = "<group>"; };
+		F3F987391BBE6D1300E94F60 /* ETRRACAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRRACAdditions.h; sourceTree = "<group>"; };
+		F3F9873A1BBE6D1300E94F60 /* ETRRACAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRRACAdditions.m; sourceTree = "<group>"; };
+		F3F9873C1BBE6D1300E94F60 /* ETRStoryboardLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStoryboardLink.h; sourceTree = "<group>"; };
+		F3F9873D1BBE6D1300E94F60 /* ETRStoryboardLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStoryboardLink.m; sourceTree = "<group>"; };
+		F3F9873E1BBE6D1300E94F60 /* ETRStoryboardModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStoryboardModalSegue.h; sourceTree = "<group>"; };
+		F3F9873F1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStoryboardModalSegue.m; sourceTree = "<group>"; };
+		F3F987401BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStoryboardPopoverSegue.h; sourceTree = "<group>"; };
+		F3F987411BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStoryboardPopoverSegue.m; sourceTree = "<group>"; };
+		F3F987421BBE6D1300E94F60 /* ETRStoryboardPushSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStoryboardPushSegue.h; sourceTree = "<group>"; };
+		F3F987431BBE6D1300E94F60 /* ETRStoryboardPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStoryboardPushSegue.m; sourceTree = "<group>"; };
+		F3F987441BBE6D1300E94F60 /* ETRStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStoryboardSegue.h; sourceTree = "<group>"; };
+		F3F987451BBE6D1300E94F60 /* ETRStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStoryboardSegue.m; sourceTree = "<group>"; };
+		F3F987461BBE6D1300E94F60 /* ETRStringDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRStringDecorator.h; sourceTree = "<group>"; };
+		F3F987471BBE6D1300E94F60 /* ETRStringDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRStringDecorator.m; sourceTree = "<group>"; };
+		F3F987481BBE6D1300E94F60 /* ETRUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRUtils.h; sourceTree = "<group>"; };
+		F3F987491BBE6D1300E94F60 /* ETRUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRUtils.m; sourceTree = "<group>"; };
+		F3F987921BBE6DAE00E94F60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F3F987931BBE6DAE00E94F60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DigUpProject.xcworkspace; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +518,7 @@
 		F3ECBE611B9D452E0000A656 = {
 			isa = PBXGroup;
 			children = (
+				F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */,
 				F3F320A81BBA6B560029F565 /* exo.json */,
 				F3ECBE6C1B9D452E0000A656 /* DigUpProject */,
 				F3ECBE861B9D452E0000A656 /* DigUpProjectTests */,
@@ -311,6 +552,7 @@
 				F3F986AC1BBE604800E94F60 /* Main.storyboard */,
 				F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */,
 				F3ECBE7E1B9D452E0000A656 /* Info.plist */,
+				F3F986B01BBE6D1300E94F60 /* Externals */,
 				F3ECBE6D1B9D452E0000A656 /* Supporting Files */,
 				F3ECBEA31B9D546C0000A656 /* JSONModel */,
 				F3FA7EFF1BAFC26100432037 /* Ressources */,
@@ -451,6 +693,10 @@
 				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
 				F3EC8C7F1BBD5226008AD87A /* MenuViewModel.h */,
 				F3EC8C801BBD5226008AD87A /* MenuViewModel.m */,
+				F35274981BBE91000089FB6F /* MyCoursesViewModel.h */,
+				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
+				F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */,
+				F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */,
 			);
 			name = FullViewsModels;
 			sourceTree = "<group>";
@@ -458,6 +704,10 @@
 		F3F986A91BBE455C00E94F60 /* LocalViewsModels */ = {
 			isa = PBXGroup;
 			children = (
+				F352749B1BBE9C990089FB6F /* CoursesTableViewModel.h */,
+				F352749C1BBE9C990089FB6F /* CoursesTableViewModel.m */,
+				F35274A11BBEC0790089FB6F /* CourseCellViewModel.h */,
+				F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */,
 				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
 				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
 				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
@@ -479,14 +729,237 @@
 			children = (
 				F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */,
 				F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */,
+				F35274951BBE8F430089FB6F /* MyCoursesViewController.h */,
+				F35274961BBE8F430089FB6F /* MyCoursesViewController.m */,
+				F352749E1BBE9FF90089FB6F /* CoursesTableViewController.h */,
+				F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */,
 				F3F986A41BBE405400E94F60 /* CourseViewController.h */,
 				F3F986A51BBE405400E94F60 /* CourseViewController.m */,
 				F3E01F771BA179F1005028A4 /* MainViewController.h */,
 				F3E01F781BA179F1005028A4 /* MainViewController.m */,
 				F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */,
 				F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */,
+				F3F987921BBE6DAE00E94F60 /* LoginViewController.h */,
+				F3F987931BBE6DAE00E94F60 /* LoginViewController.m */,
 			);
 			name = FullViewsControllers;
+			sourceTree = "<group>";
+		};
+		F3F986B01BBE6D1300E94F60 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				F3F986B11BBE6D1300E94F60 /* .gitignore */,
+				F3F986B21BBE6D1300E94F60 /* ETRActionSheet.h */,
+				F3F986B31BBE6D1300E94F60 /* ETRActionSheet.m */,
+				F3F986B41BBE6D1300E94F60 /* ETRAlertView.h */,
+				F3F986B51BBE6D1300E94F60 /* ETRAlertView.m */,
+				F3F986B61BBE6D1300E94F60 /* ETRCategories */,
+				F3F986E11BBE6D1300E94F60 /* ETRCGUtils.h */,
+				F3F986E21BBE6D1300E94F60 /* ETRCGUtils.m */,
+				F3F986E31BBE6D1300E94F60 /* ETRCollectionModel */,
+				F3F9872C1BBE6D1300E94F60 /* ETRImagePickerController.h */,
+				F3F9872D1BBE6D1300E94F60 /* ETRImagePickerController.m */,
+				F3F9872E1BBE6D1300E94F60 /* ETRKVO.h */,
+				F3F9872F1BBE6D1300E94F60 /* ETRKVO.m */,
+				F3F987301BBE6D1300E94F60 /* ETRPromise */,
+				F3F987391BBE6D1300E94F60 /* ETRRACAdditions.h */,
+				F3F9873A1BBE6D1300E94F60 /* ETRRACAdditions.m */,
+				F3F9873B1BBE6D1300E94F60 /* ETRStoryboardLink */,
+				F3F987461BBE6D1300E94F60 /* ETRStringDecorator.h */,
+				F3F987471BBE6D1300E94F60 /* ETRStringDecorator.m */,
+				F3F987481BBE6D1300E94F60 /* ETRUtils.h */,
+				F3F987491BBE6D1300E94F60 /* ETRUtils.m */,
+			);
+			name = Externals;
+			path = ../Externals;
+			sourceTree = "<group>";
+		};
+		F3F986B61BBE6D1300E94F60 /* ETRCategories */ = {
+			isa = PBXGroup;
+			children = (
+				F3F986B71BBE6D1300E94F60 /* ETRCollectionModel+Flatten.h */,
+				F3F986B81BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m */,
+				F3F986B91BBE6D1300E94F60 /* NSArray+ETRUtils.h */,
+				F3F986BA1BBE6D1300E94F60 /* NSArray+ETRUtils.m */,
+				F3F986BB1BBE6D1300E94F60 /* NSBlockOperation+ETRUtils.h */,
+				F3F986BC1BBE6D1300E94F60 /* NSBlockOperation+ETRUtils.m */,
+				F3F986BD1BBE6D1300E94F60 /* NSError+ETRUtils.h */,
+				F3F986BE1BBE6D1300E94F60 /* NSError+ETRUtils.m */,
+				F3F986BF1BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.h */,
+				F3F986C01BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.m */,
+				F3F986C11BBE6D1300E94F60 /* NSMutableArray+ETRUtils.h */,
+				F3F986C21BBE6D1300E94F60 /* NSMutableArray+ETRUtils.m */,
+				F3F986C31BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.h */,
+				F3F986C41BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m */,
+				F3F986C51BBE6D1300E94F60 /* NSMutableSet+ETRUtils.h */,
+				F3F986C61BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m */,
+				F3F986C71BBE6D1300E94F60 /* NSMutableString+ETRUtils.h */,
+				F3F986C81BBE6D1300E94F60 /* NSMutableString+ETRUtils.m */,
+				F3F986C91BBE6D1300E94F60 /* NSNumber+ETRUtils.h */,
+				F3F986CA1BBE6D1300E94F60 /* NSNumber+ETRUtils.m */,
+				F3F986CB1BBE6D1300E94F60 /* NSString+ETRUtils.h */,
+				F3F986CC1BBE6D1300E94F60 /* NSString+ETRUtils.m */,
+				F3F986CD1BBE6D1300E94F60 /* NSTimer+ETRUtils.h */,
+				F3F986CE1BBE6D1300E94F60 /* NSTimer+ETRUtils.m */,
+				F3F986CF1BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.h */,
+				F3F986D01BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m */,
+				F3F986D11BBE6D1300E94F60 /* UICollectionView+ETRUtils.h */,
+				F3F986D21BBE6D1300E94F60 /* UICollectionView+ETRUtils.m */,
+				F3F986D31BBE6D1300E94F60 /* UIColor+ETRUtils.h */,
+				F3F986D41BBE6D1300E94F60 /* UIColor+ETRUtils.m */,
+				F3F986D51BBE6D1300E94F60 /* UIImage+ETRUtils.h */,
+				F3F986D61BBE6D1300E94F60 /* UIImage+ETRUtils.m */,
+				F3F986D71BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.h */,
+				F3F986D81BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.m */,
+				F3F986D91BBE6D1300E94F60 /* UITableView+ETRUtils.h */,
+				F3F986DA1BBE6D1300E94F60 /* UITableView+ETRUtils.m */,
+				F3F986DB1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.h */,
+				F3F986DC1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m */,
+				F3F986DD1BBE6D1300E94F60 /* UIView+ETRUtils.h */,
+				F3F986DE1BBE6D1300E94F60 /* UIView+ETRUtils.m */,
+				F3F986DF1BBE6D1300E94F60 /* UIViewController+ETRUtils.h */,
+				F3F986E01BBE6D1300E94F60 /* UIViewController+ETRUtils.m */,
+			);
+			path = ETRCategories;
+			sourceTree = "<group>";
+		};
+		F3F986E31BBE6D1300E94F60 /* ETRCollectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3F986E41BBE6D1300E94F60 /* Changes */,
+				F3F986FD1BBE6D1300E94F60 /* Composite */,
+				F3F9870A1BBE6D1300E94F60 /* ETRCollectionModel.h */,
+				F3F9870B1BBE6D1300E94F60 /* ETRCollectionModel.m */,
+				F3F9870C1BBE6D1300E94F60 /* ETRCollectionUtils.h */,
+				F3F9870D1BBE6D1300E94F60 /* ETRCollectionUtils.m */,
+				F3F9870E1BBE6D1300E94F60 /* ETRFilteredCollectionModel.h */,
+				F3F9870F1BBE6D1300E94F60 /* ETRFlatternCollectionModel.h */,
+				F3F987101BBE6D1300E94F60 /* Implementations */,
+				F3F9871F1BBE6D1300E94F60 /* Views */,
+			);
+			path = ETRCollectionModel;
+			sourceTree = "<group>";
+		};
+		F3F986E41BBE6D1300E94F60 /* Changes */ = {
+			isa = PBXGroup;
+			children = (
+				F3F986E51BBE6D1300E94F60 /* ETRCollectionChange.h */,
+				F3F986E61BBE6D1300E94F60 /* ETRCollectionChange.m */,
+				F3F986E71BBE6D1300E94F60 /* ETRCollectionChangeBatch.h */,
+				F3F986E81BBE6D1300E94F60 /* ETRCollectionChangeBatch.m */,
+				F3F986E91BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.h */,
+				F3F986EA1BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m */,
+				F3F986EB1BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.h */,
+				F3F986EC1BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m */,
+				F3F986ED1BBE6D1300E94F60 /* ETRCollectionChangeItemMove.h */,
+				F3F986EE1BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m */,
+				F3F986EF1BBE6D1300E94F60 /* ETRCollectionChangeItemReload.h */,
+				F3F986F01BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m */,
+				F3F986F11BBE6D1300E94F60 /* ETRCollectionChangeItems.h */,
+				F3F986F21BBE6D1300E94F60 /* ETRCollectionChangeItems.m */,
+				F3F986F31BBE6D1300E94F60 /* ETRCollectionChangeReload.h */,
+				F3F986F41BBE6D1300E94F60 /* ETRCollectionChangeReload.m */,
+				F3F986F51BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.h */,
+				F3F986F61BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.m */,
+				F3F986F71BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.h */,
+				F3F986F81BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m */,
+				F3F986F91BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.h */,
+				F3F986FA1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m */,
+				F3F986FB1BBE6D1300E94F60 /* ETRCollectionChangeSections.h */,
+				F3F986FC1BBE6D1300E94F60 /* ETRCollectionChangeSections.m */,
+			);
+			path = Changes;
+			sourceTree = "<group>";
+		};
+		F3F986FD1BBE6D1300E94F60 /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				F3F986FE1BBE6D1300E94F60 /* ETRCompositeCollectionModel.h */,
+				F3F986FF1BBE6D1300E94F60 /* ETRCompositeCollectionModel.m */,
+				F3F987001BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.h */,
+				F3F987011BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.m */,
+				F3F987021BBE6D1300E94F60 /* ETRHidingCollectionModel.h */,
+				F3F987031BBE6D1300E94F60 /* ETRHidingCollectionModel.m */,
+				F3F987041BBE6D1300E94F60 /* ETROuterUnionCollectionModel.h */,
+				F3F987051BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m */,
+				F3F987061BBE6D1300E94F60 /* ETRProxyCollectionModel.h */,
+				F3F987071BBE6D1300E94F60 /* ETRProxyCollectionModel.m */,
+				F3F987081BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.h */,
+				F3F987091BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.m */,
+			);
+			path = Composite;
+			sourceTree = "<group>";
+		};
+		F3F987101BBE6D1300E94F60 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				F3F987111BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.h */,
+				F3F987121BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m */,
+				F3F987131BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.h */,
+				F3F987141BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m */,
+				F3F987151BBE6D1300E94F60 /* ETRRelationshipCollectionModel.h */,
+				F3F987161BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m */,
+				F3F987171BBE6D1300E94F60 /* ETRSimpleCollectionModel.h */,
+				F3F987181BBE6D1300E94F60 /* ETRSimpleCollectionModel.m */,
+				F3F987191BBE6D1300E94F60 /* ETRStaticCellModel.h */,
+				F3F9871A1BBE6D1300E94F60 /* ETRStaticCellModel.m */,
+				F3F9871B1BBE6D1300E94F60 /* ETRStaticCollectionModel.h */,
+				F3F9871C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m */,
+				F3F9871D1BBE6D1300E94F60 /* ETRStaticCollectionSection.h */,
+				F3F9871E1BBE6D1300E94F60 /* ETRStaticCollectionSection.m */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		F3F9871F1BBE6D1300E94F60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3F987201BBE6D1300E94F60 /* ETRCollectionViewCell.h */,
+				F3F987211BBE6D1300E94F60 /* ETRCollectionViewCell.m */,
+				F3F987221BBE6D1300E94F60 /* ETRCollectionViewController.h */,
+				F3F987231BBE6D1300E94F60 /* ETRCollectionViewController.m */,
+				F3F987241BBE6D1300E94F60 /* ETRReuseIdentifierMatching.h */,
+				F3F987251BBE6D1300E94F60 /* ETRReuseIdentifierMatching.m */,
+				F3F987261BBE6D1300E94F60 /* ETRSearchResults.h */,
+				F3F987271BBE6D1300E94F60 /* ETRSearchResults.m */,
+				F3F987281BBE6D1300E94F60 /* ETRTableViewCell.h */,
+				F3F987291BBE6D1300E94F60 /* ETRTableViewCell.m */,
+				F3F9872A1BBE6D1300E94F60 /* ETRTableViewController.h */,
+				F3F9872B1BBE6D1300E94F60 /* ETRTableViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F3F987301BBE6D1300E94F60 /* ETRPromise */ = {
+			isa = PBXGroup;
+			children = (
+				F3F987311BBE6D1300E94F60 /* ETRLazyPromise.h */,
+				F3F987321BBE6D1300E94F60 /* ETRLazyPromise.m */,
+				F3F987331BBE6D1300E94F60 /* ETRPromise.h */,
+				F3F987341BBE6D1300E94F60 /* ETRPromise.m */,
+				F3F987351BBE6D1300E94F60 /* ETRResolvablePromise.h */,
+				F3F987361BBE6D1300E94F60 /* ETRResolvablePromise.m */,
+				F3F987371BBE6D1300E94F60 /* ETRTrivialPromise.h */,
+				F3F987381BBE6D1300E94F60 /* ETRTrivialPromise.m */,
+			);
+			path = ETRPromise;
+			sourceTree = "<group>";
+		};
+		F3F9873B1BBE6D1300E94F60 /* ETRStoryboardLink */ = {
+			isa = PBXGroup;
+			children = (
+				F3F9873C1BBE6D1300E94F60 /* ETRStoryboardLink.h */,
+				F3F9873D1BBE6D1300E94F60 /* ETRStoryboardLink.m */,
+				F3F9873E1BBE6D1300E94F60 /* ETRStoryboardModalSegue.h */,
+				F3F9873F1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m */,
+				F3F987401BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.h */,
+				F3F987411BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.m */,
+				F3F987421BBE6D1300E94F60 /* ETRStoryboardPushSegue.h */,
+				F3F987431BBE6D1300E94F60 /* ETRStoryboardPushSegue.m */,
+				F3F987441BBE6D1300E94F60 /* ETRStoryboardSegue.h */,
+				F3F987451BBE6D1300E94F60 /* ETRStoryboardSegue.m */,
+			);
+			path = ETRStoryboardLink;
 			sourceTree = "<group>";
 		};
 		F3FA7EFF1BAFC26100432037 /* Ressources */ = {
@@ -605,10 +1078,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F9874A1BBE6D1300E94F60 /* .gitignore in Resources */,
 				F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */,
 				F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */,
 				F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */,
 				F3F320A91BBA6B560029F565 /* exo.json in Resources */,
+				F3F987991BBE877500E94F60 /* DigUpProject.xcworkspace in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,
 				F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */,
 				F3F986AB1BBE47B400E94F60 /* partition.pdf in Resources */,
@@ -670,43 +1145,121 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F986A61BBE405400E94F60 /* CourseViewController.m in Sources */,
+				F3F987531BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m in Sources */,
+				F3F987811BBE6D1300E94F60 /* ETRSearchResults.m in Sources */,
 				F3ECBEC01B9D546C0000A656 /* JSONModelError.m in Sources */,
+				F3F9877B1BBE6D1300E94F60 /* ETRStaticCellModel.m in Sources */,
 				F3ECBEC11B9D546C0000A656 /* NSArray+JSONModel.m in Sources */,
 				F3ECBEBF1B9D546C0000A656 /* JSONModelClassProperty.m in Sources */,
+				F3F987591BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m in Sources */,
+				F3F9874D1BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m in Sources */,
 				F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */,
+				F3F9874B1BBE6D1300E94F60 /* ETRActionSheet.m in Sources */,
+				F3F987651BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m in Sources */,
+				F3F987691BBE6D1300E94F60 /* ETRCollectionChangeItems.m in Sources */,
 				F3E01F761BA179CC005028A4 /* MainViewModel.m in Sources */,
+				F3F987611BBE6D1300E94F60 /* UIViewController+ETRUtils.m in Sources */,
+				F3F9878A1BBE6D1300E94F60 /* ETRRACAdditions.m in Sources */,
 				F3E01F791BA179F1005028A4 /* MainViewController.m in Sources */,
+				F3F987551BBE6D1300E94F60 /* NSMutableString+ETRUtils.m in Sources */,
+				F3F9878D1BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.m in Sources */,
 				F3ECBECF1B9D814B0000A656 /* ExerciceModel.m in Sources */,
+				F3F9877A1BBE6D1300E94F60 /* ETRSimpleCollectionModel.m in Sources */,
+				F3F987891BBE6D1300E94F60 /* ETRTrivialPromise.m in Sources */,
+				F3F9878E1BBE6D1300E94F60 /* ETRStoryboardPushSegue.m in Sources */,
+				F3F987521BBE6D1300E94F60 /* NSMutableArray+ETRUtils.m in Sources */,
 				F3ECBEA21B9D4D5B0000A656 /* WebSearcherController.m in Sources */,
+				F3F987621BBE6D1300E94F60 /* ETRCGUtils.m in Sources */,
+				F3F9876C1BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m in Sources */,
+				F3F9876E1BBE6D1300E94F60 /* ETRCollectionChangeSections.m in Sources */,
 				F3ECBEC51B9D546C0000A656 /* JSONKeyMapper.m in Sources */,
+				F3F987871BBE6D1300E94F60 /* ETRPromise.m in Sources */,
+				F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */,
+				F3F987721BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m in Sources */,
 				F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */,
+				F3F987971BBE6E9D00E94F60 /* LoginViewModel.m in Sources */,
 				F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */,
 				F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */,
+				F3F9878B1BBE6D1300E94F60 /* ETRStoryboardLink.m in Sources */,
+				F3F987791BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m in Sources */,
 				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
 				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
 				F3EC8C811BBD5226008AD87A /* MenuViewModel.m in Sources */,
+				F3F987501BBE6D1300E94F60 /* NSError+ETRUtils.m in Sources */,
+				F3F987671BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m in Sources */,
+				F3F9876D1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m in Sources */,
+				F3F987641BBE6D1300E94F60 /* ETRCollectionChangeBatch.m in Sources */,
 				F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */,
+				F3F987821BBE6D1300E94F60 /* ETRTableViewCell.m in Sources */,
+				F3F9875F1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m in Sources */,
 				F3E01F851BA1B294005028A4 /* ImageView.m in Sources */,
+				F3F9875A1BBE6D1300E94F60 /* UICollectionView+ETRUtils.m in Sources */,
+				F3F9876B1BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.m in Sources */,
 				F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */,
 				F3ECBEBE1B9D546C0000A656 /* JSONModelArray.m in Sources */,
+				F3F9875D1BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.m in Sources */,
+				F3F987761BBE6D1300E94F60 /* ETRCollectionUtils.m in Sources */,
 				F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */,
+				F3F987511BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.m in Sources */,
+				F3F987571BBE6D1300E94F60 /* NSString+ETRUtils.m in Sources */,
 				F3ECBEC41B9D546C0000A656 /* JSONModel+networking.m in Sources */,
+				F3F9877F1BBE6D1300E94F60 /* ETRCollectionViewController.m in Sources */,
+				F3F987781BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m in Sources */,
+				F3F987601BBE6D1300E94F60 /* UIView+ETRUtils.m in Sources */,
+				F3F987911BBE6D1300E94F60 /* ETRUtils.m in Sources */,
+				F3F9875B1BBE6D1300E94F60 /* UIColor+ETRUtils.m in Sources */,
 				F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */,
+				F3F987751BBE6D1300E94F60 /* ETRCollectionModel.m in Sources */,
 				F3F487091BA7D8E900FCA8A6 /* MenuViewController.m in Sources */,
+				F3F9875E1BBE6D1300E94F60 /* UITableView+ETRUtils.m in Sources */,
 				F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */,
+				F352749A1BBE91000089FB6F /* MyCoursesViewModel.m in Sources */,
 				F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */,
 				F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */,
+				F3F987631BBE6D1300E94F60 /* ETRCollectionChange.m in Sources */,
+				F3F987881BBE6D1300E94F60 /* ETRResolvablePromise.m in Sources */,
+				F3F987841BBE6D1300E94F60 /* ETRImagePickerController.m in Sources */,
 				F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */,
+				F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */,
+				F3F987701BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.m in Sources */,
+				F3F9876F1BBE6D1300E94F60 /* ETRCompositeCollectionModel.m in Sources */,
+				F3F9874E1BBE6D1300E94F60 /* NSArray+ETRUtils.m in Sources */,
 				F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */,
+				F3F987901BBE6D1300E94F60 /* ETRStringDecorator.m in Sources */,
+				F3F987831BBE6D1300E94F60 /* ETRTableViewController.m in Sources */,
 				F3ECBE6F1B9D452E0000A656 /* main.m in Sources */,
+				F3F9876A1BBE6D1300E94F60 /* ETRCollectionChangeReload.m in Sources */,
+				F3F9877C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m in Sources */,
+				F35274A01BBE9FF90089FB6F /* CoursesTableViewController.m in Sources */,
+				F3F987541BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m in Sources */,
+				F3F987771BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m in Sources */,
+				F3F987561BBE6D1300E94F60 /* NSNumber+ETRUtils.m in Sources */,
+				F3F9874F1BBE6D1300E94F60 /* NSBlockOperation+ETRUtils.m in Sources */,
+				F3F9877D1BBE6D1300E94F60 /* ETRStaticCollectionSection.m in Sources */,
 				F3F64A401BA6F56400B9231D /* TextInputView.m in Sources */,
+				F3F987581BBE6D1300E94F60 /* NSTimer+ETRUtils.m in Sources */,
+				F3F987661BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m in Sources */,
+				F3F987851BBE6D1300E94F60 /* ETRKVO.m in Sources */,
 				F3ECBEC21B9D546C0000A656 /* JSONAPI.m in Sources */,
+				F3F987711BBE6D1300E94F60 /* ETRHidingCollectionModel.m in Sources */,
+				F352749D1BBE9C990089FB6F /* CoursesTableViewModel.m in Sources */,
+				F3F9878F1BBE6D1300E94F60 /* ETRStoryboardSegue.m in Sources */,
+				F3F9877E1BBE6D1300E94F60 /* ETRCollectionViewCell.m in Sources */,
 				F3F64A3D1BA6F54700B9231D /* TextInputViewModel.m in Sources */,
+				F3F9875C1BBE6D1300E94F60 /* UIImage+ETRUtils.m in Sources */,
+				F3F987801BBE6D1300E94F60 /* ETRReuseIdentifierMatching.m in Sources */,
 				F3ECBEC61B9D546C0000A656 /* JSONValueTransformer.m in Sources */,
+				F3F987741BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.m in Sources */,
+				F35274971BBE8F430089FB6F /* MyCoursesViewController.m in Sources */,
 				F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */,
+				F3F9878C1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m in Sources */,
+				F3F9874C1BBE6D1300E94F60 /* ETRAlertView.m in Sources */,
 				F3ECBEC31B9D546C0000A656 /* JSONHTTPClient.m in Sources */,
 				F3ECBEBD1B9D546C0000A656 /* JSONModel.m in Sources */,
+				F3F987681BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m in Sources */,
+				F3F987731BBE6D1300E94F60 /* ETRProxyCollectionModel.m in Sources */,
+				F3F987861BBE6D1300E94F60 /* ETRLazyPromise.m in Sources */,
 				F3F5A8531BAC37D800D35CA6 /* AudioView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
