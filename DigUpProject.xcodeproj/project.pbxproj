@@ -20,7 +20,6 @@
 		F3EC8C811BBD5226008AD87A /* MenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EC8C801BBD5226008AD87A /* MenuViewModel.m */; };
 		F3ECBE6F1B9D452E0000A656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE6E1B9D452E0000A656 /* main.m */; };
 		F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE711B9D452E0000A656 /* AppDelegate.m */; };
-		F3ECBE781B9D452E0000A656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE761B9D452E0000A656 /* Main.storyboard */; };
 		F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE791B9D452E0000A656 /* Assets.xcassets */; };
 		F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */; };
 		F3ECBE881B9D452E0000A656 /* DigUpProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE871B9D452E0000A656 /* DigUpProjectTests.m */; };
@@ -58,6 +57,9 @@
 		F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E881BA28880004648B6 /* RadioButtonView.m */; };
 		F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */; };
 		F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */; };
+		F3F986A61BBE405400E94F60 /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986A51BBE405400E94F60 /* CourseViewController.m */; };
+		F3F986AB1BBE47B400E94F60 /* partition.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AA1BBE47B400E94F60 /* partition.pdf */; };
+		F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AC1BBE604800E94F60 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +120,6 @@
 		F3ECBE6E1B9D452E0000A656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3ECBE701B9D452E0000A656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F3ECBE711B9D452E0000A656 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F3ECBE771B9D452E0000A656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3ECBE791B9D452E0000A656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3ECBE7C1B9D452E0000A656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3ECBE7E1B9D452E0000A656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +189,10 @@
 		F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCorrector.m; sourceTree = "<group>"; };
 		F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonViewModel.h; sourceTree = "<group>"; };
 		F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonViewModel.m; sourceTree = "<group>"; };
+		F3F986A41BBE405400E94F60 /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
+		F3F986A51BBE405400E94F60 /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
+		F3F986AA1BBE47B400E94F60 /* partition.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = partition.pdf; sourceTree = "<group>"; };
+		F3F986AD1BBE604800E94F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DigUpProject/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,22 +260,8 @@
 		F3E01F7B1BA17BD5005028A4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
-				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
-				F3EC8C7F1BBD5226008AD87A /* MenuViewModel.h */,
-				F3EC8C801BBD5226008AD87A /* MenuViewModel.m */,
-				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
-				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
-				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
-				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
-				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
-				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
-				F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */,
-				F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */,
-				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
-				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
-				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
-				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
+				F3F986A71BBE453500E94F60 /* FullViewsModels */,
+				F3F986A91BBE455C00E94F60 /* LocalViewsModels */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -278,14 +269,7 @@
 		F3E01F7C1BA17BEE005028A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */,
-				F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */,
-				F3E01F771BA179F1005028A4 /* MainViewController.h */,
-				F3E01F781BA179F1005028A4 /* MainViewController.m */,
-				F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */,
-				F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */,
-				F3E01F7D1BA180E7005028A4 /* MaterialView.h */,
-				F3E01F7E1BA180E7005028A4 /* MaterialView.m */,
+				F3F986AF1BBE633B00E94F60 /* FullViewsControllers */,
 				F3F4870A1BA8084400FCA8A6 /* MaterialViews */,
 			);
 			name = Views;
@@ -323,8 +307,8 @@
 				F3F89E901BA30670004648B6 /* TaskControllers */,
 				F3E01F7B1BA17BD5005028A4 /* ViewModels */,
 				F3E01F7C1BA17BEE005028A4 /* Views */,
-				F3ECBE761B9D452E0000A656 /* Main.storyboard */,
 				F3ECBE791B9D452E0000A656 /* Assets.xcassets */,
+				F3F986AC1BBE604800E94F60 /* Main.storyboard */,
 				F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */,
 				F3ECBE7E1B9D452E0000A656 /* Info.plist */,
 				F3ECBE6D1B9D452E0000A656 /* Supporting Files */,
@@ -423,6 +407,8 @@
 		F3F4870A1BA8084400FCA8A6 /* MaterialViews */ = {
 			isa = PBXGroup;
 			children = (
+				F3E01F7D1BA180E7005028A4 /* MaterialView.h */,
+				F3E01F7E1BA180E7005028A4 /* MaterialView.m */,
 				F3F64A411BA6FAED00B9231D /* RectangleView.h */,
 				F3F64A421BA6FAED00B9231D /* RectangleView.m */,
 				F3F89E871BA28880004648B6 /* RadioButtonView.h */,
@@ -458,9 +444,55 @@
 			name = TaskControllers;
 			sourceTree = "<group>";
 		};
+		F3F986A71BBE453500E94F60 /* FullViewsModels */ = {
+			isa = PBXGroup;
+			children = (
+				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
+				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
+				F3EC8C7F1BBD5226008AD87A /* MenuViewModel.h */,
+				F3EC8C801BBD5226008AD87A /* MenuViewModel.m */,
+			);
+			name = FullViewsModels;
+			sourceTree = "<group>";
+		};
+		F3F986A91BBE455C00E94F60 /* LocalViewsModels */ = {
+			isa = PBXGroup;
+			children = (
+				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
+				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
+				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
+				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
+				F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */,
+				F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */,
+				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
+				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
+				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
+				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
+				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
+				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
+			);
+			name = LocalViewsModels;
+			sourceTree = "<group>";
+		};
+		F3F986AF1BBE633B00E94F60 /* FullViewsControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */,
+				F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */,
+				F3F986A41BBE405400E94F60 /* CourseViewController.h */,
+				F3F986A51BBE405400E94F60 /* CourseViewController.m */,
+				F3E01F771BA179F1005028A4 /* MainViewController.h */,
+				F3E01F781BA179F1005028A4 /* MainViewController.m */,
+				F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */,
+				F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */,
+			);
+			name = FullViewsControllers;
+			sourceTree = "<group>";
+		};
 		F3FA7EFF1BAFC26100432037 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				F3F986AA1BBE47B400E94F60 /* partition.pdf */,
 				F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */,
 				F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */,
 			);
@@ -573,12 +605,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */,
 				F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */,
 				F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */,
 				F3F320A91BBA6B560029F565 /* exo.json in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,
 				F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */,
-				F3ECBE781B9D452E0000A656 /* Main.storyboard in Resources */,
+				F3F986AB1BBE47B400E94F60 /* partition.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +669,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F986A61BBE405400E94F60 /* CourseViewController.m in Sources */,
 				F3ECBEC01B9D546C0000A656 /* JSONModelError.m in Sources */,
 				F3ECBEC11B9D546C0000A656 /* NSArray+JSONModel.m in Sources */,
 				F3ECBEBF1B9D546C0000A656 /* JSONModelClassProperty.m in Sources */,
@@ -709,20 +743,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F3ECBE761B9D452E0000A656 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F3ECBE771B9D452E0000A656 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F3ECBE7C1B9D452E0000A656 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F3F986AC1BBE604800E94F60 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3F986AD1BBE604800E94F60 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

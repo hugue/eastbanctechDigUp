@@ -114,14 +114,8 @@
         self.viewModel.selectedCourse = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     }
     else {
-        
+        [self performSegueWithIdentifier:@"courseSegue" sender:nil];
     }
 }
 
-/*
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.courseTableView reloadData];
-}
-*/
 @end
