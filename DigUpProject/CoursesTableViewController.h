@@ -6,8 +6,11 @@
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
-#import "ETRTableViewController.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 #import "CoursesTableViewModel.h"
+#import "ETRTableViewController.h"
+#import "CourseCellView.h"
 
 @interface CoursesTableViewController : ETRTableViewController
 

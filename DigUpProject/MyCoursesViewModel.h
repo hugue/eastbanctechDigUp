@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 #import "CoursesTableViewModel.h"
+#import "CourseModel.h"
 
 @interface MyCoursesViewModel : NSObject
 
@@ -15,7 +18,10 @@
 
 @property (nonatomic, strong) NSString * selectedCourse;
 @property (nonatomic, strong) CoursesTableViewModel * coursesViewModel;
+@property (nonatomic, strong) CoursesTableViewModel * detailCoursesViewModel;
 
-- (id)init;
+- (id)initWithCourses:(NSArray<CourseModel *> *)courses;
+- (void)observeSubModels;
+- (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;
 
 @end

@@ -7,22 +7,53 @@
 //
 
 #import "MyCoursesViewModel.h"
+@interface MyCoursesViewModel()
+
+@property (nonatomic, strong) NSMutableArray<NSArray<NSString *> *> * coursesDocumentsTitles;
+
+@end
 
 @implementation MyCoursesViewModel
 
-- (id)init {
+- (id)initWithCourses:(NSArray<CourseModel *> *)courses {
     self = [super init];
     if (self) {
-        self.coursesViewModel = [[CoursesTableViewModel alloc] init];
- /*
-        self.detailCourses = [[NSMutableDictionary alloc] init];
-        [self.detailCourses setObject:@[@"Geometry",@"Complex Numbers"] forKey:@"Mathematics"];
-        [self.detailCourses setObject:@[@"The 3rd Newton's law",@"2 Principle of thermodynamics"] forKey:@"Physics"];
-        [self.detailCourses setObject:@[@"Balzac",@"Blabla"] forKey:@"Litterature"];
-        [self.detailCourses setObject:@[@"Geology",@"Turtles", @"Mice"] forKey:@"Biology"];*/
+        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CoursesCell"];
+        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"detailsCell"];
+        
+        self.coursesDocumentsTitles = [[NSMutableArray alloc] init];
+        
+        for (CourseModel * course in courses) {
+            [self.coursesViewModel addNewCellWithLabel:course.courseTitle];
+            [self.coursesDocumentsTitles addObject:course.documentsTitle];
+        }
+        
+        [self observeSubModels];
     }
     return self;
 }
 
+- (void)observeSubModels {
+    @weakify(self)
+    [[RACObserve(self.coursesViewModel, selectedCell) distinctUntilChanged] subscribeNext:^(id x) {
+        @strongify(self)
+        self.detailCoursesViewModel.listModelCourses = [self createCellViewModelsForCourse:x];
+    }];
+}
+
+- (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber {
+    if (courseNumber) {
+        NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
+        for (NSString * cellLabel in [self.coursesDocumentsTitles objectAtIndex:[courseNumber integerValue]]) {
+            CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.detailCoursesViewModel.cellIdentifier];
+            newCellModel.cellLabel = cellLabel;
+            [courseCellViewModels addObject:newCellModel];
+        }
+    return courseCellViewModels;
+    }
+    else {
+        return nil;
+    }
+}
 
 @end

@@ -11,11 +11,13 @@
 
 @interface CoursesTableViewModel : ETRCollectionModel
 
-@property (nonatomic, strong) NSMutableArray<NSString *> * listCourses;
 @property (nonatomic, strong) NSMutableArray<CourseCellViewModel *> * listModelCourses;
+@property (nonatomic, strong) NSString * cellIdentifier;
+@property (nonatomic, strong) NSNumber * selectedCell;
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
-- (id)init;
+- (id)initWithCellIdentifier:(NSString *)identifier;
+- (void)addNewCellWithLabel:(NSString *)cellLabel;
 
 @end

@@ -10,29 +10,30 @@
 
 @implementation CoursesTableViewModel
 
-- (id)init {
+- (id)initWithCellIdentifier:(NSString *)identifier {
     self = [super init];
     if (self) {
-        self.listCourses = [[NSMutableArray alloc] init];
-        [self.listCourses addObject:@"Mathematics"];
-        [self.listCourses addObject:@"Physics"];
-        [self.listCourses addObject:@"Litterature"];
-        [self.listCourses addObject:@"Biology"];
+        self.listModelCourses = [[NSMutableArray alloc] init];
+        self.cellIdentifier = identifier;
     }
     return self;
 }
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
     if (section == 0) {
-        return self.listCourses.count;
+        return self.listModelCourses.count;
     }
     return 0;
 }
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"IndexPath - %@ , and first element - %d", indexPath, [indexPath indexAtPosition:0]);
-    //NSString * item = [self.listCourses objectAtIndex:[indexPath indexAtPosition:0]];
-    return @"Hello";
+       return [self.listModelCourses objectAtIndex:[indexPath indexAtPosition:1]];
+}
+
+- (void)addNewCellWithLabel:(NSString *)cellLabel {
+    CourseCellViewModel * newCell = [[CourseCellViewModel alloc] initWithIdentifier:self.cellIdentifier];
+    newCell.cellLabel = cellLabel;
+    [self.listModelCourses addObject:newCell];
 }
 
 @end

@@ -140,6 +140,8 @@
 		F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987931BBE6DAE00E94F60 /* LoginViewController.m */; };
 		F3F987971BBE6E9D00E94F60 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */; };
 		F3F987991BBE877500E94F60 /* DigUpProject.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */; };
+		F3F9F1A51BC251CA005B0D5E /* CourseCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */; };
+		F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F1AD1BC27070005B0D5E /* CourseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -433,6 +435,10 @@
 		F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DigUpProject.xcworkspace; sourceTree = "<group>"; };
+		F3F9F1A31BC251CA005B0D5E /* CourseCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCellView.h; sourceTree = "<group>"; };
+		F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCellView.m; sourceTree = "<group>"; };
+		F3F9F1AC1BC27070005B0D5E /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
+		F3F9F1AD1BC27070005B0D5E /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +499,8 @@
 				F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */,
 				F3ECBECA1B9D64EE0000A656 /* MaterialModel.h */,
 				F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */,
+				F3F9F1AC1BC27070005B0D5E /* CourseModel.h */,
+				F3F9F1AD1BC27070005B0D5E /* CourseModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 		F3E01F7B1BA17BD5005028A4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F3F9F1A01BC2345E005B0D5E /* ExerciseMaterialViewModels */,
 				F3F986A71BBE453500E94F60 /* FullViewsModels */,
 				F3F986A91BBE455C00E94F60 /* LocalViewsModels */,
 			);
@@ -510,7 +519,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F986AF1BBE633B00E94F60 /* FullViewsControllers */,
-				F3F4870A1BA8084400FCA8A6 /* MaterialViews */,
+				F3F9F1A21BC234A8005B0D5E /* LocalViews */,
+				F3F9F1A11BC2348A005B0D5E /* ExerciseMaterialViews */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -646,29 +656,6 @@
 			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
-		F3F4870A1BA8084400FCA8A6 /* MaterialViews */ = {
-			isa = PBXGroup;
-			children = (
-				F3E01F7D1BA180E7005028A4 /* MaterialView.h */,
-				F3E01F7E1BA180E7005028A4 /* MaterialView.m */,
-				F3F64A411BA6FAED00B9231D /* RectangleView.h */,
-				F3F64A421BA6FAED00B9231D /* RectangleView.m */,
-				F3F89E871BA28880004648B6 /* RadioButtonView.h */,
-				F3F89E881BA28880004648B6 /* RadioButtonView.m */,
-				F33D40FF1BAFFBB200F5A903 /* CheckBoxView.h */,
-				F33D41001BAFFBB200F5A903 /* CheckBoxView.m */,
-				F3F64A3E1BA6F56400B9231D /* TextInputView.h */,
-				F3F64A3F1BA6F56400B9231D /* TextInputView.m */,
-				F3E01F801BA1A6E6005028A4 /* TextFrameView.h */,
-				F3E01F811BA1A6E6005028A4 /* TextFrameView.m */,
-				F3E01F831BA1B294005028A4 /* ImageView.h */,
-				F3E01F841BA1B294005028A4 /* ImageView.m */,
-				F3F5A8511BAC37D800D35CA6 /* AudioView.h */,
-				F3F5A8521BAC37D800D35CA6 /* AudioView.m */,
-			);
-			name = MaterialViews;
-			sourceTree = "<group>";
-		};
 		F3F89E901BA30670004648B6 /* TaskControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,18 +695,6 @@
 				F352749C1BBE9C990089FB6F /* CoursesTableViewModel.m */,
 				F35274A11BBEC0790089FB6F /* CourseCellViewModel.h */,
 				F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */,
-				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
-				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
-				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
-				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
-				F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */,
-				F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */,
-				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
-				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
-				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
-				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
-				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
-				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
 			);
 			name = LocalViewsModels;
 			sourceTree = "<group>";
@@ -731,8 +706,6 @@
 				F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */,
 				F35274951BBE8F430089FB6F /* MyCoursesViewController.h */,
 				F35274961BBE8F430089FB6F /* MyCoursesViewController.m */,
-				F352749E1BBE9FF90089FB6F /* CoursesTableViewController.h */,
-				F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */,
 				F3F986A41BBE405400E94F60 /* CourseViewController.h */,
 				F3F986A51BBE405400E94F60 /* CourseViewController.m */,
 				F3E01F771BA179F1005028A4 /* MainViewController.h */,
@@ -962,6 +935,59 @@
 			path = ETRStoryboardLink;
 			sourceTree = "<group>";
 		};
+		F3F9F1A01BC2345E005B0D5E /* ExerciseMaterialViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
+				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
+				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
+				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
+				F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */,
+				F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */,
+				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
+				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
+				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
+				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
+				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
+				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
+			);
+			name = ExerciseMaterialViewModels;
+			sourceTree = "<group>";
+		};
+		F3F9F1A11BC2348A005B0D5E /* ExerciseMaterialViews */ = {
+			isa = PBXGroup;
+			children = (
+				F3E01F7D1BA180E7005028A4 /* MaterialView.h */,
+				F3E01F7E1BA180E7005028A4 /* MaterialView.m */,
+				F3F64A411BA6FAED00B9231D /* RectangleView.h */,
+				F3F64A421BA6FAED00B9231D /* RectangleView.m */,
+				F3F89E871BA28880004648B6 /* RadioButtonView.h */,
+				F3F89E881BA28880004648B6 /* RadioButtonView.m */,
+				F33D40FF1BAFFBB200F5A903 /* CheckBoxView.h */,
+				F33D41001BAFFBB200F5A903 /* CheckBoxView.m */,
+				F3F64A3E1BA6F56400B9231D /* TextInputView.h */,
+				F3F64A3F1BA6F56400B9231D /* TextInputView.m */,
+				F3E01F801BA1A6E6005028A4 /* TextFrameView.h */,
+				F3E01F811BA1A6E6005028A4 /* TextFrameView.m */,
+				F3E01F831BA1B294005028A4 /* ImageView.h */,
+				F3E01F841BA1B294005028A4 /* ImageView.m */,
+				F3F5A8511BAC37D800D35CA6 /* AudioView.h */,
+				F3F5A8521BAC37D800D35CA6 /* AudioView.m */,
+			);
+			name = ExerciseMaterialViews;
+			sourceTree = "<group>";
+		};
+		F3F9F1A21BC234A8005B0D5E /* LocalViews */ = {
+			isa = PBXGroup;
+			children = (
+				F352749E1BBE9FF90089FB6F /* CoursesTableViewController.h */,
+				F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */,
+				F3F9F1A31BC251CA005B0D5E /* CourseCellView.h */,
+				F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */,
+			);
+			name = LocalViews;
+			sourceTree = "<group>";
+		};
 		F3FA7EFF1BAFC26100432037 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1146,6 +1172,7 @@
 			files = (
 				F3F986A61BBE405400E94F60 /* CourseViewController.m in Sources */,
 				F3F987531BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m in Sources */,
+				F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */,
 				F3F987811BBE6D1300E94F60 /* ETRSearchResults.m in Sources */,
 				F3ECBEC01B9D546C0000A656 /* JSONModelError.m in Sources */,
 				F3F9877B1BBE6D1300E94F60 /* ETRStaticCellModel.m in Sources */,
@@ -1231,6 +1258,7 @@
 				F3ECBE6F1B9D452E0000A656 /* main.m in Sources */,
 				F3F9876A1BBE6D1300E94F60 /* ETRCollectionChangeReload.m in Sources */,
 				F3F9877C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m in Sources */,
+				F3F9F1A51BC251CA005B0D5E /* CourseCellView.m in Sources */,
 				F35274A01BBE9FF90089FB6F /* CoursesTableViewController.m in Sources */,
 				F3F987541BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m in Sources */,
 				F3F987771BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m in Sources */,

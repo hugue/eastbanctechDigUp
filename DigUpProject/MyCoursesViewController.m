@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self applyModelToView];
     
 }
 
@@ -30,12 +31,26 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"viewModel - %@", self.viewModel);
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NSLog(@"Show new view controller");
-    CoursesTableViewController * coursesTableViewController = [segue destinationViewController];
-    coursesTableViewController.viewModel = self.viewModel.coursesViewModel;
+    if ([segue.identifier isEqualToString:@"coursesSegue"]) {
+        CoursesTableViewController * coursesTableViewController = [segue destinationViewController];
+        coursesTableViewController.viewModel = self.viewModel.coursesViewModel;
+    }
+    else if ([segue.identifier isEqualToString:@"detailCoursesSegue"]) {
+        CoursesTableViewController * detailCoursesTableViewController = [segue destinationViewController];
+        detailCoursesTableViewController.viewModel = self.viewModel.detailCoursesViewModel;
+    }
+}
+
+- (void)applyModelToView {
+    @weakify(self)
+    [RACObserve(self.viewModel.detailCoursesViewModel, selectedCell) subscribeNext:^(id x) {
+        @strongify(self)
+        if (x) {
+            [self performSegueWithIdentifier:@"viewDocument" sender:nil];
+        }
+    }];
 }
 
 @end

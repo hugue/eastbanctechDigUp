@@ -13,6 +13,7 @@
 @interface MyCoursesViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *coursesTableView;
+@property (weak, nonatomic) IBOutlet UIView *detailCoursesTableView;
 
 @property (nonatomic, strong) MyCoursesViewModel * viewModel;
 

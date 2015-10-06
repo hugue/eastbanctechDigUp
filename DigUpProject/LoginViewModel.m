@@ -45,8 +45,19 @@
 */
 
 - (BOOL)signInNow {
+    NSMutableArray<CourseModel *> * courses = [[NSMutableArray alloc] init];
     NSLog(@"Login - %@ and password - %@", self.login, self.password);
-    self.profileViewModel = [[MyCoursesViewModel alloc] init];
+    CourseModel * course1 = [[CourseModel alloc] initWithTitle:@"Mathematics" AndDocuments:@[@"Cosinus", @"Poincarre's formula", @"Complex numbers"]];
+    CourseModel * course2 = [[CourseModel alloc] initWithTitle:@"Litterature" AndDocuments:@[@"Balzac", @"Tolstoi"]];
+    [courses addObject:course1];
+    [courses addObject:course2];
+    
+    for (int i = 0; i < 50; i++) {
+        CourseModel * newCourse = [[CourseModel alloc] initWithTitle:[NSString stringWithFormat:@"Course %d", i]  AndDocuments:@[@"Hello"]];
+        [courses addObject:newCourse];
+    }
+    
+    self.profileViewModel = [[MyCoursesViewModel alloc] initWithCourses:courses];
     return YES;
 }
 @end

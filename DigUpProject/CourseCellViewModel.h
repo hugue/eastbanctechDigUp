@@ -10,6 +10,10 @@
 
 @interface CourseCellViewModel : NSObject
 
+@property (nonatomic, strong) NSString * cellIdentifier;
+@property (nonatomic, strong) NSString * cellLabel;
+
 - (NSString *)reuseIdentifier;
+- (id)initWithIdentifier:(NSString *)identifier;
 
 @end
