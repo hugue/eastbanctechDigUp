@@ -32,6 +32,7 @@
         @strongify(self)
         if (x) {
             self.viewModel.documentViewModel.nameDocument = @"partition";
+            self.viewModel.documentViewModel.testNames = @[@"Test 1", @"Test 2", @"Test 3", @"Test 4"];
             [self performSegueWithIdentifier:@"viewDocument" sender:self];
         }
     }];

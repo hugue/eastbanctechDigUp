@@ -33,6 +33,8 @@
     NSURL *url = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.documentView loadRequest:request];
+    
+    //self.viewModel.chooseTestViewModel
 }
 
 /*
@@ -45,6 +47,13 @@
 }
 */
 
-- (IBAction)displayChoiceTests:(id)sender {
+- (IBAction)chooseTest:(UIButton *)sender {
+        [self performSegueWithIdentifier:@"chooseTestSegue" sender:self];
 }
+
+- (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
+    CoursesTableViewController * tableViewController = [segue destinationViewController];
+    tableViewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+}
+
 @end

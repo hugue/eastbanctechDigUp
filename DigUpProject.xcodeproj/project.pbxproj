@@ -47,6 +47,8 @@
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
 		F3F596191BC3C7A2007928CB /* DocumentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F596181BC3C7A2007928CB /* DocumentViewModel.m */; };
 		F3F5961C1BC3C7CF007928CB /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */; };
+		F3F5962E1BC3ED68007928CB /* ChooseTestTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */; };
+		F3F596311BC3EE87007928CB /* ChooseTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F596301BC3EE87007928CB /* ChooseTestTableViewController.m */; };
 		F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */; };
 		F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */; };
 		F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */; };
@@ -254,6 +256,10 @@
 		F3F596181BC3C7A2007928CB /* DocumentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewModel.m; sourceTree = "<group>"; };
 		F3F5961A1BC3C7CF007928CB /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
 		F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
+		F3F5962C1BC3ED68007928CB /* ChooseTestTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTestTableViewModel.h; sourceTree = "<group>"; };
+		F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTestTableViewModel.m; sourceTree = "<group>"; };
+		F3F5962F1BC3EE87007928CB /* ChooseTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTestTableViewController.h; sourceTree = "<group>"; };
+		F3F596301BC3EE87007928CB /* ChooseTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTestTableViewController.m; sourceTree = "<group>"; };
 		F3F5A8461BABCACB00D35CA6 /* DragNDropController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragNDropController.h; sourceTree = "<group>"; };
 		F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragNDropController.m; sourceTree = "<group>"; };
 		F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragElementRecognizer.h; sourceTree = "<group>"; };
@@ -681,6 +687,8 @@
 				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
 				F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */,
 				F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */,
+				F3F5962C1BC3ED68007928CB /* ChooseTestTableViewModel.h */,
+				F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */,
 				F3F596171BC3C7A2007928CB /* DocumentViewModel.h */,
 				F3F596181BC3C7A2007928CB /* DocumentViewModel.m */,
 			);
@@ -711,6 +719,8 @@
 				F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */,
 				F3F987921BBE6DAE00E94F60 /* LoginViewController.h */,
 				F3F987931BBE6DAE00E94F60 /* LoginViewController.m */,
+				F3F5962F1BC3EE87007928CB /* ChooseTestTableViewController.h */,
+				F3F596301BC3EE87007928CB /* ChooseTestTableViewController.m */,
 			);
 			name = FullViewsControllers;
 			sourceTree = "<group>";
@@ -1214,6 +1224,7 @@
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
 				F3F987501BBE6D1300E94F60 /* NSError+ETRUtils.m in Sources */,
 				F3F987671BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m in Sources */,
+				F3F5962E1BC3ED68007928CB /* ChooseTestTableViewModel.m in Sources */,
 				F3F9876D1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m in Sources */,
 				F3F987641BBE6D1300E94F60 /* ETRCollectionChangeBatch.m in Sources */,
 				F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */,
@@ -1258,6 +1269,7 @@
 				F3F9877C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m in Sources */,
 				F3F9F1A51BC251CA005B0D5E /* CourseCellView.m in Sources */,
 				F35274A01BBE9FF90089FB6F /* CoursesTableViewController.m in Sources */,
+				F3F596311BC3EE87007928CB /* ChooseTestTableViewController.m in Sources */,
 				F3F987541BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m in Sources */,
 				F3F987771BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m in Sources */,
 				F3F987561BBE6D1300E94F60 /* NSNumber+ETRUtils.m in Sources */,

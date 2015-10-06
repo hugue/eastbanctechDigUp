@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "DocumentViewModel.h"
+#import "CoursesTableViewController.h"
 
 @interface DocumentViewController : UIViewController
 
 @property (nonatomic, strong) DocumentViewModel * viewModel;
 @property (weak, nonatomic) IBOutlet UIWebView * documentView;
 
-- (IBAction)displayChoiceTests:(id)sender;
+- (IBAction)chooseTest:(UIButton *)sender;
 
 @end
