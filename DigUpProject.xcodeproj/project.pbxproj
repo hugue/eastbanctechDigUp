@@ -45,6 +45,8 @@
 		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
+		F3F596191BC3C7A2007928CB /* DocumentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F596181BC3C7A2007928CB /* DocumentViewModel.m */; };
+		F3F5961C1BC3C7CF007928CB /* DocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */; };
 		F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */; };
 		F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */; };
 		F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */; };
@@ -61,7 +63,6 @@
 		F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E881BA28880004648B6 /* RadioButtonView.m */; };
 		F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */; };
 		F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */; };
-		F3F986A61BBE405400E94F60 /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F986A51BBE405400E94F60 /* CourseViewController.m */; };
 		F3F986AB1BBE47B400E94F60 /* partition.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AA1BBE47B400E94F60 /* partition.pdf */; };
 		F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AC1BBE604800E94F60 /* Main.storyboard */; };
 		F3F9874A1BBE6D1300E94F60 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F3F986B11BBE6D1300E94F60 /* .gitignore */; };
@@ -249,6 +250,10 @@
 		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
 		F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Regular.otf"; sourceTree = "<group>"; };
 		F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Bold.otf"; sourceTree = "<group>"; };
+		F3F596171BC3C7A2007928CB /* DocumentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewModel.h; sourceTree = "<group>"; };
+		F3F596181BC3C7A2007928CB /* DocumentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewModel.m; sourceTree = "<group>"; };
+		F3F5961A1BC3C7CF007928CB /* DocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewController.h; sourceTree = "<group>"; };
+		F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentViewController.m; sourceTree = "<group>"; };
 		F3F5A8461BABCACB00D35CA6 /* DragNDropController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragNDropController.h; sourceTree = "<group>"; };
 		F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragNDropController.m; sourceTree = "<group>"; };
 		F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragElementRecognizer.h; sourceTree = "<group>"; };
@@ -277,8 +282,6 @@
 		F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCorrector.m; sourceTree = "<group>"; };
 		F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonViewModel.h; sourceTree = "<group>"; };
 		F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonViewModel.m; sourceTree = "<group>"; };
-		F3F986A41BBE405400E94F60 /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
-		F3F986A51BBE405400E94F60 /* CourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseViewController.m; sourceTree = "<group>"; };
 		F3F986AA1BBE47B400E94F60 /* partition.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = partition.pdf; sourceTree = "<group>"; };
 		F3F986AD1BBE604800E94F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DigUpProject/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3F986B11BBE6D1300E94F60 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -678,6 +681,8 @@
 				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
 				F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */,
 				F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */,
+				F3F596171BC3C7A2007928CB /* DocumentViewModel.h */,
+				F3F596181BC3C7A2007928CB /* DocumentViewModel.m */,
 			);
 			name = FullViewsModels;
 			sourceTree = "<group>";
@@ -698,8 +703,8 @@
 			children = (
 				F35274951BBE8F430089FB6F /* MyCoursesViewController.h */,
 				F35274961BBE8F430089FB6F /* MyCoursesViewController.m */,
-				F3F986A41BBE405400E94F60 /* CourseViewController.h */,
-				F3F986A51BBE405400E94F60 /* CourseViewController.m */,
+				F3F5961A1BC3C7CF007928CB /* DocumentViewController.h */,
+				F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */,
 				F3E01F771BA179F1005028A4 /* MainViewController.h */,
 				F3E01F781BA179F1005028A4 /* MainViewController.m */,
 				F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */,
@@ -1164,7 +1169,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F986A61BBE405400E94F60 /* CourseViewController.m in Sources */,
 				F3F987531BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m in Sources */,
 				F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */,
 				F3F987811BBE6D1300E94F60 /* ETRSearchResults.m in Sources */,
@@ -1197,12 +1201,14 @@
 				F3F987871BBE6D1300E94F60 /* ETRPromise.m in Sources */,
 				F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */,
 				F3F987721BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m in Sources */,
+				F3F596191BC3C7A2007928CB /* DocumentViewModel.m in Sources */,
 				F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */,
 				F3F987971BBE6E9D00E94F60 /* LoginViewModel.m in Sources */,
 				F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */,
 				F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */,
 				F3F9878B1BBE6D1300E94F60 /* ETRStoryboardLink.m in Sources */,
 				F3F987791BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m in Sources */,
+				F3F5961C1BC3C7CF007928CB /* DocumentViewController.m in Sources */,
 				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
 				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,

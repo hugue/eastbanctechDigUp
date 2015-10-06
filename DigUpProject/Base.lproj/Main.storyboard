@@ -5,11 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="3Uh-nU-mkS">
@@ -170,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="1990" y="485"/>
         </scene>
-        <!--Course View Controller-->
+        <!--Document View Controller-->
         <scene sceneID="v7M-h3-uXw">
             <objects>
-                <viewController id="BRy-P1-EVn" customClass="CourseViewController" sceneMemberID="viewController">
+                <viewController id="BRy-P1-EVn" customClass="DocumentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fd2-gM-3jE"/>
                         <viewControllerLayoutGuide type="bottom" id="eIx-VV-wLi"/>
@@ -191,6 +186,7 @@
                                 </constraints>
                                 <state key="normal" title="Do Test"/>
                                 <connections>
+                                    <action selector="displayChoiceTests:" destination="BRy-P1-EVn" eventType="touchUpInside" id="VrP-vh-ev7"/>
                                     <action selector="doTestButton:" destination="BRy-P1-EVn" eventType="touchUpInside" id="jTU-sX-mza"/>
                                     <segue destination="X2Z-ZF-BXp" kind="push" identifier="doTestSegue" id="uhX-Kl-2Sz"/>
                                 </connections>
@@ -212,19 +208,9 @@
                             <constraint firstItem="GqI-wt-FGp" firstAttribute="leading" secondItem="m5P-s0-bZj" secondAttribute="leadingMargin" constant="-20" id="kbK-ij-N4d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Kg1-2w-1f0">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ulr-nS-eTu">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZlC-vh-Pfc">
-                                <rect key="frame" x="598" y="7" width="170" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Log Out"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Kg1-2w-1f0"/>
                     <connections>
-                        <outlet property="documentView" destination="GqI-wt-FGp" id="ZoF-wl-8TR"/>
+                        <outlet property="documentView" destination="GqI-wt-FGp" id="wxY-B3-MsW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxR-TO-DUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,11 +319,11 @@
         <scene sceneID="cKf-Fx-rer">
             <objects>
                 <tableViewController id="jq1-H0-sbe" customClass="CoursesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oZJ-LV-vM8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="oZJ-LV-vM8">
                         <rect key="frame" x="0.0" y="0.0" width="325" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="jq1-H0-sbe" id="btE-75-dA9"/>
                             <outlet property="delegate" destination="jq1-H0-sbe" id="JQy-Qj-fSE"/>
@@ -352,11 +338,11 @@
         <scene sceneID="rwU-yT-3hF">
             <objects>
                 <tableViewController id="poc-9P-dPp" customClass="CoursesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="beW-m0-zkC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="beW-m0-zkC">
                         <rect key="frame" x="0.0" y="0.0" width="435" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="poc-9P-dPp" id="eno-9d-wBG"/>
                             <outlet property="delegate" destination="poc-9P-dPp" id="XpM-1B-VxM"/>

@@ -10,19 +10,19 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "CoursesTableViewModel.h"
+#import "DocumentViewModel.h"
 #import "CourseModel.h"
 
 @interface MyCoursesViewModel : NSObject
 
-//@property (nonatomic, strong) NSMutableDictionary<NSString *, NSArray<NSString *> *> * detailCourses;
-
 @property (nonatomic, strong) NSString * selectedCourse;
 @property (nonatomic, strong) CoursesTableViewModel * coursesViewModel;
 @property (nonatomic, strong) CoursesTableViewModel * detailCoursesViewModel;
+@property (nonatomic, strong) DocumentViewModel * documentViewModel;
 
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses;
 - (void)observeSubModels;
-- (CoursesTableViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
-//- (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;
+- (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
+- (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;
 
 @end

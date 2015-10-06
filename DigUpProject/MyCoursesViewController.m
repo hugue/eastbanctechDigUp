@@ -28,9 +28,10 @@
 
 - (void)applyModelToView {
     @weakify(self)
-    [RACObserve(self.viewModel.detailCoursesViewModel, selectedCell) subscribeNext:^(id x) {
+    [RACObserve(self.viewModel, detailCoursesViewModel.selectedCell) subscribeNext:^(id x) {
         @strongify(self)
         if (x) {
+            self.viewModel.documentViewModel.nameDocument = @"partition";
             [self performSegueWithIdentifier:@"viewDocument" sender:self];
         }
     }];

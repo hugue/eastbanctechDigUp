@@ -25,7 +25,6 @@
         }
         
         self.items = [cellsModels copy];
-        NSLog(@"Number of items - %lu", self.items.count);
     }
     return self;
 }
@@ -37,7 +36,7 @@
 }
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
-    self.selectedCell = [NSNumber numberWithInt:[indexPath indexAtPosition:1]];
+    self.selectedCell = [NSNumber numberWithInt:(int)[indexPath indexAtPosition:1]];
 }
 
 - (void)didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {

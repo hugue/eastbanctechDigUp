@@ -24,14 +24,14 @@
         
         for (CourseModel * course in courses) {
             [coursesNames addObject:course.courseTitle];
-            //[self.coursesViewModel addNewCellWithLabel:course.courseTitle];
-            //[self.coursesDocumentsTitles addObject:course.documentsTitle];
+            [self.coursesDocumentsTitles addObject:course.documentsTitle];
         }
         
         self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:coursesNames];
         self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:nil];
+        self.documentViewModel = [[DocumentViewModel alloc] init];
         
-        //[self observeSubModels];
+        [self observeSubModels];
     }
     return self;
 }
@@ -44,15 +44,18 @@
     }];
 }
 
-- (CoursesTableViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
-    CoursesTableViewModel * tableViewModel = nil;
+- (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
+    id viewModel = nil;
     if ([segueIdentifier isEqualToString:@"coursesSegue"]) {
-        tableViewModel = self.coursesViewModel;
+        viewModel = self.coursesViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"detailCoursesSegue"]) {
-        tableViewModel = self.detailCoursesViewModel;
+        viewModel = self.detailCoursesViewModel;
     }
-    return tableViewModel;
+    else if ([segueIdentifier isEqualToString:@"viewDocument"]) {
+        viewModel = self.documentViewModel;
+    }
+    return viewModel;
 
 }
 
