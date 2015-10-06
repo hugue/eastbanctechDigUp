@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="3Uh-nU-mkS">
@@ -26,17 +31,6 @@
                                     <constraint firstAttribute="width" constant="226" id="abC-sJ-VP3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="53"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsn-9F-H2d">
-                                <rect key="frame" x="186" y="547" width="126" height="21"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="j2O-qu-s3a"/>
-                                    <constraint firstAttribute="width" constant="126" id="rCP-0v-6SJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -74,12 +68,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1A-Xt-7Jb">
-                                <rect key="frame" x="186" y="463" width="84" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1A-Xt-7Jb">
+                                <rect key="frame" x="186" y="463" width="395" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="UjG-z4-yPF"/>
-                                    <constraint firstAttribute="width" constant="84" id="eRU-6a-eEr"/>
+                                    <constraint firstAttribute="width" constant="395" id="qau-6n-xwm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsn-9F-H2d">
+                                <rect key="frame" x="186" y="547" width="395" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="395" id="RiQ-8W-EWZ"/>
+                                    <constraint firstAttribute="height" constant="21" id="j2O-qu-s3a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -94,11 +99,13 @@
                             <constraint firstItem="YMe-U4-ZDS" firstAttribute="centerX" secondItem="cmW-9F-Brj" secondAttribute="centerX" id="IW5-ry-nmD"/>
                             <constraint firstItem="MeZ-up-ipS" firstAttribute="centerX" secondItem="cmW-9F-Brj" secondAttribute="centerX" id="PQf-tg-zJJ"/>
                             <constraint firstItem="WAh-xn-Vgb" firstAttribute="top" secondItem="hsn-9F-H2d" secondAttribute="bottom" constant="8" id="TUK-Ri-8O3"/>
+                            <constraint firstItem="x1A-Xt-7Jb" firstAttribute="centerX" secondItem="cmW-9F-Brj" secondAttribute="centerX" id="UTi-IB-oXq"/>
                             <constraint firstItem="Zf2-JJ-ngG" firstAttribute="top" secondItem="5hX-7h-8ir" secondAttribute="bottom" id="bDB-zt-QDv"/>
                             <constraint firstItem="YMe-U4-ZDS" firstAttribute="top" secondItem="WAh-xn-Vgb" secondAttribute="bottom" constant="41" id="ib0-4I-NHG"/>
                             <constraint firstItem="MeZ-up-ipS" firstAttribute="centerY" secondItem="cmW-9F-Brj" secondAttribute="centerY" id="rdk-Xy-nBF"/>
                             <constraint firstItem="Zf2-JJ-ngG" firstAttribute="centerX" secondItem="cmW-9F-Brj" secondAttribute="centerX" id="uAo-70-ePp"/>
                             <constraint firstItem="hsn-9F-H2d" firstAttribute="top" secondItem="MeZ-up-ipS" secondAttribute="bottom" constant="20" id="xKG-e8-Wfa"/>
+                            <constraint firstItem="hsn-9F-H2d" firstAttribute="centerX" secondItem="cmW-9F-Brj" secondAttribute="centerX" id="xnR-Tq-rz8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="95U-yQ-dFO"/>
@@ -148,6 +155,8 @@
                             <constraint firstItem="7dx-ta-Uvm" firstAttribute="top" secondItem="BVh-Bn-rKD" secondAttribute="bottom" id="V5d-n8-XWl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BVh-Bn-rKD" secondAttribute="trailing" constant="-20" id="ZsQ-Df-kUW"/>
                             <constraint firstItem="BVh-Bn-rKD" firstAttribute="leading" secondItem="pCp-gj-w5l" secondAttribute="trailing" constant="8" id="ajd-YL-SZN"/>
+                            <constraint firstItem="BVh-Bn-rKD" firstAttribute="centerY" secondItem="Ky0-bW-Pk9" secondAttribute="centerY" id="fbv-vF-3xp"/>
+                            <constraint firstItem="pCp-gj-w5l" firstAttribute="centerY" secondItem="Ky0-bW-Pk9" secondAttribute="centerY" id="fu3-du-Qgz"/>
                             <constraint firstItem="BVh-Bn-rKD" firstAttribute="top" secondItem="Db0-J2-uH6" secondAttribute="bottom" id="pka-bs-108"/>
                             <constraint firstItem="pCp-gj-w5l" firstAttribute="leading" secondItem="Ky0-bW-Pk9" secondAttribute="leadingMargin" constant="-20" id="pv3-Ph-8vh"/>
                         </constraints>
@@ -185,7 +194,7 @@
                                 <state key="normal" title="Do Test"/>
                                 <connections>
                                     <action selector="doTestButton:" destination="BRy-P1-EVn" eventType="touchUpInside" id="jTU-sX-mza"/>
-                                    <segue destination="X2Z-ZF-BXp" kind="push" id="uhX-Kl-2Sz"/>
+                                    <segue destination="X2Z-ZF-BXp" kind="push" identifier="doTestSegue" id="uhX-Kl-2Sz"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-wt-FGp">
@@ -211,6 +220,7 @@
                                 <rect key="frame" x="598" y="7" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Log Out"/>
                             </button>
                         </barButtonItem>
@@ -251,7 +261,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="dd2-rP-Lcv"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="push" id="3FM-I7-NKU"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="loadTestSegue" id="3FM-I7-NKU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zjr-Ft-Kdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,8 +280,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5X-J6-8ZP">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5X-J6-8ZP">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <animations/>
                             </scrollView>
                         </subviews>

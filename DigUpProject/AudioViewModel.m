@@ -27,33 +27,12 @@
     self.audioURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
     self.showAudioSymbol = [self.material.Show boolValue];
     self.autoPlay = [self.material.Autoplay boolValue];
-    
-    //[self downLoadAudioWithBlobId:self.blobID];
 }
 
 - (void)audioSelectedOnView {
     if (![self.selectedID isEqualToNumber:self.materialID]) {
         self.selectedID = self.materialID;
     }    
-}
-
-- (void)downLoadAudioWithBlobId:(NSNumber *)audioBlobId {
-    NSURL * downloadURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.audioURL, audioBlobId]];
-    
-    NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession * session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
-    
-    NSURLSessionDownloadTask * downloadTask = [session downloadTaskWithURL:downloadURL];
-    @weakify(self)
-    [RACObserve(downloadTask, state) subscribeNext:^(id x) {
-        @strongify(self)
-        NSLog(@"TaskState - %d and materialID - %@", [x integerValue], self.materialID);
-    }];
-    
-    [downloadTask resume];
-    if(!session) {
-        NSLog(@"Can't open the connection");
-    }
 }
 
 - (void)applyDataToMaterial:(NSData *)data {
