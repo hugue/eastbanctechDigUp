@@ -13,27 +13,24 @@
 - (id)initWithCellIdentifier:(NSString *)identifier {
     self = [super init];
     if (self) {
-        self.listModelCourses = [[NSMutableArray alloc] init];
+        self.items = [NSArray array];
         self.cellIdentifier = identifier;
     }
     return self;
 }
 
-- (NSInteger)numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
-        return self.listModelCourses.count;
-    }
-    return 0;
-}
-
-- (id)itemAtIndexPath:(NSIndexPath *)indexPath {
-       return [self.listModelCourses objectAtIndex:[indexPath indexAtPosition:1]];
-}
-
 - (void)addNewCellWithLabel:(NSString *)cellLabel {
     CourseCellViewModel * newCell = [[CourseCellViewModel alloc] initWithIdentifier:self.cellIdentifier];
     newCell.cellLabel = cellLabel;
-    [self.listModelCourses addObject:newCell];
+    self.items = [self.items arrayByAddingObject:newCell];
+}
+
+- (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
+    self.selectedCell = [NSNumber numberWithInt:[indexPath indexAtPosition:1]];
+}
+
+- (void)didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedCell = nil;
 }
 
 @end

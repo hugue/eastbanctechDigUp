@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		577F35BEA4DB620CEC2D7B42 /* libPods-DigUpProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6F6F49FD7004E48D0327AB /* libPods-DigUpProject.a */; };
+		8A59766F1BC38E5800AD4B12 /* CourseCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */; settings = {ASSET_TAGS = (); }; };
 		F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */; };
 		F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41001BAFFBB200F5A903 /* CheckBoxView.m */; };
 		F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41031BB00A8600F5A903 /* ImageViewModel.m */; };
@@ -177,6 +178,7 @@
 /* Begin PBXFileReference section */
 		0E6F6F49FD7004E48D0327AB /* libPods-DigUpProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigUpProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D73C66D096650E2F90BED57 /* Pods-DigUpProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigUpProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigUpProject/Pods-DigUpProject.debug.xcconfig"; sourceTree = "<group>"; };
+		8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseCellView.xib; sourceTree = "<group>"; };
 		E67205341C11DA0471D1DCA4 /* Pods-DigUpProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigUpProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigUpProject/Pods-DigUpProject.release.xcconfig"; sourceTree = "<group>"; };
 		F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxViewModel.h; sourceTree = "<group>"; };
 		F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxViewModel.m; sourceTree = "<group>"; };
@@ -984,6 +986,7 @@
 				F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */,
 				F3F9F1A31BC251CA005B0D5E /* CourseCellView.h */,
 				F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */,
+				8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */,
 			);
 			name = LocalViews;
 			sourceTree = "<group>";
@@ -1107,6 +1110,7 @@
 				F3F9874A1BBE6D1300E94F60 /* .gitignore in Resources */,
 				F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */,
 				F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */,
+				8A59766F1BC38E5800AD4B12 /* CourseCellView.xib in Resources */,
 				F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */,
 				F3F320A91BBA6B560029F565 /* exo.json in Resources */,
 				F3F987991BBE877500E94F60 /* DigUpProject.xcworkspace in Resources */,

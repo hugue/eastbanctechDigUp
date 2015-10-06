@@ -6,18 +6,17 @@
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
-#import "ETRCollectionModel.h"
+#import "ETRSimpleCollectionModel.h"
 #import "CourseCellViewModel.h"
 
-@interface CoursesTableViewModel : ETRCollectionModel
+@interface CoursesTableViewModel : ETRSimpleCollectionModel
 
-@property (nonatomic, strong) NSMutableArray<CourseCellViewModel *> * listModelCourses;
 @property (nonatomic, strong) NSString * cellIdentifier;
 @property (nonatomic, strong) NSNumber * selectedCell;
 
-- (NSInteger)numberOfItemsInSection:(NSInteger)section;
-- (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 - (id)initWithCellIdentifier:(NSString *)identifier;
 - (void)addNewCellWithLabel:(NSString *)cellLabel;
+
+- (void)didDeselectItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

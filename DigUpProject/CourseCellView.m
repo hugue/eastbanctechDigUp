@@ -8,36 +8,30 @@
 
 #import "CourseCellView.h"
 
+#import <ReactiveCocoa.h>
+
+@interface CourseCellView ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@end
+
 @implementation CourseCellView
 
 @dynamic viewModel;
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.dynamicHeightLabels = [[NSArray alloc] initWithObjects:[[UILabel alloc] init], nil];
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self applyModelToView];
 }
 
 - (void)applyModelToView {
-    if (!self.dynamicHeightLabels) {
-        CGRect labelFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        UILabel * cellLabel = [[UILabel alloc] initWithFrame:labelFrame];
-        self.dynamicHeightLabels = @[cellLabel];
-        [self addSubview:cellLabel];
-    }
-    
-    UILabel * label = self.dynamicHeightLabels[0];
-    label.text = self.viewModel.cellLabel;
+    RAC(self.nameLabel, text) = RACObserve(self, viewModel.cellLabel);
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (NSString *)reuseIdentifier {
+    return @"CourseCellView";
 }
-*/
 
 @end

@@ -18,8 +18,8 @@
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses {
     self = [super init];
     if (self) {
-        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CoursesCell"];
-        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"detailsCell"];
+        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView"];
+        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView"];
         
         self.coursesDocumentsTitles = [[NSMutableArray alloc] init];
         
@@ -37,7 +37,7 @@
     @weakify(self)
     [[RACObserve(self.coursesViewModel, selectedCell) distinctUntilChanged] subscribeNext:^(id x) {
         @strongify(self)
-        self.detailCoursesViewModel.listModelCourses = [self createCellViewModelsForCourse:x];
+        self.detailCoursesViewModel.items = [self createCellViewModelsForCourse:x];
     }];
 }
 

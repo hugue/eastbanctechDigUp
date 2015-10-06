@@ -16,6 +16,4 @@
 
 @property (nonatomic, strong) CoursesTableViewModel * viewModel;
 
-- (void)loadView;
-
 @end
