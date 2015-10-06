@@ -10,16 +10,17 @@
 
 @implementation CourseCellViewModel
 
-- (id)initWithIdentifier:(NSString *)identifier {
-    self = [super init];
+- (id)initWithIdentifier:(NSString *)identifier andLabel:(NSString *)cellLabel{
+    self = [super initWithReuseIdentifier:identifier];
     if (self) {
-        self.cellIdentifier = identifier;
+        self.cellLabel = cellLabel;
     }
     return self;
 }
 
+/*
 - (NSString *)reuseIdentifier {
         return self.cellIdentifier;
 }
-
+*/
 @end

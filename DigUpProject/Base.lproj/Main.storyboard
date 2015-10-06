@@ -177,7 +177,7 @@
                                     <segue destination="X2Z-ZF-BXp" kind="push" id="uhX-Kl-2Sz"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-wt-FGp">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-wt-FGp">
                                 <rect key="frame" x="0.0" y="64" width="768" height="874"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -322,6 +322,10 @@
         <scene sceneID="fay-1R-Mbc">
             <objects>
                 <viewController id="9ew-vW-4X9" customClass="CoursesTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cyj-Eg-4l9"/>
+                        <viewControllerLayoutGuide type="bottom" id="E1R-RT-26W"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y7A-Bu-8Xr">
                         <rect key="frame" x="0.0" y="0.0" width="435" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

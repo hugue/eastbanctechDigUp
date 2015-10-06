@@ -40,4 +40,8 @@
 }
 */
 
+- (void)awakeFromNib {
+    NSLog(@"Awake from nib");
+}
+
 @end

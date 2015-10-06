@@ -22,6 +22,6 @@
 
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses;
 - (void)observeSubModels;
-- (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;
+//- (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;
 
 @end

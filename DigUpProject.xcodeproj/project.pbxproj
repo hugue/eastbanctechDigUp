@@ -874,12 +874,12 @@
 				F3F987161BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m */,
 				F3F987171BBE6D1300E94F60 /* ETRSimpleCollectionModel.h */,
 				F3F987181BBE6D1300E94F60 /* ETRSimpleCollectionModel.m */,
-				F3F987191BBE6D1300E94F60 /* ETRStaticCellModel.h */,
-				F3F9871A1BBE6D1300E94F60 /* ETRStaticCellModel.m */,
 				F3F9871B1BBE6D1300E94F60 /* ETRStaticCollectionModel.h */,
 				F3F9871C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m */,
 				F3F9871D1BBE6D1300E94F60 /* ETRStaticCollectionSection.h */,
 				F3F9871E1BBE6D1300E94F60 /* ETRStaticCollectionSection.m */,
+				F3F987191BBE6D1300E94F60 /* ETRStaticCellModel.h */,
+				F3F9871A1BBE6D1300E94F60 /* ETRStaticCellModel.m */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";

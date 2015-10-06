@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ETRStaticCellModel.h"
 
-@interface CourseCellViewModel : NSObject
+@interface CourseCellViewModel : ETRStaticCellModel
 
-@property (nonatomic, strong) NSString * cellIdentifier;
 @property (nonatomic, strong) NSString * cellLabel;
 
-- (NSString *)reuseIdentifier;
-- (id)initWithIdentifier:(NSString *)identifier;
+//- (NSString *)reuseIdentifier;
+- (id)initWithIdentifier:(NSString *)identifier andLabel:(NSString *)cellLabel;
 
 @end

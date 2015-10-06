@@ -18,15 +18,19 @@
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses {
     self = [super init];
     if (self) {
-        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CoursesCell"];
-        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"detailsCell"];
+        
+        NSMutableArray<NSString *> * coursesNames = [[NSMutableArray alloc] init];
         
         self.coursesDocumentsTitles = [[NSMutableArray alloc] init];
         
         for (CourseModel * course in courses) {
-            [self.coursesViewModel addNewCellWithLabel:course.courseTitle];
-            [self.coursesDocumentsTitles addObject:course.documentsTitle];
+            [coursesNames addObject:course.courseTitle];
+            //[self.coursesViewModel addNewCellWithLabel:course.courseTitle];
+            //[self.coursesDocumentsTitles addObject:course.documentsTitle];
         }
+        
+        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CoursesCell" andItems:coursesNames];
+        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"detailsCell" andItems:nil];
         
         [self observeSubModels];
     }
@@ -34,13 +38,15 @@
 }
 
 - (void)observeSubModels {
-    @weakify(self)
+    //@weakify(self)
     [[RACObserve(self.coursesViewModel, selectedCell) distinctUntilChanged] subscribeNext:^(id x) {
-        @strongify(self)
-        self.detailCoursesViewModel.listModelCourses = [self createCellViewModelsForCourse:x];
+        //@strongify(self)
+        //self.detailCoursesViewModel.listModelCourses = [self createCellViewModelsForCourse:x];
+        NSLog(@"Changed");
     }];
 }
 
+/*
 - (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber {
     if (courseNumber) {
         NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
@@ -55,5 +61,5 @@
         return nil;
     }
 }
-
+*/
 @end

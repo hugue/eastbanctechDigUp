@@ -14,6 +14,7 @@
 @property (nonatomic, strong) CourseCellViewModel * viewModel;
 
 - (void)applyModelToView;
+- (void)awakeFromNib;
 - (id)init;
 
 @end

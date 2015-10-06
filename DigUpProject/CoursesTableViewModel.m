@@ -10,28 +10,26 @@
 
 @implementation CoursesTableViewModel
 
-- (id)initWithCellIdentifier:(NSString *)identifier {
+- (id)initWithCellIdentifier:(NSString *)identifier andItems:(NSMutableArray *)itemsCellsNames {
     self = [super init];
     if (self) {
-        self.listModelCourses = [[NSMutableArray alloc] init];
+        //self.listModelCourses = [[NSMutableArray alloc] init];
+        self.listCellsNames = itemsCellsNames;
         self.cellIdentifier = identifier;
+        
+        NSMutableArray * cellsModels = [NSMutableArray array];
+        for (NSString * cellsNames in self.listCellsNames) {
+            CourseCellViewModel * cellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.cellIdentifier andLabel:cellsNames];
+            [cellsModels addObject: cellModel];
+        }
+        
+        self.items = cellsModels;
     }
     return self;
 }
 
-- (NSInteger)numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
-        return self.listModelCourses.count;
-    }
-    return 0;
-}
-
-- (id)itemAtIndexPath:(NSIndexPath *)indexPath {
-       return [self.listModelCourses objectAtIndex:[indexPath indexAtPosition:1]];
-}
-
 - (void)addNewCellWithLabel:(NSString *)cellLabel {
-    CourseCellViewModel * newCell = [[CourseCellViewModel alloc] initWithIdentifier:self.cellIdentifier];
+    CourseCellViewModel * newCell = [[CourseCellViewModel alloc] initWithIdentifier:self.cellIdentifier andLabel:cellLabel];
     newCell.cellLabel = cellLabel;
     [self.listModelCourses addObject:newCell];
 }
