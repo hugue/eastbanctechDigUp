@@ -18,8 +18,10 @@
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses {
     self = [super init];
     if (self) {
-        
         NSMutableArray<NSString *> * coursesNames = [[NSMutableArray alloc] init];
+        //self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView"];
+        //self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView"];
+
         
         self.coursesDocumentsTitles = [[NSMutableArray alloc] init];
         
@@ -38,21 +40,19 @@
 }
 
 - (void)observeSubModels {
-    //@weakify(self)
+    @weakify(self)
     [[RACObserve(self.coursesViewModel, selectedCell) distinctUntilChanged] subscribeNext:^(id x) {
-        //@strongify(self)
-        //self.detailCoursesViewModel.listModelCourses = [self createCellViewModelsForCourse:x];
-        NSLog(@"Changed");
+        @strongify(self)
+        self.detailCoursesViewModel.items = [self createCellViewModelsForCourse:x];
     }];
 }
 
-/*
+
 - (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber {
     if (courseNumber) {
         NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
         for (NSString * cellLabel in [self.coursesDocumentsTitles objectAtIndex:[courseNumber integerValue]]) {
-            CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.detailCoursesViewModel.cellIdentifier];
-            newCellModel.cellLabel = cellLabel;
+            CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.detailCoursesViewModel.cellIdentifier andLabel:cellLabel];
             [courseCellViewModels addObject:newCellModel];
         }
     return courseCellViewModels;
@@ -61,5 +61,5 @@
         return nil;
     }
 }
-*/
+
 @end

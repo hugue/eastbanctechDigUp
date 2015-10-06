@@ -11,6 +11,7 @@
 
 @interface CoursesTableViewModel : ETRSimpleCollectionModel
 
+
 @property (nonatomic, strong) NSMutableArray<CourseCellViewModel *> * listModelCourses;
 @property (nonatomic, strong) NSMutableArray<NSString *> * listCellsNames;
 @property (nonatomic, strong) NSString * cellIdentifier;
@@ -18,5 +19,8 @@
 
 - (id)initWithCellIdentifier:(NSString *)identifier andItems:(NSArray *)itemsCellsNames;
 //- (void)addNewCellWithLabel:(NSString *)cellLabel;
+
+- (void)addNewCellWithLabel:(NSString *)cellLabel;
+- (void)didDeselectItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
