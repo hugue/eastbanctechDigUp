@@ -22,6 +22,7 @@
 
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses;
 - (void)observeSubModels;
+- (CoursesTableViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 //- (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;
 
 @end

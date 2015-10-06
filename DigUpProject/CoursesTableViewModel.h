@@ -13,14 +13,14 @@
 
 
 @property (nonatomic, strong) NSMutableArray<CourseCellViewModel *> * listModelCourses;
-@property (nonatomic, strong) NSMutableArray<NSString *> * listCellsNames;
+@property (nonatomic, strong) NSArray<NSString *> * listCellsNames;
 @property (nonatomic, strong) NSString * cellIdentifier;
 @property (nonatomic, strong) NSNumber * selectedCell;
 
 - (id)initWithCellIdentifier:(NSString *)identifier andItems:(NSArray *)itemsCellsNames;
 //- (void)addNewCellWithLabel:(NSString *)cellLabel;
 
-- (void)addNewCellWithLabel:(NSString *)cellLabel;
+//- (void)addNewCellWithLabel:(NSString *)cellLabel;
 - (void)didDeselectItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

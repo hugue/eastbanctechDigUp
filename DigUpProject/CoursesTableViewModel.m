@@ -10,15 +10,12 @@
 
 @implementation CoursesTableViewModel
 
-- (id)initWithCellIdentifier:(NSString *)identifier andItems:(NSMutableArray *)itemsCellsNames {
+- (id)initWithCellIdentifier:(NSString *)identifier andItems:(NSArray *)itemsCellsNames {
     self = [super init];
     if (self) {
 
-        //self.listModelCourses = [[NSMutableArray alloc] init];
-        self.listCellsNames = itemsCellsNames;
-
+        self.listCellsNames = [itemsCellsNames copy];
         self.items = [NSArray array];
-
         self.cellIdentifier = identifier;
         
         NSMutableArray * cellsModels = [NSMutableArray array];
@@ -27,7 +24,8 @@
             [cellsModels addObject: cellModel];
         }
         
-        self.items = cellsModels;
+        self.items = [cellsModels copy];
+        NSLog(@"Number of items - %lu", self.items.count);
     }
     return self;
 }

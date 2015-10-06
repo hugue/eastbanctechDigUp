@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "ETRStaticCellModel.h"
 
-@interface CourseCellViewModel : ETRStaticCellModel
+@interface CourseCellViewModel : NSObject
 
 @property (nonatomic, strong) NSString * cellLabel;
+@property (nonatomic, strong) NSString * identifier;
 
-//- (NSString *)reuseIdentifier;
+- (NSString *)reuseIdentifier;
 - (id)initWithIdentifier:(NSString *)identifier andLabel:(NSString *)cellLabel;
 
 @end

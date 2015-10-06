@@ -23,7 +23,6 @@
 		F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F7E1BA180E7005028A4 /* MaterialView.m */; };
 		F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F811BA1A6E6005028A4 /* TextFrameView.m */; };
 		F3E01F851BA1B294005028A4 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F841BA1B294005028A4 /* ImageView.m */; };
-		F3EC8C811BBD5226008AD87A /* MenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EC8C801BBD5226008AD87A /* MenuViewModel.m */; };
 		F3ECBE6F1B9D452E0000A656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE6E1B9D452E0000A656 /* main.m */; };
 		F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE711B9D452E0000A656 /* AppDelegate.m */; };
 		F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE791B9D452E0000A656 /* Assets.xcassets */; };
@@ -44,7 +43,6 @@
 		F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */; };
 		F3ECBECF1B9D814B0000A656 /* ExerciceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */; };
 		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
-		F3F487091BA7D8E900FCA8A6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
 		F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */; };
@@ -208,8 +206,6 @@
 		F3E01F811BA1A6E6005028A4 /* TextFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFrameView.m; sourceTree = "<group>"; };
 		F3E01F831BA1B294005028A4 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
 		F3E01F841BA1B294005028A4 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
-		F3EC8C7F1BBD5226008AD87A /* MenuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewModel.h; sourceTree = "<group>"; };
-		F3EC8C801BBD5226008AD87A /* MenuViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewModel.m; sourceTree = "<group>"; };
 		F3ECBE6A1B9D452E0000A656 /* DigUpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigUpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ECBE6E1B9D452E0000A656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3ECBE701B9D452E0000A656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -251,8 +247,6 @@
 		F3ECBECD1B9D814B0000A656 /* ExerciceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciceModel.h; sourceTree = "<group>"; };
 		F3ECBECE1B9D814B0000A656 /* ExerciceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciceModel.m; sourceTree = "<group>"; };
 		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
-		F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Regular.otf"; sourceTree = "<group>"; };
 		F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Bold.otf"; sourceTree = "<group>"; };
 		F3F5A8461BABCACB00D35CA6 /* DragNDropController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragNDropController.h; sourceTree = "<group>"; };
@@ -680,8 +674,6 @@
 			children = (
 				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
 				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
-				F3EC8C7F1BBD5226008AD87A /* MenuViewModel.h */,
-				F3EC8C801BBD5226008AD87A /* MenuViewModel.m */,
 				F35274981BBE91000089FB6F /* MyCoursesViewModel.h */,
 				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
 				F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */,
@@ -704,8 +696,6 @@
 		F3F986AF1BBE633B00E94F60 /* FullViewsControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F3F487071BA7D8E900FCA8A6 /* MenuViewController.h */,
-				F3F487081BA7D8E900FCA8A6 /* MenuViewController.m */,
 				F35274951BBE8F430089FB6F /* MyCoursesViewController.h */,
 				F35274961BBE8F430089FB6F /* MyCoursesViewController.m */,
 				F3F986A41BBE405400E94F60 /* CourseViewController.h */,
@@ -1216,7 +1206,6 @@
 				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
 				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
-				F3EC8C811BBD5226008AD87A /* MenuViewModel.m in Sources */,
 				F3F987501BBE6D1300E94F60 /* NSError+ETRUtils.m in Sources */,
 				F3F987671BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m in Sources */,
 				F3F9876D1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m in Sources */,
@@ -1242,7 +1231,6 @@
 				F3F9875B1BBE6D1300E94F60 /* UIColor+ETRUtils.m in Sources */,
 				F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */,
 				F3F987751BBE6D1300E94F60 /* ETRCollectionModel.m in Sources */,
-				F3F487091BA7D8E900FCA8A6 /* MenuViewController.m in Sources */,
 				F3F9875E1BBE6D1300E94F60 /* UITableView+ETRUtils.m in Sources */,
 				F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */,
 				F352749A1BBE91000089FB6F /* MyCoursesViewModel.m in Sources */,

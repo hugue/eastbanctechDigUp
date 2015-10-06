@@ -19,9 +19,6 @@
     self = [super init];
     if (self) {
         NSMutableArray<NSString *> * coursesNames = [[NSMutableArray alloc] init];
-        //self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView"];
-        //self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView"];
-
         
         self.coursesDocumentsTitles = [[NSMutableArray alloc] init];
         
@@ -31,10 +28,10 @@
             //[self.coursesDocumentsTitles addObject:course.documentsTitle];
         }
         
-        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CoursesCell" andItems:coursesNames];
-        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"detailsCell" andItems:nil];
+        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:coursesNames];
+        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:nil];
         
-        [self observeSubModels];
+        //[self observeSubModels];
     }
     return self;
 }
@@ -45,6 +42,18 @@
         @strongify(self)
         self.detailCoursesViewModel.items = [self createCellViewModelsForCourse:x];
     }];
+}
+
+- (CoursesTableViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
+    CoursesTableViewModel * tableViewModel = nil;
+    if ([segueIdentifier isEqualToString:@"coursesSegue"]) {
+        tableViewModel = self.coursesViewModel;
+    }
+    else if ([segueIdentifier isEqualToString:@"detailCoursesSegue"]) {
+        tableViewModel = self.detailCoursesViewModel;
+    }
+    return tableViewModel;
+
 }
 
 
