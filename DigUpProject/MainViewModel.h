@@ -12,7 +12,7 @@
 #import "CheckBoxViewModel.h"
 #import "ImageViewModel.h"
 
-#import "ExerciceModel.h"
+#import "ExerciseModel.h"
 #import "WebSearcherController.h"
 #import "ExerciseCorrector.h"
 #import "RadioButtonsController.h"
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
 @property (nonatomic, strong) WebSearcherController * webSearcherController;
-@property (nonatomic, strong) ExerciceModel * currentExercise;
+@property (nonatomic, strong) ExerciseModel * currentExercise;
 @property (nonatomic, strong) ExerciseCorrector * corrector;
 @property (nonatomic, strong) NSMutableDictionary<NSString *,RadioButtonsController *> * buttonControllers;
 @property (nonatomic, strong) AudioController * audioController;

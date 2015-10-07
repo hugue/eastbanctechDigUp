@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MaterialModel.h"
 
-@interface ExerciceModel : JSONModel
+@interface ExerciseModel : JSONModel
 
 @property (nonatomic, strong) NSMutableArray<MaterialModel *> * materialsObject;
 @property (nonatomic, strong) NSString * exerciseType;

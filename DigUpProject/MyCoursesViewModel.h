@@ -19,6 +19,7 @@
 @property (nonatomic, strong) CoursesTableViewModel * coursesViewModel;
 @property (nonatomic, strong) CoursesTableViewModel * detailCoursesViewModel;
 @property (nonatomic, strong) DocumentViewModel * documentViewModel;
+@property (nonatomic, strong) NSArray<CourseModel *> * profileCourses;
 
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses;
 - (void)observeSubModels;

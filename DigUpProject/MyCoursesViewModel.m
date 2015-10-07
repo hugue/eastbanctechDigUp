@@ -9,8 +9,6 @@
 #import "MyCoursesViewModel.h"
 @interface MyCoursesViewModel()
 
-@property (nonatomic, strong) NSMutableArray<NSArray<NSString *> *> * coursesDocumentsTitles;
-
 @end
 
 @implementation MyCoursesViewModel
@@ -19,12 +17,10 @@
     self = [super init];
     if (self) {
         NSMutableArray<NSString *> * coursesNames = [[NSMutableArray alloc] init];
-        
-        self.coursesDocumentsTitles = [[NSMutableArray alloc] init];
+        self.profileCourses = [courses copy];
         
         for (CourseModel * course in courses) {
             [coursesNames addObject:course.courseTitle];
-            [self.coursesDocumentsTitles addObject:course.documentsTitle];
         }
         
         self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:coursesNames];
@@ -53,6 +49,8 @@
         viewModel = self.detailCoursesViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"viewDocument"]) {
+        CourseModel * currentCourse = [self.profileCourses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
+        self.documentViewModel.currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
         viewModel = self.documentViewModel;
     }
     return viewModel;
@@ -63,8 +61,8 @@
 - (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber {
     if (courseNumber) {
         NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
-        for (NSString * cellLabel in [self.coursesDocumentsTitles objectAtIndex:[courseNumber integerValue]]) {
-            CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.detailCoursesViewModel.cellIdentifier andLabel:cellLabel];
+        for (SubcourseModel * subcourse in [self.profileCourses objectAtIndex:[courseNumber integerValue]].subcourses) {
+            CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.detailCoursesViewModel.cellIdentifier andLabel:subcourse.title];
             [courseCellViewModels addObject:newCellModel];
         }
     return courseCellViewModels;

@@ -6,16 +6,16 @@
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
-#import "ExerciceModel.h"
+#import "ExerciseModel.h"
 
-@interface ExerciceModel()
+@interface ExerciseModel()
 
 @property (nonatomic, strong) NSArray<MaterialModel> * materials;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, MaterialModel *> * referencedModels;
 
 @end
 
-@implementation ExerciceModel
+@implementation ExerciseModel
 
 - (id) initWithData:(NSData *)data error:(NSError *)error {
     self = [super init];
@@ -40,9 +40,7 @@
 - (MaterialModel *) addNewMaterialWithDictionary:(NSDictionary *) materialInfo {
     //This is a reference, so look at the info in the dicionary for referenced models
     if (materialInfo[@"$ref"]) {
-        //NSLog(@"ref - %@", materialInfo[@"$ref"]);
         MaterialModel * referencedModel = self.referencedModels[materialInfo[@"$ref"]];
-       // NSLog(@"%@ for key %@", referencedModel, referencedModel);
         [self createReferencedModels:referencedModel];
         return referencedModel;
     }
@@ -60,7 +58,6 @@
 - (void) createReferencedModels:(MaterialModel *) material {
     //If this material creates other materials, register it in the dictionary so we know were to look at when we find the references
     if (material.DropElements) {
-        //NSLog(@"material ID - %@ / count sons - %lu", material.Id, (unsigned long)material.DropElements.count);
         for(MaterialModel * referencedMaterial in material.DropElements) {
             //If this is not a reference but a real model, store it
             if(referencedMaterial.$id) {

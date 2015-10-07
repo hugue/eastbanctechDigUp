@@ -14,7 +14,14 @@
     self = [super init];
     if (self) {
         self.courseTitle = title;
-        self.documentsTitle = titlesDocs;
+        
+        NSMutableArray<SubcourseModel *> * subcoursesInterm = [[NSMutableArray alloc] init];
+        
+        for (NSString * title in titlesDocs) {
+            SubcourseModel * subcourseModel = [[SubcourseModel alloc] initWithTitle:title];
+            [subcoursesInterm addObject:subcourseModel];
+        }
+        self.subcourses = [subcoursesInterm copy];
     }
     return self;
 }

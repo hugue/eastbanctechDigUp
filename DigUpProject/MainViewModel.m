@@ -42,7 +42,7 @@
     [self.webSearcherController launchSession];
 }
 
-- (ExerciceModel *)LoadDataFromFile:(NSString *)fileName {
+- (ExerciseModel *)LoadDataFromFile:(NSString *)fileName {
     NSString * filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
     NSError * error;
     NSData * data = [[NSData  alloc] initWithContentsOfFile:filePath options:kNilOptions error:&error];
@@ -50,7 +50,7 @@
         NSLog(@"Error : %@", error);
         return nil;
     }
-    ExerciceModel * exercise = [[ExerciceModel alloc] initWithData:data error: error];
+    ExerciseModel * exercise = [[ExerciseModel alloc] initWithData:data error: error];
     if(error) {
         NSLog(@"Error : %@", error);
         return nil;
@@ -243,7 +243,7 @@
     }
     else {
         NSError * initError;
-        self.currentExercise = [[ExerciceModel alloc] initWithData:data error: initError];
+        self.currentExercise = [[ExerciseModel alloc] initWithData:data error: initError];
         
         if(error) {
             NSLog(@"Error : %@", error);

@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ExerciceModel.h"
+#import "ExerciseModel.h"
 
 @interface ExerciseCorrector : NSObject
 
-@property (nonatomic, strong) ExerciceModel * currentExercise;
+@property (nonatomic, strong) ExerciseModel * currentExercise;
 
 @end

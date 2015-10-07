@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SubcourseModel.h"
 
 @interface CourseModel : NSObject
 
 @property (nonatomic, strong) NSString * courseTitle;
-@property (nonatomic, strong) NSArray<NSString *> * documentsTitle;
+@property (nonatomic, strong) NSArray <SubcourseModel *> * subcourses;
 
 - (id)initWithTitle:(NSString *)title AndDocuments:(NSArray<NSString *> *)titleDocs;
 
