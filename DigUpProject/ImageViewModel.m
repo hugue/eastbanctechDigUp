@@ -24,11 +24,9 @@
     self.imageLoaded = @NO;
     self.BlobID = self.material.BlobId;
     self.imageData = nil;
-    self.imageURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
 }
 
 - (void)applyDataToMaterial:(NSData *)data {
-    NSLog(@"Apply data to material");
     self.imageData = [data copy];
     self.imageLoaded = @YES;
 }

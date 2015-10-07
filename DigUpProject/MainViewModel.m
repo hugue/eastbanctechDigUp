@@ -15,7 +15,7 @@
 
 @implementation MainViewModel
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self) {
         [self initialize];
@@ -39,6 +39,10 @@
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
     
+    //[self.webSearcherController launchSession];
+}
+
+- (void)fetchExerciseAndDisplay {
     [self.webSearcherController launchSession];
 }
 

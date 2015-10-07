@@ -15,6 +15,5 @@
 
 - (void)applyModelToView;
 - (void)awakeFromNib;
-- (id)init;
 
 @end

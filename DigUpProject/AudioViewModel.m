@@ -24,7 +24,6 @@
     self.audioLoaded = @NO;
     self.blobID = self.material.BlobId;
     self.audioData = nil;
-    self.audioURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
     self.showAudioSymbol = [self.material.Show boolValue];
     self.autoPlay = [self.material.Autoplay boolValue];
 }
@@ -36,7 +35,6 @@
 }
 
 - (void)applyDataToMaterial:(NSData *)data {
-    NSLog(@"Apply data to material");
     self.audioData = [data copy];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithData:self.audioData error:nil];
     self.audioPlayer.delegate = self;

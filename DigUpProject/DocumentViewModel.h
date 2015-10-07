@@ -13,13 +13,10 @@
 
 @interface DocumentViewModel : NSObject
 
-@property (nonatomic, strong) NSString * nameDocument;
-@property (nonatomic, strong) NSArray<NSString *> * testNames;
-
 @property (nonatomic, strong) SubcourseModel * currentSubcourse;
 @property (nonatomic, strong) ChooseTestTableViewModel * chooseTestViewModel;
 
-- (id)initWithTests:(NSArray<NSString *> *)listTest;
+//- (id)initWithTests:(NSArray<NSString *> *)listTest;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 @end

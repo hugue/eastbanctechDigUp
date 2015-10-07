@@ -31,11 +31,15 @@
         
         
         NSError * htmlError;
-        self.viewDisplayed.attributedText = [[NSAttributedString alloc]
-                               initWithData: [materialViewModel.material.Text dataUsingEncoding:NSUTF8StringEncoding]
-                               options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
-                               documentAttributes: nil
-                               error: &htmlError];
+        NSAttributedString * displayedText = [[NSAttributedString alloc]
+                                             initWithData: [materialViewModel.material.Text dataUsingEncoding:NSUTF8StringEncoding]
+                                             options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+                                             documentAttributes: nil
+                                             error: &htmlError];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.viewDisplayed.attributedText = displayedText;
+        });
+        
         if(htmlError) {
             NSLog(@"Unable to parse label text: %@", htmlError);
         }

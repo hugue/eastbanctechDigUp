@@ -57,5 +57,6 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 - (void)solutionAsked;
 - (void)playPauseAudioChangedOnView;
 - (void)volumeAudioChangedOnViewByButton;
+- (void)fetchExerciseAndDisplay;
 
 @end

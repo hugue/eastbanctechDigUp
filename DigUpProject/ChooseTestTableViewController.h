@@ -8,6 +8,7 @@
 
 #import "ETRTableViewController.h"
 #import "ChooseTestTableViewModel.h"
+#import "MainViewController.h"
 
 @interface ChooseTestTableViewController : ETRTableViewController
 

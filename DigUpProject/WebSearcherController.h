@@ -12,10 +12,11 @@
 
 @interface WebSearcherController : NSObject <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
 
-@property (nonatomic, strong) id delegate;
+
 @property (nonatomic, strong) NSString * urlToReach;
 @property (nonatomic, strong) NSMutableData * receivedData;
 @property (nonatomic, strong) NSString * mediaURL;
+@property (nonatomic, weak) id delegate;
 
 - (id)init;
 - (void)launchSession;

@@ -22,15 +22,14 @@
 - (id)initWithTests:(NSArray<NSString *> *)listTest {
     self = [super init];
     if (self) {
-        self.testNames = [listTest copy];
     }
     return self;
 }
 
-- (NSArray<CourseCellViewModel *> *)createCellViewModelsForListTests:(NSArray<NSString *> *)listTests {
+- (NSArray<CourseCellViewModel *> *)createCellViewModelsForListTests:(NSArray<TestModel *> *)listTests {
     NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
-    for (NSString * cellLabel in listTests) {
-        CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:@"CourseCellView" andLabel:cellLabel];
+    for (TestModel * test in listTests) {
+        CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:@"CourseCellView" andLabel:test.title];
         [courseCellViewModels addObject:newCellModel];
     }
     return courseCellViewModels;
@@ -39,7 +38,8 @@
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     id viewModel;
     if ([segueIdentifier isEqualToString:@"chooseTestSegue"]) {
-        self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.testNames];
+        self.chooseTestViewModel.listTests = self.currentSubcourse.listTests;
+        self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.currentSubcourse.listTests];
         viewModel = self.chooseTestViewModel;
     }
     return viewModel;

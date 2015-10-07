@@ -46,7 +46,9 @@
     [[[audioLoadedSignal filter:^BOOL(id value) {
         return [value boolValue];
     }] take: 1] subscribeNext:^(id x) {
-        self.viewDisplayed.enabled = YES;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.viewDisplayed.enabled = YES;
+        });
     }];
     
     @weakify(self)

@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) NSNumber * BlobID;
 @property (nonatomic, strong) NSData * imageData;
-@property (nonatomic, strong) NSString * imageURL;
 @property (nonatomic, strong) NSNumber * imageLoaded;
 
 - (id)initWithModel:(MaterialModel *)materialModel;

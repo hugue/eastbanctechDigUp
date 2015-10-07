@@ -10,11 +10,18 @@
 
 @implementation SubcourseModel
 
-- (id)initWithTitle:(NSString *)titleDocument {
+- (id)initWithTitle:(NSString *)title andDocument:(NSString *)documentTitle {
     self = [super init];
     if (self) {
-        self.title = titleDocument;
-        self.documentName = @"partition";
+        self.title = title;
+        self.documentName = documentTitle;
+        NSMutableArray * subcoursesTests = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < 4; i++) {
+            TestModel * test = [[TestModel alloc] initWithTitle:[NSString stringWithFormat:@"Test %d", i]];
+            [subcoursesTests addObject:test];
+        }
+        self.listTests = [subcoursesTests copy];
     }
     return self;
 }

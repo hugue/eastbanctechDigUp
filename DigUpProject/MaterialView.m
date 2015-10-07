@@ -26,9 +26,9 @@
 }
 
 - (void)configureDropElement {
-    @weakify(self);
+    @weakify(self)
     RAC(self, position) = [[RACObserve(self.viewModel, position) skip:1] doNext:^(id x) {
-        @strongify(self);
+        @strongify(self)
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.frame = CGRectMake(self.position.x, self.position.y, self.viewDisplayed.frame.size.width, self.viewDisplayed.frame.size.height);
             //self.shadowDisplayed.frame = CGRectMake(self.position.x, self.position.y, self.viewDisplayed.frame.size.width, self.viewDisplayed.frame.size.height);
@@ -66,10 +66,10 @@
     if ([self.viewModel.material.Behavior isEqualToString:@"DropElement"]) {
         [self configureDropElement];
     }    
-    @weakify(self);
+    @weakify(self)
     //Look on model to display answer state (correct/notCorrect/undefined)
     [RACObserve(self.viewModel, answerState) subscribeNext:^(id x) {
-        @strongify(self);
+        @strongify(self)
         [self applyBorderStyleForAnswerState:[x integerValue]];
     }];
 

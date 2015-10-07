@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ExerciseModel.h"
+#import "TestModel.h"
 
 @interface SubcourseModel : NSObject
 
 @property (nonatomic, strong) NSString * documentName;
 @property (nonatomic, strong) NSString * title;
-@property (nonatomic, strong) NSArray<ExerciseModel *> * listTests;
+@property (nonatomic, strong) NSArray<TestModel *> * listTests;
 
-- (id)initWithTitle:(NSString *)titleDocument;
+- (id)initWithTitle:(NSString *)title andDocument:(NSString *)documentTitle ;
 
 @end

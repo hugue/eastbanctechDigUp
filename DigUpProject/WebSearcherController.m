@@ -26,8 +26,8 @@
         self.downloadedMedias = [[NSMutableDictionary alloc] init];
         NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         self.controllerSession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
-        self.urlToReach = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&";
-        self.mediaURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
+        //self.urlToReach = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&";
+        //self.mediaURL = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
         self.downloadedMediaID = @0;
     }
     return self;

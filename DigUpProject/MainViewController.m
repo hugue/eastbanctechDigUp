@@ -12,7 +12,6 @@
 
 @interface MainViewController ()
 
-@property (nonatomic, strong) MainViewModel * viewModel;
 @property (nonatomic, strong) UITextField * activeField;
 @property (nonatomic) long currentAudioTime;
 
@@ -22,10 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-    // Do any additional setup after loading the view, typically from a nib.
-    MainViewModel * mainViewModel = [[MainViewModel alloc] init];
-    self.viewModel = mainViewModel;
+    //MainViewModel * mainViewModel = [[MainViewModel alloc] init];
+    //self.viewModel = mainViewModel;
     
     self.materialsViews = [[NSMutableArray alloc] init];
     
@@ -35,6 +32,7 @@
     DragElementRecognizer * recognizer = [[DragElementRecognizer alloc] initWithTarget:self action:@selector(handleDragging:)];
     recognizer.delegate = self;
     [self.scrollView addGestureRecognizer:recognizer];
+    [self.viewModel fetchExerciseAndDisplay];
 }
 
 - (void)didReceiveMemoryWarning {

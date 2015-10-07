@@ -9,13 +9,15 @@
 #import "ETRSimpleCollectionModel.h"
 #import "CourseCellViewModel.h"
 #import "MainViewModel.h"
+#import "TestModel.h"
 
 @interface ChooseTestTableViewModel : ETRSimpleCollectionModel
 
-@property (nonatomic, strong) NSMutableArray<CourseCellViewModel *> * listModelCourses;
-@property (nonatomic, strong) NSArray<NSString *> * listCellsNames;
+@property (nonatomic, strong) NSArray<TestModel *> * listTests;
 @property (nonatomic, strong) NSString * cellIdentifier;
-
 @property (nonatomic, strong) MainViewModel * mainViewModel;
+@property (nonatomic, strong) NSNumber * selectedCell;
+
+- (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 @end

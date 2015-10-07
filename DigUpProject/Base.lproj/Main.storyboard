@@ -177,7 +177,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-wt-FGp">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-wt-FGp">
                                 <rect key="frame" x="0.0" y="64" width="768" height="874"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,6 +200,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="GqI-wt-FGp" secondAttribute="trailing" constant="-20" id="FkC-hJ-Aco"/>
                             <constraint firstItem="GqI-wt-FGp" firstAttribute="top" secondItem="Fd2-gM-3jE" secondAttribute="bottom" id="IAL-aj-rBh"/>
                             <constraint firstItem="eIx-VV-wLi" firstAttribute="top" secondItem="wlc-87-kdF" secondAttribute="bottom" constant="8" id="Rgf-SK-XVe"/>
+                            <constraint firstItem="wlc-87-kdF" firstAttribute="top" secondItem="GqI-wt-FGp" secondAttribute="bottom" constant="8" id="fBi-hB-pEE"/>
                             <constraint firstItem="GqI-wt-FGp" firstAttribute="leading" secondItem="m5P-s0-bZj" secondAttribute="leadingMargin" constant="-20" id="kbK-ij-N4d"/>
                             <constraint firstItem="wlc-87-kdF" firstAttribute="centerX" secondItem="m5P-s0-bZj" secondAttribute="centerX" id="wwn-Ai-LAH"/>
                         </constraints>
@@ -224,7 +225,7 @@
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Tje-N1-3Ut">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CourseCellView" id="Tje-N1-3Ut">
                                 <rect key="frame" x="0.0" y="114" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tje-N1-3Ut" id="uOP-9a-XbD">
@@ -233,9 +234,6 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="tBv-dg-4ex"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -244,6 +242,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="dd2-rP-Lcv"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="displayExerciseSegue" id="aQA-qe-veq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zjr-Ft-Kdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

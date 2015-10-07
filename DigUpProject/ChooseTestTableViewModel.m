@@ -10,4 +10,26 @@
 
 @implementation ChooseTestTableViewModel
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.selectedCell = nil;
+    }
+    return self;
+}
+
+- (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
+    id viewModel = nil;
+    if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
+        viewModel = self.mainViewModel;
+    }
+    return viewModel;
+}
+
+- (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
+    self.mainViewModel = [[MainViewModel alloc] init];
+    self.mainViewModel.webSearcherController.urlToReach = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]].urlExercise;
+    self.mainViewModel.webSearcherController.mediaURL = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]].urlMedia;
+    self.selectedCell = @([indexPath indexAtPosition:1]);
+}
 @end

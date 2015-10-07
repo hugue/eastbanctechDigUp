@@ -19,6 +19,20 @@
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"CourseCellView" bundle:nil] forCellReuseIdentifier:@"CourseCellView"];
     self.clearsSelectionOnViewWillAppear = NO;
+    [self applyModelToView];
+}
+
+- (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
+    MainViewController * viewController = [segue destinationViewController];
+    viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+}
+
+- (void)applyModelToView {
+    [RACObserve(self.viewModel, selectedCell) subscribeNext:^(id x) {
+        if (x) {
+            [self performSegueWithIdentifier:@"displayExerciseSegue" sender:self];
+        }
+    }];
 }
 
 @end

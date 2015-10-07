@@ -31,8 +31,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView * scrollView;
 @property (nonatomic, strong) DragElementRecognizer * dragRecongnizer;
 @property (strong, nonatomic) NSMutableArray<MaterialView *> * materialsViews;
+@property (nonatomic, strong) MainViewModel * viewModel;
 
-- (id)initWithViewModel:(MainViewModel *)mainViewModel;
+- (id)initWithViewModel:(MainViewModel *)mainVewModel;
 - (void)displayExercise;
 
 @end

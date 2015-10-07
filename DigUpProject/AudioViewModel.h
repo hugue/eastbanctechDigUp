@@ -18,7 +18,6 @@
 @property (nonatomic, strong) AVAudioPlayer * audioPlayer;
 @property (nonatomic, strong) NSData * audioData;
 @property (nonatomic, strong) NSNumber * audioLoaded;
-@property (nonatomic, strong) NSString * audioURL;
 @property (nonatomic, strong) NSNumber * blobID;
 @property (nonatomic) BOOL showAudioSymbol;
 @property (nonatomic) BOOL autoPlay;
