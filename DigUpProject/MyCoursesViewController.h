@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIView *detailCoursesTableView;
 
 @property (nonatomic, strong) MyCoursesViewModel * viewModel;
+- (IBAction)logOut:(id)sender;
 
 @end

@@ -81,6 +81,7 @@
 
 - (void)viewWillAppear {
     self.documentViewModel = nil;
+    self.examViewModel = nil;
 }
 
 @end

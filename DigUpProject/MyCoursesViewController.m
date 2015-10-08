@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.hidesBackButton = YES;
     [self applyModelToView];
     
 }
@@ -65,4 +66,7 @@
 }
 
 
+- (IBAction)logOut:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end
