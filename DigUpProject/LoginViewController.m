@@ -17,8 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.viewModel = [[LoginViewModel alloc] init];
-    
+    self.viewModel = [[LoginViewModel alloc] init];    
     [self applyModelToView];
 }
 
@@ -51,5 +50,10 @@
     if ([self.viewModel signInNow]) {
          [self performSegueWithIdentifier:@"SignInSegue" sender:self];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.viewModel viewWillAppear];
 }
 @end

@@ -42,6 +42,7 @@
 		F3ECBEC61B9D546C0000A656 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEBC1B9D546C0000A656 /* JSONValueTransformer.m */; };
 		F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */; };
 		F3ECBECF1B9D814B0000A656 /* ExerciseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECE1B9D814B0000A656 /* ExerciseModel.m */; };
+		F3F1E0A61BC67115001AFA62 /* ExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0A51BC67115001AFA62 /* ExamModel.m */; };
 		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
@@ -250,6 +251,8 @@
 		F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialModel.m; sourceTree = "<group>"; };
 		F3ECBECD1B9D814B0000A656 /* ExerciseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseModel.h; sourceTree = "<group>"; };
 		F3ECBECE1B9D814B0000A656 /* ExerciseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseModel.m; sourceTree = "<group>"; };
+		F3F1E0A41BC67115001AFA62 /* ExamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamModel.h; sourceTree = "<group>"; };
+		F3F1E0A51BC67115001AFA62 /* ExamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamModel.m; sourceTree = "<group>"; };
 		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
 		F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Regular.otf"; sourceTree = "<group>"; };
 		F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Bold.otf"; sourceTree = "<group>"; };
@@ -503,16 +506,18 @@
 		F3E01F7A1BA17BB5005028A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F3ECBECD1B9D814B0000A656 /* ExerciseModel.h */,
-				F3ECBECE1B9D814B0000A656 /* ExerciseModel.m */,
-				F3ECBECA1B9D64EE0000A656 /* MaterialModel.h */,
-				F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */,
-				F3F663021BC4E8E600BCE54F /* TestModel.h */,
-				F3F663031BC4E8E600BCE54F /* TestModel.m */,
 				F3F9F1AC1BC27070005B0D5E /* CourseModel.h */,
 				F3F9F1AD1BC27070005B0D5E /* CourseModel.m */,
 				F3F662FF1BC4D96B00BCE54F /* SubcourseModel.h */,
 				F3F663001BC4D96B00BCE54F /* SubcourseModel.m */,
+				F3F1E0A41BC67115001AFA62 /* ExamModel.h */,
+				F3F1E0A51BC67115001AFA62 /* ExamModel.m */,
+				F3F663021BC4E8E600BCE54F /* TestModel.h */,
+				F3F663031BC4E8E600BCE54F /* TestModel.m */,
+				F3ECBECD1B9D814B0000A656 /* ExerciseModel.h */,
+				F3ECBECE1B9D814B0000A656 /* ExerciseModel.m */,
+				F3ECBECA1B9D64EE0000A656 /* MaterialModel.h */,
+				F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -714,18 +719,18 @@
 		F3F986AF1BBE633B00E94F60 /* FullViewsControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3F987921BBE6DAE00E94F60 /* LoginViewController.h */,
+				F3F987931BBE6DAE00E94F60 /* LoginViewController.m */,
 				F35274951BBE8F430089FB6F /* MyCoursesViewController.h */,
 				F35274961BBE8F430089FB6F /* MyCoursesViewController.m */,
 				F3F5961A1BC3C7CF007928CB /* DocumentViewController.h */,
 				F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */,
+				F3F5962F1BC3EE87007928CB /* ChooseTestTableViewController.h */,
+				F3F596301BC3EE87007928CB /* ChooseTestTableViewController.m */,
 				F3E01F771BA179F1005028A4 /* MainViewController.h */,
 				F3E01F781BA179F1005028A4 /* MainViewController.m */,
 				F3F5A8491BAC030300D35CA6 /* DragElementRecognizer.h */,
 				F3F5A84A1BAC030300D35CA6 /* DragElementRecognizer.m */,
-				F3F987921BBE6DAE00E94F60 /* LoginViewController.h */,
-				F3F987931BBE6DAE00E94F60 /* LoginViewController.m */,
-				F3F5962F1BC3EE87007928CB /* ChooseTestTableViewController.h */,
-				F3F596301BC3EE87007928CB /* ChooseTestTableViewController.m */,
 			);
 			name = FullViewsControllers;
 			sourceTree = "<group>";
@@ -1232,6 +1237,7 @@
 				F3F9876D1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m in Sources */,
 				F3F987641BBE6D1300E94F60 /* ETRCollectionChangeBatch.m in Sources */,
 				F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */,
+				F3F1E0A61BC67115001AFA62 /* ExamModel.m in Sources */,
 				F3F987821BBE6D1300E94F60 /* ETRTableViewCell.m in Sources */,
 				F3F9875F1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m in Sources */,
 				F3E01F851BA1B294005028A4 /* ImageView.m in Sources */,

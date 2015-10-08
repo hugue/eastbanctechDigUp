@@ -22,6 +22,7 @@
             [subcoursesInterm addObject:subcourseModel];
         }
         self.subcourses = [subcoursesInterm copy];
+        self.exam = [[ExamModel alloc] init];
     }
     return self;
 }

@@ -22,11 +22,8 @@
         for (CourseModel * course in courses) {
             [coursesNames addObject:course.courseTitle];
         }
-        
         self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:coursesNames];
         self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:nil];
-        //self.documentViewModel = [[DocumentViewModel alloc] init];
-        
         [self observeSubModels];
     }
     return self;
@@ -62,11 +59,16 @@
 - (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber {
     if (courseNumber) {
         NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
-        for (SubcourseModel * subcourse in [self.profileCourses objectAtIndex:[courseNumber integerValue]].subcourses) {
+        CourseModel * course = [self.profileCourses objectAtIndex:[courseNumber integerValue]];
+        for (SubcourseModel * subcourse in course.subcourses) {
             CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.detailCoursesViewModel.cellIdentifier andLabel:subcourse.title];
             [courseCellViewModels addObject:newCellModel];
         }
-    return courseCellViewModels;
+        if (course.exam) {
+            CourseCellViewModel * examCellModel = [[CourseCellViewModel alloc] initWithIdentifier:self.detailCoursesViewModel.cellIdentifier andLabel:course.exam.title];
+            [courseCellViewModels addObject:examCellModel];
+        }
+        return courseCellViewModels;
     }
     else {
         return nil;

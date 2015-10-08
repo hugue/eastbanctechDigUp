@@ -21,8 +21,4 @@
     self.clearsSelectionOnViewWillAppear = NO;
 }
 
-- (void)tableView:(nonnull UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    [self.viewModel didDeselectItemAtIndexPath:indexPath];
-}
-
 @end

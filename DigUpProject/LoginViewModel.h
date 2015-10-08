@@ -18,5 +18,6 @@
 @property (nonatomic, strong) MyCoursesViewModel * profileViewModel;
 
 - (BOOL)signInNow;
+- (void)viewWillAppear;
 
 @end

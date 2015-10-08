@@ -15,7 +15,6 @@
     if (self) {
 
         self.listCellsNames = [itemsCellsNames copy];
-        self.items = [NSArray array];
         self.cellIdentifier = identifier;
         
         NSMutableArray * cellsModels = [NSMutableArray array];
@@ -37,10 +36,6 @@
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
     self.selectedCell = [NSNumber numberWithInt:(int)[indexPath indexAtPosition:1]];
-}
-
-- (void)didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.selectedCell = nil;
 }
 
 @end
