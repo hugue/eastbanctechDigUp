@@ -31,7 +31,13 @@
     [RACObserve(self.viewModel, detailCoursesViewModel.selectedCell) subscribeNext:^(id x) {
         @strongify(self)
         if (x) {
-            [self performSegueWithIdentifier:@"viewDocument" sender:nil];
+            CourseModel * currentCourse = [self.viewModel.profileCourses objectAtIndex:[self.viewModel.coursesViewModel.selectedCell integerValue]];
+            if ([x integerValue] < currentCourse.subcourses.count) {
+                [self performSegueWithIdentifier:@"viewDocumentSegue" sender:nil];
+            }
+            else {
+                [self performSegueWithIdentifier:@"presentExamSegue" sender:nil];
+            }
         }
     }];
 }
@@ -39,13 +45,17 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"viewDocument"]) {
+    if ([segue.identifier isEqualToString:@"viewDocumentSegue"]) {
         DocumentViewController * viewController = [segue destinationViewController];
         viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];        
     }
+    else if ([segue.identifier isEqualToString:@"presentExamSegue"]) {
+        ExamViewController * viewController = [segue destinationViewController];
+        viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+    }
     else {
-        CoursesTableViewController * tableViewController = [segue destinationViewController];
-        tableViewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+        CoursesTableViewController * viewController = [segue destinationViewController];
+        viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
     }
 }
 

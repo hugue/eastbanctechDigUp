@@ -43,6 +43,8 @@
 		F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */; };
 		F3ECBECF1B9D814B0000A656 /* ExerciseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECE1B9D814B0000A656 /* ExerciseModel.m */; };
 		F3F1E0A61BC67115001AFA62 /* ExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0A51BC67115001AFA62 /* ExamModel.m */; };
+		F3F1E0A91BC678CF001AFA62 /* ExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */; };
+		F3F1E0AC1BC67905001AFA62 /* ExamViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */; };
 		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
@@ -253,6 +255,10 @@
 		F3ECBECE1B9D814B0000A656 /* ExerciseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseModel.m; sourceTree = "<group>"; };
 		F3F1E0A41BC67115001AFA62 /* ExamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamModel.h; sourceTree = "<group>"; };
 		F3F1E0A51BC67115001AFA62 /* ExamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamModel.m; sourceTree = "<group>"; };
+		F3F1E0A71BC678CF001AFA62 /* ExamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamViewController.h; sourceTree = "<group>"; };
+		F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamViewController.m; sourceTree = "<group>"; };
+		F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamViewModel.h; sourceTree = "<group>"; };
+		F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamViewModel.m; sourceTree = "<group>"; };
 		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
 		F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Regular.otf"; sourceTree = "<group>"; };
 		F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Bold.otf"; sourceTree = "<group>"; };
@@ -695,6 +701,8 @@
 				F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */,
 				F35274981BBE91000089FB6F /* MyCoursesViewModel.h */,
 				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
+				F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */,
+				F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */,
 				F3F596171BC3C7A2007928CB /* DocumentViewModel.h */,
 				F3F596181BC3C7A2007928CB /* DocumentViewModel.m */,
 				F3F5962C1BC3ED68007928CB /* ChooseTestTableViewModel.h */,
@@ -723,6 +731,8 @@
 				F3F987931BBE6DAE00E94F60 /* LoginViewController.m */,
 				F35274951BBE8F430089FB6F /* MyCoursesViewController.h */,
 				F35274961BBE8F430089FB6F /* MyCoursesViewController.m */,
+				F3F1E0A71BC678CF001AFA62 /* ExamViewController.h */,
+				F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */,
 				F3F5961A1BC3C7CF007928CB /* DocumentViewController.h */,
 				F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */,
 				F3F5962F1BC3EE87007928CB /* ChooseTestTableViewController.h */,
@@ -1230,6 +1240,7 @@
 				F3F5961C1BC3C7CF007928CB /* DocumentViewController.m in Sources */,
 				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
 				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
+				F3F1E0A91BC678CF001AFA62 /* ExamViewController.m in Sources */,
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
 				F3F987501BBE6D1300E94F60 /* NSError+ETRUtils.m in Sources */,
 				F3F987671BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m in Sources */,
@@ -1289,6 +1300,7 @@
 				F3F663041BC4E8E600BCE54F /* TestModel.m in Sources */,
 				F3F64A401BA6F56400B9231D /* TextInputView.m in Sources */,
 				F3F987581BBE6D1300E94F60 /* NSTimer+ETRUtils.m in Sources */,
+				F3F1E0AC1BC67905001AFA62 /* ExamViewModel.m in Sources */,
 				F3F987661BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m in Sources */,
 				F3F987851BBE6D1300E94F60 /* ETRKVO.m in Sources */,
 				F3ECBEC21B9D546C0000A656 /* JSONAPI.m in Sources */,
