@@ -45,6 +45,7 @@
 		F3F1E0A61BC67115001AFA62 /* ExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0A51BC67115001AFA62 /* ExamModel.m */; };
 		F3F1E0A91BC678CF001AFA62 /* ExamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */; };
 		F3F1E0AC1BC67905001AFA62 /* ExamViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */; };
+		F3F1E0AF1BC6977D001AFA62 /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0AE1BC6977D001AFA62 /* WebController.m */; };
 		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
@@ -259,6 +260,8 @@
 		F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamViewController.m; sourceTree = "<group>"; };
 		F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamViewModel.h; sourceTree = "<group>"; };
 		F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamViewModel.m; sourceTree = "<group>"; };
+		F3F1E0AD1BC6977D001AFA62 /* WebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebController.h; sourceTree = "<group>"; };
+		F3F1E0AE1BC6977D001AFA62 /* WebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebController.m; sourceTree = "<group>"; };
 		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
 		F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Regular.otf"; sourceTree = "<group>"; };
 		F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Bold.otf"; sourceTree = "<group>"; };
@@ -682,6 +685,8 @@
 		F3F89E901BA30670004648B6 /* TaskControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3F1E0AD1BC6977D001AFA62 /* WebController.h */,
+				F3F1E0AE1BC6977D001AFA62 /* WebController.m */,
 				F3ECBEA01B9D4D5B0000A656 /* WebSearcherController.h */,
 				F3ECBEA11B9D4D5B0000A656 /* WebSearcherController.m */,
 				F3F5A8571BAC41FE00D35CA6 /* AudioController.h */,
@@ -1210,6 +1215,7 @@
 				F3F9874D1BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m in Sources */,
 				F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */,
 				F3F9874B1BBE6D1300E94F60 /* ETRActionSheet.m in Sources */,
+				F3F1E0AF1BC6977D001AFA62 /* WebController.m in Sources */,
 				F3F987651BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m in Sources */,
 				F3F987691BBE6D1300E94F60 /* ETRCollectionChangeItems.m in Sources */,
 				F3E01F761BA179CC005028A4 /* MainViewModel.m in Sources */,
