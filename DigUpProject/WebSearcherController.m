@@ -44,6 +44,11 @@
     }
 }
 
+- (void)releaseWebSession {
+    [self.controllerSession invalidateAndCancel];
+    self.controllerSession = nil;
+}
+
 - (void)launchDownloadingMediaSession {
     for (NSNumber * key in self.downloadedMedias) {
         NSURL * downloadURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", self.mediaURL, key]];

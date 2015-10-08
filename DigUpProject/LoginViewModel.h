@@ -17,8 +17,6 @@
 @property (nonatomic, strong) RACCommand * signInCommand;
 @property (nonatomic, strong) MyCoursesViewModel * profileViewModel;
 
-
-- (id)init;
 - (BOOL)signInNow;
 
 @end

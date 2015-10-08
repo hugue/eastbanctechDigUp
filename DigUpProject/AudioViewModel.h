@@ -22,11 +22,7 @@
 @property (nonatomic) BOOL showAudioSymbol;
 @property (nonatomic) BOOL autoPlay;
 
-- (id)initWithModel:(MaterialModel *)materialModel;
 - (void)audioSelectedOnView;
-- (void)correctionAsked;
-- (void)solutionAsked;
-- (void)restartAsked;
 - (void)applyDataToMaterial:(NSData *)data;
 
 @end

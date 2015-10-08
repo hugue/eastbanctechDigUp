@@ -13,6 +13,4 @@
 @property (nonatomic, strong) NSString * answer;
 @property (nonatomic, strong) NSString * givenAnswer;
 
-- (void)correctionAsked;
-
 @end

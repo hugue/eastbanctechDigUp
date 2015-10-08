@@ -21,7 +21,6 @@
 @property (nonatomic) float currentAudioVolum;
 @property (nonatomic) BOOL isNeeded;
 
-- (id)init;
 - (void)addNewAudio:(AudioViewModel *)audio;
 - (void)pauseCurrentAudio;
 - (void)playCurrentAudio;
@@ -31,5 +30,6 @@
 - (void)playPauseChangedOnView;
 
 - (void)restartAsked;
+- (void)releaseAudioTimer;
 
 @end

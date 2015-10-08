@@ -18,13 +18,12 @@
 @property (nonatomic, strong) NSString * mediaURL;
 @property (nonatomic, weak) id delegate;
 
-- (id)init;
 - (void)launchSession;
 - (void)registerNewViewToDownloadMedia:(MaterialViewModel *) materialViewModel forBlobId:(NSNumber *)blobID;
 - (void)launchDownloadingMediaSession;
+- (void)releaseWebSession;
 
 @end
-
 
 @protocol WebSearcherControllerDelegate <NSObject>
 

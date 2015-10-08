@@ -10,7 +10,7 @@
 @interface RadioButtonsController ()
 
 //Reference needed for later correction
-@property (nonatomic, strong) RadioButtonViewModel * currentlyClikedButton;
+@property (nonatomic, weak) RadioButtonViewModel * currentlyClikedButton;
 @property (nonatomic, strong) NSNumber * correctButtonID;
 
 @end

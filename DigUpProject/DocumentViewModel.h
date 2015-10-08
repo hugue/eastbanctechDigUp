@@ -16,7 +16,6 @@
 @property (nonatomic, strong) SubcourseModel * currentSubcourse;
 @property (nonatomic, strong) ChooseTestTableViewModel * chooseTestViewModel;
 
-//- (id)initWithTests:(NSArray<NSString *> *)listTest;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 @end

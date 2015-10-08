@@ -45,7 +45,8 @@
 }
 
 - (void)viewWillDisappear {
-    //[self.audioController stopCurrentAudio];
+    [self.webSearcherController releaseWebSession];
+    [self.audioController releaseAudioTimer];
 }
 
 - (void)fetchExerciseAndDisplay {
@@ -252,7 +253,6 @@
         NSLog(@"Connection stopped with error : %@", error);
     }
     else {
-        NSLog(@"Main connection mainView - %@", self.webSearcherController);
         NSError * initError;
         self.currentExercise = [[ExerciseModel alloc] initWithData:data error: initError];
         

@@ -13,6 +13,4 @@
 
 @property (nonatomic, strong) UILabel * viewDisplayed;
 
-- (id)initWithViewModel:(MaterialViewModel *)materialViewModel;
-
 @end

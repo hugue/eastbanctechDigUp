@@ -14,7 +14,6 @@
 @property (nonatomic, strong) NSData * imageData;
 @property (nonatomic, strong) NSNumber * imageLoaded;
 
-- (id)initWithModel:(MaterialModel *)materialModel;
 - (void)applyDataToMaterial:(NSData *)data;
 
 @end

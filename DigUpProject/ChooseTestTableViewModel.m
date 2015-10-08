@@ -25,6 +25,9 @@
         viewModel = self.mainViewModel;
         self.testMainViewModel = self.mainViewModel;
         self.testAudioController = self.mainViewModel.audioController;
+        self.testDragController = self.mainViewModel.dropController;
+        self.testWebSearcherController = self.mainViewModel.webSearcherController;
+        self.testRadioButtonsControllers = self.mainViewModel.buttonControllers;
     }
     return viewModel;
 }
@@ -40,12 +43,14 @@
 
 - (void)viewWillAppear {
     self.mainViewModel = nil;
-    NSLog(@"testMainViewModel - %@", self.testMainViewModel.audioController.currentlyPlaying);
 }
 
 - (void)viewWillDisappear {
     NSLog(@"testMainViewModel will disappear- %@", self.testMainViewModel);
-    NSLog(@"testAudioController will disappear - %@", self.testAudioController);
+    NSLog(@"testDragController will disappear - %@", self.testDragController);
+    NSLog(@"testAudioController will disappear - %@", self.testAudioController);    
+    NSLog(@"testWebSearcherController will disappear - %@", self.testWebSearcherController);
+    NSLog(@"testRadioButtonControllers will disappear - %@", self.testRadioButtonsControllers);
 }
 
 @end

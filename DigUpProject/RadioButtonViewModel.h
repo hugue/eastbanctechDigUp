@@ -14,10 +14,6 @@
 @property (nonatomic, strong) NSString * groupID;
 @property (nonatomic, strong) NSNumber * selectedID;
 
-- (id)initWithModel:(MaterialModel *)materialModel;
 - (void)buttonSelectedOnView;
-- (void)correctionAsked;
-- (void)solutionAsked;
-- (void)restartAsked;
 
 @end

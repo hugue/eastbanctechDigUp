@@ -14,10 +14,4 @@
 @property (nonatomic, strong) NSString * groupID;
 @property (nonatomic) BOOL isSelected;
 
-- (id)initWithModel:(MaterialModel *)materialModel;
-
-- (void)solutionAsked;
-- (void)correctionAsked;
-- (void)restartAsked;
-
 @end

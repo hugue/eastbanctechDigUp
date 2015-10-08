@@ -16,6 +16,5 @@
 @property (nonatomic, strong) UIButton * viewDisplayed;
 
 - (void)applyModelToView;
-- (void)applyBorderStyleForAnswerState:(MaterialAnswerState)materialAnswerState;
 
 @end

@@ -80,6 +80,11 @@
     }
 }
 
+- (void)releaseAudioTimer {
+    [self.updatingTimer invalidate];
+    self.updatingTimer = nil;
+}
+
 - (void)updateCurrentTime:(id)sender {
     if (self.currentlyPlaying.audioPlayer.isPlaying) {
         self.currentAudioTime = self.currentlyPlaying.audioPlayer.currentTime;

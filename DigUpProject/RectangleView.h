@@ -12,7 +12,4 @@
 
 @property (nonatomic, strong) UIView * viewDisplayed;
 
-- (id)initWithViewModel:(MaterialViewModel *)materialViewModel;
-- (void)applyBorderStyleForAnswerState:(MaterialAnswerState)materialAnswerMode;
-
 @end

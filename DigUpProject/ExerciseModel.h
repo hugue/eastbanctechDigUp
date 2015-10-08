@@ -14,6 +14,4 @@
 @property (nonatomic, strong) NSMutableArray<MaterialModel *> * materialsObject;
 @property (nonatomic, strong) NSString * exerciseType;
 
-- (id) initWithData:(NSData *)data error:(NSError *) error;
-
 @end

@@ -16,7 +16,6 @@
 
 @property (nonatomic, strong) NSNumber * currentlySelectedButtonID;
 
-- (id)init;
 - (void)addNewRadioButton:(RadioButtonViewModel *)radioButton;
 
 @end

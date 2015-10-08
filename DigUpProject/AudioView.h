@@ -14,6 +14,4 @@
 @property (nonatomic, strong) UIButton * viewDisplayed;
 @property (nonatomic, strong) AudioViewModel * viewModel;
 
-- (void)applyBorderStyleForAnswerState:(MaterialAnswerState)materialAnswerState;
-
 @end
