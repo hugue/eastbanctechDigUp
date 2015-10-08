@@ -28,7 +28,6 @@
 }
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
-    self.mainViewModel = nil;
     //[self.mainViewModel reset];
     self.mainViewModel = [[MainViewModel alloc] init];
     self.mainViewModel.webSearcherController.urlToReach = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]].urlExercise;

@@ -10,18 +10,12 @@
 
 @implementation DocumentViewModel
 
-- (id)init {
+- (id)initWithSubcourse:(SubcourseModel *)subcourse {
     self = [super init];
     if (self) {
+        self.currentSubcourse = subcourse;
         self.chooseTestViewModel = [[ChooseTestTableViewModel alloc] init];
-        self.chooseTestViewModel.cellIdentifier = @"CourseCellView";
-    }
-    return self;
-}
-
-- (id)initWithTests:(NSArray<NSString *> *)listTest {
-    self = [super init];
-    if (self) {
+        [self configureChooseTestViewModel];
     }
     return self;
 }
@@ -39,11 +33,14 @@
     id viewModel;
     if ([segueIdentifier isEqualToString:@"chooseTestSegue"]) {
         self.chooseTestViewModel.selectedCell = nil;
-        self.chooseTestViewModel.listTests = self.currentSubcourse.listTests;
-        self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.currentSubcourse.listTests];
         viewModel = self.chooseTestViewModel;
     }
     return viewModel;
 }
 
+- (void)configureChooseTestViewModel {
+    self.chooseTestViewModel.cellIdentifier = @"CourseCellView";
+    self.chooseTestViewModel.listTests = self.currentSubcourse.listTests;
+    self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.currentSubcourse.listTests];
+}
 @end

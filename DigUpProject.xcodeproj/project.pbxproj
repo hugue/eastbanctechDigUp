@@ -686,16 +686,16 @@
 		F3F986A71BBE453500E94F60 /* FullViewsModels */ = {
 			isa = PBXGroup;
 			children = (
-				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
-				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
-				F35274981BBE91000089FB6F /* MyCoursesViewModel.h */,
-				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
 				F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */,
 				F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */,
-				F3F5962C1BC3ED68007928CB /* ChooseTestTableViewModel.h */,
-				F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */,
+				F35274981BBE91000089FB6F /* MyCoursesViewModel.h */,
+				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
 				F3F596171BC3C7A2007928CB /* DocumentViewModel.h */,
 				F3F596181BC3C7A2007928CB /* DocumentViewModel.m */,
+				F3F5962C1BC3ED68007928CB /* ChooseTestTableViewModel.h */,
+				F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */,
+				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
+				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
 			);
 			name = FullViewsModels;
 			sourceTree = "<group>";

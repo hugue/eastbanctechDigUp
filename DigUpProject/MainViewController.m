@@ -50,7 +50,6 @@
         self.viewModel = mainViewModel;
         self.materialsViews = [[NSMutableArray alloc] init];
     }
-    
     return self;
 }
 

@@ -25,5 +25,6 @@
 - (void)observeSubModels;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 - (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;
+- (void)viewWillAppear;
 
 @end

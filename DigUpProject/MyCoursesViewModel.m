@@ -49,9 +49,9 @@
         viewModel = self.detailCoursesViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"viewDocument"]) {
-        self.documentViewModel = [[DocumentViewModel alloc] init];
         CourseModel * currentCourse = [self.profileCourses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
-        self.documentViewModel.currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
+        SubcourseModel * currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
+        self.documentViewModel = [[DocumentViewModel alloc] initWithSubcourse:currentSubcourse];
         viewModel = self.documentViewModel;
     }
     return viewModel;
@@ -71,6 +71,10 @@
     else {
         return nil;
     }
+}
+
+- (void)viewWillAppear {
+    self.documentViewModel = nil;
 }
 
 @end

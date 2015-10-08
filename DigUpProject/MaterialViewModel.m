@@ -46,15 +46,12 @@
 }
 
 - (void)correctionAsked {
-    
 }
 
 - (void)solutionAsked {
-    
 }
 
 - (void)restartAsked {
-    
 }
 
 - (void)applyDataToMaterial:(NSData *)data {
