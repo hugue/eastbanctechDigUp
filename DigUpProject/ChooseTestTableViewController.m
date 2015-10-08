@@ -28,11 +28,22 @@
 }
 
 - (void)applyModelToView {
+    @weakify(self)
     [RACObserve(self.viewModel, selectedCell) subscribeNext:^(id x) {
+        @strongify(self)
         if (x) {
-            [self performSegueWithIdentifier:@"displayExerciseSegue" sender:self];
+            [self performSegueWithIdentifier:@"displayExerciseSegue" sender:nil];
         }
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.viewModel viewWillAppear];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.viewModel viewWillDisappear];
+}
 @end

@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self applyModelToView];
 
 }
@@ -33,22 +32,10 @@
     NSURL *url = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.documentView loadRequest:request];
-    
-    //self.viewModel.chooseTestViewModel
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)chooseTest:(UIButton *)sender {
-        [self performSegueWithIdentifier:@"chooseTestSegue" sender:self];
+        [self performSegueWithIdentifier:@"chooseTestSegue" sender:nil];
 }
 
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {

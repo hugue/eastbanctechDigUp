@@ -22,7 +22,6 @@
                                     self.viewModel.materialHeight);
         
         self.viewDisplayed = [[UITextField alloc] initWithFrame:frame];
-       //self.viewDisplayed.clearButtonMode = UITextFieldViewModeAlways;
         self.viewDisplayed.layer.borderColor = [UIColor grayColor].CGColor;
         self.viewDisplayed.layer.borderWidth = 1.0f;
         

@@ -15,9 +15,15 @@
 
 @property (nonatomic, strong) NSArray<TestModel *> * listTests;
 @property (nonatomic, strong) NSString * cellIdentifier;
+
 @property (nonatomic, strong) MainViewModel * mainViewModel;
 @property (nonatomic, strong) NSNumber * selectedCell;
 
+@property (nonatomic, weak) MainViewModel * testMainViewModel;
+@property (nonatomic, weak) AudioController * testAudioController;
+
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
+- (void)viewWillAppear;
+- (void)viewWillDisappear;
 
 @end

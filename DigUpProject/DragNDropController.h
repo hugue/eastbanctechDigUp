@@ -11,8 +11,6 @@
 
 @interface DragNDropController : NSObject
 
-//@property (nonatomic, strong) NSMutableDictionary * dragDropElements;
-//@property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * targetElements;
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, MaterialViewModel *> * targetElements;
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * dropElements;
 

@@ -45,9 +45,9 @@
     
     [controllerTerminal subscribe:buttonTerminal];
     
-    @weakify(self);
+    @weakify(self)
     [[buttonTerminal doNext:^(id x) {
-        @strongify(self);
+        @strongify(self)
         if ([x isEqualToNumber:audio.materialID]) {
             [self stopCurrentAudio];
             
@@ -68,7 +68,7 @@
         [[[RACObserve(audio, audioLoaded) filter:^BOOL(id value) {
             return [value boolValue];
         }] take:1] subscribeNext:^(id x) {
-            @strongify(self);
+            @strongify(self)
             self.currentlyPlaying = audio;
             self.beingPlayedID = audio.materialID;
             self.audioDuration = audio.audioPlayer.duration;

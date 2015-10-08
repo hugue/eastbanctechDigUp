@@ -31,7 +31,7 @@
     [RACObserve(self.viewModel, detailCoursesViewModel.selectedCell) subscribeNext:^(id x) {
         @strongify(self)
         if (x) {
-            [self performSegueWithIdentifier:@"viewDocument" sender:self];
+            [self performSegueWithIdentifier:@"viewDocument" sender:nil];
         }
     }];
 }
@@ -39,8 +39,14 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CoursesTableViewController * tableViewController = [segue destinationViewController];
-    tableViewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+    if ([segue.identifier isEqualToString:@"viewDocument"]) {
+        DocumentViewController * viewController = [segue destinationViewController];
+        viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];        
+    }
+    else {
+        CoursesTableViewController * tableViewController = [segue destinationViewController];
+        tableViewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+    }
 }
 
 

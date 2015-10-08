@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MyCoursesViewModel.h"
 #import "CoursesTableViewController.h"
+#import "DocumentViewController.h"
 
 @interface MyCoursesViewController : UIViewController
 

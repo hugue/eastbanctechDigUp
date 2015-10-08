@@ -14,7 +14,6 @@
 
 #import "ExerciseModel.h"
 #import "WebSearcherController.h"
-#import "ExerciseCorrector.h"
 #import "RadioButtonsController.h"
 #import "DragNDropController.h"
 #import "AudioController.h"
@@ -35,18 +34,17 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 @interface MainViewModel : NSObject <WebSearcherControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
-@property (nonatomic, strong) WebSearcherController * webSearcherController;
 @property (nonatomic, strong) ExerciseModel * currentExercise;
-@property (nonatomic, strong) ExerciseCorrector * corrector;
+
+@property (nonatomic, strong) WebSearcherController * webSearcherController;
 @property (nonatomic, strong) NSMutableDictionary<NSString *,RadioButtonsController *> * buttonControllers;
 @property (nonatomic, strong) AudioController * audioController;
 @property (nonatomic, strong) DragNDropController * dropController;
+
 @property (nonatomic, strong) NSNumber * exerciseLoaded;
 @property (nonatomic) enum ExerciseCurrentState currentExerciseState;
-
 @property (nonatomic) float bottomOfView;
 @property (nonatomic) float rightBorderOfView;
-
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;
 
@@ -58,5 +56,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 - (void)playPauseAudioChangedOnView;
 - (void)volumeAudioChangedOnViewByButton;
 - (void)fetchExerciseAndDisplay;
+- (void)reset;
+- (void)viewWillDisappear;
 
 @end

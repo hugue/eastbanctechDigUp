@@ -37,8 +37,12 @@
 - (void)applyDataToMaterial:(NSData *)data {
     self.audioData = [data copy];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithData:self.audioData error:nil];
-    self.audioPlayer.delegate = self;
+    //self.audioPlayer.delegate = self;
     self.audioLoaded = @YES;
+}
+
+- (void)audioPlayerDidFinishPlaying:(nonnull AVAudioPlayer *)player successfully:(BOOL)flag {
+    NSLog(@"Finished Playing");
 }
 
 - (void)solutionAsked {

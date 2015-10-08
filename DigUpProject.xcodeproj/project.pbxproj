@@ -65,7 +65,6 @@
 		F3F663041BC4E8E600BCE54F /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F663031BC4E8E600BCE54F /* TestModel.m */; };
 		F3F7B51C1BB1121600781D90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F7B51B1BB1121600781D90 /* QuartzCore.framework */; };
 		F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E881BA28880004648B6 /* RadioButtonView.m */; };
-		F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */; };
 		F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */; };
 		F3F986AB1BBE47B400E94F60 /* partition.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AA1BBE47B400E94F60 /* partition.pdf */; };
 		F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F986AC1BBE604800E94F60 /* Main.storyboard */; };
@@ -290,8 +289,6 @@
 		F3F7B51B1BB1121600781D90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F3F89E871BA28880004648B6 /* RadioButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonView.h; sourceTree = "<group>"; };
 		F3F89E881BA28880004648B6 /* RadioButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonView.m; sourceTree = "<group>"; };
-		F3F89E911BA306A3004648B6 /* ExerciseCorrector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseCorrector.h; sourceTree = "<group>"; };
-		F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCorrector.m; sourceTree = "<group>"; };
 		F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonViewModel.h; sourceTree = "<group>"; };
 		F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonViewModel.m; sourceTree = "<group>"; };
 		F3F986AA1BBE47B400E94F60 /* partition.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = partition.pdf; sourceTree = "<group>"; };
@@ -682,8 +679,6 @@
 				F3F64A391BA68A5100B9231D /* RadioButtonsController.m */,
 				F3F5A8461BABCACB00D35CA6 /* DragNDropController.h */,
 				F3F5A8471BABCACB00D35CA6 /* DragNDropController.m */,
-				F3F89E911BA306A3004648B6 /* ExerciseCorrector.h */,
-				F3F89E921BA306A3004648B6 /* ExerciseCorrector.m */,
 			);
 			name = TaskControllers;
 			sourceTree = "<group>";
@@ -1225,7 +1220,6 @@
 				F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */,
 				F3F987971BBE6E9D00E94F60 /* LoginViewModel.m in Sources */,
 				F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */,
-				F3F89E931BA306A3004648B6 /* ExerciseCorrector.m in Sources */,
 				F3F9878B1BBE6D1300E94F60 /* ETRStoryboardLink.m in Sources */,
 				F3F987791BBE6D1300E94F60 /* ETRRelationshipCollectionModel.m in Sources */,
 				F3F5961C1BC3C7CF007928CB /* DocumentViewController.m in Sources */,

@@ -13,7 +13,7 @@
 @interface AudioController : NSObject
 
 @property (nonatomic, strong) NSNumber * beingPlayedID;
-@property (nonatomic, strong) AudioViewModel * currentlyPlaying;
+@property (nonatomic, weak) AudioViewModel * currentlyPlaying;
 
 @property (nonatomic) long currentAudioTime;
 @property (nonatomic) long audioDuration;

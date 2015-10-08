@@ -38,8 +38,14 @@
     self.selfCorrectingMaterials = [[NSMutableArray alloc] init];
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
-    
-    //[self.webSearcherController launchSession];
+}
+
+- (void)reset {
+    [self initialize];
+}
+
+- (void)viewWillDisappear {
+    //[self.audioController stopCurrentAudio];
 }
 
 - (void)fetchExerciseAndDisplay {
@@ -246,6 +252,7 @@
         NSLog(@"Connection stopped with error : %@", error);
     }
     else {
+        NSLog(@"Main connection mainView - %@", self.webSearcherController);
         NSError * initError;
         self.currentExercise = [[ExerciseModel alloc] initWithData:data error: initError];
         
@@ -255,6 +262,9 @@
         [self parseExercise];
     }
 }
+
+
+
 
 
 @end

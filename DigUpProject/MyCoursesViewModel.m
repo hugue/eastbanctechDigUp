@@ -25,7 +25,7 @@
         
         self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:coursesNames];
         self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:nil];
-        self.documentViewModel = [[DocumentViewModel alloc] init];
+        //self.documentViewModel = [[DocumentViewModel alloc] init];
         
         [self observeSubModels];
     }
@@ -49,6 +49,7 @@
         viewModel = self.detailCoursesViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"viewDocument"]) {
+        self.documentViewModel = [[DocumentViewModel alloc] init];
         CourseModel * currentCourse = [self.profileCourses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
         self.documentViewModel.currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
         viewModel = self.documentViewModel;

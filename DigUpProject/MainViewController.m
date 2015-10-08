@@ -7,7 +7,6 @@
 //
 
 #import "MainViewController.h"
-
 #import <ReactiveCocoa/RACEXTScope.h>
 
 @interface MainViewController ()
@@ -18,12 +17,11 @@
 @end
 
 @implementation MainViewController
+#pragma mark - Navigation Methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //MainViewModel * mainViewModel = [[MainViewModel alloc] init];
-    //self.viewModel = mainViewModel;
-    
+
     self.materialsViews = [[NSMutableArray alloc] init];
     
     [self registerForKeyboardNotifications];
@@ -33,6 +31,11 @@
     recognizer.delegate = self;
     [self.scrollView addGestureRecognizer:recognizer];
     [self.viewModel fetchExerciseAndDisplay];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.viewModel viewWillDisappear];
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +55,7 @@
 }
 
 - (void)applyModelToView {
-    @weakify(self);
+    @weakify(self)
     [[[RACObserve(self.viewModel, exerciseLoaded) distinctUntilChanged] filter:^BOOL(NSNumber * stateExercise) {
         return [stateExercise boolValue];
     }] subscribeNext:^(id x) {
@@ -63,6 +66,8 @@
             [self displayExercise];
     }];
 }
+
+#pragma mark - exercise and materials methods
 
 - (void)displayExercise {
     MaterialView * materialView;
@@ -156,7 +161,7 @@
         [playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
         [playPauseButton addTarget:self action:@selector(playPauseButtonClicked:) forControlEvents:UIControlEventTouchDown];
         
-        [RACObserve(self.viewModel.audioController, isPlaying) subscribeNext:^(id x) {
+        [RACObserve(self.viewModel, audioController.isPlaying) subscribeNext:^(id x) {
             if ([x boolValue]) {
                 [playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
             }
@@ -175,10 +180,10 @@
         audioTimeSlider.minimumTrackTintColor = [UIColor whiteColor];
         audioTimeSlider.maximumTrackTintColor = [UIColor blackColor];
         
-        RAC(audioTimeSlider, maximumValue) = RACObserve(self.viewModel.audioController, audioDuration);
+        RAC(audioTimeSlider, maximumValue) = RACObserve(self.viewModel, audioController.audioDuration);
     
         RACChannelTerminal * sliderTerminal = [audioTimeSlider rac_newValueChannelWithNilValue:@0];
-        RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
+        RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel, audioController.currentAudioTime, @0);
    
         @weakify(self)
         [[[sliderTerminal doNext:^(id x) {
@@ -199,8 +204,8 @@
     
         [controlAudioBar addSubview:timeLabel];
     
-        RAC(self, currentAudioTime) = [RACObserve(self.viewModel.audioController, currentAudioTime) doNext:^(id x) {
-            @strongify(self);
+        RAC(self, currentAudioTime) = [RACObserve(self.viewModel, audioController.currentAudioTime) doNext:^(id x) {
+            @strongify(self)
             long minutes = floor(self.currentAudioTime/60);
             long seconds = self.currentAudioTime - minutes*60;
         
@@ -214,7 +219,7 @@
         UIButton * volumeButton = [[UIButton alloc] initWithFrame:volumeButtonFrame];
         [volumeButton setImage:[UIImage imageNamed:@"HighVolume"] forState:UIControlStateNormal];
         
-        [[[RACObserve(self.viewModel.audioController, currentAudioVolum) map:^id(id value) {
+        [[[RACObserve(self.viewModel, audioController.currentAudioVolum) map:^id(id value) {
                 if ([value floatValue] == 0) {
                     return @(AudioVolumeIntervalMute);
                 }
@@ -261,14 +266,14 @@
         volumeSlider.minimumTrackTintColor = [UIColor whiteColor];
         volumeSlider.maximumTrackTintColor = [UIColor blackColor];
         [volumeSlider addTarget:self action:@selector(volumeValueChanged:) forControlEvents:UIControlEventValueChanged];
-        RAC(volumeSlider, value) = RACObserve(self.viewModel.audioController, currentAudioVolum);
+        RAC(volumeSlider, value) = RACObserve(self.viewModel, audioController.currentAudioVolum);
     
         [controlAudioBar addSubview:volumeSlider];
     
         [self.scrollView addSubview:mainAudioBar];
         
         //Add the control audio bar only if an audio file is selected
-        [RACObserve(self.viewModel.audioController, currentlyPlaying) subscribeNext:^(id x) {
+        [RACObserve(self.viewModel, audioController.currentlyPlaying) subscribeNext:^(id x) {
             if (x) {
                 [mainAudioBar addSubview:controlAudioBar];
             }
@@ -333,7 +338,9 @@
     [solutionButton addTarget:self action:@selector(solutionAsked:) forControlEvents:UIControlEventTouchDown];
     
     //Signal to display the buttons at the right time (not when testing)
+    @weakify(self)
     [RACObserve(self.viewModel, currentExerciseState) subscribeNext:^(id x) {
+        @strongify(self)
         if ([x integerValue] == ExerciseCurrentStateIsGoingOn) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [solutionButton removeFromSuperview];

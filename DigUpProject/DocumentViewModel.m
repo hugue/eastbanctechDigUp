@@ -38,6 +38,7 @@
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     id viewModel;
     if ([segueIdentifier isEqualToString:@"chooseTestSegue"]) {
+        self.chooseTestViewModel.selectedCell = nil;
         self.chooseTestViewModel.listTests = self.currentSubcourse.listTests;
         self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.currentSubcourse.listTests];
         viewModel = self.chooseTestViewModel;

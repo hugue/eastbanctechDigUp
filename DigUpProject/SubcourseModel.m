@@ -17,7 +17,7 @@
         self.documentName = documentTitle;
         NSMutableArray * subcoursesTests = [[NSMutableArray alloc] init];
         
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 50; i++) {
             TestModel * test = [[TestModel alloc] initWithTitle:[NSString stringWithFormat:@"Test %d", i]];
             [subcoursesTests addObject:test];
         }

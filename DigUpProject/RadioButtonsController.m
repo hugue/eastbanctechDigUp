@@ -34,7 +34,7 @@
     
     RACChannelTerminal * controllerTerminal = RACChannelTo(self, currentlySelectedButtonID);
     RACChannelTerminal * buttonTerminal = RACChannelTo(radioButton, selectedID);
-     @weakify(self);
+    @weakify(self)
     [[controllerTerminal doNext:^(id x) {
         @strongify(self);
         if ([x isEqualToNumber:radioButton.materialID]) {
@@ -44,7 +44,7 @@
     
    
     [[[buttonTerminal  skip :1] doNext:^(id x) {
-        @strongify(self);
+        @strongify(self)
         self.currentlyClikedButton = radioButton;
     }] subscribe:controllerTerminal];
 }

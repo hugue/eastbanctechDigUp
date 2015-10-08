@@ -22,7 +22,10 @@
                                     self.viewModel.materialWidth,
                                     self.viewModel.materialHeight);
         self.viewDisplayed = [[UIView alloc] initWithFrame:frame];
-        [self applyStyle:self.viewModel.material.Style ToView:self.viewDisplayed];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self applyStyle:self.viewModel.material.Style ToView:self.viewDisplayed];
+        });
+        
 
         //Add the dashed border if is a target
         if ([self.viewModel.material.Behavior isEqualToString:@"DropTarget"]) {
@@ -32,7 +35,9 @@
             self.specialBorder.lineDashPattern = @[@4, @2];
             self.specialBorder.path = [UIBezierPath bezierPathWithRect:self.viewDisplayed.bounds].CGPath;
             self.specialBorder.frame = self.viewDisplayed.bounds;
-            [self.viewDisplayed.layer addSublayer:self.specialBorder];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.viewDisplayed.layer addSublayer:self.specialBorder];
+            });
         }
     }
     return self;
