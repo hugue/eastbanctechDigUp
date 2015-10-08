@@ -11,14 +11,6 @@
 #import "MainViewModel.h"
 #import "MainViewController.h"
 
-@interface AppDelegate ()
-
-//@property (nonatomic, strong) MainViewModel * mainViewModel;
-//@property (nonatomic, strong) MaterialsViewModel * materialsViewModel;
-//@property (nonatomic, retain) UINavigationController * navigationController;
-
-@end
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -47,10 +39,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-/*
-- (MainViewController *) createInitialViewController {
-    self.mainViewModel = [MainViewModel new];
-    return [[MainViewController alloc] initWithViewModel:self.mainViewModel];
-}
- */
+
 @end

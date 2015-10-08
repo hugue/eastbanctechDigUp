@@ -19,12 +19,6 @@
 @property (nonatomic, strong) MainViewModel * mainViewModel;
 @property (nonatomic, strong) NSNumber * selectedCell;
 
-@property (nonatomic, weak) MainViewModel * testMainViewModel;
-@property (nonatomic, weak) AudioController * testAudioController;
-@property (nonatomic, weak) WebSearcherController * testWebSearcherController;
-@property (nonatomic, weak) DragNDropController * testDragController;
-@property (nonatomic, weak) NSDictionary * testRadioButtonsControllers;
-
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 - (void)viewWillAppear;
 - (void)viewWillDisappear;

@@ -58,7 +58,6 @@
 }
 
 - (void)applyDataToMaterial:(NSData *)data {
-    NSLog(@"Ici");
 }
 
 @end

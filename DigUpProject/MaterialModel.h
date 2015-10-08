@@ -21,35 +21,35 @@
 
 @interface MaterialModel : JSONModel
 
-@property (nonatomic, assign)      NSString<Optional> * $id;
+@property (nonatomic, strong)      NSString<Optional> * $id;
 @property (nonatomic, strong)      NSString<Optional> * $type;
 @property (nonatomic, strong)      NSString<Optional> * Exercise;
-@property (nonatomic)              NSNumber<Optional> * ExerciseId;
-@property (nonatomic)              NSNumber<Optional> * ParentId;
+@property (nonatomic, strong)      NSNumber<Optional> * ExerciseId;
+@property (nonatomic, strong)      NSNumber<Optional> * ParentId;
 @property (nonatomic, strong)      NSString<Optional> * Parent;
 
-@property (nonatomic)              NSNumber<Optional> * DropTargetId;
+@property (nonatomic, strong)      NSNumber<Optional> * DropTargetId;
 @property (nonatomic, strong)      MaterialModel<Optional> * DropTarget;
 @property (nonatomic, strong)      NSArray<MaterialModel, Optional> * DropElements;
 
-@property (nonatomic)              NSNumber<Optional> * BlobId;
+@property (nonatomic, strong)      NSNumber<Optional> * BlobId;
 @property (nonatomic, strong)      NSString<Optional> * Blob;
 @property (nonatomic, strong)      NSNumber<Optional> * Id;
 @property (nonatomic, strong)      NSString<Optional> * Name;
 @property (nonatomic, strong)      NSString<Optional> * Type;
-@property (nonatomic)              NSNumber<Optional> * X;
-@property (nonatomic)              NSNumber<Optional> * Y;
-@property (nonatomic)              NSNumber<Optional> * Z;
-@property (nonatomic)              NSNumber<Optional> * Width;
-@property (nonatomic)              NSNumber<Optional> * Height;
+@property (nonatomic, strong)      NSNumber<Optional> * X;
+@property (nonatomic, strong)      NSNumber<Optional> * Y;
+@property (nonatomic, strong)      NSNumber<Optional> * Z;
+@property (nonatomic, strong)      NSNumber<Optional> * Width;
+@property (nonatomic, strong)      NSNumber<Optional> * Height;
 @property (nonatomic, strong)      NSString<Optional> * Behavior;
-@property (nonatomic)              NSNumber<Optional> * Composition;
-@property (nonatomic)              NSNumber<Optional> * FakeTargetId;
+@property (nonatomic, strong)      NSNumber<Optional> * Composition;
+@property (nonatomic, strong)      NSNumber<Optional> * FakeTargetId;
 @property (nonatomic, strong)      NSString<Optional> * Text;
 @property (nonatomic, strong)      NSString<Optional> * Value;
 @property (nonatomic, strong)      NSString<Optional> * Style;
-@property (nonatomic)              NSString<Optional> * Autoplay;
-@property (nonatomic)              NSString<Optional> * Show;
+@property (nonatomic, strong)      NSString<Optional> * Autoplay;
+@property (nonatomic, strong)      NSString<Optional> * Show;
 
 @property (nonatomic, strong)      NSString<Optional> * $ref;
 

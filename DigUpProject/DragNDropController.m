@@ -27,7 +27,6 @@
 - (BOOL)pointIsInTargetElement:(CGPoint)point forMaterial:(MaterialViewModel *)draggedMaterial {
     if (draggedMaterial.currentDropTarget) {
         //Notify the target that the element has been moved
-        //[draggedMaterial.currentDropTarget removeDroppedElement:draggedMaterial];
         [self removeFromTargetElement:draggedMaterial];
     }
     for (MaterialViewModel * target in self.targetElements.allValues) {
@@ -35,7 +34,6 @@
         
         if (CGRectContainsPoint(frameTarget, point)) {
             draggedMaterial.currentDropTarget = target;
-            //[target.droppedElements addObject:draggedMaterial];
             [target positionNewDraggedMaterial:draggedMaterial];
             return YES;
         }
@@ -90,14 +88,11 @@
             }
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
-                //[droppedElement.currentDropTarget removeDroppedElement:droppedElement];
-               // [correctTarget.droppedElements addObject:droppedElement];
                 [correctTarget positionNewDraggedMaterial:droppedElement];
                 droppedElement.answerState = MaterialAnswerStateIsUndefined;
                 droppedElement.currentDropTarget = correctTarget;
             }
             else {
-                //[droppedElement.currentDropTarget removeDroppedElement:droppedElement];
                 [droppedElement resetPosition];
             }
         }
@@ -105,7 +100,6 @@
         else if (droppedElement.answerState == MaterialAnswerStateIsUndefined) {
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
-                //[correctTarget.droppedElements addObject:droppedElement];
                 [correctTarget positionNewDraggedMaterial:droppedElement];
                 droppedElement.currentDropTarget = correctTarget;
             }
@@ -121,7 +115,6 @@
         }
         for (MaterialViewModel * target in self.targetElements.allValues) {
             target.posForDraggedMaterial = CGPointMake(target.position.x, target.position.y);
-        //[target.droppedElements removeAllObjects];
     }
 }
 

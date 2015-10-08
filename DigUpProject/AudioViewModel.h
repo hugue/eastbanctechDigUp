@@ -23,6 +23,5 @@
 @property (nonatomic) BOOL autoPlay;
 
 - (void)audioSelectedOnView;
-- (void)applyDataToMaterial:(NSData *)data;
 
 @end

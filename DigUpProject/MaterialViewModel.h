@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, MaterialAnswerState) {
 @property (nonatomic) CGPoint posForDraggedMaterial;
 
 @property (nonatomic) enum MaterialAnswerState answerState;
-@property (nonatomic, strong) MaterialViewModel * currentDropTarget;
+@property (nonatomic, weak) MaterialViewModel * currentDropTarget;
 @property (nonatomic, strong) NSNumber  * correctDropTargetID;
 
 - (id)initWithModel:(MaterialModel *)materialModel;

@@ -61,7 +61,7 @@
         NSLog(@"Error : %@", error);
         return nil;
     }
-    ExerciseModel * exercise = [[ExerciseModel alloc] initWithData:data error: error];
+    ExerciseModel * exercise = [[ExerciseModel alloc] initWithData:data error: &error];
     if(error) {
         NSLog(@"Error : %@", error);
         return nil;
@@ -254,7 +254,7 @@
     }
     else {
         NSError * initError;
-        self.currentExercise = [[ExerciseModel alloc] initWithData:data error: initError];
+        self.currentExercise = [[ExerciseModel alloc] initWithData:data error: &initError];
         
         if(error) {
             NSLog(@"Error : %@", error);

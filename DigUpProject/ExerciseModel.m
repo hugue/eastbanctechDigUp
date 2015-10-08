@@ -17,10 +17,10 @@
 
 @implementation ExerciseModel
 
-- (id) initWithData:(NSData *)data error:(NSError *)error {
+- (id)initWithData:(NSData *)data error:(NSError *__autoreleasing *)error {
     self = [super init];
     if (self) {
-        self.materials = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &error];
+        self.materials = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: error];
         self.materialsObject = [[NSMutableArray alloc] initWithCapacity:[self.materials count]];
         self.referencedModels = [[NSMutableDictionary alloc] init];
         
