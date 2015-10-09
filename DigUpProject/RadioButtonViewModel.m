@@ -36,7 +36,8 @@
     if ([self.selectedID isEqualToNumber:self.materialID] && self.isTrue) {
         self.answerState = MaterialAnswerStateIsCorrect;
     }
-    else if ([self.selectedID isEqualToNumber:self.materialID] && (!self.isTrue)) {
+    else if (([self.selectedID isEqualToNumber:self.materialID] && (!self.isTrue)) ||
+             ((![self.selectedID isEqualToNumber:self.materialID]) && self.isTrue)) {
         self.answerState = MaterialAnswerStateIsNotCorrect;
     }
     else  {

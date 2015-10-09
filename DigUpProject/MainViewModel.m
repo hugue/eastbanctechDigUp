@@ -261,14 +261,21 @@
 }
 
 - (void)correctionAsked {
-    self.currentExerciseState = ExerciseCurrentStateCorrectionAsked;
-    [self.audioController stopCurrentAudio];
-    [self correctingDragNDrop];
+    if (self.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
+        self.currentExerciseState = ExerciseCurrentStateCorrectionAsked;
+        [self.audioController stopCurrentAudio];
+        [self correctingDragNDrop];
+    }
 }
 
 - (void)solutionAsked {
-    self.currentExerciseState = ExerciseCurrentStateSolutionAsked;
-    [self displayingSolutionForDragNDrop];
+    if (self.currentExerciseState == ExerciseCurrentStateCorrectionAsked) {
+        self.currentExerciseState = ExerciseCurrentStateSolutionAsked;
+        [self displayingSolutionForDragNDrop];
+        for (RadioButtonsController * radioButtonController in self.buttonControllers.allValues) {
+            [radioButtonController solutionAsked];
+        }
+    }
 }
 
 //Correcting functions for different materials

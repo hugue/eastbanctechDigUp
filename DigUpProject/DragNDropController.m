@@ -76,12 +76,16 @@
                 droppedElement.answerState = MaterialAnswerStateIsNotCorrect;
             }
         }
+        else {
+            if (droppedElement.correctDropTargetID) {
+                droppedElement.answerState = MaterialAnswerStateIsNotCorrect;
+            }
+        }
     }
 }
 
 - (void)solutionAsked {
     for(MaterialViewModel * droppedElement in self.dropElements) {
-        //The element has been placed
         if (droppedElement.answerState == MaterialAnswerStateIsNotCorrect) {
             if (droppedElement.currentDropTarget) {
                 [self removeFromTargetElement:droppedElement];
@@ -94,16 +98,17 @@
             }
             else {
                 [droppedElement resetPosition];
+                droppedElement.answerState = MaterialAnswerStateIsUndefined;
             }
         }
         //Means the element has not been placed on a target
-        else if (droppedElement.answerState == MaterialAnswerStateIsUndefined) {
+        /*else if (droppedElement.answerState == MaterialAnswerStateIsUndefined) {
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
                 [correctTarget positionNewDraggedMaterial:droppedElement];
                 droppedElement.currentDropTarget = correctTarget;
             }
-        }
+        }*/
     }
 }
 
@@ -111,7 +116,6 @@
         for (MaterialViewModel * droppedElement in self.dropElements) {
             droppedElement.currentDropTarget = nil;
             [droppedElement resetPosition];
-            //droppedElement.answerState = MaterialAnswerStateIsUndefined;
         }
         for (MaterialViewModel * target in self.targetElements.allValues) {
             target.posForDraggedMaterial = CGPointMake(target.position.x, target.position.y);

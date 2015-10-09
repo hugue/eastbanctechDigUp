@@ -49,4 +49,10 @@
     }] subscribe:controllerTerminal];
 }
 
+- (void)solutionAsked {
+    if ([self.correctButtonID isEqualToNumber:@0]) {
+        self.currentlySelectedButtonID = self.correctButtonID;
+    }
+}
+
 @end
