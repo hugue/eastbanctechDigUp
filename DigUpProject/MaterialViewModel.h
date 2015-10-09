@@ -15,7 +15,7 @@
 
 typedef NS_ENUM(NSInteger, MaterialAnswerState) {
     MaterialAnswerStateIsTesting,
-    MaterialAnswerStateIsUndefined ,
+    MaterialAnswerStateIsUndefined,
     MaterialAnswerStateIsCorrect,
     MaterialAnswerStateIsAlternative,
     MaterialAnswerStateIsNotCorrect

@@ -24,7 +24,7 @@
         self.viewDisplayed = [[UITextField alloc] initWithFrame:frame];
         self.viewDisplayed.layer.borderColor = [UIColor grayColor].CGColor;
         self.viewDisplayed.layer.borderWidth = 1.0f;
-        
+        self.viewDisplayed.enabled = NO;
         [self applyStyle:self.viewModel.material.Style toTextField:self.viewDisplayed];
         [self applyModelToView];
     }

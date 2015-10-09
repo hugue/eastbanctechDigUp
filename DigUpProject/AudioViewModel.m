@@ -57,7 +57,6 @@
     self.audioPlayer.currentTime = 0;
     self.audioPlayer.volume = 1.0;
     self.selectedID = @0;
-    self.answerState = MaterialAnswerStateIsTesting;
 }
 
 @end

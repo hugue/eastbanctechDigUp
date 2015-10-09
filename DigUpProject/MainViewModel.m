@@ -9,9 +9,9 @@
 #import "MainViewModel.h"
 @interface MainViewModel ()
 
-@property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * selfCorrectingMaterials;
 @property (nonatomic, strong) NSString * exerciseURL;
 @property (nonatomic, strong) NSString * mediaURL;
+@property (nonatomic, strong) NSMutableArray<RACSignal *> * downloadedMedias;
 
 @end
 
@@ -30,6 +30,7 @@
 
 - (void)initialize {
     self.exerciseLoaded = @NO;
+    self.currentExerciseState = ExerciseCurrentStateIsStopped;
     
     self.maxZPosition = 0;
     self.maxTargetZPosition = 0;
@@ -38,7 +39,7 @@
     
     self.buttonControllers = [[NSMutableDictionary alloc] init];
     self.materialsModels = [[NSMutableArray alloc] init];
-    self.selfCorrectingMaterials = [[NSMutableArray alloc] init];
+    self.downloadedMedias = [[NSMutableArray alloc] init];
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
 }
@@ -94,7 +95,6 @@
         }
         [newButtonController addNewRadioButton:materialViewModel];
         [self processDragNDropElement:materialViewModel];
-        [self.selfCorrectingMaterials addObject:materialViewModel];
         
         return materialViewModel;
     }
@@ -107,17 +107,14 @@
     }
     else if ([type isEqualToString:@"InputField"]) {
         materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
-        [self.selfCorrectingMaterials addObject:materialViewModel];
     }
     else if ([type isEqualToString:@"Audio"]) {
         materialViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:(AudioViewModel *) materialViewModel];
-        [self.selfCorrectingMaterials addObject:materialViewModel];
         [self.webController addTaskForObject:materialViewModel toURL:[materialViewModel makeDownloadURLFormURL:self.mediaURL]];
     }
     else if([type isEqualToString:@"CheckBox"]) {
         materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
-        [self.selfCorrectingMaterials addObject:materialViewModel];
     }
 
     else {
@@ -162,8 +159,38 @@
         MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:self.currentExercise.materialsObject[i]];
         [self.materialsModels addObject:materialViewModel];
     }
+    
+    @weakify(self)
+    [RACObserve(self, currentExerciseState) subscribeNext:^(id x) {
+        @strongify(self)
+        MaterialViewModel * materialViewModel;
+        switch ([x integerValue]) {
+            case ExerciseCurrentStateIsStopped:
+                for (materialViewModel in self.materialsModels) {
+                    materialViewModel.answerState = MaterialAnswerStateIsUndefined;
+                }
+                break;
+            case ExerciseCurrentStateIsGoingOn:
+                for (materialViewModel in self.materialsModels) {
+                    materialViewModel.answerState = MaterialAnswerStateIsTesting;
+                }
+                break;
+            case ExerciseCurrentStateCorrectionAsked:
+                for (materialViewModel in self.materialsModels) {
+                    [materialViewModel correctionAsked];
+                }
+                break;
+            case ExerciseCurrentStateSolutionAsked:
+                for (materialViewModel in self.materialsModels) {
+                    [materialViewModel solutionAsked];
+                }
+                break;
+            default:
+                break;
+        }
+       
+    }];
     self.exerciseLoaded = @YES;
-    //self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
 
 - (BOOL)audioBarTapped {
@@ -198,7 +225,9 @@
 - (void)restartExerciseAsked {
     [self.audioController restartAsked];
     [self restartingDragNDrop];
-    [self restartingSelfCorrectingMaterials];
+    for (MaterialViewModel * materialViewModel in self.materialsModels) {
+        [materialViewModel restartAsked];
+    }
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
 
@@ -206,13 +235,11 @@
     self.currentExerciseState = ExerciseCurrentStateCorrectionAsked;
     [self.audioController stopCurrentAudio];
     [self correctingDragNDrop];
-    [self correctingSelfCorrectingMaterials];
 }
 
 - (void)solutionAsked {
     self.currentExerciseState = ExerciseCurrentStateSolutionAsked;
     [self displayingSolutionForDragNDrop];
-    [self displayingSolutionSelfCorrectingMaterials];
 }
 
 //Correcting functions for different materials
@@ -227,25 +254,6 @@
 
 - (void)displayingSolutionForDragNDrop {
     [self.dropController solutionAsked];
-}
-
-//Make correction for self correcting materials (Checkbox, textField...)
-- (void)correctingSelfCorrectingMaterials {
-    for (MaterialViewModel * materialViewModel in self.selfCorrectingMaterials) {
-        [materialViewModel correctionAsked];
-    }
-}
-
-- (void)displayingSolutionSelfCorrectingMaterials {
-    for (MaterialViewModel * materialViewModel in self.selfCorrectingMaterials) {
-        [materialViewModel solutionAsked];
-    }
-}
-
-- (void)restartingSelfCorrectingMaterials {
-    for (MaterialViewModel * materialViewModel in self.selfCorrectingMaterials) {
-        [materialViewModel restartAsked];
-    }
 }
 
 #pragma mark - DataControllerProtocol methods

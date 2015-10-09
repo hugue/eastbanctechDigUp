@@ -55,7 +55,6 @@
 
 - (void)restartAsked {
     self.selectedID = @0;
-    self.answerState = MaterialAnswerStateIsTesting;
 }
 
 @end

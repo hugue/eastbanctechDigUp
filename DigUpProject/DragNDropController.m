@@ -111,7 +111,7 @@
         for (MaterialViewModel * droppedElement in self.dropElements) {
             droppedElement.currentDropTarget = nil;
             [droppedElement resetPosition];
-            droppedElement.answerState = MaterialAnswerStateIsUndefined;
+            //droppedElement.answerState = MaterialAnswerStateIsUndefined;
         }
         for (MaterialViewModel * target in self.targetElements.allValues) {
             target.posForDraggedMaterial = CGPointMake(target.position.x, target.position.y);

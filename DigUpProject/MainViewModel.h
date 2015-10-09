@@ -20,6 +20,7 @@
 #import "TestModel.h"
 
 typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
+    ExerciseCurrentStateIsStopped,
     ExerciseCurrentStateIsGoingOn,
     ExerciseCurrentStateCorrectionAsked,
     ExerciseCurrentStateSolutionAsked

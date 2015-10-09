@@ -40,7 +40,6 @@
 
 - (void)restartAsked {
     self.isSelected = NO;
-    self.answerState = MaterialAnswerStateIsUndefined;
 }
 
 - (void)solutionAsked {

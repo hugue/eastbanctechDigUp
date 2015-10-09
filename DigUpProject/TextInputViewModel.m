@@ -69,7 +69,6 @@
 }
 
 - (void)restartAsked {
-    self.answerState = MaterialAnswerStateIsTesting;
     self.givenAnswer = @"";
 }
 

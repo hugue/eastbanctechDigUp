@@ -29,9 +29,10 @@
         
         self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         [self.viewDisplayed setImage:[UIImage imageNamed:@"RadioButton-Unselected"] forState: UIControlStateNormal];
+        self.viewDisplayed.enabled = NO;
         
         [self.viewDisplayed addTarget:self action:@selector(handleTap:) forControlEvents:UIControlEventTouchUpInside];
-        [self applyModelToView];
+        [self applyModelToView];        
     }
     return self;
 }

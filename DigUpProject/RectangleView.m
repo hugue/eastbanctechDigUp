@@ -9,6 +9,7 @@
 #import "RectangleView.h"
 @interface RectangleView ()
 @property (nonatomic, strong) CAShapeLayer * specialBorder;
+@property (nonatomic, strong) NSString * style;
 @end
 
 @implementation RectangleView
@@ -17,13 +18,14 @@
 - (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
+        self.style = self.viewModel.material.Style;
         CGRect  frame =  CGRectMake(self.viewModel.position.x,
                                     self.viewModel.position.y,
                                     self.viewModel.materialWidth,
                                     self.viewModel.materialHeight);
         self.viewDisplayed = [[UIView alloc] initWithFrame:frame];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self applyStyle:self.viewModel.material.Style ToView:self.viewDisplayed];
+            [self applyStyle:self.style ToView:self.viewDisplayed];
         });
         
 
@@ -59,7 +61,7 @@
 
 - (void)applyBorderStyleForAnswerState:(MaterialAnswerState)materialAnswerState {
     [super applyBorderStyleForAnswerState:materialAnswerState];
-    if (materialAnswerState == MaterialAnswerStateIsUndefined) {
+    if ((materialAnswerState == MaterialAnswerStateIsUndefined || materialAnswerState == MaterialAnswerStateIsTesting) && [self.style isEqualToString:@"box-default"]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor blackColor].CGColor;
             self.viewDisplayed.layer.borderWidth = 1.0f;
