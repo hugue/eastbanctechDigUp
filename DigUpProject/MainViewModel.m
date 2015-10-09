@@ -81,37 +81,47 @@
         materialViewModel = [[MaterialViewModel alloc] initWithModel:materialModel];
     }
     else if ([type isEqualToString:@"RadioButton"]) {
-        RadioButtonViewModel * materialViewModel = [[RadioButtonViewModel alloc] initWithModel:materialModel];
+        RadioButtonViewModel * buttonViewModel = [[RadioButtonViewModel alloc] initWithModel:materialModel];
         RadioButtonsController * newButtonController;
         
         //First button created for that group ID
-        if (self.buttonControllers[materialViewModel.groupID] == nil) {
+        if (self.buttonControllers[buttonViewModel.groupID] == nil) {
             newButtonController = [[RadioButtonsController alloc] init];
-            [self.buttonControllers setObject:newButtonController forKey:materialViewModel.groupID];
+            [self.buttonControllers setObject:newButtonController forKey:buttonViewModel.groupID];
         }
         //The group already exists, just add the button
         else {
-            newButtonController = self.buttonControllers[materialViewModel.groupID];
+            newButtonController = self.buttonControllers[buttonViewModel.groupID];
         }
-        [newButtonController addNewRadioButton:materialViewModel];
-        [self processDragNDropElement:materialViewModel];
+        [newButtonController addNewRadioButton:buttonViewModel];
+        [self processDragNDropElement:buttonViewModel];
         
-        return materialViewModel;
+        return buttonViewModel;
     }
     else if ([type isEqualToString:@"Rectangle"]) {
         materialViewModel = [[MaterialViewModel alloc] initWithModel:materialModel];
     }
     else if ([type isEqualToString:@"Image"]) {
-        materialViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
-        [self.webController addTaskForObject:materialViewModel toURL:[materialViewModel makeDownloadURLFormURL:self.mediaURL]];
+        ImageViewModel * imageViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
+        [self.webController addTaskForObject:imageViewModel toURL:[imageViewModel makeDownloadURLFormURL:self.mediaURL]];
+        RACSignal * imageLoadedSignal = RACObserve(imageViewModel, imageLoaded);
+        [self.downloadedMedias addObject:imageLoadedSignal];
+        [self processDragNDropElement:imageViewModel];
+        [self updateViewBordersWithMaterial:imageViewModel];
+        return imageViewModel;
     }
     else if ([type isEqualToString:@"InputField"]) {
         materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
     }
     else if ([type isEqualToString:@"Audio"]) {
-        materialViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
-        [self.audioController addNewAudio:(AudioViewModel *) materialViewModel];
-        [self.webController addTaskForObject:materialViewModel toURL:[materialViewModel makeDownloadURLFormURL:self.mediaURL]];
+        AudioViewModel * audioViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
+        [self.audioController addNewAudio:audioViewModel];
+        [self.webController addTaskForObject:audioViewModel toURL:[audioViewModel makeDownloadURLFormURL:self.mediaURL]];
+        RACSignal * audioLoadedSignal = RACObserve(audioViewModel, audioLoaded);
+        [self.downloadedMedias addObject:audioLoadedSignal];
+        [self processDragNDropElement:audioViewModel];
+        [self updateViewBordersWithMaterial:audioViewModel];
+        return audioViewModel;
     }
     else if([type isEqualToString:@"CheckBox"]) {
         materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
@@ -122,7 +132,13 @@
     }
     
     [self processDragNDropElement:materialViewModel];
+    [self updateViewBordersWithMaterial:materialViewModel];
     
+    return materialViewModel;
+    
+}
+
+- (void)updateViewBordersWithMaterial:(MaterialViewModel *)materialViewModel {
     //This attribute is needed to place the audio bar and correction buttons at the right place
     if (self.bottomOfView < (materialViewModel.materialHeight + materialViewModel.position.y)) {
         self.bottomOfView = (materialViewModel.materialHeight + materialViewModel.position.y);
@@ -130,8 +146,6 @@
     if (self.rightBorderOfView < (materialViewModel.materialWidth + materialViewModel.position.x)) {
         self.rightBorderOfView = (materialViewModel.materialWidth + materialViewModel.position.x);
     }
-    return materialViewModel;
-    
 }
 
 - (void)volumeAudioChangedOnViewByButton {
@@ -159,8 +173,23 @@
         MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:self.currentExercise.materialsObject[i]];
         [self.materialsModels addObject:materialViewModel];
     }
-    
     @weakify(self)
+    [[[RACSignal combineLatest:self.downloadedMedias] map:^id(RACTuple * value) {
+        NSArray * downloadValues = value.allObjects;
+        BOOL allDownoloaded = YES;
+        for (id isDownloaded in downloadValues) {
+            if (![isDownloaded boolValue]) {
+                allDownoloaded = NO;
+            }
+        }
+        return @(allDownoloaded);
+    }] subscribeNext:^(id x) {
+        @strongify(self)
+        if ([x boolValue]) {
+            self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
+        }
+    }];
+    
     [RACObserve(self, currentExerciseState) subscribeNext:^(id x) {
         @strongify(self)
         MaterialViewModel * materialViewModel;
