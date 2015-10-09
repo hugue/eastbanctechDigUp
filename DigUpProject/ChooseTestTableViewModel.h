@@ -9,6 +9,7 @@
 #import "ETRSimpleCollectionModel.h"
 #import "CourseCellViewModel.h"
 #import "MainViewModel.h"
+#import "WebController.h"
 #import "TestModel.h"
 
 @interface ChooseTestTableViewModel : ETRSimpleCollectionModel
@@ -18,7 +19,9 @@
 
 @property (nonatomic, strong) MainViewModel * mainViewModel;
 @property (nonatomic, strong) NSNumber * selectedCell;
+@property (nonatomic, strong) WebController * webController;
 
+- (id)initWithWebController:(WebController *)webController;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 - (void)viewWillAppear;
 - (void)viewWillDisappear;

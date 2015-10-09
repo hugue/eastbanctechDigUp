@@ -8,6 +8,7 @@
 
 #import "MaterialViewModel.h"
 @interface MaterialViewModel ()
+
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * droppedElements;
 
 @end
@@ -55,6 +56,22 @@
 }
 
 - (void)applyDataToMaterial:(NSData *)data {
+}
+
+- (NSString *)makeDownloadURLFormURL:(NSString *)url {
+    NSString * downloadURL = [NSString stringWithFormat:@"%@%@", url, self.material.BlobId];
+    return downloadURL;
+}
+
+#pragma mark - DataControllerProtocol
+
+- (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
+    if (error) {
+        NSLog(@"Error upon receiving data in AudioViewModel- %@", error);
+    }
+    else {
+        [self applyDataToMaterial:data];
+    }
 }
 
 @end

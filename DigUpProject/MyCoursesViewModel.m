@@ -13,9 +13,10 @@
 
 @implementation MyCoursesViewModel
 
-- (id)initWithCourses:(NSArray<CourseModel *> *)courses {
+- (id)initWithCourses:(NSArray<CourseModel *> *)courses WebController:(WebController *)webController {
     self = [super init];
     if (self) {
+        self.webController = webController;
         NSMutableArray<NSString *> * coursesNames = [[NSMutableArray alloc] init];
         self.profileCourses = [courses copy];
         
@@ -48,7 +49,7 @@
     else if ([segueIdentifier isEqualToString:@"viewDocumentSegue"]) {
         CourseModel * currentCourse = [self.profileCourses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
         SubcourseModel * currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
-        self.documentViewModel = [[DocumentViewModel alloc] initWithSubcourse:currentSubcourse];
+        self.documentViewModel = [[DocumentViewModel alloc] initWithSubcourse:currentSubcourse webController:self.webController];
         viewModel = self.documentViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"presentExamSegue"]) {

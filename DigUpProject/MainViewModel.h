@@ -14,9 +14,11 @@
 
 #import "ExerciseModel.h"
 #import "WebSearcherController.h"
+#import "WebController.h"
 #import "RadioButtonsController.h"
 #import "DragNDropController.h"
 #import "AudioController.h"
+#import "TestModel.h"
 
 typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
     ExerciseCurrentStateIsGoingOn,
@@ -31,12 +33,13 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
     AudioVolumeIntervalHigh
 };
 
-@interface MainViewModel : NSObject <WebSearcherControllerDelegate>
+@interface MainViewModel : NSObject <WebSearcherControllerDelegate, DataControllerProtocol>
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
 @property (nonatomic, strong) ExerciseModel * currentExercise;
 
-@property (nonatomic, strong) WebSearcherController * webSearcherController;
+//@property (nonatomic, strong) WebSearcherController * webSearcherController;
+@property (nonatomic, strong) WebController * webController;
 @property (nonatomic, strong) NSMutableDictionary<NSString *,RadioButtonsController *> * buttonControllers;
 @property (nonatomic, strong) AudioController * audioController;
 @property (nonatomic, strong) DragNDropController * dropController;
@@ -47,6 +50,8 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 @property (nonatomic) float rightBorderOfView;
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;
+
+- (id)initWithTestModel:(TestModel *)testModel WebController:(WebController *)webController;
 
 - (void)parseExercise;
 - (BOOL)audioBarTapped;

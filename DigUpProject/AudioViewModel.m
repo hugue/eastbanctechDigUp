@@ -59,5 +59,16 @@
     self.selectedID = @0;
     self.answerState = MaterialAnswerStateIsTesting;
 }
+/*
+#pragma mark - DataControllerProtocol
 
+- (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
+    if (error) {
+        NSLog(@"Error upon receiving data in AudioViewModel- %@", error);
+    }
+    else {
+        [self applyDataToMaterial:data];
+    }    
+}
+*/
 @end

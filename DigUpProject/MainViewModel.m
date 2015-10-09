@@ -10,15 +10,20 @@
 @interface MainViewModel ()
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * selfCorrectingMaterials;
+@property (nonatomic, strong) NSString * exerciseURL;
+@property (nonatomic, strong) NSString * mediaURL;
 
 @end
 
 @implementation MainViewModel
 
-- (id)init {
+- (id)initWithTestModel:(TestModel *)testModel WebController:(WebController *)webController {
     self = [super init];
     if (self) {
         [self initialize];
+        self.exerciseURL = testModel.urlExercise;
+        self.mediaURL = testModel.urlMedia;
+        self.webController = webController;
     }
     return self;
 }
@@ -31,8 +36,8 @@
     self.bottomOfView = 0;
     self.rightBorderOfView = 0;
     
-    self.webSearcherController  = [[WebSearcherController alloc] init];
-    self.webSearcherController.delegate = self;
+    //self.webSearcherController  = [[WebSearcherController alloc] init];
+    //self.webSearcherController.delegate = self;
     self.buttonControllers = [[NSMutableDictionary alloc] init];
     self.materialsModels = [[NSMutableArray alloc] init];
     self.selfCorrectingMaterials = [[NSMutableArray alloc] init];
@@ -45,12 +50,13 @@
 }
 
 - (void)viewWillDisappear {
-    [self.webSearcherController releaseWebSession];
+    //[self.webSearcherController releaseWebSession];
     [self.audioController releaseAudioTimer];
 }
 
 - (void)fetchExerciseAndDisplay {
-    [self.webSearcherController launchSession];
+    //[self.webSearcherController launchSession];
+    [self.webController addTaskForObject:self toURL:self.exerciseURL];
 }
 
 - (ExerciseModel *)LoadDataFromFile:(NSString *)fileName {
@@ -101,7 +107,8 @@
     }
     else if ([type isEqualToString:@"Image"]) {
         materialViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
-        [self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
+        //[self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
+        [self.webController addTaskForObject:materialViewModel toURL:[materialViewModel makeDownloadURLFormURL:self.mediaURL]];
     }
     else if ([type isEqualToString:@"InputField"]) {
         materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
@@ -111,7 +118,8 @@
         materialViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:(AudioViewModel *) materialViewModel];
         [self.selfCorrectingMaterials addObject:materialViewModel];
-        [self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
+        //[self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
+        [self.webController addTaskForObject:materialViewModel toURL:[materialViewModel makeDownloadURLFormURL:self.mediaURL]];
     }
     else if([type isEqualToString:@"CheckBox"]) {
         materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
@@ -160,7 +168,7 @@
         MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:self.currentExercise.materialsObject[i]];
         [self.materialsModels addObject:materialViewModel];
     }
-    [self.webSearcherController launchDownloadingMediaSession];
+    //[self.webSearcherController launchDownloadingMediaSession];
     self.exerciseLoaded = @YES;
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
@@ -263,8 +271,21 @@
     }
 }
 
+#pragma mark - DataControllerProtocol methods
 
-
-
+- (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
+    if (error) {
+        NSLog(@"Error upon reciving exercise in MainViewModel - %@", error);
+    }
+    else {
+        NSError * initError;
+        self.currentExercise = [[ExerciseModel alloc] initWithData:data error: &initError];
+        
+        if(error) {
+            NSLog(@"Error upon parsing exercise - %@", error);
+        }
+        [self parseExercise];
+    }
+}
 
 @end

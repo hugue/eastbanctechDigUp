@@ -10,6 +10,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "MaterialModel.h"
+#import "DataControllerProtocol.h"
 
 
 typedef NS_ENUM(NSInteger, MaterialAnswerState) {
@@ -20,7 +21,7 @@ typedef NS_ENUM(NSInteger, MaterialAnswerState) {
     MaterialAnswerStateIsNotCorrect
 };
 
-@interface MaterialViewModel : NSObject
+@interface MaterialViewModel : NSObject <DataControllerProtocol>
 
 @property (nonatomic, strong) MaterialModel * material;
 @property (nonatomic) NSNumber * materialID;
@@ -43,6 +44,7 @@ typedef NS_ENUM(NSInteger, MaterialAnswerState) {
 - (void)restartAsked;
 
 - (void)applyDataToMaterial:(NSData *)data;
+- (NSString *)makeDownloadURLFormURL:(NSString *)url;
 
 @end
 

@@ -10,7 +10,8 @@
 
 @interface WebController()
 
-@property (nonatomic, strong)NSURLSession * globalSession;
+@property (nonatomic, strong) NSURLSession * globalSession;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, id> * taskClients;
 
 @end
 
@@ -21,11 +22,19 @@
     if (self) {
         NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         self.globalSession = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+        self.taskClients = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-- (void)addDownloadTaskToURL:(NSString *)downloadURL {
+- (void)addTaskForObject:(id<DataControllerProtocol>)object toURL:(NSString *)url {
+    NSURL * downloadURL = [NSURL URLWithString:url];
+    NSURLSessionDownloadTask * downloadTask = [self.globalSession downloadTaskWithURL:downloadURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSData * data = [NSData dataWithContentsOfURL:location];
+        [object didReceiveData:data withError:nil];
+    }];
+    [downloadTask resume];
+
     
 }
 

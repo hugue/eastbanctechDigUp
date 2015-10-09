@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DataControllerProtocol.h"
 
 @interface WebController : NSObject <NSURLSessionDelegate, NSURLSessionDownloadDelegate>
+
+- (void)addTaskForObject:(id<DataControllerProtocol>)object toURL:(NSString *)url;
 
 @end

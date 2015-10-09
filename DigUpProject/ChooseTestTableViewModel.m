@@ -10,11 +10,12 @@
 
 @implementation ChooseTestTableViewModel
 
-- (id)init {
+- (id)initWithWebController:(WebController *)webController {
     self = [super init];
     if (self) {
         self.selectedCell = nil;
         //self.mainViewModel = [[MainViewModel alloc] init];
+        self.webController = webController;
     }
     return self;
 }
@@ -29,9 +30,10 @@
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
     //[self.mainViewModel reset];
-    self.mainViewModel = [[MainViewModel alloc] init];
-    self.mainViewModel.webSearcherController.urlToReach = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]].urlExercise;
-    self.mainViewModel.webSearcherController.mediaURL = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]].urlMedia;
+    TestModel * testModel = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]];
+    self.mainViewModel = [[MainViewModel alloc] initWithTestModel:testModel WebController:self.webController];
+    //self.mainViewModel.webSearcherController.urlToReach = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]].urlExercise;
+    //self.mainViewModel.webSearcherController.mediaURL = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]].urlMedia;
     self.selectedCell = @([indexPath indexAtPosition:1]);
 }
 

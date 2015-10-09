@@ -22,8 +22,9 @@
 @property (nonatomic, strong) CoursesTableViewModel * detailCoursesViewModel;
 @property (nonatomic, strong) DocumentViewModel * documentViewModel;
 @property (nonatomic, strong) ExamViewModel * examViewModel;
+@property (nonatomic, strong) WebController * webController;
 
-- (id)initWithCourses:(NSArray<CourseModel *> *)courses;
+- (id)initWithCourses:(NSArray<CourseModel *> *)courses WebController:(WebController *)webController;
 - (void)observeSubModels;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 - (NSMutableArray<CourseCellViewModel *> *)createCellViewModelsForCourse:(NSNumber *)courseNumber;

@@ -10,6 +10,7 @@
 @interface LoginViewModel ()
 
 @property (nonatomic,strong) RACSignal * signInValidArguments;
+@property (nonatomic, strong) WebController * webController;
 
 @end
 
@@ -39,6 +40,7 @@
 */
 
 - (BOOL)signInNow {
+    self.webController = [[WebController alloc] init];
     NSMutableArray<CourseModel *> * courses = [[NSMutableArray alloc] init];
     NSLog(@"Login - %@ and password - %@", self.login, self.password);
     CourseModel * course1 = [[CourseModel alloc] initWithTitle:@"Mathematics" AndDocuments:@[@"Cosinus", @"Poincarre's formula", @"Complex numbers"]];
@@ -49,7 +51,7 @@
         CourseModel * newCourse = [[CourseModel alloc] initWithTitle:[NSString stringWithFormat:@"Course %d", i]  AndDocuments:@[@"Hello"]];
         [courses addObject:newCourse];
     }
-    self.profileViewModel = [[MyCoursesViewModel alloc] initWithCourses:courses];
+    self.profileViewModel = [[MyCoursesViewModel alloc] initWithCourses:courses WebController:self.webController];
     return YES;
 }
 

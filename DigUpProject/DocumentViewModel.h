@@ -15,8 +15,9 @@
 
 @property (nonatomic, strong) SubcourseModel * currentSubcourse;
 @property (nonatomic, strong) ChooseTestTableViewModel * chooseTestViewModel;
+@property (nonatomic, strong) WebController * webController;
 
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
-- (id)initWithSubcourse:(SubcourseModel *)subcourse;
+- (id)initWithSubcourse:(SubcourseModel *)subcourse webController:(WebController *)webController;
 
 @end

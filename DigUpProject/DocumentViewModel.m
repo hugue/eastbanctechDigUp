@@ -10,11 +10,12 @@
 
 @implementation DocumentViewModel
 
-- (id)initWithSubcourse:(SubcourseModel *)subcourse {
+- (id)initWithSubcourse:(SubcourseModel *)subcourse webController:(WebController *)webController {
     self = [super init];
     if (self) {
         self.currentSubcourse = subcourse;
-        self.chooseTestViewModel = [[ChooseTestTableViewModel alloc] init];
+        self.webController = webController;
+        self.chooseTestViewModel = [[ChooseTestTableViewModel alloc] initWithWebController:self.webController];
         [self configureChooseTestViewModel];
     }
     return self;

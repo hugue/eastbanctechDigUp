@@ -8,7 +8,7 @@
 
 #import "MaterialViewModel.h"
 
-@interface ImageViewModel : MaterialViewModel 
+@interface ImageViewModel : MaterialViewModel
 
 @property (nonatomic, strong) NSNumber * BlobID;
 @property (nonatomic, strong) NSData * imageData;

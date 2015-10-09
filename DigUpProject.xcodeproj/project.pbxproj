@@ -298,6 +298,7 @@
 		F3F663001BC4D96B00BCE54F /* SubcourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubcourseModel.m; sourceTree = "<group>"; };
 		F3F663021BC4E8E600BCE54F /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		F3F663031BC4E8E600BCE54F /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		F3F7601F1BC79D3C00158ABC /* DataControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataControllerProtocol.h; sourceTree = "<group>"; };
 		F3F7B51B1BB1121600781D90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F3F89E871BA28880004648B6 /* RadioButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonView.h; sourceTree = "<group>"; };
 		F3F89E881BA28880004648B6 /* RadioButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonView.m; sourceTree = "<group>"; };
@@ -685,6 +686,7 @@
 		F3F89E901BA30670004648B6 /* TaskControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3F7601F1BC79D3C00158ABC /* DataControllerProtocol.h */,
 				F3F1E0AD1BC6977D001AFA62 /* WebController.h */,
 				F3F1E0AE1BC6977D001AFA62 /* WebController.m */,
 				F3ECBEA01B9D4D5B0000A656 /* WebSearcherController.h */,
