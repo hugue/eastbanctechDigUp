@@ -36,8 +36,6 @@
     self.bottomOfView = 0;
     self.rightBorderOfView = 0;
     
-    //self.webSearcherController  = [[WebSearcherController alloc] init];
-    //self.webSearcherController.delegate = self;
     self.buttonControllers = [[NSMutableDictionary alloc] init];
     self.materialsModels = [[NSMutableArray alloc] init];
     self.selfCorrectingMaterials = [[NSMutableArray alloc] init];
@@ -50,12 +48,10 @@
 }
 
 - (void)viewWillDisappear {
-    //[self.webSearcherController releaseWebSession];
     [self.audioController releaseAudioTimer];
 }
 
 - (void)fetchExerciseAndDisplay {
-    //[self.webSearcherController launchSession];
     [self.webController addTaskForObject:self toURL:self.exerciseURL];
 }
 
@@ -107,7 +103,6 @@
     }
     else if ([type isEqualToString:@"Image"]) {
         materialViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
-        //[self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
         [self.webController addTaskForObject:materialViewModel toURL:[materialViewModel makeDownloadURLFormURL:self.mediaURL]];
     }
     else if ([type isEqualToString:@"InputField"]) {
@@ -118,7 +113,6 @@
         materialViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:(AudioViewModel *) materialViewModel];
         [self.selfCorrectingMaterials addObject:materialViewModel];
-        //[self.webSearcherController registerNewViewToDownloadMedia:materialViewModel forBlobId:materialViewModel.material.BlobId];
         [self.webController addTaskForObject:materialViewModel toURL:[materialViewModel makeDownloadURLFormURL:self.mediaURL]];
     }
     else if([type isEqualToString:@"CheckBox"]) {
@@ -168,7 +162,6 @@
         MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:self.currentExercise.materialsObject[i]];
         [self.materialsModels addObject:materialViewModel];
     }
-    //[self.webSearcherController launchDownloadingMediaSession];
     self.exerciseLoaded = @YES;
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
@@ -252,22 +245,6 @@
 - (void)restartingSelfCorrectingMaterials {
     for (MaterialViewModel * materialViewModel in self.selfCorrectingMaterials) {
         [materialViewModel restartAsked];
-    }
-}
-#pragma mark - WebSearcherControllerDelegate Methods
-
-- (void)webSearcherController:(WebSearcherController *)webSearcherController didReceiveData:(nullable NSData *)data withError: (nullable NSError *) error{
-    if (error) {
-        NSLog(@"Connection stopped with error : %@", error);
-    }
-    else {
-        NSError * initError;
-        self.currentExercise = [[ExerciseModel alloc] initWithData:data error: &initError];
-        
-        if(error) {
-            NSLog(@"Error : %@", error);
-        }
-        [self parseExercise];
     }
 }
 

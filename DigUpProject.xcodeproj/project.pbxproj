@@ -29,7 +29,6 @@
 		F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */; };
 		F3ECBE881B9D452E0000A656 /* DigUpProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE871B9D452E0000A656 /* DigUpProjectTests.m */; };
 		F3ECBE931B9D452E0000A656 /* DigUpProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE921B9D452E0000A656 /* DigUpProjectUITests.m */; };
-		F3ECBEA21B9D4D5B0000A656 /* WebSearcherController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEA11B9D4D5B0000A656 /* WebSearcherController.m */; };
 		F3ECBEBD1B9D546C0000A656 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEA61B9D546C0000A656 /* JSONModel.m */; };
 		F3ECBEBE1B9D546C0000A656 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEA81B9D546C0000A656 /* JSONModelArray.m */; };
 		F3ECBEBF1B9D546C0000A656 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEAA1B9D546C0000A656 /* JSONModelClassProperty.m */; };
@@ -227,8 +226,6 @@
 		F3ECBE8E1B9D452E0000A656 /* DigUpProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigUpProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ECBE921B9D452E0000A656 /* DigUpProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigUpProjectUITests.m; sourceTree = "<group>"; };
 		F3ECBE941B9D452E0000A656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3ECBEA01B9D4D5B0000A656 /* WebSearcherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSearcherController.h; sourceTree = "<group>"; };
-		F3ECBEA11B9D4D5B0000A656 /* WebSearcherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSearcherController.m; sourceTree = "<group>"; };
 		F3ECBEA51B9D546C0000A656 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		F3ECBEA61B9D546C0000A656 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		F3ECBEA71B9D546C0000A656 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -689,8 +686,6 @@
 				F3F7601F1BC79D3C00158ABC /* DataControllerProtocol.h */,
 				F3F1E0AD1BC6977D001AFA62 /* WebController.h */,
 				F3F1E0AE1BC6977D001AFA62 /* WebController.m */,
-				F3ECBEA01B9D4D5B0000A656 /* WebSearcherController.h */,
-				F3ECBEA11B9D4D5B0000A656 /* WebSearcherController.m */,
 				F3F5A8571BAC41FE00D35CA6 /* AudioController.h */,
 				F3F5A8581BAC41FE00D35CA6 /* AudioController.m */,
 				F3F64A381BA68A5100B9231D /* RadioButtonsController.h */,
@@ -1231,7 +1226,6 @@
 				F3F987891BBE6D1300E94F60 /* ETRTrivialPromise.m in Sources */,
 				F3F9878E1BBE6D1300E94F60 /* ETRStoryboardPushSegue.m in Sources */,
 				F3F987521BBE6D1300E94F60 /* NSMutableArray+ETRUtils.m in Sources */,
-				F3ECBEA21B9D4D5B0000A656 /* WebSearcherController.m in Sources */,
 				F3F987621BBE6D1300E94F60 /* ETRCGUtils.m in Sources */,
 				F3F9876C1BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m in Sources */,
 				F3F9876E1BBE6D1300E94F60 /* ETRCollectionChangeSections.m in Sources */,

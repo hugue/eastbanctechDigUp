@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 #import "DataControllerProtocol.h"
 
 @interface WebController : NSObject <NSURLSessionDelegate, NSURLSessionDownloadDelegate>

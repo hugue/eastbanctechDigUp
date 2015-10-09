@@ -13,7 +13,6 @@
 #import "ImageViewModel.h"
 
 #import "ExerciseModel.h"
-#import "WebSearcherController.h"
 #import "WebController.h"
 #import "RadioButtonsController.h"
 #import "DragNDropController.h"
@@ -33,12 +32,11 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
     AudioVolumeIntervalHigh
 };
 
-@interface MainViewModel : NSObject <WebSearcherControllerDelegate, DataControllerProtocol>
+@interface MainViewModel : NSObject <DataControllerProtocol>
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
 @property (nonatomic, strong) ExerciseModel * currentExercise;
 
-//@property (nonatomic, strong) WebSearcherController * webSearcherController;
 @property (nonatomic, strong) WebController * webController;
 @property (nonatomic, strong) NSMutableDictionary<NSString *,RadioButtonsController *> * buttonControllers;
 @property (nonatomic, strong) AudioController * audioController;
