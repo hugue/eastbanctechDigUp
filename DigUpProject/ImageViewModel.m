@@ -30,16 +30,5 @@
     self.imageData = [data copy];
     self.imageLoaded = @YES;
 }
-/*
-#pragma mark - DataControllerProtocol
 
-- (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
-    if (error) {
-        NSLog(@"Error upon receiving data in ImageViewModel- %@", error);
-    }
-    else {
-        [self applyDataToMaterial:data];
-    }
-}
-*/
 @end

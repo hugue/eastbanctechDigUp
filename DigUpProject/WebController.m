@@ -29,12 +29,12 @@
 
 - (void)addTaskForObject:(id<DataControllerProtocol>)object toURL:(NSString *)url {
     NSURL * downloadURL = [NSURL URLWithString:url];
-    //@weakify(object)
+    @weakify(object)
     NSURLSessionDownloadTask * downloadTask = [self.globalSession downloadTaskWithURL:downloadURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        //@strongify(object)
+        @strongify(object)
+        NSLog(@"Data Received for - %@", object);
         NSData * data = [NSData dataWithContentsOfURL:location];
         [object didReceiveData:data withError:nil];
-        NSLog(@"Data Received - %@", object);
     }];
     [downloadTask resume];
 

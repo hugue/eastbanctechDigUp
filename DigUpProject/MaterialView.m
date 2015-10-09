@@ -67,12 +67,11 @@
         [self configureDropElement];
     }    
     @weakify(self)
-    //Look on model to display answer state (correct/notCorrect/undefined)
+    //Look on model to display answer state (correct/notCorrect/undefined/alternative)
     [RACObserve(self.viewModel, answerState) subscribeNext:^(id x) {
         @strongify(self)
         [self applyBorderStyleForAnswerState:[x integerValue]];
     }];
-
 }
 
 @end

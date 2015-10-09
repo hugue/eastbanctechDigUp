@@ -967,6 +967,8 @@
 		F3F9F1A01BC2345E005B0D5E /* ExerciseMaterialViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
+				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
 				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
 				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
 				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
@@ -977,8 +979,6 @@
 				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
 				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
 				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
-				F3E01F711BA175F4005028A4 /* MaterialViewModel.h */,
-				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
 			);
 			name = ExerciseMaterialViewModels;
 			sourceTree = "<group>";

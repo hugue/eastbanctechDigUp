@@ -163,7 +163,7 @@
         [self.materialsModels addObject:materialViewModel];
     }
     self.exerciseLoaded = @YES;
-    self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
+    //self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
 
 - (BOOL)audioBarTapped {
@@ -196,10 +196,10 @@
 #pragma mark - Functions to process the different phases of the test (testing/Correction/solution)
 
 - (void)restartExerciseAsked {
-    self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
     [self.audioController restartAsked];
     [self restartingDragNDrop];
     [self restartingSelfCorrectingMaterials];
+    self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
 
 - (void)correctionAsked {
