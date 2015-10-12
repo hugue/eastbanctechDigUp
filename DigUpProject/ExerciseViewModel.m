@@ -196,9 +196,9 @@
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
     self.currentExerciseState = ExerciseCurrentStateIsStopped;
     [self.audioController stopCurrentAudio];
-    [self.dropController correctionAsked];
+    [self.dropController correctionAskedWithDisplay:YES];
     for (MaterialViewModel * material in self.materialsModels) {
-        [material correctionAsked];
+        [material correctionAskedWithDisplay:YES];
     }
     
     return NO;
@@ -206,7 +206,7 @@
 
 - (void)solutionAsked {
     for (MaterialViewModel * materialViewModel in self.materialsModels) {
-        [materialViewModel restartAsked];
+        [materialViewModel solutionAsked];
     }
     for (RadioButtonsController * radioButtonController in self.buttonControllers.allValues) {
         [radioButtonController solutionAsked];

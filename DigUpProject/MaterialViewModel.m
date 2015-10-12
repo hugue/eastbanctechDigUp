@@ -48,7 +48,8 @@
     self.position = CGPointMake([self.material.X floatValue], [self.material.Y floatValue]);
 }
 
-- (void)correctionAsked {
+- (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
+    return MaterialAnswerStateIsNotCorrect;
 }
 
 - (void)solutionAsked {

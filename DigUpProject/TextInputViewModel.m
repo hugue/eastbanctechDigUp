@@ -33,7 +33,8 @@
     }
 }
 
-- (void)correctionAsked {
+- (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
+    MaterialAnswerState isCorrect = MaterialAnswerStateIsNotCorrect;
     for (NSDictionary * possibleAnswer in self.answerInfo[@"answers"]) {
         BOOL isMatching = NO;
         if (![possibleAnswer[@"caseSensitive"] boolValue]) {
@@ -44,18 +45,30 @@
         }
         if (isMatching) {
             if ([possibleAnswer[@"rang"] integerValue] == 1) {
-                self.displayState = MaterialDisplayStateIsCorrect;
+                isCorrect = MaterialAnswerStateIsCorrect;
+                if (displayEnabled) {
+                    self.displayState = MaterialDisplayStateIsCorrect;
+                }
             }
             else if([possibleAnswer[@"rang"] integerValue] == 2) {
-                self.displayState = MaterialDisplayStateIsAlternative;
+                isCorrect = MaterialAnswerStateIsAlternative;
+                if (displayEnabled) {
+                    self.displayState = MaterialDisplayStateIsAlternative;
+                }
             }
             else {
-                self.displayState = MaterialDisplayStateIsNotCorrect;
+                isCorrect = MaterialAnswerStateIsNotCorrect;
+                if (displayEnabled) {
+                    self.displayState = MaterialDisplayStateIsNotCorrect;
+                }
             }
-            return;
+            return isCorrect;
         }
     }
-    self.displayState = MaterialDisplayStateIsNotCorrect;
+    if (displayEnabled) {
+        self.displayState = MaterialDisplayStateIsNotCorrect;
+    }
+    return isCorrect;
 }
 
 - (void)solutionAsked {

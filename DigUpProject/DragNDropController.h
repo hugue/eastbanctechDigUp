@@ -16,8 +16,8 @@
 
 - (BOOL)pointIsInTargetElement:(CGPoint)point forMaterial:(MaterialViewModel *)draggedMaterial;
 - (id)init;
-- (void)correctionAsked;
 - (void)restartAsked;
 - (void)solutionAsked;
+- (NSArray<NSNumber *> *)correctionAskedWithDisplay:(BOOL)displayEnabled;
 
 @end

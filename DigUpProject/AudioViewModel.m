@@ -47,7 +47,6 @@
 }
 
 - (void)solutionAsked {
-    
 }
 
 - (void)correctionAsked {

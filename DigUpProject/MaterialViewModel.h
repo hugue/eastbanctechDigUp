@@ -25,6 +25,11 @@ typedef NS_ENUM(NSInteger, MaterialCurrentState) {
     MaterialCurrentStateStopped
 };
 
+typedef NS_ENUM(NSInteger, MaterialAnswerState) {
+    MaterialAnswerStateIsCorrect,
+    MaterialAnswerStateIsAlternative,
+    MaterialAnswerStateIsNotCorrect
+};
 
 @interface MaterialViewModel : NSObject <DataControllerProtocol>
 
@@ -46,7 +51,9 @@ typedef NS_ENUM(NSInteger, MaterialCurrentState) {
 - (id)initWithModel:(MaterialModel *)materialModel;
 - (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial;
 - (void)resetPosition;
-- (void)correctionAsked;
+
+- (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled;
+
 - (void)solutionAsked;
 - (void)restartAsked;
 

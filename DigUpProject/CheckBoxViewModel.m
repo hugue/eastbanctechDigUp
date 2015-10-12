@@ -22,21 +22,25 @@
     return self;
 }
 
-- (void)correctionAsked {
-    if (self.isTrue) {
-        if (self.isSelected) {
+- (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
+    MaterialAnswerState isCorrect = MaterialAnswerStateIsNotCorrect;
+
+    if (self.isSelected && self.isTrue) {
+        isCorrect = MaterialAnswerStateIsCorrect;
+        if (displayEnabled) {
             self.displayState = MaterialDisplayStateIsCorrect;
         }
-        else {
+    }
+    else if ((self.isSelected && !self.isTrue) || (!(self.isSelected) && self.isTrue)) {
+        isCorrect = MaterialAnswerStateIsNotCorrect;
+        if (displayEnabled) {
             self.displayState = MaterialDisplayStateIsNotCorrect;
         }
     }
-    else {
-        if (self.isSelected) {
-            self.displayState = MaterialDisplayStateIsNotCorrect;
-        }
-    }
+    return isCorrect;
 }
+
+
 
 - (void)restartAsked {
     [super restartAsked];
