@@ -15,12 +15,13 @@
 
 @implementation ExerciseViewModel
 
-- (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController {
+- (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController mediaURL:(NSString *)mediaurl {
     self = [super init];
     if (self) {
         [self initialize];
         self.webController = webController;
         self.currentExercise = exerciseModel;
+        self.mediaURL = mediaurl;
         [self parseExercise];
     }
     return self;
@@ -38,6 +39,10 @@
     self.materialsModels = [[NSMutableArray alloc] init];
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
+}
+
+- (void)viewWillDisappear {
+    [self.audioController releaseAudioTimer];
 }
 
 - (void)parseExercise {
@@ -144,21 +149,6 @@
     }
 }
 
-- (void)volumeAudioChangedOnViewByButton {
-    if (self.audioController.currentAudioVolum == 0) {
-        self.audioController.currentAudioVolum = 1.0;
-    }
-    else {
-        self.audioController.currentAudioVolum = 0;
-    }
-}
-
-- (void)playPauseAudioChangedOnView {
-    if (self.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
-        [self.audioController playPauseChangedOnView];
-    }
-}
-
 - (void)processDragNDropElement:(MaterialViewModel *) materialViewModel {
     if ([materialViewModel.material.Behavior isEqualToString:@"DropTarget"]){
         [self.dropController.targetElements setObject:materialViewModel forKey:materialViewModel.materialID];
@@ -175,6 +165,22 @@
     }
 }
 
+- (void)volumeAudioChangedOnViewByButton {
+    if (self.audioController.currentAudioVolum == 0) {
+        self.audioController.currentAudioVolum = 1.0;
+    }
+    else {
+        self.audioController.currentAudioVolum = 0;
+    }
+}
+
+- (void)playPauseAudioChangedOnView {
+    if (self.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
+        [self.audioController playPauseChangedOnView];
+    }
+}
+
+
 - (BOOL)audioBarTapped {
     if (self.audioController.currentlyPlaying.audioPlayer.playing) {
         [self.audioController.currentlyPlaying.audioPlayer pause];
@@ -189,14 +195,32 @@
 #pragma mark - Correction methods
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
     self.currentExerciseState = ExerciseCurrentStateIsStopped;
+    [self.audioController stopCurrentAudio];
+    [self.dropController correctionAsked];
+    for (MaterialViewModel * material in self.materialsModels) {
+        [material correctionAsked];
+    }
+    
     return NO;
 }
 
 - (void)solutionAsked {
-    
+    for (MaterialViewModel * materialViewModel in self.materialsModels) {
+        [materialViewModel restartAsked];
+    }
+    for (RadioButtonsController * radioButtonController in self.buttonControllers.allValues) {
+        [radioButtonController solutionAsked];
+    }
+    [self.dropController solutionAsked];
+
 }
 
 - (void)restartExerciseAsked {
+    [self.audioController restartAsked];
+    [self.dropController restartAsked];
+    for (MaterialViewModel * materialViewModel in self.materialsModels) {
+        [materialViewModel restartAsked];
+    }
     self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
 

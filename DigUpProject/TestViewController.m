@@ -29,9 +29,8 @@
 - (void)applyModelToView {
     [RACObserve(self.viewModel, exerciseLoaded) subscribeNext:^(id x) {
         if ([x boolValue]) {
-            NSLog(@"Exercise loaded");
-            if ([self shouldPerformSegueWithIdentifier:@"displayExerciseSegue" sender:self]) {
-                [self performSegueWithIdentifier:@"displayExerciseSegue" sender:self];
+            if ([self shouldPerformSegueWithIdentifier:@"displayExerciseSegue" sender:nil]) {
+                [self performSegueWithIdentifier:@"displayExerciseSegue" sender:nil];
             }
         }
     }];
@@ -39,7 +38,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self.viewModel viewWillAppear];
+    [self.viewModel viewWillAppear];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

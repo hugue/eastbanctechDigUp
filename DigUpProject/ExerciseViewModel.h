@@ -50,7 +50,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;
 
-- (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController;
+- (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController mediaURL:(NSString *)mediaurl;
 
 - (BOOL)audioBarTapped;
 - (void)playPauseAudioChangedOnView;
@@ -59,5 +59,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection;
 - (void)restartExerciseAsked;
 - (void)solutionAsked;
+
+- (void)viewWillDisappear;
 
 @end

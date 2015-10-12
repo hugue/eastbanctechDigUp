@@ -30,4 +30,6 @@
 - (void)solutionAsked;
 - (void)restartAsked;
 
+- (void)viewWillAppear;
+
 @end

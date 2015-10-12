@@ -34,9 +34,6 @@
 }
 
 - (void)correctionAsked {
-    if ([self.givenAnswer isEqualToString:@""]) {
-        return;
-    }
     for (NSDictionary * possibleAnswer in self.answerInfo[@"answers"]) {
         BOOL isMatching = NO;
         if (![possibleAnswer[@"caseSensitive"] boolValue]) {
@@ -69,6 +66,7 @@
 }
 
 - (void)restartAsked {
+    [super restartAsked];
     self.givenAnswer = @"";
 }
 

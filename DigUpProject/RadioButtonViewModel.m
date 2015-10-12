@@ -49,12 +49,13 @@
     if (self.displayState == MaterialDisplayStateIsNotCorrect) {
         self.displayState = MaterialDisplayStateIsNormal;
     }
-    else if (self.isTrue && (self.displayState == MaterialDisplayStateIsNormal)) {
+    if (self.isTrue) {
         self.selectedID = self.materialID;
     }
 }
 
 - (void)restartAsked {
+    [super restartAsked];
     self.selectedID = @0;
 }
 

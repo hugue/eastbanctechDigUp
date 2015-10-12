@@ -16,6 +16,7 @@
 @end
 
 @implementation ExerciseViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,33 +40,24 @@
 }
 
 - (void)displayExercise {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        MaterialView * materialView;
-        
-        NSUInteger width;
-        NSUInteger height;
-        NSUInteger x;
-        NSUInteger y;
-        
-        if (self.scrollView.contentSize.width < self.viewModel.rightBorderOfView) {
+    MaterialView * materialView;
+           if (self.scrollView.contentSize.width < self.viewModel.rightBorderOfView) {
             self.scrollView.contentSize = CGSizeMake(self.viewModel.rightBorderOfView, self.scrollView.frame.size.height);
         }
         if (self.scrollView.contentSize.height < self.viewModel.bottomOfView + 100) {
             self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.viewModel.bottomOfView + 100);
         }
-        [self configureAudioPlayerView];
 
     for (materialView in self.materialsViews) {
-        width = materialView.viewModel.materialWidth;
-        height = materialView.viewModel.materialHeight;
-        x = materialView.viewModel.position.x;
-        y = materialView.viewModel.position.y;
-        
-        
-            NSLog(@"View Placed");
-            [materialView addVisualToView:self.scrollView];
+         NSLog(@"View Placed");
+         [materialView addVisualToView:self.scrollView];
     }
-        });
+    [self configureAudioPlayerView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.viewModel viewWillDisappear];
 }
 
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel {
@@ -151,7 +143,7 @@
         RAC(audioTimeSlider, maximumValue) = RACObserve(self.viewModel, audioController.audioDuration);
         
         RACChannelTerminal * sliderTerminal = [audioTimeSlider rac_newValueChannelWithNilValue:@0];
-        RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel, audioController.currentAudioTime, @0);
+        RACChannelTerminal * modelTerminal = RACChannelTo_(self, viewModel.audioController.currentAudioTime, @0);
         
         @weakify(self)
         [[[sliderTerminal doNext:^(id x) {
@@ -172,7 +164,7 @@
         
         [controlAudioBar addSubview:timeLabel];
         
-        RAC(self, currentAudioTime) = [RACObserve(self.viewModel, audioController.currentAudioTime) doNext:^(id x) {
+        RAC(self, currentAudioTime) = [RACObserve(self, viewModel.audioController.currentAudioTime) doNext:^(id x) {
             @strongify(self)
             long minutes = floor(self.currentAudioTime/60);
             long seconds = self.currentAudioTime - minutes*60;
@@ -298,7 +290,6 @@
         //Put back the recognizer in listening mode
         recognizer.draggedMaterial = nil;
     }
-    
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer

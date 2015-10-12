@@ -541,9 +541,9 @@
 		F3E01F7B1BA17BD5005028A4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				F3F9F1A01BC2345E005B0D5E /* ExerciseMaterialViewModels */,
-				F3F986A71BBE453500E94F60 /* FullViewsModels */,
 				F3F986A91BBE455C00E94F60 /* LocalViewsModels */,
+				F3F986A71BBE453500E94F60 /* FullViewsModels */,
+				F3F9F1A01BC2345E005B0D5E /* ExerciseMaterialViewModels */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";

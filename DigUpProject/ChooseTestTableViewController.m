@@ -9,7 +9,6 @@
 #import "ChooseTestTableViewController.h"
 
 @interface ChooseTestTableViewController ()
-
 @end
 
 @implementation ChooseTestTableViewController

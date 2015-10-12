@@ -7,6 +7,9 @@
 //
 
 #import "TestViewModel.h"
+@interface TestViewModel()
+
+@end
 
 @implementation TestViewModel
 
@@ -25,14 +28,12 @@
     self.exerciseLoaded = @NO;
 }
 
-- (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
-    id viewModel = nil;
+- (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        self.exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController];
-        self.exerciseViewModel.mediaURL = self.dataModel.urlMedia;
-        viewModel = self.exerciseViewModel;
+        self.exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController mediaURL:self.dataModel.urlMedia];
+        return self.exerciseViewModel;
     }
-    return viewModel;
+    return nil;
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier {
@@ -59,6 +60,9 @@
 
 - (void)restartAsked {
     [self.exerciseViewModel restartExerciseAsked];
+}
+
+- (void)viewWillAppear {
 }
 
 #pragma mark - DataControllerProtocol methods

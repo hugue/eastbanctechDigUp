@@ -55,6 +55,7 @@
 }
 
 - (void)restartAsked {
+    self.displayState = MaterialDisplayStateIsNormal;
 }
 
 - (void)applyDataToMaterial:(NSData *)data {

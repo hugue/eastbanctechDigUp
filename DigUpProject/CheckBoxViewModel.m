@@ -39,6 +39,7 @@
 }
 
 - (void)restartAsked {
+    [super restartAsked];
     self.isSelected = NO;
 }
 

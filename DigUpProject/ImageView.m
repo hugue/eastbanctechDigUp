@@ -37,8 +37,9 @@
         return [value boolValue];
     }]subscribeNext:^(id x) {
         @strongify(self)
-        UIImage * downloadedImage = [UIImage imageWithData:self.viewModel.imageData];
+        NSLog(@"Image Loaded %@", x);
         dispatch_async(dispatch_get_main_queue(), ^{
+        UIImage * downloadedImage = [UIImage imageWithData:self.viewModel.imageData];
             [self.viewDisplayed setImage:downloadedImage];});
         }];
 }

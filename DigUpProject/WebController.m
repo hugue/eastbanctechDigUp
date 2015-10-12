@@ -51,6 +51,9 @@
         @strongify(object)
         NSData * data = [NSData dataWithContentsOfURL:location];
         [object didReceiveData:data withError:nil];
+        if (error) {
+            NSLog(@"Error connection - %@", error);
+        }
     }];
     [downloadTask resume];
 }
