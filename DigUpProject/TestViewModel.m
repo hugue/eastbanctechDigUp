@@ -28,7 +28,9 @@
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     id viewModel = nil;
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        viewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController];
+        self.exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController];
+        self.exerciseViewModel.mediaURL = self.dataModel.urlMedia;
+        viewModel = self.exerciseViewModel;
     }
     return viewModel;
 }
@@ -43,6 +45,20 @@
 - (void)askDataForExercise:(TestModel *)testModel {
     NSString * exerciseURL = testModel.urlExercise;
     [self.webController addTaskForObject:self toURL:exerciseURL];
+}
+
+#pragma - mark Correction Methods
+
+- (void)correctionAsked {
+    [self.exerciseViewModel correctionAskedDisplayed:YES];
+}
+
+- (void)solutionAsked {
+    [self.exerciseViewModel solutionAsked];
+}
+
+- (void)restartAsked {
+    [self.exerciseViewModel restartExerciseAsked];
 }
 
 #pragma mark - DataControllerProtocol methods

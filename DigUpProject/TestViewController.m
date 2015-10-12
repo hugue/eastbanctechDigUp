@@ -16,7 +16,6 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
-    NSLog(@"Should Perform segue - %d",[self.viewModel shouldPerformSegueWithIdentifier:identifier]);
     return [self.viewModel shouldPerformSegueWithIdentifier:identifier];
 }
 
@@ -24,7 +23,6 @@
     if ([segue.identifier isEqualToString:@"displayExerciseSegue"]) {
         ExerciseViewController * viewController = [segue destinationViewController];
         viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
-        NSLog(@"Will perform segue");
     }
 }
 
@@ -47,6 +45,18 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 //    [self.viewModel viewWillDisappear];
+}
+
+- (IBAction)restartAsked:(id)sender {
+    [self.viewModel restartAsked];
+}
+
+- (IBAction)solutionAsked:(id)sender {
+    [self.viewModel solutionAsked];
+}
+
+- (IBAction)correctionAsked:(id)sender {
+    [self.viewModel correctionAsked];
 }
 
 @end

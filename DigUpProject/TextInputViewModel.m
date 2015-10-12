@@ -47,24 +47,24 @@
         }
         if (isMatching) {
             if ([possibleAnswer[@"rang"] integerValue] == 1) {
-                self.answerState = MaterialAnswerStateIsCorrect;
+                self.displayState = MaterialDisplayStateIsCorrect;
             }
             else if([possibleAnswer[@"rang"] integerValue] == 2) {
-                self.answerState = MaterialAnswerStateIsAlternative;
+                self.displayState = MaterialDisplayStateIsAlternative;
             }
             else {
-                self.answerState = MaterialAnswerStateIsNotCorrect;
+                self.displayState = MaterialDisplayStateIsNotCorrect;
             }
             return;
         }
     }
-    self.answerState = MaterialAnswerStateIsNotCorrect;
+    self.displayState = MaterialDisplayStateIsNotCorrect;
 }
 
 - (void)solutionAsked {
     self.givenAnswer = self.answer;
-    if (!(self.answerState == MaterialAnswerStateIsCorrect)) {
-        self.answerState = MaterialAnswerStateIsUndefined;
+    if (!(self.displayState == MaterialDisplayStateIsCorrect)) {
+        self.displayState = MaterialDisplayStateIsNormal;
     }
 }
 

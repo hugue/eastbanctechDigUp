@@ -20,7 +20,7 @@
     if (self) {
         self.material = materialModel;
         self.materialID = materialModel.Id;
-        self.answerState = MaterialAnswerStateIsUndefined;
+        self.displayState = MaterialDisplayStateIsNormal;
         self.correctDropTargetID = self.material.DropTargetId;
         
         self.position = CGPointMake([materialModel.X floatValue], [materialModel.Y floatValue]);
@@ -32,6 +32,8 @@
         self.posForDraggedMaterial = self.position;
         self.currentDropTarget = nil;
         self.droppedElements = [[NSMutableArray alloc] init];
+        
+        self.materialState = MaterialCurrentStateGoingOn;
     }
     return self;
 }
@@ -66,6 +68,7 @@
 #pragma mark - DataControllerProtocol
 
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
+    NSLog(@"Material Receivied");
     if (error) {
         NSLog(@"Error upon receiving data in AudioViewModel- %@", error);
     }

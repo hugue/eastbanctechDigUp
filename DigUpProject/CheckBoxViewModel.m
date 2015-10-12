@@ -25,15 +25,15 @@
 - (void)correctionAsked {
     if (self.isTrue) {
         if (self.isSelected) {
-            self.answerState = MaterialAnswerStateIsCorrect;
+            self.displayState = MaterialDisplayStateIsCorrect;
         }
         else {
-            self.answerState = MaterialAnswerStateIsNotCorrect;
+            self.displayState = MaterialDisplayStateIsNotCorrect;
         }
     }
     else {
         if (self.isSelected) {
-            self.answerState = MaterialAnswerStateIsNotCorrect;
+            self.displayState = MaterialDisplayStateIsNotCorrect;
         }
     }
 }
@@ -43,8 +43,8 @@
 }
 
 - (void)solutionAsked {
-    if (self.answerState == MaterialAnswerStateIsNotCorrect) {
-        self.answerState = MaterialAnswerStateIsUndefined;
+    if (self.displayState == MaterialDisplayStateIsNotCorrect) {
+        self.displayState = MaterialDisplayStateIsNormal;
         self.isSelected = !self.isSelected;
     }
 }

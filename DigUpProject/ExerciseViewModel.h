@@ -43,6 +43,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 @property (nonatomic, strong) DragNDropController * dropController;
 
 @property (nonatomic) enum ExerciseCurrentState currentExerciseState;
+@property (nonatomic, strong) NSString * mediaURL;
 
 @property (nonatomic) float bottomOfView;
 @property (nonatomic) float rightBorderOfView;
@@ -55,7 +56,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 - (void)playPauseAudioChangedOnView;
 - (void)volumeAudioChangedOnViewByButton;
 
-- (void)correctionAsked;
+- (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection;
 - (void)restartExerciseAsked;
 - (void)solutionAsked;
 

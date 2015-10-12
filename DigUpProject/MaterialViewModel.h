@@ -20,6 +20,12 @@ typedef NS_ENUM(NSInteger, MaterialDisplayState) {
     MaterialDisplayStateIsNotCorrect
 };
 
+typedef NS_ENUM(NSInteger, MaterialCurrentState) {
+    MaterialCurrentStateGoingOn,
+    MaterialCurrentStateStopped
+};
+
+
 @interface MaterialViewModel : NSObject <DataControllerProtocol>
 
 @property (nonatomic, strong) MaterialModel * material;
@@ -32,6 +38,8 @@ typedef NS_ENUM(NSInteger, MaterialDisplayState) {
 @property (nonatomic) CGPoint posForDraggedMaterial;
 
 @property (nonatomic) enum MaterialDisplayState displayState;
+@property (nonatomic) enum MaterialCurrentState materialState;
+
 @property (nonatomic, weak) MaterialViewModel * currentDropTarget;
 @property (nonatomic, strong) NSNumber  * correctDropTargetID;
 

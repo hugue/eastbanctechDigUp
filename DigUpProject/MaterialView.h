@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MaterialViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
+#import "MaterialViewModel.h"
 
 @interface MaterialView : NSObject
 
@@ -22,5 +22,5 @@
 
 - (void)addVisualToView:(UIView *)superView;
 - (void)configureDropElement;
-- (void)applyBorderStyleForAnswerState:(MaterialDisplayState) materialAnswerState;
+- (void)applyBorderStyleForAnswerState:(MaterialDisplayState) materialDisplayState;
 @end

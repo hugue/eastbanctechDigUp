@@ -34,22 +34,22 @@
 
 - (void)correctionAsked {
     if ([self.selectedID isEqualToNumber:self.materialID] && self.isTrue) {
-        self.answerState = MaterialAnswerStateIsCorrect;
+        self.displayState = MaterialDisplayStateIsCorrect;
     }
     else if (([self.selectedID isEqualToNumber:self.materialID] && (!self.isTrue)) ||
              ((![self.selectedID isEqualToNumber:self.materialID]) && self.isTrue)) {
-        self.answerState = MaterialAnswerStateIsNotCorrect;
+        self.displayState = MaterialDisplayStateIsNotCorrect;
     }
     else  {
-        self.answerState = MaterialAnswerStateIsUndefined;
+        self.displayState = MaterialDisplayStateIsNormal;
     }
 }
 
 - (void)solutionAsked {
-    if (self.answerState == MaterialAnswerStateIsNotCorrect) {
-        self.answerState = MaterialAnswerStateIsUndefined;
+    if (self.displayState == MaterialDisplayStateIsNotCorrect) {
+        self.displayState = MaterialDisplayStateIsNormal;
     }
-    else if (self.isTrue && (self.answerState == MaterialAnswerStateIsUndefined)) {
+    else if (self.isTrue && (self.displayState == MaterialDisplayStateIsNormal)) {
         self.selectedID = self.materialID;
     }
 }

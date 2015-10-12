@@ -50,7 +50,7 @@
 }
 
 - (void)correctionAsked {
-    self.answerState = MaterialAnswerStateIsUndefined;
+    self.displayState = MaterialDisplayStateIsNormal;
 }
 
 - (void)restartAsked {

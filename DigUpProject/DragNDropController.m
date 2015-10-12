@@ -70,15 +70,15 @@
     for (MaterialViewModel * droppedElement in self.dropElements) {
         if (droppedElement.currentDropTarget) {
             if ((droppedElement.correctDropTargetID) && [droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]){
-                droppedElement.answerState = MaterialAnswerStateIsCorrect;
+                droppedElement.displayState = MaterialDisplayStateIsCorrect;
             }
             else {
-                droppedElement.answerState = MaterialAnswerStateIsNotCorrect;
+                droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
             }
         }
         else {
             if (droppedElement.correctDropTargetID) {
-                droppedElement.answerState = MaterialAnswerStateIsNotCorrect;
+                droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
             }
         }
     }
@@ -86,29 +86,21 @@
 
 - (void)solutionAsked {
     for(MaterialViewModel * droppedElement in self.dropElements) {
-        if (droppedElement.answerState == MaterialAnswerStateIsNotCorrect) {
+        if (droppedElement.displayState == MaterialDisplayStateIsNotCorrect) {
             if (droppedElement.currentDropTarget) {
                 [self removeFromTargetElement:droppedElement];
             }
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
                 [correctTarget positionNewDraggedMaterial:droppedElement];
-                droppedElement.answerState = MaterialAnswerStateIsUndefined;
+                droppedElement.displayState = MaterialDisplayStateIsNormal;
                 droppedElement.currentDropTarget = correctTarget;
             }
             else {
                 [droppedElement resetPosition];
-                droppedElement.answerState = MaterialAnswerStateIsUndefined;
+                droppedElement.displayState = MaterialDisplayStateIsNormal;
             }
         }
-        //Means the element has not been placed on a target
-        /*else if (droppedElement.answerState == MaterialAnswerStateIsUndefined) {
-            if (droppedElement.correctDropTargetID) {
-                MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
-                [correctTarget positionNewDraggedMaterial:droppedElement];
-                droppedElement.currentDropTarget = correctTarget;
-            }
-        }*/
     }
 }
 

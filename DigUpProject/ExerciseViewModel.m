@@ -8,6 +8,11 @@
 
 #import "ExerciseViewModel.h"
 
+@interface ExerciseViewModel()
+
+
+@end
+
 @implementation ExerciseViewModel
 
 - (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController {
@@ -52,12 +57,12 @@
         switch ([x integerValue]) {
             case ExerciseCurrentStateIsStopped:
                 for (materialViewModel in self.materialsModels) {
-                    materialViewModel.answerState = MaterialAnswerStateIsUndefined;
+                    materialViewModel.materialState = MaterialCurrentStateStopped;
                 }
                 break;
             case ExerciseCurrentStateIsGoingOn:
                 for (materialViewModel in self.materialsModels) {
-                    materialViewModel.answerState = MaterialAnswerStateIsTesting;
+                    materialViewModel.materialState = MaterialCurrentStateGoingOn;
                 }
                 break;
             default:
@@ -66,7 +71,6 @@
         
     }];
 }
-
 
 - (MaterialViewModel *)createMaterialViewModelWithModel:(MaterialModel *)materialModel{
     
@@ -98,7 +102,7 @@
     }
     else if ([type isEqualToString:@"Image"]) {
         ImageViewModel * imageViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
-        //[self.webController addTaskForObject:imageViewModel toURL:[imageViewModel makeDownloadURLFormURL:self.mediaURL]];
+        [self.webController addTaskForObject:imageViewModel toURL:[imageViewModel makeDownloadURLFormURL:self.mediaURL]];
         //RACSignal * imageLoadedSignal = RACObserve(imageViewModel, imageLoaded);
         [self processDragNDropElement:imageViewModel];
         [self updateViewBordersWithMaterial:imageViewModel];
@@ -110,7 +114,7 @@
     else if ([type isEqualToString:@"Audio"]) {
         AudioViewModel * audioViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:audioViewModel];
-        //[self.webController addTaskForObject:audioViewModel toURL:[audioViewModel makeDownloadURLFormURL:self.mediaURL]];
+        [self.webController addTaskForObject:audioViewModel toURL:[audioViewModel makeDownloadURLFormURL:self.mediaURL]];
         //RACSignal * audioLoadedSignal = RACObserve(audioViewModel, audioLoaded);
         [self processDragNDropElement:audioViewModel];
         [self updateViewBordersWithMaterial:audioViewModel];
@@ -180,6 +184,20 @@
         [self.audioController.currentlyPlaying.audioPlayer play];
         return YES;
     }
+}
+
+#pragma mark - Correction methods
+- (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
+    self.currentExerciseState = ExerciseCurrentStateIsStopped;
+    return NO;
+}
+
+- (void)solutionAsked {
+    
+}
+
+- (void)restartExerciseAsked {
+    self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
 
 @end

@@ -39,14 +39,14 @@
 }
 
 - (void)displayExercise {
-    MaterialView * materialView;
-    
-    NSUInteger width;
-    NSUInteger height;
-    NSUInteger x;
-    NSUInteger y;
-    
     dispatch_async(dispatch_get_main_queue(), ^{
+        MaterialView * materialView;
+        
+        NSUInteger width;
+        NSUInteger height;
+        NSUInteger x;
+        NSUInteger y;
+        
         if (self.scrollView.contentSize.width < self.viewModel.rightBorderOfView) {
             self.scrollView.contentSize = CGSizeMake(self.viewModel.rightBorderOfView, self.scrollView.frame.size.height);
         }
@@ -54,19 +54,18 @@
             self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.viewModel.bottomOfView + 100);
         }
         [self configureAudioPlayerView];
-    });
-    NSLog(@"materialviews - %@", self.materialsViews);
+
     for (materialView in self.materialsViews) {
         width = materialView.viewModel.materialWidth;
         height = materialView.viewModel.materialHeight;
         x = materialView.viewModel.position.x;
         y = materialView.viewModel.position.y;
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"material view added");
+        
+            NSLog(@"View Placed");
             [materialView addVisualToView:self.scrollView];
-        });
     }
+        });
 }
 
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel {
@@ -358,7 +357,7 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
-    
+        
     CGRect aRect = self.view.frame;
     aRect.size.height -= keyboardSize.height;
     CGPoint point = CGPointMake(self.activeField.frame.origin.x+self.activeField.frame.size.width, self.activeField.frame.origin.y+self.activeField.frame.size.height);
@@ -375,10 +374,6 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.activeField = textField;
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    NSLog(@"Screen turned");
 }
 
 @end
