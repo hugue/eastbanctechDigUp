@@ -38,8 +38,8 @@
     }]subscribeNext:^(id x) {
         @strongify(self)
         NSLog(@"Image Loaded %@", x);
-        dispatch_async(dispatch_get_main_queue(), ^{
         UIImage * downloadedImage = [UIImage imageWithData:self.viewModel.imageData];
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self.viewDisplayed setImage:downloadedImage];});
         }];
 }

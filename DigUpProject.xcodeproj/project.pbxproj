@@ -154,6 +154,7 @@
 		F3FCD53C1BCBCD890074F409 /* ExamResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */; };
 		F3FCD5401BCBCDFB0074F409 /* ExamFirstViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */; };
 		F3FCD5431BCBCE100074F409 /* ExamResultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */; };
+		F3FCD5461BCBD2820074F409 /* AudioBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5451BCBD2820074F409 /* AudioBarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -475,6 +476,8 @@
 		F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamFirstViewModel.m; sourceTree = "<group>"; };
 		F3FCD5411BCBCE100074F409 /* ExamResultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultViewModel.h; sourceTree = "<group>"; };
 		F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamResultViewModel.m; sourceTree = "<group>"; };
+		F3FCD5441BCBD2820074F409 /* AudioBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioBarView.h; sourceTree = "<group>"; };
+		F3FCD5451BCBD2820074F409 /* AudioBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioBarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1034,6 +1037,8 @@
 				F3F9F1A31BC251CA005B0D5E /* CourseCellView.h */,
 				F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */,
 				8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */,
+				F3FCD5441BCBD2820074F409 /* AudioBarView.h */,
+				F3FCD5451BCBD2820074F409 /* AudioBarView.m */,
 			);
 			name = LocalViews;
 			sourceTree = "<group>";
@@ -1325,6 +1330,7 @@
 				F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */,
 				F352749A1BBE91000089FB6F /* MyCoursesViewModel.m in Sources */,
 				F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */,
+				F3FCD5461BCBD2820074F409 /* AudioBarView.m in Sources */,
 				F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */,
 				F3F987631BBE6D1300E94F60 /* ETRCollectionChange.m in Sources */,
 				F3F987881BBE6D1300E94F60 /* ETRResolvablePromise.m in Sources */,

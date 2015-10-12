@@ -41,10 +41,6 @@
     self.audioController = [[AudioController alloc] init];
 }
 
-- (void)viewWillDisappear {
-    [self.audioController releaseAudioTimer];
-}
-
 - (void)parseExercise {
     if (self.currentExercise == nil) {
         NSLog(@"Error, no exercise found");

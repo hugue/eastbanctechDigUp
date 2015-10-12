@@ -135,7 +135,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVh-Bn-rKD">
-                                <rect key="frame" x="333" y="166" width="435" height="858"/>
+                                <rect key="frame" x="333" y="64" width="435" height="960"/>
                                 <animations/>
                                 <connections>
                                     <segue destination="poc-9P-dPp" kind="embed" identifier="detailCoursesSegue" id="x7D-VX-jHY"/>
@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="3851" y="485"/>
         </scene>
-        <!--View Controller-->
+        <!--Exam First View Controller-->
         <scene sceneID="8e7-9z-o6c">
             <objects>
-                <viewController id="FNH-Xs-6CJ" sceneMemberID="viewController">
+                <viewController id="FNH-Xs-6CJ" customClass="ExamFirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTZ-xf-h76"/>
                         <viewControllerLayoutGuide type="bottom" id="eI4-3V-tsf"/>
@@ -273,7 +273,25 @@
                     <view key="view" contentMode="scaleToFill" id="Z2f-7p-lfc">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F47-Te-keW">
+                                <rect key="frame" x="286" y="819" width="196" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="Bqp-pT-laq"/>
+                                    <constraint firstAttribute="height" constant="185" id="xQs-z6-HJF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="StartExam:" destination="FNH-Xs-6CJ" eventType="touchUpInside" id="oqG-wR-uZH"/>
+                                    <segue destination="s1O-5e-r0b" kind="push" identifier="StartExamSegue" id="3kP-5Z-2DJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F47-Te-keW" firstAttribute="centerX" secondItem="Z2f-7p-lfc" secondAttribute="centerX" id="5SB-TR-r2I"/>
+                            <constraint firstItem="eI4-3V-tsf" firstAttribute="top" secondItem="F47-Te-keW" secondAttribute="bottom" constant="20" id="Zat-Z6-ygJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k55-F6-Kco"/>
                 </viewController>
@@ -292,6 +310,14 @@
                     <view key="view" contentMode="scaleToFill" id="y3e-LP-eKo">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qge-CR-M4Y">
+                                <rect key="frame" x="0.0" y="64" width="768" height="858"/>
+                                <connections>
+                                    <segue destination="or9-SM-Ri1" kind="embed" id="4lv-8p-NeC"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Taj-rh-SRr"/>
@@ -439,7 +465,7 @@
             <objects>
                 <tableViewController id="poc-9P-dPp" customClass="CoursesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="beW-m0-zkC">
-                        <rect key="frame" x="0.0" y="0.0" width="435" height="858"/>
+                        <rect key="frame" x="0.0" y="0.0" width="435" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -480,6 +506,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pr-n0-Kb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4851" y="1608"/>
+        </scene>
+        <!--Exercise View Controller-->
+        <scene sceneID="iCe-ED-BjM">
+            <objects>
+                <viewController id="or9-SM-Ri1" customClass="ExerciseViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QbH-0l-01m">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="858"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbo-tC-jWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4805" y="-738"/>
         </scene>
     </scenes>
 </document>

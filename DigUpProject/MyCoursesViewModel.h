@@ -11,7 +11,7 @@
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "CoursesTableViewModel.h"
 #import "DocumentViewModel.h"
-#import "ExamViewModel.h"
+#import "ExamFirstViewModel.h"
 #import "CourseModel.h"
 
 @interface MyCoursesViewModel : NSObject
@@ -21,7 +21,7 @@
 @property (nonatomic, strong) CoursesTableViewModel * coursesViewModel;
 @property (nonatomic, strong) CoursesTableViewModel * detailCoursesViewModel;
 @property (nonatomic, strong) DocumentViewModel * documentViewModel;
-@property (nonatomic, strong) ExamViewModel * examViewModel;
+@property (nonatomic, strong) ExamFirstViewModel * examFirstViewModel;
 @property (nonatomic, strong) WebController * webController;
 
 - (id)initWithCourses:(NSArray<CourseModel *> *)courses WebController:(WebController *)webController;

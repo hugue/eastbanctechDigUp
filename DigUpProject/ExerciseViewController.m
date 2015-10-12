@@ -11,7 +11,7 @@
 @interface ExerciseViewController ()
 
 @property (nonatomic, strong) UITextField * activeField;
-@property (nonatomic) long currentAudioTime;
+//@property (nonatomic) long currentAudioTime;
 
 @end
 
@@ -28,8 +28,8 @@
     recognizer.delegate = self;
     [self.scrollView addGestureRecognizer:recognizer];
     
-    for (int i = 0; i < self.viewModel.materialsModels.count; i++) {
-            [self createMaterialViewWithModel:self.viewModel.materialsModels[i]];
+    for (MaterialViewModel  * viewModel in self.viewModel.materialsModels) {
+          [self createMaterialViewWithModel:viewModel];
     }
     [self displayExercise];
 }
@@ -40,19 +40,25 @@
 }
 
 - (void)displayExercise {
-    MaterialView * materialView;
-           if (self.scrollView.contentSize.width < self.viewModel.rightBorderOfView) {
-            self.scrollView.contentSize = CGSizeMake(self.viewModel.rightBorderOfView, self.scrollView.frame.size.height);
-        }
-        if (self.scrollView.contentSize.height < self.viewModel.bottomOfView + 100) {
-            self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.viewModel.bottomOfView + 100);
-        }
+   dispatch_async(dispatch_get_main_queue(), ^{
+       if (self.scrollView.contentSize.width < self.viewModel.rightBorderOfView) {
+           self.scrollView.contentSize = CGSizeMake(self.viewModel.rightBorderOfView, self.scrollView.frame.size.height);
+       }
+       if (self.scrollView.contentSize.height < self.viewModel.bottomOfView + 100) {
+           self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, self.viewModel.bottomOfView + 100);
+       }
 
-    for (materialView in self.materialsViews) {
+   });
+    
+    for (MaterialView * materialView in self.materialsViews) {
          NSLog(@"View Placed");
-         [materialView addVisualToView:self.scrollView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [materialView addVisualToView:self.scrollView];
+        });
     }
-    [self configureAudioPlayerView];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self configureAudioPlayerView];
+    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -98,7 +104,7 @@
 #pragma AudioBar
 
 - (void)configureAudioPlayerView {
-    self.currentAudioTime = 0;
+    //self.currentAudioTime = 0;
     //Create the audiobar only if there are audio files in the test
     if (self.viewModel.audioController.isNeeded) {
         float positionX = 10.0;
@@ -143,7 +149,7 @@
         RAC(audioTimeSlider, maximumValue) = RACObserve(self.viewModel, audioController.audioDuration);
         
         RACChannelTerminal * sliderTerminal = [audioTimeSlider rac_newValueChannelWithNilValue:@0];
-        RACChannelTerminal * modelTerminal = RACChannelTo_(self, viewModel.audioController.currentAudioTime, @0);
+        RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel.audioController, currentAudioTime, @0);
         
         @weakify(self)
         [[[sliderTerminal doNext:^(id x) {
@@ -164,11 +170,9 @@
         
         [controlAudioBar addSubview:timeLabel];
         
-        RAC(self, currentAudioTime) = [RACObserve(self, viewModel.audioController.currentAudioTime) doNext:^(id x) {
-            @strongify(self)
-            long minutes = floor(self.currentAudioTime/60);
-            long seconds = self.currentAudioTime - minutes*60;
-            
+       [RACObserve(self.viewModel.audioController, currentAudioTime) subscribeNext:^(id x) {
+            long minutes = floor([x integerValue]/60);
+            long seconds = [x integerValue] - minutes*60;
             dispatch_async(dispatch_get_main_queue(), ^{
                 timeLabel.text = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
             });

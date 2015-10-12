@@ -10,4 +10,6 @@
 
 @implementation ExamFirstViewController
 
+- (IBAction)StartExam:(id)sender {
+}
 @end

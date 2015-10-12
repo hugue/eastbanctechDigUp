@@ -43,7 +43,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-//    [self.viewModel viewWillDisappear];
+
 }
 
 - (IBAction)restartAsked:(id)sender {

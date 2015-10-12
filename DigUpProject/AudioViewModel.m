@@ -39,7 +39,6 @@
     self.audioPlayer = [[AVAudioPlayer alloc] initWithData:self.audioData error:nil];
     //self.audioPlayer.delegate = self;
     self.audioLoaded = @YES;
-    NSLog(@"Audio data - %@", data);
 }
 
 - (void)audioPlayerDidFinishPlaying:(nonnull AVAudioPlayer *)player successfully:(BOOL)flag {

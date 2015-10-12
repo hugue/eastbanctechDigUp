@@ -53,8 +53,8 @@
         viewModel = self.documentViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"presentExamSegue"]) {
-        self.examViewModel = [[ExamViewModel alloc] init];
-        viewModel = self.examViewModel;
+        self.examFirstViewModel = [[ExamFirstViewModel alloc] init];
+        viewModel = self.examFirstViewModel;
     }
     return viewModel;
 
@@ -82,7 +82,7 @@
 
 - (void)viewWillAppear {
     self.documentViewModel = nil;
-    self.examViewModel = nil;
+    self.examFirstViewModel = nil;
 }
 
 @end

@@ -20,11 +20,8 @@
 }
 
 - (void)addVisualToView:(UIView *)superView {
-    dispatch_sync(dispatch_get_main_queue(), ^{
         [superView addSubview:self.viewDisplayed];
         self.viewDisplayed.layer.zPosition = self.viewModel.zPosition;
-    });
-
     //self.shadowDisplayed.layer.zPosition = self.viewModel.zPosition;
 }
 
