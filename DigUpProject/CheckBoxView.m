@@ -32,7 +32,7 @@
         self.isClicked = NO;
         self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
-        self.viewDisplayed.enabled = NO;
+        //self.viewDisplayed.enabled = NO;
         [self.viewDisplayed addTarget:self action:@selector(handleTap:) forControlEvents:UIControlEventTouchUpInside];
         [self applyModelToView];
     }
@@ -70,22 +70,5 @@
         }
     }]subscribe:modelTerminal];
 }
-
-
-- (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState {
-    [super applyBorderStyleForAnswerState:materialAnswerState];
-    if (materialAnswerState == MaterialAnswerStateIsTesting) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.viewDisplayed.enabled = YES;
-        });
-    }
-    else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.viewDisplayed.enabled = NO;
-        });
-    }
-
-}
-
 
 @end

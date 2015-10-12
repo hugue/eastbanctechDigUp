@@ -59,9 +59,9 @@
     }
 }
 
-- (void)applyBorderStyleForAnswerState:(MaterialAnswerState)materialAnswerState {
-    [super applyBorderStyleForAnswerState:materialAnswerState];
-    if ((materialAnswerState == MaterialAnswerStateIsUndefined || materialAnswerState == MaterialAnswerStateIsTesting) && [self.style isEqualToString:@"box-default"]) {
+- (void)applyBorderStyleForAnswerState:(MaterialDisplayState)materialDisplayState {
+    [super applyBorderStyleForAnswerState:materialDisplayState];
+    if ((materialDisplayState == MaterialDisplayStateIsNormal) && [self.style isEqualToString:@"box-default"]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor blackColor].CGColor;
             self.viewDisplayed.layer.borderWidth = 1.0f;

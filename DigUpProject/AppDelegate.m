@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "MainViewModel.h"
-#import "MainViewController.h"
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

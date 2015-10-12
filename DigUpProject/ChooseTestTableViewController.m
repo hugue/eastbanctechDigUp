@@ -23,7 +23,7 @@
 }
 
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
-    MainViewController * viewController = [segue destinationViewController];
+    TestViewController * viewController = [segue destinationViewController];
     viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
 }
 
@@ -32,7 +32,7 @@
     [RACObserve(self.viewModel, selectedCell) subscribeNext:^(id x) {
         @strongify(self)
         if (x) {
-            [self performSegueWithIdentifier:@"displayExerciseSegue" sender:nil];
+            [self performSegueWithIdentifier:@"displayTestSegue" sender:nil];
         }
     }];
 }
@@ -46,4 +46,5 @@
     [super viewWillDisappear:animated];
     [self.viewModel viewWillDisappear];
 }
+
 @end

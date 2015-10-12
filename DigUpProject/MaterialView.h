@@ -22,5 +22,5 @@
 
 - (void)addVisualToView:(UIView *)superView;
 - (void)configureDropElement;
-- (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState;
+- (void)applyBorderStyleForAnswerState:(MaterialDisplayState) materialAnswerState;
 @end

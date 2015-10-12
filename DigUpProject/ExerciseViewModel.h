@@ -22,9 +22,7 @@
 
 typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
     ExerciseCurrentStateIsStopped,
-    ExerciseCurrentStateIsGoingOn,
-    ExerciseCurrentStateCorrectionAsked,
-    ExerciseCurrentStateSolutionAsked
+    ExerciseCurrentStateIsGoingOn
 };
 
 typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
@@ -34,12 +32,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
     AudioVolumeIntervalHigh
 };
 
-typedef NS_ENUM(NSInteger, MainViewModelMode) {
-    MainViewModelModeTraining,
-    MainViewModelModeExam
-};
-
-@interface ExerciseViewModel : NSObject <DataControllerProtocol>
+@interface ExerciseViewModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
 @property (nonatomic, strong) ExerciseModel * currentExercise;
@@ -49,26 +42,21 @@ typedef NS_ENUM(NSInteger, MainViewModelMode) {
 @property (nonatomic, strong) AudioController * audioController;
 @property (nonatomic, strong) DragNDropController * dropController;
 
-@property (nonatomic, strong) NSNumber * exerciseLoaded;
 @property (nonatomic) enum ExerciseCurrentState currentExerciseState;
-@property (nonatomic) enum MainViewModelMode currentExerciseMode;
 
 @property (nonatomic) float bottomOfView;
 @property (nonatomic) float rightBorderOfView;
 @property (nonatomic) NSUInteger maxZPosition;
 @property (nonatomic) NSUInteger maxTargetZPosition;
 
-- (id)initWithTestModel:(TestModel *)testModel WebController:(WebController *)webController;
+- (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController;
 
-- (void)parseExercise;
 - (BOOL)audioBarTapped;
+- (void)playPauseAudioChangedOnView;
+- (void)volumeAudioChangedOnViewByButton;
+
 - (void)correctionAsked;
 - (void)restartExerciseAsked;
 - (void)solutionAsked;
-- (void)playPauseAudioChangedOnView;
-- (void)volumeAudioChangedOnViewByButton;
-- (void)fetchExerciseAndDisplay;
-- (void)reset;
-- (void)viewWillDisappear;
 
 @end

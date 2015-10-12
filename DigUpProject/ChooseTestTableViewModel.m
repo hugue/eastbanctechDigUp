@@ -7,6 +7,11 @@
 //
 
 #import "ChooseTestTableViewModel.h"
+@interface ChooseTestTableViewModel ()
+
+@property (nonatomic, strong) TestModel * dataModel;
+
+@end
 
 @implementation ChooseTestTableViewModel
 
@@ -21,21 +26,18 @@
 
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     id viewModel = nil;
-    if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        viewModel = self.mainViewModel;
+    if ([segueIdentifier isEqualToString:@"displayTestSegue"]) {
+        viewModel = [[TestViewModel alloc] initWithDataModel:self.dataModel WebController:self.webController];
     }
     return viewModel;
 }
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
-    TestModel * testModel = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]];
-    self.mainViewModel = [[MainViewModel alloc] initWithTestModel:testModel WebController:self.webController];
-    self.mainViewModel.currentExerciseMode = MainViewModelModeTraining;
+    self.dataModel = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]];
     self.selectedCell = @([indexPath indexAtPosition:1]);
 }
 
 - (void)viewWillAppear {
-    self.mainViewModel = nil;
 }
 
 - (void)viewWillDisappear {

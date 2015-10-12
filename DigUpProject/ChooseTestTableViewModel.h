@@ -8,16 +8,15 @@
 
 #import "ETRSimpleCollectionModel.h"
 #import "CourseCellViewModel.h"
-#import "MainViewModel.h"
 #import "WebController.h"
 #import "TestModel.h"
+#import "TestViewModel.h"
 
 @interface ChooseTestTableViewModel : ETRSimpleCollectionModel
 
 @property (nonatomic, strong) NSArray<TestModel *> * listTests;
 @property (nonatomic, strong) NSString * cellIdentifier;
 
-@property (nonatomic, strong) MainViewModel * mainViewModel;
 @property (nonatomic, strong) NSNumber * selectedCell;
 @property (nonatomic, strong) WebController * webController;
 

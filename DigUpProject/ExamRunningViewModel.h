@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MainViewModel.h"
+#import "ExerciseViewModel.h"
 
 @interface ExamRunningViewModel : NSObject
 
-@property (nonatomic, strong) NSArray<MainViewModel *> * exercises;
+@property (nonatomic, strong) NSArray<ExerciseViewModel *> * exercises;
 @property (nonatomic, strong) NSTimer * countDownTimer;
 @property (nonatomic) NSUInteger allowedTime;
 

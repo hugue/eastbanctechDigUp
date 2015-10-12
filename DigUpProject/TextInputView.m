@@ -40,20 +40,13 @@
 }
 
 
-- (void)applyBorderStyleForAnswerState:(MaterialAnswerState) materialAnswerState {
-    [super applyBorderStyleForAnswerState:materialAnswerState];
-    if ((materialAnswerState == MaterialAnswerStateIsUndefined) || (materialAnswerState == MaterialAnswerStateIsTesting)) {
+- (void)applyBorderStyleForAnswerState:(MaterialDisplayState) materialDisplayState {
+    [super applyBorderStyleForAnswerState:materialDisplayState];
+    if (materialDisplayState == MaterialDisplayStateIsNormal) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor grayColor].CGColor;
             self.viewDisplayed.layer.borderWidth = 1.0f;
         });
-    }
-    
-    if (materialAnswerState == MaterialAnswerStateIsTesting) {
-        self.viewDisplayed.enabled = YES;
-    }
-    else {
-        self.viewDisplayed.enabled = NO;
     }
 }
 

@@ -247,7 +247,6 @@
     if (self.maxZPosition < materialViewModel.zPosition) {
         self.maxZPosition = materialViewModel.zPosition;
     }
-
 }
 #pragma mark - Functions to process the different phases of the test (testing/Correction/solution)
 

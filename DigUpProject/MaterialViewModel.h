@@ -13,12 +13,11 @@
 #import "DataControllerProtocol.h"
 
 
-typedef NS_ENUM(NSInteger, MaterialAnswerState) {
-    MaterialAnswerStateIsTesting,
-    MaterialAnswerStateIsUndefined,
-    MaterialAnswerStateIsCorrect,
-    MaterialAnswerStateIsAlternative,
-    MaterialAnswerStateIsNotCorrect
+typedef NS_ENUM(NSInteger, MaterialDisplayState) {
+    MaterialDisplayStateIsNormal,
+    MaterialDisplayStateIsCorrect,
+    MaterialDisplayStateIsAlternative,
+    MaterialDisplayStateIsNotCorrect
 };
 
 @interface MaterialViewModel : NSObject <DataControllerProtocol>
@@ -32,7 +31,7 @@ typedef NS_ENUM(NSInteger, MaterialAnswerState) {
 @property (nonatomic) float materialWidth;
 @property (nonatomic) CGPoint posForDraggedMaterial;
 
-@property (nonatomic) enum MaterialAnswerState answerState;
+@property (nonatomic) enum MaterialDisplayState displayState;
 @property (nonatomic, weak) MaterialViewModel * currentDropTarget;
 @property (nonatomic, strong) NSNumber  * correctDropTargetID;
 
