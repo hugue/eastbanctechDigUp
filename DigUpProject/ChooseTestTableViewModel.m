@@ -30,6 +30,7 @@
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath completion:(void (^)(void))completion {
     TestModel * testModel = [self.listTests objectAtIndex:[indexPath indexAtPosition:1]];
     self.mainViewModel = [[MainViewModel alloc] initWithTestModel:testModel WebController:self.webController];
+    self.mainViewModel.currentExerciseMode = MainViewModelModeTraining;
     self.selectedCell = @([indexPath indexAtPosition:1]);
 }
 

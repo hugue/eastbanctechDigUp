@@ -66,6 +66,7 @@
 		F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A421BA6FAED00B9231D /* RectangleView.m */; };
 		F3F663011BC4D96B00BCE54F /* SubcourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F663001BC4D96B00BCE54F /* SubcourseModel.m */; };
 		F3F663041BC4E8E600BCE54F /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F663031BC4E8E600BCE54F /* TestModel.m */; };
+		F3F760241BC7F3D500158ABC /* ExamRunningViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F760231BC7F3D500158ABC /* ExamRunningViewModel.m */; };
 		F3F7B51C1BB1121600781D90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F7B51B1BB1121600781D90 /* QuartzCore.framework */; };
 		F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E881BA28880004648B6 /* RadioButtonView.m */; };
 		F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */; };
@@ -148,6 +149,7 @@
 		F3F987991BBE877500E94F60 /* DigUpProject.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */; };
 		F3F9F1A51BC251CA005B0D5E /* CourseCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */; };
 		F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F1AD1BC27070005B0D5E /* CourseModel.m */; };
+		F3FCD5291BCB68FA0074F409 /* ExerciseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +298,8 @@
 		F3F663021BC4E8E600BCE54F /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		F3F663031BC4E8E600BCE54F /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		F3F7601F1BC79D3C00158ABC /* DataControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataControllerProtocol.h; sourceTree = "<group>"; };
+		F3F760221BC7F3D500158ABC /* ExamRunningViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamRunningViewModel.h; sourceTree = "<group>"; };
+		F3F760231BC7F3D500158ABC /* ExamRunningViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamRunningViewModel.m; sourceTree = "<group>"; };
 		F3F7B51B1BB1121600781D90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F3F89E871BA28880004648B6 /* RadioButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonView.h; sourceTree = "<group>"; };
 		F3F89E881BA28880004648B6 /* RadioButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonView.m; sourceTree = "<group>"; };
@@ -457,6 +461,8 @@
 		F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCellView.m; sourceTree = "<group>"; };
 		F3F9F1AC1BC27070005B0D5E /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
 		F3F9F1AD1BC27070005B0D5E /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
+		F3FCD5271BCB68FA0074F409 /* ExerciseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewModel.h; sourceTree = "<group>"; };
+		F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,10 +713,14 @@
 				F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */,
 				F3F596171BC3C7A2007928CB /* DocumentViewModel.h */,
 				F3F596181BC3C7A2007928CB /* DocumentViewModel.m */,
+				F3F760221BC7F3D500158ABC /* ExamRunningViewModel.h */,
+				F3F760231BC7F3D500158ABC /* ExamRunningViewModel.m */,
 				F3F5962C1BC3ED68007928CB /* ChooseTestTableViewModel.h */,
 				F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */,
 				F3E01F741BA179CC005028A4 /* MainViewModel.h */,
 				F3E01F751BA179CC005028A4 /* MainViewModel.m */,
+				F3FCD5271BCB68FA0074F409 /* ExerciseViewModel.h */,
+				F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */,
 			);
 			name = FullViewsModels;
 			sourceTree = "<group>";
@@ -1271,6 +1281,7 @@
 				F3F9875B1BBE6D1300E94F60 /* UIColor+ETRUtils.m in Sources */,
 				F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */,
 				F3F987751BBE6D1300E94F60 /* ETRCollectionModel.m in Sources */,
+				F3FCD5291BCB68FA0074F409 /* ExerciseViewModel.m in Sources */,
 				F3F663011BC4D96B00BCE54F /* SubcourseModel.m in Sources */,
 				F3F9875E1BBE6D1300E94F60 /* UITableView+ETRUtils.m in Sources */,
 				F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */,
@@ -1283,6 +1294,7 @@
 				F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */,
 				F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */,
 				F3F987701BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.m in Sources */,
+				F3F760241BC7F3D500158ABC /* ExamRunningViewModel.m in Sources */,
 				F3F9876F1BBE6D1300E94F60 /* ETRCompositeCollectionModel.m in Sources */,
 				F3F9874E1BBE6D1300E94F60 /* NSArray+ETRUtils.m in Sources */,
 				F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */,

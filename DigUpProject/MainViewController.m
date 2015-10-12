@@ -296,6 +296,10 @@
 }
 
 - (void)addCorrectionButtons {
+    if (self.viewModel.currentExerciseMode == MainViewModelModeExam) {
+        return;
+    }
+    
     float extremRight = MAX(self.scrollView.frame.size.width, self.scrollView.contentSize.width);
     //Button Right?
     CGRect correctionButtonFrame = CGRectMake(extremRight - 80.0, (self.viewModel.bottomOfView + 10.0) , 70.0, 40.0);

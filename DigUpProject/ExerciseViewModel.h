@@ -1,12 +1,13 @@
 //
-//  MainViewModel.h
+//  ExerciseViewModel.h
 //  DigUpProject
 //
-//  Created by hugues on 10/09/15.
+//  Created by hugues on 12/10/15.
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+
 #import "MaterialViewModel.h"
 #import "TextInputViewModel.h"
 #import "CheckBoxViewModel.h"
@@ -38,7 +39,7 @@ typedef NS_ENUM(NSInteger, MainViewModelMode) {
     MainViewModelModeExam
 };
 
-@interface MainViewModel : NSObject <DataControllerProtocol>
+@interface ExerciseViewModel : NSObject <DataControllerProtocol>
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
 @property (nonatomic, strong) ExerciseModel * currentExercise;

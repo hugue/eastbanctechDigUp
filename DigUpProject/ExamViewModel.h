@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ExamModel.h"
+#import "ExamRunningViewModel.h"
 
 @interface ExamViewModel : NSObject
 
