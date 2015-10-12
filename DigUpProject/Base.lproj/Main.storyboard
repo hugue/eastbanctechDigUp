@@ -135,7 +135,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVh-Bn-rKD">
-                                <rect key="frame" x="333" y="64" width="435" height="960"/>
+                                <rect key="frame" x="333" y="166" width="435" height="858"/>
                                 <animations/>
                                 <connections>
                                     <segue destination="poc-9P-dPp" kind="embed" identifier="detailCoursesSegue" id="x7D-VX-jHY"/>
@@ -170,7 +170,7 @@
                         <outlet property="coursesTableView" destination="pCp-gj-w5l" id="CNj-8c-F2p"/>
                         <outlet property="detailCoursesTableView" destination="BVh-Bn-rKD" id="dEJ-Cg-0Ng"/>
                         <segue destination="BRy-P1-EVn" kind="push" identifier="viewDocumentSegue" id="ufS-Lu-hKE"/>
-                        <segue destination="s1O-5e-r0b" kind="push" identifier="presentExamSegue" id="1Tp-O5-rXf"/>
+                        <segue destination="FNH-Xs-6CJ" kind="push" identifier="presentExamSegue" id="gYD-h6-VHJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YX0-jG-esV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -262,6 +262,25 @@
             </objects>
             <point key="canvasLocation" x="3851" y="485"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8e7-9z-o6c">
+            <objects>
+                <viewController id="FNH-Xs-6CJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UTZ-xf-h76"/>
+                        <viewControllerLayoutGuide type="bottom" id="eI4-3V-tsf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z2f-7p-lfc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k55-F6-Kco"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBD-70-m0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2897" y="-738"/>
+        </scene>
         <!--Exam View Controller-->
         <scene sceneID="473-5N-Ave">
             <objects>
@@ -273,27 +292,13 @@
                     <view key="view" contentMode="scaleToFill" id="y3e-LP-eKo">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4Y-Lt-ya3">
-                                <rect key="frame" x="285" y="848" width="199" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="Zaj-wx-bai"/>
-                                    <constraint firstAttribute="width" constant="199" id="z0m-1M-5We"/>
-                                </constraints>
-                                <state key="normal" title="Begin Exam "/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="M4Y-Lt-ya3" firstAttribute="centerX" secondItem="y3e-LP-eKo" secondAttribute="centerX" id="HdE-el-22r"/>
-                            <constraint firstItem="ttv-Lp-dQ6" firstAttribute="top" secondItem="M4Y-Lt-ya3" secondAttribute="bottom" constant="14" id="nUD-eL-pDE"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Taj-rh-SRr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Co-8E-mGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2897" y="-959"/>
+            <point key="canvasLocation" x="3851" y="-738"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="hpM-wA-GRZ">
@@ -434,7 +439,7 @@
             <objects>
                 <tableViewController id="poc-9P-dPp" customClass="CoursesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="beW-m0-zkC">
-                        <rect key="frame" x="0.0" y="0.0" width="435" height="960"/>
+                        <rect key="frame" x="0.0" y="0.0" width="435" height="858"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

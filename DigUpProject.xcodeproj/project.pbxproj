@@ -64,7 +64,6 @@
 		F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F64A421BA6FAED00B9231D /* RectangleView.m */; };
 		F3F663011BC4D96B00BCE54F /* SubcourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F663001BC4D96B00BCE54F /* SubcourseModel.m */; };
 		F3F663041BC4E8E600BCE54F /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F663031BC4E8E600BCE54F /* TestModel.m */; };
-		F3F760241BC7F3D500158ABC /* ExamRunningViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F760231BC7F3D500158ABC /* ExamRunningViewModel.m */; };
 		F3F7B51C1BB1121600781D90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F7B51B1BB1121600781D90 /* QuartzCore.framework */; };
 		F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E881BA28880004648B6 /* RadioButtonView.m */; };
 		F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */; };
@@ -151,6 +150,10 @@
 		F3FCD52F1BCB69E60074F409 /* TestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD52E1BCB69E60074F409 /* TestViewModel.m */; };
 		F3FCD5321BCB6A130074F409 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5311BCB6A130074F409 /* TestViewController.m */; };
 		F3FCD5351BCB6EA60074F409 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5341BCB6EA60074F409 /* ExerciseViewController.m */; };
+		F3FCD5391BCBCD780074F409 /* ExamFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */; };
+		F3FCD53C1BCBCD890074F409 /* ExamResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */; };
+		F3FCD5401BCBCDFB0074F409 /* ExamFirstViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */; };
+		F3FCD5431BCBCE100074F409 /* ExamResultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,8 +298,6 @@
 		F3F663021BC4E8E600BCE54F /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		F3F663031BC4E8E600BCE54F /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		F3F7601F1BC79D3C00158ABC /* DataControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataControllerProtocol.h; sourceTree = "<group>"; };
-		F3F760221BC7F3D500158ABC /* ExamRunningViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamRunningViewModel.h; sourceTree = "<group>"; };
-		F3F760231BC7F3D500158ABC /* ExamRunningViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamRunningViewModel.m; sourceTree = "<group>"; };
 		F3F7B51B1BB1121600781D90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F3F89E871BA28880004648B6 /* RadioButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonView.h; sourceTree = "<group>"; };
 		F3F89E881BA28880004648B6 /* RadioButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonView.m; sourceTree = "<group>"; };
@@ -466,6 +467,14 @@
 		F3FCD5311BCB6A130074F409 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		F3FCD5331BCB6EA60074F409 /* ExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
 		F3FCD5341BCB6EA60074F409 /* ExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
+		F3FCD5371BCBCD780074F409 /* ExamFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamFirstViewController.h; sourceTree = "<group>"; };
+		F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamFirstViewController.m; sourceTree = "<group>"; };
+		F3FCD53A1BCBCD890074F409 /* ExamResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultViewController.h; sourceTree = "<group>"; };
+		F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamResultViewController.m; sourceTree = "<group>"; };
+		F3FCD53E1BCBCDFB0074F409 /* ExamFirstViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamFirstViewModel.h; sourceTree = "<group>"; };
+		F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamFirstViewModel.m; sourceTree = "<group>"; };
+		F3FCD5411BCBCE100074F409 /* ExamResultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultViewModel.h; sourceTree = "<group>"; };
+		F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamResultViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +550,7 @@
 		F3E01F7B1BA17BD5005028A4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F3FCD53D1BCBCDAC0074F409 /* Exam */,
 				F3F986A91BBE455C00E94F60 /* LocalViewsModels */,
 				F3F986A71BBE453500E94F60 /* FullViewsModels */,
 				F3F9F1A01BC2345E005B0D5E /* ExerciseMaterialViewModels */,
@@ -551,6 +561,7 @@
 		F3E01F7C1BA17BEE005028A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F3FCD5361BCBCD540074F409 /* Exam */,
 				F3F986AF1BBE633B00E94F60 /* FullViewsControllers */,
 				F3F9F1A21BC234A8005B0D5E /* LocalViews */,
 				F3F9F1A11BC2348A005B0D5E /* ExerciseMaterialViews */,
@@ -712,12 +723,8 @@
 				F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */,
 				F35274981BBE91000089FB6F /* MyCoursesViewModel.h */,
 				F35274991BBE91000089FB6F /* MyCoursesViewModel.m */,
-				F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */,
-				F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */,
 				F3F596171BC3C7A2007928CB /* DocumentViewModel.h */,
 				F3F596181BC3C7A2007928CB /* DocumentViewModel.m */,
-				F3F760221BC7F3D500158ABC /* ExamRunningViewModel.h */,
-				F3F760231BC7F3D500158ABC /* ExamRunningViewModel.m */,
 				F3F5962C1BC3ED68007928CB /* ChooseTestTableViewModel.h */,
 				F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */,
 				F3FCD52D1BCB69E60074F409 /* TestViewModel.h */,
@@ -746,8 +753,6 @@
 				F3F987931BBE6DAE00E94F60 /* LoginViewController.m */,
 				F35274951BBE8F430089FB6F /* MyCoursesViewController.h */,
 				F35274961BBE8F430089FB6F /* MyCoursesViewController.m */,
-				F3F1E0A71BC678CF001AFA62 /* ExamViewController.h */,
-				F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */,
 				F3F5961A1BC3C7CF007928CB /* DocumentViewController.h */,
 				F3F5961B1BC3C7CF007928CB /* DocumentViewController.m */,
 				F3F5962F1BC3EE87007928CB /* ChooseTestTableViewController.h */,
@@ -1043,6 +1048,32 @@
 			name = Ressources;
 			sourceTree = "<group>";
 		};
+		F3FCD5361BCBCD540074F409 /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1E0A71BC678CF001AFA62 /* ExamViewController.h */,
+				F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */,
+				F3FCD5371BCBCD780074F409 /* ExamFirstViewController.h */,
+				F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */,
+				F3FCD53A1BCBCD890074F409 /* ExamResultViewController.h */,
+				F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */,
+			);
+			name = Exam;
+			sourceTree = "<group>";
+		};
+		F3FCD53D1BCBCDAC0074F409 /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */,
+				F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */,
+				F3FCD53E1BCBCDFB0074F409 /* ExamFirstViewModel.h */,
+				F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */,
+				F3FCD5411BCBCE100074F409 /* ExamResultViewModel.h */,
+				F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */,
+			);
+			name = Exam;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1222,6 +1253,7 @@
 				F3ECBEC01B9D546C0000A656 /* JSONModelError.m in Sources */,
 				F3F9877B1BBE6D1300E94F60 /* ETRStaticCellModel.m in Sources */,
 				F3ECBEC11B9D546C0000A656 /* NSArray+JSONModel.m in Sources */,
+				F3FCD5391BCBCD780074F409 /* ExamFirstViewController.m in Sources */,
 				F3ECBEBF1B9D546C0000A656 /* JSONModelClassProperty.m in Sources */,
 				F3F987591BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m in Sources */,
 				F3F9874D1BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m in Sources */,
@@ -1233,6 +1265,7 @@
 				F3FCD5321BCB6A130074F409 /* TestViewController.m in Sources */,
 				F3F987611BBE6D1300E94F60 /* UIViewController+ETRUtils.m in Sources */,
 				F3F9878A1BBE6D1300E94F60 /* ETRRACAdditions.m in Sources */,
+				F3FCD53C1BCBCD890074F409 /* ExamResultViewController.m in Sources */,
 				F3F987551BBE6D1300E94F60 /* NSMutableString+ETRUtils.m in Sources */,
 				F3FCD52F1BCB69E60074F409 /* TestViewModel.m in Sources */,
 				F3F9878D1BBE6D1300E94F60 /* ETRStoryboardPopoverSegue.m in Sources */,
@@ -1299,12 +1332,12 @@
 				F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */,
 				F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */,
 				F3F987701BBE6D1300E94F60 /* ETRFlattenUnionCollectionModel.m in Sources */,
-				F3F760241BC7F3D500158ABC /* ExamRunningViewModel.m in Sources */,
 				F3F9876F1BBE6D1300E94F60 /* ETRCompositeCollectionModel.m in Sources */,
 				F3F9874E1BBE6D1300E94F60 /* NSArray+ETRUtils.m in Sources */,
 				F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */,
 				F3F987901BBE6D1300E94F60 /* ETRStringDecorator.m in Sources */,
 				F3F987831BBE6D1300E94F60 /* ETRTableViewController.m in Sources */,
+				F3FCD5401BCBCDFB0074F409 /* ExamFirstViewModel.m in Sources */,
 				F3ECBE6F1B9D452E0000A656 /* main.m in Sources */,
 				F3F9876A1BBE6D1300E94F60 /* ETRCollectionChangeReload.m in Sources */,
 				F3FCD5351BCB6EA60074F409 /* ExerciseViewController.m in Sources */,
@@ -1312,6 +1345,7 @@
 				F3F9F1A51BC251CA005B0D5E /* CourseCellView.m in Sources */,
 				F35274A01BBE9FF90089FB6F /* CoursesTableViewController.m in Sources */,
 				F3F596311BC3EE87007928CB /* ChooseTestTableViewController.m in Sources */,
+				F3FCD5431BCBCE100074F409 /* ExamResultViewModel.m in Sources */,
 				F3F987541BBE6D1300E94F60 /* NSMutableSet+ETRUtils.m in Sources */,
 				F3F987771BBE6D1300E94F60 /* ETRAutoDiffCollectionModel.m in Sources */,
 				F3F987561BBE6D1300E94F60 /* NSNumber+ETRUtils.m in Sources */,
