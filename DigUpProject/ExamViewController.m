@@ -50,4 +50,8 @@
 
 - (IBAction)endExam:(id)sender {
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.viewModel viewDidAppear];
+}
 @end

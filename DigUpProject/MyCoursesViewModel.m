@@ -53,7 +53,9 @@
         viewModel = self.documentViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"presentExamSegue"]) {
-        self.examFirstViewModel = [[ExamFirstViewModel alloc] init];
+        CourseModel * currentCourse = [self.profileCourses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
+        ExamModel * examModel = currentCourse.exam;
+        self.examFirstViewModel = [[ExamFirstViewModel alloc] initWithDataModel:examModel WebController:self.webController];
         viewModel = self.examFirstViewModel;
     }
     return viewModel;

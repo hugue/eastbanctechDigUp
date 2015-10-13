@@ -15,10 +15,54 @@
 
 @implementation ExamViewModel
 
+- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises AllowedTime:(NSUInteger)time {
+    self = [super init];
+    if (self) {
+        self.remainingTime = time;
+        self.exercises = exercises;
+    }
+    return self;
+}
+
+- (void)viewDidAppear {
+    [self startExam];
+}
+
 - (void)stopExam {
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
         exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsStopped;
     }
+}
+
+- (void)startExam {
+    [self startTimer];
+    for (ExerciseViewModel * exerciseViewModel in self.exercises) {
+        exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsGoingOn;
+    }
+}
+
+- (void)startTimer {
+    self.examTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateCountDown:) userInfo:nil repeats:YES];
+}
+
+- (void)updateCountDown:(NSTimer *)sender {
+    self.remainingTime -=1;
+    NSLog(@"Remaining time - %d", self.remainingTime);
+    if (self.remainingTime == 0) {
+        NSLog(@"Time is Over");
+    }
+}
+
+- (void)selectNextExercise {
+    
+}
+
+- (void)selectPreviousExercise {
+    
+}
+
+- (void)examDone {
+    
 }
 
 @end

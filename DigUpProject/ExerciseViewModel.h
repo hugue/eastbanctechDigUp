@@ -44,11 +44,7 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
 @property (nonatomic) NSUInteger maxTargetZPosition;
 
 - (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController mediaURL:(NSString *)mediaurl;
-/*
-- (BOOL)audioBarTapped;
-- (void)playPauseAudioChangedOnView;
-- (void)volumeAudioChangedOnViewByButton;
-*/
+
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection;
 - (void)restartExerciseAsked;
 - (void)solutionAsked;

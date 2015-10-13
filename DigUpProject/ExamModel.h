@@ -16,5 +16,6 @@
 
 @property (nonatomic, strong) NSNumber * lastPercentageCorrect;
 @property (nonatomic, strong) NSNumber * lastDuration;
+@property (nonatomic, strong) NSString * examULR;
 
 @end

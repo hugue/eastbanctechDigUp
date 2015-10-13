@@ -732,8 +732,6 @@
 				F3F5962D1BC3ED68007928CB /* ChooseTestTableViewModel.m */,
 				F3FCD52D1BCB69E60074F409 /* TestViewModel.h */,
 				F3FCD52E1BCB69E60074F409 /* TestViewModel.m */,
-				F3FCD5271BCB68FA0074F409 /* ExerciseViewModel.h */,
-				F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */,
 			);
 			name = FullViewsModels;
 			sourceTree = "<group>";
@@ -741,6 +739,8 @@
 		F3F986A91BBE455C00E94F60 /* LocalViewsModels */ = {
 			isa = PBXGroup;
 			children = (
+				F3FCD5271BCB68FA0074F409 /* ExerciseViewModel.h */,
+				F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */,
 				F352749B1BBE9C990089FB6F /* CoursesTableViewModel.h */,
 				F352749C1BBE9C990089FB6F /* CoursesTableViewModel.m */,
 				F35274A11BBEC0790089FB6F /* CourseCellViewModel.h */,
@@ -1056,10 +1056,10 @@
 		F3FCD5361BCBCD540074F409 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
-				F3F1E0A71BC678CF001AFA62 /* ExamViewController.h */,
-				F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */,
 				F3FCD5371BCBCD780074F409 /* ExamFirstViewController.h */,
 				F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */,
+				F3F1E0A71BC678CF001AFA62 /* ExamViewController.h */,
+				F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */,
 				F3FCD53A1BCBCD890074F409 /* ExamResultViewController.h */,
 				F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */,
 			);
@@ -1069,10 +1069,10 @@
 		F3FCD53D1BCBCDAC0074F409 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
-				F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */,
-				F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */,
 				F3FCD53E1BCBCDFB0074F409 /* ExamFirstViewModel.h */,
 				F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */,
+				F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */,
+				F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */,
 				F3FCD5411BCBCE100074F409 /* ExamResultViewModel.h */,
 				F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */,
 			);

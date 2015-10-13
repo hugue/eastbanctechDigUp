@@ -10,6 +10,32 @@
 
 @implementation ExamFirstViewController
 
-- (IBAction)StartExam:(id)sender {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.startButton.enabled = NO;
+    [self applyModelToView];
 }
+
+- (IBAction)startExam:(id)sender {
+    [self performSegueWithIdentifier:@"startExamSegue" sender:nil];
+}
+
+- (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
+    ExamViewController * viewController = [segue destinationViewController];
+    viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+}
+
+- (void)applyModelToView {
+    @weakify(self)
+    [RACObserve(self.viewModel, examLoaded) subscribeNext:^(id x) {
+        @strongify(self);
+        if ([x boolValue]) {
+            self.startButton.enabled = YES;
+        }
+        else {
+            self.startButton.enabled = NO;
+        }
+    }];
+}
+
 @end

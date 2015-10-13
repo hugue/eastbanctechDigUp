@@ -274,26 +274,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F47-Te-keW">
-                                <rect key="frame" x="286" y="819" width="196" height="185"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ac5-aF-wF8">
+                                <rect key="frame" x="274" y="837" width="220" height="167"/>
+                                <color key="backgroundColor" red="1" green="0.00012160007610384493" blue="0.10264359559225" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="196" id="Bqp-pT-laq"/>
-                                    <constraint firstAttribute="height" constant="185" id="xQs-z6-HJF"/>
+                                    <constraint firstAttribute="width" constant="220" id="G7r-yy-gl5"/>
+                                    <constraint firstAttribute="height" constant="167" id="RWS-1v-vDv"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Begin"/>
                                 <connections>
-                                    <action selector="StartExam:" destination="FNH-Xs-6CJ" eventType="touchUpInside" id="oqG-wR-uZH"/>
-                                    <segue destination="s1O-5e-r0b" kind="push" identifier="StartExamSegue" id="3kP-5Z-2DJ"/>
+                                    <action selector="startExam:" destination="FNH-Xs-6CJ" eventType="touchUpInside" id="7iE-3W-96j"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="F47-Te-keW" firstAttribute="centerX" secondItem="Z2f-7p-lfc" secondAttribute="centerX" id="5SB-TR-r2I"/>
-                            <constraint firstItem="eI4-3V-tsf" firstAttribute="top" secondItem="F47-Te-keW" secondAttribute="bottom" constant="20" id="Zat-Z6-ygJ"/>
+                            <constraint firstItem="Ac5-aF-wF8" firstAttribute="centerX" secondItem="Z2f-7p-lfc" secondAttribute="centerX" id="Rgc-KE-dm6"/>
+                            <constraint firstItem="eI4-3V-tsf" firstAttribute="top" secondItem="Ac5-aF-wF8" secondAttribute="bottom" constant="20" id="Zh2-IE-3qy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k55-F6-Kco"/>
+                    <connections>
+                        <outlet property="startButton" destination="Ac5-aF-wF8" id="YSr-E1-dyt"/>
+                        <segue destination="s1O-5e-r0b" kind="push" identifier="startExamSegue" id="TwZ-lt-brE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBD-70-m0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ExamFirstViewModel.h"
+#import "ExamViewController.h"
 
 @interface ExamFirstViewController : UIViewController
 
 @property (nonatomic, strong) ExamFirstViewModel * viewModel;
 
-- (IBAction)StartExam:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 @end

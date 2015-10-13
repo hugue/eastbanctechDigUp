@@ -15,13 +15,15 @@
 
 @property (nonatomic, strong) NSArray<ExerciseViewModel *> * exercises;
 @property (nonatomic, strong) NSTimer * countDownTimer;
-@property (nonatomic) NSUInteger allowedTime;
 @property (nonatomic) NSUInteger remainingTime;
+
+- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises AllowedTime:(NSUInteger)time;
 
 - (void)stopExam;
 - (void)startExam;
 - (void)selectNextExercise;
 - (void)selectPreviousExercise;
 - (void)examDone;
+- (void)viewDidAppear;
 
 @end
