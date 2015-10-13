@@ -10,6 +10,13 @@
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "AudioViewModel.h"
 
+typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
+    AudioVolumeIntervalMute,
+    AudioVolumeIntervalLow,
+    AudioVolumeIntervalMedium,
+    AudioVolumeIntervalHigh
+};
+
 @interface AudioController : NSObject
 
 @property (nonatomic, strong) NSNumber * beingPlayedID;
@@ -25,6 +32,7 @@
 - (void)pauseCurrentAudio;
 - (void)playCurrentAudio;
 - (void)stopCurrentAudio;
+- (void)volumeAudioChangedOnViewByButton;
 
 - (void)setTimeCurrentAudio:(long)currentAudioTime;
 - (void)playPauseChangedOnView;

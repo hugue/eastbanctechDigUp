@@ -82,6 +82,15 @@
     }
 }
 
+- (void)volumeAudioChangedOnViewByButton {
+    if (self.currentAudioVolum == 0) {
+        self.currentAudioVolum = 1.0;
+    }
+    else {
+        self.currentAudioVolum = 0;
+    }
+}
+
 - (void)releaseAudioTimer {
     [self.updatingTimer invalidate];
     self.updatingTimer = nil;
@@ -124,6 +133,7 @@
     }
 }
 
+#pragma mark - correction methods
 - (void)restartAsked {
     self.currentlyPlaying = nil;
     self.audioDuration = 0;

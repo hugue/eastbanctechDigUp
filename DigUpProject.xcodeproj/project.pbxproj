@@ -1034,11 +1034,11 @@
 				F3FCD5341BCB6EA60074F409 /* ExerciseViewController.m */,
 				F352749E1BBE9FF90089FB6F /* CoursesTableViewController.h */,
 				F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */,
+				F3FCD5441BCBD2820074F409 /* AudioBarView.h */,
+				F3FCD5451BCBD2820074F409 /* AudioBarView.m */,
 				F3F9F1A31BC251CA005B0D5E /* CourseCellView.h */,
 				F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */,
 				8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */,
-				F3FCD5441BCBD2820074F409 /* AudioBarView.h */,
-				F3FCD5451BCBD2820074F409 /* AudioBarView.m */,
 			);
 			name = LocalViews;
 			sourceTree = "<group>";

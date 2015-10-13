@@ -165,33 +165,6 @@
     }
 }
 
-- (void)volumeAudioChangedOnViewByButton {
-    if (self.audioController.currentAudioVolum == 0) {
-        self.audioController.currentAudioVolum = 1.0;
-    }
-    else {
-        self.audioController.currentAudioVolum = 0;
-    }
-}
-
-- (void)playPauseAudioChangedOnView {
-    if (self.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
-        [self.audioController playPauseChangedOnView];
-    }
-}
-
-
-- (BOOL)audioBarTapped {
-    if (self.audioController.currentlyPlaying.audioPlayer.playing) {
-        [self.audioController.currentlyPlaying.audioPlayer pause];
-        return NO;
-    }
-    else {
-        [self.audioController.currentlyPlaying.audioPlayer play];
-        return YES;
-    }
-}
-
 #pragma mark - Correction methods
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
     self.currentExerciseState = ExerciseCurrentStateIsStopped;
@@ -212,7 +185,6 @@
         [radioButtonController solutionAsked];
     }
     [self.dropController solutionAsked];
-
 }
 
 - (void)restartExerciseAsked {

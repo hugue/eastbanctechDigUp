@@ -24,6 +24,7 @@
 #import "TableView.h"
 #import "AudioView.h"
 #import "CheckBoxView.h"
+#import "AudioBarView.h"
 
 @interface ExerciseViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>
 
@@ -31,6 +32,7 @@
 @property (strong, nonatomic) ExerciseViewModel * viewModel;
 @property (nonatomic, strong) DragElementRecognizer * dragRecongnizer;
 @property (strong, nonatomic) NSMutableArray<MaterialView *> * materialsViews;
+@property (nonatomic, strong) AudioBarView * audioBar;
 
 - (void)displayExercise;
 

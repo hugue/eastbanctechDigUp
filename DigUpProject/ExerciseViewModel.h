@@ -25,13 +25,6 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
     ExerciseCurrentStateIsGoingOn
 };
 
-typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
-    AudioVolumeIntervalMute,
-    AudioVolumeIntervalLow,
-    AudioVolumeIntervalMedium,
-    AudioVolumeIntervalHigh
-};
-
 @interface ExerciseViewModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * materialsModels;
@@ -51,11 +44,11 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 @property (nonatomic) NSUInteger maxTargetZPosition;
 
 - (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController mediaURL:(NSString *)mediaurl;
-
+/*
 - (BOOL)audioBarTapped;
 - (void)playPauseAudioChangedOnView;
 - (void)volumeAudioChangedOnViewByButton;
-
+*/
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection;
 - (void)restartExerciseAsked;
 - (void)solutionAsked;
