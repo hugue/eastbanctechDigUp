@@ -18,6 +18,7 @@
 @property (nonatomic) NSUInteger remainingTime;
 
 - (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises AllowedTime:(NSUInteger)time;
+- (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 - (void)stopExam;
 - (void)startExam;
@@ -25,5 +26,6 @@
 - (void)selectPreviousExercise;
 - (void)examDone;
 - (void)viewDidAppear;
+- (void)viewWillDisappear;
 
 @end

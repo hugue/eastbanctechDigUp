@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ExamViewModel.h"
+#import "ExerciseViewController.h"
 
 @interface ExamViewController : UIViewController
 
@@ -19,5 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 @property (nonatomic, strong) UILabel * timeLabel;
+@property (weak, nonatomic) IBOutlet UIView * exerciseView;
 
 @end

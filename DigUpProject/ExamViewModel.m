@@ -28,7 +28,21 @@
     [self startExam];
 }
 
+- (void)viewWillDisappear {
+    [self stopExam];
+}
+
+- (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
+    ExerciseViewModel * viewModel;
+    if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
+        viewModel = self.exercises[0];
+        NSLog(@"Exercise to display - %@", viewModel.materialsModels);
+    }
+    return viewModel;
+}
+
 - (void)stopExam {
+    [self.examTimer invalidate];
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
         exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsStopped;
     }
@@ -47,8 +61,8 @@
 
 - (void)updateCountDown:(NSTimer *)sender {
     self.remainingTime -=1;
-    NSLog(@"Remaining time - %d", self.remainingTime);
     if (self.remainingTime == 0) {
+        [self stopExam];
         NSLog(@"Time is Over");
     }
 }

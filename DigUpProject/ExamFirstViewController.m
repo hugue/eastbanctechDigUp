@@ -30,10 +30,14 @@
     [RACObserve(self.viewModel, examLoaded) subscribeNext:^(id x) {
         @strongify(self);
         if ([x boolValue]) {
-            self.startButton.enabled = YES;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.startButton.enabled = YES;
+            });
         }
         else {
-            self.startButton.enabled = NO;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.startButton.enabled = NO;
+            });
         }
     }];
 }

@@ -17,6 +17,8 @@
 		F352749D1BBE9C990089FB6F /* CoursesTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F352749C1BBE9C990089FB6F /* CoursesTableViewModel.m */; };
 		F35274A01BBE9FF90089FB6F /* CoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */; };
 		F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */; };
+		F3893AB01BCD181000558F07 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3893AAE1BCD181000558F07 /* ExerciseViewController.m */; };
+		F3893AB31BCD1D1000558F07 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3893AB21BCD1D1000558F07 /* ExerciseViewController.xib */; };
 		F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F721BA175F4005028A4 /* MaterialViewModel.m */; };
 		F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F7E1BA180E7005028A4 /* MaterialView.m */; };
 		F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F811BA1A6E6005028A4 /* TextFrameView.m */; };
@@ -149,7 +151,6 @@
 		F3FCD5291BCB68FA0074F409 /* ExerciseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */; };
 		F3FCD52F1BCB69E60074F409 /* TestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD52E1BCB69E60074F409 /* TestViewModel.m */; };
 		F3FCD5321BCB6A130074F409 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5311BCB6A130074F409 /* TestViewController.m */; };
-		F3FCD5351BCB6EA60074F409 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5341BCB6EA60074F409 /* ExerciseViewController.m */; };
 		F3FCD5391BCBCD780074F409 /* ExamFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */; };
 		F3FCD53C1BCBCD890074F409 /* ExamResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */; };
 		F3FCD5401BCBCDFB0074F409 /* ExamFirstViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */; };
@@ -208,6 +209,9 @@
 		F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesTableViewController.m; sourceTree = "<group>"; };
 		F35274A11BBEC0790089FB6F /* CourseCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCellViewModel.h; sourceTree = "<group>"; };
 		F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCellViewModel.m; sourceTree = "<group>"; };
+		F3893AAD1BCD181000558F07 /* ExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
+		F3893AAE1BCD181000558F07 /* ExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
+		F3893AB21BCD1D1000558F07 /* ExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseViewController.xib; sourceTree = "<group>"; };
 		F3E01F711BA175F4005028A4 /* MaterialViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewModel.h; sourceTree = "<group>"; };
 		F3E01F721BA175F4005028A4 /* MaterialViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewModel.m; sourceTree = "<group>"; };
 		F3E01F7D1BA180E7005028A4 /* MaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialView.h; sourceTree = "<group>"; };
@@ -466,8 +470,6 @@
 		F3FCD52E1BCB69E60074F409 /* TestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewModel.m; sourceTree = "<group>"; };
 		F3FCD5301BCB6A130074F409 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		F3FCD5311BCB6A130074F409 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		F3FCD5331BCB6EA60074F409 /* ExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
-		F3FCD5341BCB6EA60074F409 /* ExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
 		F3FCD5371BCBCD780074F409 /* ExamFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamFirstViewController.h; sourceTree = "<group>"; };
 		F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamFirstViewController.m; sourceTree = "<group>"; };
 		F3FCD53A1BCBCD890074F409 /* ExamResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultViewController.h; sourceTree = "<group>"; };
@@ -1030,8 +1032,6 @@
 		F3F9F1A21BC234A8005B0D5E /* LocalViews */ = {
 			isa = PBXGroup;
 			children = (
-				F3FCD5331BCB6EA60074F409 /* ExerciseViewController.h */,
-				F3FCD5341BCB6EA60074F409 /* ExerciseViewController.m */,
 				F352749E1BBE9FF90089FB6F /* CoursesTableViewController.h */,
 				F352749F1BBE9FF90089FB6F /* CoursesTableViewController.m */,
 				F3FCD5441BCBD2820074F409 /* AudioBarView.h */,
@@ -1039,6 +1039,9 @@
 				F3F9F1A31BC251CA005B0D5E /* CourseCellView.h */,
 				F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */,
 				8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */,
+				F3893AAD1BCD181000558F07 /* ExerciseViewController.h */,
+				F3893AAE1BCD181000558F07 /* ExerciseViewController.m */,
+				F3893AB21BCD1D1000558F07 /* ExerciseViewController.xib */,
 			);
 			name = LocalViews;
 			sourceTree = "<group>";
@@ -1187,6 +1190,7 @@
 			files = (
 				F3F9874A1BBE6D1300E94F60 /* .gitignore in Resources */,
 				F3F986AE1BBE604800E94F60 /* Main.storyboard in Resources */,
+				F3893AB31BCD1D1000558F07 /* ExerciseViewController.xib in Resources */,
 				F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */,
 				8A59766F1BC38E5800AD4B12 /* CourseCellView.xib in Resources */,
 				F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */,
@@ -1346,7 +1350,6 @@
 				F3FCD5401BCBCDFB0074F409 /* ExamFirstViewModel.m in Sources */,
 				F3ECBE6F1B9D452E0000A656 /* main.m in Sources */,
 				F3F9876A1BBE6D1300E94F60 /* ETRCollectionChangeReload.m in Sources */,
-				F3FCD5351BCB6EA60074F409 /* ExerciseViewController.m in Sources */,
 				F3F9877C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m in Sources */,
 				F3F9F1A51BC251CA005B0D5E /* CourseCellView.m in Sources */,
 				F35274A01BBE9FF90089FB6F /* CoursesTableViewController.m in Sources */,
@@ -1377,6 +1380,7 @@
 				F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */,
 				F3F9878C1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m in Sources */,
 				F3F9874C1BBE6D1300E94F60 /* ETRAlertView.m in Sources */,
+				F3893AB01BCD181000558F07 /* ExerciseViewController.m in Sources */,
 				F3ECBEC31B9D546C0000A656 /* JSONHTTPClient.m in Sources */,
 				F3ECBEBD1B9D546C0000A656 /* JSONModel.m in Sources */,
 				F3F987681BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m in Sources */,

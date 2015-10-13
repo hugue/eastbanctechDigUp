@@ -29,12 +29,13 @@
 - (ExamViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     ExamViewModel * examViewModel;
     if ([segueIdentifier isEqualToString:@"startExamSegue"]) {
-        examViewModel = [[ExamViewModel alloc] initWithExercises:self.exercises AllowedTime:10];
+        examViewModel = [[ExamViewModel alloc] initWithExercises:self.exercises AllowedTime:60];
     }
     return examViewModel;
 }
 
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
+    NSLog(@"One exercise downloaded");
     //Create Exam here according to JSON Model
     NSError * initError;
     
