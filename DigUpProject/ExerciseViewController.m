@@ -34,7 +34,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)displayExercise {
@@ -50,6 +49,7 @@
     
     for (MaterialView * materialView in self.materialsViews) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Material displayed");
             [materialView addVisualToView:self.scrollView];
         });
     }

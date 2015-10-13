@@ -64,11 +64,13 @@
                 for (materialViewModel in self.materialsModels) {
                     materialViewModel.materialState = MaterialCurrentStateStopped;
                 }
+                self.audioController.controllerState = AudioControllerCurrentStateStopped;
                 break;
             case ExerciseCurrentStateIsGoingOn:
                 for (materialViewModel in self.materialsModels) {
                     materialViewModel.materialState = MaterialCurrentStateGoingOn;
                 }
+                self.audioController.controllerState = AudioControllerCurrentStateGoingOn;
                 break;
             default:
                 break;

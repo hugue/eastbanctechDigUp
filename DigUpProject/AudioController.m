@@ -26,6 +26,7 @@
 
 - (void)initialize {
     self.beingPlayedID = @0;
+    self.controllerState = AudioControllerCurrentStateStopped;
     self.currentlyPlaying = nil;
     self.currentAudioTime = 0;
     self.audioDuration = 0;
@@ -125,11 +126,13 @@
 }
 
 - (void)playPauseChangedOnView {
-    if (self.isPlaying) {
-        [self pauseCurrentAudio];
-    }
-    else {
-        [self playCurrentAudio];
+    if (self.controllerState == AudioControllerCurrentStateGoingOn) {
+        if (self.isPlaying) {
+            [self pauseCurrentAudio];
+        }
+        else {
+            [self playCurrentAudio];
+        }
     }
 }
 

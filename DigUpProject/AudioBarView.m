@@ -67,7 +67,7 @@
     [self.controlAudioBar addSubview:self.timeLabel];
     
     //Audio Button
-    //positionX += timeLableFrame.size.width + 10;
+    positionX += timeLableFrame.size.width + 10;
     CGRect volumeButtonFrame = CGRectMake(positionX, 0, controlAudioBarFrame.size.width/12, controlAudioBarFrame.size.height);
     self.volumeButton = [[UIButton alloc] initWithFrame:volumeButtonFrame];
     [self.volumeButton setImage:[UIImage imageNamed:@"HighVolume"] forState:UIControlStateNormal];

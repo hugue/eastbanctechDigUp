@@ -17,6 +17,11 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
     AudioVolumeIntervalHigh
 };
 
+typedef NS_ENUM(NSInteger, AudioControllerCurrentState) {
+    AudioControllerCurrentStateGoingOn,
+    AudioControllerCurrentStateStopped
+};
+
 @interface AudioController : NSObject
 
 @property (nonatomic, strong) NSNumber * beingPlayedID;
@@ -27,6 +32,7 @@ typedef NS_ENUM(NSInteger, AudioVolumeInterval) {
 @property (nonatomic) BOOL isPlaying;
 @property (nonatomic) float currentAudioVolum;
 @property (nonatomic) BOOL isNeeded;
+@property (nonatomic) enum AudioControllerCurrentState controllerState;
 
 - (void)addNewAudio:(AudioViewModel *)audio;
 - (void)pauseCurrentAudio;
