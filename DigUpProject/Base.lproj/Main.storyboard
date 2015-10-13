@@ -118,7 +118,7 @@
         <!--My Courses View Controller-->
         <scene sceneID="kFV-04-PVG">
             <objects>
-                <viewController id="feA-6D-gZP" customClass="MyCoursesViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="feA-6D-gZP" customClass="MyCoursesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Db0-J2-uH6"/>
                         <viewControllerLayoutGuide type="bottom" id="7dx-ta-Uvm"/>
@@ -310,9 +310,26 @@
                     <view key="view" contentMode="scaleToFill" id="9eu-bM-h9n">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYm-1f-vdd">
+                                <rect key="frame" x="318" y="881" width="132" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="JyI-eW-m5R"/>
+                                    <constraint firstAttribute="height" constant="123" id="raF-cb-ez3"/>
+                                </constraints>
+                                <state key="normal" title="OK"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dYm-1f-vdd" firstAttribute="centerX" secondItem="9eu-bM-h9n" secondAttribute="centerX" id="Xn7-r6-g5u"/>
+                            <constraint firstItem="uP8-8D-Gpx" firstAttribute="top" secondItem="dYm-1f-vdd" secondAttribute="bottom" constant="20" id="yrZ-fU-O1l"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NFg-r5-L1R"/>
+                    <connections>
+                        <outlet property="backToMenu" destination="dYm-1f-vdd" id="3xf-LX-AAz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbd-Yw-67c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -534,7 +551,7 @@
         <!--Courses Table View Controller-->
         <scene sceneID="cKf-Fx-rer">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="jq1-H0-sbe" customClass="CoursesTableViewController" sceneMemberID="viewController">
+                <tableViewController id="jq1-H0-sbe" customClass="CoursesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="oZJ-LV-vM8">
                         <rect key="frame" x="0.0" y="0.0" width="325" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -553,7 +570,7 @@
         <!--Courses Table View Controller-->
         <scene sceneID="rwU-yT-3hF">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="poc-9P-dPp" customClass="CoursesTableViewController" sceneMemberID="viewController">
+                <tableViewController id="poc-9P-dPp" customClass="CoursesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="beW-m0-zkC">
                         <rect key="frame" x="0.0" y="0.0" width="435" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

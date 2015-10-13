@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExamResultViewModel.h"
 
 @interface ExamResultViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *backToMenu;
+@property (strong, nonatomic) ExamResultViewModel * viewModel;
 
 @end

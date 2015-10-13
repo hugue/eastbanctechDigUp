@@ -10,4 +10,9 @@
 
 @implementation ExamResultViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+      self.navigationItem.hidesBackButton = YES;
+}
+
 @end
