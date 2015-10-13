@@ -7,7 +7,18 @@
 //
 
 #import "ExamViewModel.h"
+@interface ExamViewModel ()
+
+@property (nonatomic, strong) NSTimer * examTimer;
+
+@end
 
 @implementation ExamViewModel
+
+- (void)stopExam {
+    for (ExerciseViewModel * exerciseViewModel in self.exercises) {
+        exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsStopped;
+    }
+}
 
 @end

@@ -13,4 +13,11 @@
 
 @property (nonatomic, strong) ExamViewModel * viewModel;
 
+- (IBAction)showNext:(id)sender;
+- (IBAction)showPrevious:(id)sender;
+- (IBAction)endExam:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *pageLabel;
+@property (nonatomic, strong) UILabel * timeLabel;
+
 @end

@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.timeLabel.textColor = [UIColor blackColor];
+    self.timeLabel.text = @"0:00";
+    
+    //UIBarButtonItem * myBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.timeLabel];
+    //[self.navigationController.navigationItem setRightBarButtonItem:myBarButtonItem animated:NO];
+    //[self.navigationController.navigationItem setTitleView:self.timeLabel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +41,12 @@
 }
 */
 
+- (IBAction)showNext:(id)sender {
+}
+
+- (IBAction)showPrevious:(id)sender {
+}
+
+- (IBAction)endExam:(id)sender {
+}
 @end
