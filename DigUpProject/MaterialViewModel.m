@@ -70,7 +70,6 @@
 #pragma mark - DataControllerProtocol
 
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
-    NSLog(@"Material Receivied");
     if (error) {
         NSLog(@"Error upon receiving data in AudioViewModel- %@", error);
     }

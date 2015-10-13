@@ -55,7 +55,7 @@
         });
     }
     else {
-        dispatch_async(dispatch_get_main_queue(), ^{
+       dispatch_async(dispatch_get_main_queue(), ^{
             self.viewDisplayed.layer.borderColor = [UIColor redColor].CGColor;
             self.viewDisplayed.layer.borderWidth = 1.0f;
         });

@@ -30,7 +30,10 @@
     [RACObserve(self.viewModel, exerciseLoaded) subscribeNext:^(id x) {
         if ([x boolValue]) {
             if ([self shouldPerformSegueWithIdentifier:@"displayExerciseSegue" sender:nil]) {
-                [self performSegueWithIdentifier:@"displayExerciseSegue" sender:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self performSegueWithIdentifier:@"displayExerciseSegue" sender:nil];
+
+                });
             }
         }
     }];

@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.materialsViews = [[NSMutableArray alloc] init];
     
     [self registerForKeyboardNotifications];
@@ -51,14 +50,13 @@
    });
     
     for (MaterialView * materialView in self.materialsViews) {
-         NSLog(@"View Placed");
         dispatch_async(dispatch_get_main_queue(), ^{
             [materialView addVisualToView:self.scrollView];
         });
     }
-    dispatch_async(dispatch_get_main_queue(), ^{
+    //dispatch_async(dispatch_get_main_queue(), ^{
         [self configureAudioPlayerView];
-    });
+    //});
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -173,9 +171,7 @@
        [RACObserve(self.viewModel.audioController, currentAudioTime) subscribeNext:^(id x) {
             long minutes = floor([x integerValue]/60);
             long seconds = [x integerValue] - minutes*60;
-            dispatch_async(dispatch_get_main_queue(), ^{
                 timeLabel.text = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
-            });
         }];
         //Volume button
         positionX += timeLableFrame.size.width + 10;
