@@ -27,7 +27,9 @@
 }
 
 - (void)applyModelToView {
+    @weakify(self)
     [RACObserve(self.viewModel, exerciseLoaded) subscribeNext:^(id x) {
+        @strongify(self)
         if ([x boolValue]) {
             if ([self shouldPerformSegueWithIdentifier:@"displayExerciseSegue" sender:nil]) {
                 dispatch_async(dispatch_get_main_queue(), ^{

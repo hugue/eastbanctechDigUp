@@ -741,12 +741,12 @@
 		F3F986A91BBE455C00E94F60 /* LocalViewsModels */ = {
 			isa = PBXGroup;
 			children = (
-				F3FCD5271BCB68FA0074F409 /* ExerciseViewModel.h */,
-				F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */,
 				F352749B1BBE9C990089FB6F /* CoursesTableViewModel.h */,
 				F352749C1BBE9C990089FB6F /* CoursesTableViewModel.m */,
 				F35274A11BBEC0790089FB6F /* CourseCellViewModel.h */,
 				F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */,
+				F3FCD5271BCB68FA0074F409 /* ExerciseViewModel.h */,
+				F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */,
 			);
 			name = LocalViewsModels;
 			sourceTree = "<group>";

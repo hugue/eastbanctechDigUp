@@ -337,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbd-Yw-67c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4811" y="-2091"/>
+            <point key="canvasLocation" x="4851" y="-1877"/>
         </scene>
         <!--Exam View Controller-->
         <scene sceneID="473-5N-Ave">
@@ -593,7 +593,6 @@
         <!--Exercise View Controller-->
         <scene sceneID="3bp-2l-A1L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Pr-n0-Kb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jqP-eM-k4V" customClass="ExerciseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Drh-Oc-klZ"/>
@@ -606,6 +605,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xzj-ai-20W"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Pr-n0-Kb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5968" y="485"/>
         </scene>
@@ -613,6 +613,10 @@
         <scene sceneID="9do-7z-X6N">
             <objects>
                 <viewController id="h0A-Ro-1SI" customClass="ExerciseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EGm-qA-4m3"/>
+                        <viewControllerLayoutGuide type="bottom" id="kqi-MM-k1F"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Myh-ZF-ocP">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="857"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

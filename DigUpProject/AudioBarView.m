@@ -94,7 +94,9 @@
 
 - (void)applyModelToView {
     //PlayPause Button
+    @weakify(self)
     [RACObserve(self.viewModel, isPlaying) subscribeNext:^(id x) {
+        @strongify(self)
         if ([x boolValue]) {
             [self.playPauseButton setImage:[UIImage imageNamed:@"Pause_Button"] forState:UIControlStateNormal];
         }
@@ -109,7 +111,6 @@
     RACChannelTerminal * sliderTerminal = [self.audioTimeSlider rac_newValueChannelWithNilValue:@0];
     RACChannelTerminal * modelTerminal = RACChannelTo_(self.viewModel, currentAudioTime, @0);
     
-    @weakify(self)
     [[[sliderTerminal doNext:^(id x) {
         @strongify(self)
         [self.viewModel setTimeCurrentAudio:self.audioTimeSlider.value];
@@ -118,6 +119,7 @@
     
     //TimeLabel
     [RACObserve(self.viewModel, currentAudioTime) subscribeNext:^(id x) {
+        @strongify(self)
         long minutes = floor([x integerValue]/60);
         long seconds = [x integerValue] - minutes*60;
         self.timeLabel.text = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
@@ -139,6 +141,7 @@
         }
     }
        ] distinctUntilChanged] subscribeNext:^(id x) {
+        @strongify(self)
         switch ([x integerValue]) {
             case AudioVolumeIntervalHigh:
                 [self.volumeButton setImage:[UIImage imageNamed:@"HighVolume"] forState:UIControlStateNormal];
@@ -163,6 +166,7 @@
     
     //Add the control audio bar only if an audio file is selected
     [RACObserve(self.viewModel, currentlyPlaying) subscribeNext:^(id x) {
+        @strongify(self)
         if (x) {
             dispatch_async(dispatch_get_main_queue(), ^{
                [self.viewDisplayed addSubview:self.controlAudioBar];
