@@ -9,8 +9,7 @@
 #import "ExerciseViewModel.h"
 
 @interface ExerciseViewModel()
-
-
+@property (nonatomic, strong) NSMutableArray<RACSignal *> * downloadedMedias;
 @end
 
 @implementation ExerciseViewModel
@@ -34,11 +33,13 @@
     self.maxTargetZPosition = 0;
     self.bottomOfView = 0;
     self.rightBorderOfView = 0;
-    
+    self.mediasLoaded = @NO;
     self.buttonControllers = [[NSMutableDictionary alloc] init];
     self.materialsModels = [[NSMutableArray alloc] init];
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
+    
+    self.downloadedMedias = [[NSMutableArray alloc] init];
 }
 
 - (void)viewWillDisappear {
@@ -77,6 +78,17 @@
         }
         
     }];
+    RAC(self, mediasLoaded) = [[RACSignal combineLatest:self.downloadedMedias] map:^id(RACTuple * value) {
+                                NSArray * result = value.allObjects;
+                                NSNumber * allDownloaded = @YES;
+                                for (NSNumber * downloaded in result) {
+                                        if (![downloaded boolValue]) {
+                                            allDownloaded = @NO;
+                                            break;
+                                        }
+                                }
+                                return allDownloaded;
+                              }];
 }
 
 - (MaterialViewModel *)createMaterialViewModelWithModel:(MaterialModel *)materialModel{
@@ -110,7 +122,8 @@
     else if ([type isEqualToString:@"Image"]) {
         ImageViewModel * imageViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
         [self.webController addTaskForObject:imageViewModel toURL:[imageViewModel makeDownloadURLFormURL:self.mediaURL]];
-        //RACSignal * imageLoadedSignal = RACObserve(imageViewModel, imageLoaded);
+        RACSignal * imageLoadedSignal = RACObserve(imageViewModel, imageLoaded);
+        [self.downloadedMedias addObject:imageLoadedSignal];
         [self processDragNDropElement:imageViewModel];
         [self updateViewBordersWithMaterial:imageViewModel];
         return imageViewModel;
@@ -122,7 +135,8 @@
         AudioViewModel * audioViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
         [self.audioController addNewAudio:audioViewModel];
         [self.webController addTaskForObject:audioViewModel toURL:[audioViewModel makeDownloadURLFormURL:self.mediaURL]];
-        //RACSignal * audioLoadedSignal = RACObserve(audioViewModel, audioLoaded);
+        RACSignal * audioLoadedSignal = RACObserve(audioViewModel, audioLoaded);
+        [self.downloadedMedias addObject:audioLoadedSignal];
         [self processDragNDropElement:audioViewModel];
         [self updateViewBordersWithMaterial:audioViewModel];
         return audioViewModel;
@@ -132,7 +146,7 @@
     }
     
     else {
-        NSLog(@"Exercise do not conform to the expected standard");
+        NSLog(@"Error : Exercise do not conform to the expected standard");
     }
     
     [self processDragNDropElement:materialViewModel];
@@ -175,7 +189,6 @@
     for (MaterialViewModel * material in self.materialsModels) {
         [material correctionAskedWithDisplay:YES];
     }
-    
     return NO;
 }
 

@@ -327,7 +327,7 @@
                                     <constraint firstAttribute="width" constant="152" id="9Gc-6e-cAO"/>
                                     <constraint firstAttribute="height" constant="135" id="cWF-VR-O1Y"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="backToMenu:" destination="0c9-yq-Al6" eventType="touchUpInside" id="4Sl-PT-IBl"/>
                                 </connections>

@@ -9,6 +9,7 @@
 #import "ExamFirstViewModel.h"
 @interface ExamFirstViewModel ()
 @property (nonatomic, strong) NSMutableArray<ExerciseViewModel *> * exercises;
+@property (nonatomic, strong) NSMutableArray<RACSignal *> * exerciseMediasLoaded;
 @end
 
 @implementation ExamFirstViewModel
@@ -16,14 +17,19 @@
 - (id)initWithDataModel:(ExamModel *)dataModel WebController:(WebController *)webController {
     self = [super init];
     if (self) {
-        self.examLoaded = NO;
         self.webController = webController;
         self.dataModel = dataModel;
-        self.exercises = [[NSMutableArray alloc] init];
+        [self initialize];
         //[self.webController addTaskForObject:self toURL:self.dataModel.examULR];
         [self temporaryExam];
     }
     return self;
+}
+
+- (void)initialize {
+    self.examLoaded = NO;
+    self.exerciseMediasLoaded = [[NSMutableArray alloc] init];
+    self.exercises = [[NSMutableArray alloc] init];
 }
 
 - (ExamViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
@@ -42,6 +48,8 @@
     ExerciseModel * exerciseModel = [[ExerciseModel alloc] initWithData:data error: &initError];
     ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:exerciseModel WebController:self.webController mediaURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/"];
     [self.exercises addObject:exerciseViewModel];
+    RACSignal * mediaLoaded = RACObserve(exerciseViewModel, mediasLoaded);
+    [self.exerciseMediasLoaded addObject:mediaLoaded];
     self.examLoaded = YES;
 }
 

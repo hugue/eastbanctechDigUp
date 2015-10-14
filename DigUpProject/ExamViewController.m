@@ -61,7 +61,7 @@
     ExerciseViewModel * exerciseViewModel = [self.viewModel selectNextExercise];
     
     CATransition * applicationLoadViewIn = [CATransition animation];
-    [applicationLoadViewIn setDuration:1];
+    [applicationLoadViewIn setDuration:0.3];
     [applicationLoadViewIn setType:kCATransitionPush];
     [applicationLoadViewIn setSubtype:kCATransitionFromRight];
     [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
@@ -76,7 +76,7 @@
     ExerciseViewModel * exerciseViewModel = [self.viewModel selectPreviousExercise];
     
     CATransition * applicationLoadViewIn = [CATransition animation];
-    [applicationLoadViewIn setDuration:1];
+    [applicationLoadViewIn setDuration:0.3];
     [applicationLoadViewIn setType:kCATransitionPush];
     [applicationLoadViewIn setSubtype:kCATransitionFromLeft];
     [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];

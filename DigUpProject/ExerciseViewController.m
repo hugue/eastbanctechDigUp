@@ -37,8 +37,8 @@
         if (self.scrollView.contentSize.width < self.viewModel.rightBorderOfView) {
             self.scrollView.contentSize = CGSizeMake(self.viewModel.rightBorderOfView, self.scrollView.contentSize.height);
         }
-        if (self.scrollView.contentSize.height < self.viewModel.bottomOfView + 100) {
-            self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.viewModel.bottomOfView + 100);
+        if (self.scrollView.contentSize.height < self.viewModel.bottomOfView + 200) {
+            self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.viewModel.bottomOfView + 200);
         }
         
     });
@@ -47,9 +47,11 @@
             [materialView addVisualToView:self.scrollView];
         });
     }
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
     if (self.viewModel.audioController.isNeeded) {
         CGPoint audioBarPosition = CGPointMake(0.0, self.viewModel.bottomOfView + 60);
-        self.audioBar = [[AudioBarView alloc] initWithModel:self.viewModel.audioController atPosition:audioBarPosition andWidth:self.viewModel.rightBorderOfView];
+        self.audioBar = [[AudioBarView alloc] initWithModel:self.viewModel.audioController atPosition:audioBarPosition andWidth:screenWidth];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.scrollView addSubview:self.audioBar.viewDisplayed];

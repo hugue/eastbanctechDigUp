@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
 
 @property (nonatomic) enum ExerciseCurrentState currentExerciseState;
 @property (nonatomic, strong) NSString * mediaURL;
+@property (nonatomic, strong) NSNumber * mediasLoaded;
 
 @property (nonatomic) float bottomOfView;
 @property (nonatomic) float rightBorderOfView;
