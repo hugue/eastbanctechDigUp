@@ -10,7 +10,7 @@
 #import "ExamViewModel.h"
 #import "ExerciseViewController.h"
 
-@interface ExamViewController : UIViewController
+@interface ExamViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) ExamViewModel * viewModel;
 
@@ -21,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 @property (nonatomic, strong) UILabel * timeLabel;
 @property (weak, nonatomic) IBOutlet UIView * exerciseView;
+@property (strong, nonatomic) UISwipeGestureRecognizer * previousSwipeRecognizer;
+@property (strong, nonatomic) UISwipeGestureRecognizer * nextSwipeRecognizer;
 
 @end

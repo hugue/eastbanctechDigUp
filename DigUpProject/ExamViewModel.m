@@ -36,7 +36,6 @@
     ExerciseViewModel * viewModel;
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
         viewModel = self.exercises[0];
-        NSLog(@"Exercise to display - %@", viewModel.materialsModels);
     }
     return viewModel;
 }

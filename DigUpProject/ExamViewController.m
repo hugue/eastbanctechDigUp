@@ -17,11 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.hidesBackButton = YES;
     self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     self.timeLabel.textColor = [UIColor blackColor];
     self.timeLabel.text = @"0:00";
     
+    self.previousSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePreviousSwipe:)];
+    self.nextSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleNextSwipe:)];
+    self.nextSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    self.previousSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    self.previousSwipeRecognizer.delegate = self;
+    self.nextSwipeRecognizer.delegate = self;
+    [self.view addGestureRecognizer:self.previousSwipeRecognizer];
+    [self.view addGestureRecognizer:self.nextSwipeRecognizer];
+
     //UIBarButtonItem * myBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.timeLabel];
     //[self.navigationController.navigationItem setRightBarButtonItem:myBarButtonItem animated:NO];
     //[self.navigationController.navigationItem setTitleView:self.timeLabel];
@@ -41,6 +50,14 @@
 }
 
 - (IBAction)showPrevious:(id)sender {
+}
+
+- (void)handlePreviousSwipe:(id)sender {
+     NSLog(@"Previous Swip");
+}
+
+- (void)handleNextSwipe:(id)sender {
+    NSLog(@"Next Swip");
 }
 
 - (IBAction)endExam:(id)sender {
