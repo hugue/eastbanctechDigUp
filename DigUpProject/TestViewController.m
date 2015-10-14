@@ -22,6 +22,7 @@
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
     if ([segue.identifier isEqualToString:@"displayExerciseSegue"]) {
         ExerciseViewController * viewController = [segue destinationViewController];
+        [viewController initialize];
         viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
     }
 }

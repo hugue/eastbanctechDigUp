@@ -34,6 +34,8 @@
 @property (nonatomic, weak) IBOutlet UIScrollView * scrollView;
 
 - (void)displayExercise;
+- (void)initialize;
+- (void)removeViewModel:(NSSet *)objects;
 
 @end
 

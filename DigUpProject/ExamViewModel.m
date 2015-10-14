@@ -20,6 +20,9 @@
     if (self) {
         self.remainingTime = time;
         self.exercises = exercises;
+        self.currentExercise = exercises[0];
+        self.currentExerciseIndex = 0;
+        self.numberOfExercises = exercises.count;
     }
     return self;
 }
@@ -35,7 +38,7 @@
 - (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     ExerciseViewModel * viewModel;
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        viewModel = self.exercises[0];
+        viewModel = self.currentExercise;
     }
     return viewModel;
 }
@@ -62,16 +65,28 @@
     self.remainingTime -=1;
     if (self.remainingTime == 0) {
         [self stopExam];
-        NSLog(@"Time is Over");
+        NSLog(@"Time is Up");
     }
 }
 
-- (void)selectNextExercise {
-    
+- (ExerciseViewModel *)selectNextExercise {
+    if (self.currentExerciseIndex < (self.exercises.count - 1)) {
+        self.currentExerciseIndex += 1;
+    }
+    else {
+        self.currentExerciseIndex = 0;
+    }
+    return self.exercises[self.currentExerciseIndex];
 }
 
-- (void)selectPreviousExercise {
-    
+- (ExerciseViewModel *)selectPreviousExercise {
+    if (self.currentExerciseIndex > 0) {
+        self.currentExerciseIndex -= 1;
+    }
+    else {
+        self.currentExerciseIndex = (self.exercises.count - 1);
+    }
+    return self.exercises[self.currentExerciseIndex];
 }
 
 - (void)examDone {

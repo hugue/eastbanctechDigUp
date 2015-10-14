@@ -15,14 +15,15 @@
 
 @property (nonatomic, strong) ExamViewModel * viewModel;
 
-- (IBAction)showNext:(id)sender;
-- (IBAction)showPrevious:(id)sender;
-- (IBAction)endExam:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UIView * exerciseView;
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 @property (nonatomic, strong) UILabel * timeLabel;
 @property (strong, nonatomic) UISwipeGestureRecognizer * previousSwipeRecognizer;
 @property (strong, nonatomic) UISwipeGestureRecognizer * nextSwipeRecognizer;
+
+
+- (IBAction)showNext:(id)sender;
+- (IBAction)showPrevious:(id)sender;
+- (IBAction)endExam:(id)sender;
 
 @end

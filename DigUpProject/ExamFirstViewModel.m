@@ -35,7 +35,6 @@
 }
 
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
-    NSLog(@"One exercise downloaded");
     //Create Exam here according to JSON Model
     NSError * initError;
     
@@ -47,6 +46,14 @@
 }
 
 - (void)temporaryExam {
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
     [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
     [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
 }

@@ -19,20 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSBundle mainBundle] loadNibNamed:@"ExerciseViewController" owner:self options:kNilOptions];
-    self.materialsViews = [[NSMutableArray alloc] init];
-    
-    [self registerForKeyboardNotifications];
-    
     DragElementRecognizer * recognizer = [[DragElementRecognizer alloc] initWithTarget:self action:@selector(handleDragging:)];
     recognizer.delegate = self;
     [self.scrollView addGestureRecognizer:recognizer];
-    
-    for (MaterialViewModel  * viewModel in self.viewModel.materialsModels) {
-        [self createMaterialViewWithModel:viewModel];
-    }
-    [self displayExercise];
 }
 
+- (void)initialize {
+    self.materialsViews = [[NSMutableArray alloc] init];
+    [self registerForKeyboardNotifications];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -49,7 +44,6 @@
     });
     for (MaterialView * materialView in self.materialsViews) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Material displayed");
             [materialView addVisualToView:self.scrollView];
         });
     }
@@ -212,17 +206,25 @@
     self.activeField = textField;
 }
 
-- (void)setViewModel:(ExerciseViewModel *)viewModel {
-    //Clean all references to the old view model
+- (void)removeViewModel:(NSSet *)objects {
     if (self.viewModel) {
         for (MaterialView * materialView in self.materialsViews) {
             [materialView.viewDisplayed removeFromSuperview];
         }
+        [self.materialsViews removeAllObjects];
+        [self.viewModel.audioController stopCurrentAudio];
         [self.audioBar.viewDisplayed removeFromSuperview];
         self.audioBar = nil;
     }
-    //Set new view Model
-    self.viewModel = viewModel;
+}
+
+- (void)setViewModel:(ExerciseViewModel *)viewModel {
+    //Show the new view model
+    _viewModel = viewModel;
+    for (MaterialViewModel  * viewModel in self.viewModel.materialsModels) {
+        [self createMaterialViewWithModel:viewModel];
+    }
+    [self displayExercise];
 }
 
 @end
