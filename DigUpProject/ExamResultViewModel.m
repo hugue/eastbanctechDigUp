@@ -10,4 +10,12 @@
 
 @implementation ExamResultViewModel
 
+- (id)initWithValues:(NSUInteger)value {
+    self = [super init];
+    if (self) {
+        self.text = [NSString stringWithFormat:@"You obtained %d", value];
+    }
+    return self;
+}
+
 @end

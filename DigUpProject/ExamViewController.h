@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ExamViewModel.h"
 #import "ExerciseViewController.h"
+#import "ExamResultViewController.h"
 
 @interface ExamViewController : UIViewController <UIGestureRecognizerDelegate>
 

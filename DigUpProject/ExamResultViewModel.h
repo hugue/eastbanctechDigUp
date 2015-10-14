@@ -10,4 +10,6 @@
 
 @interface ExamResultViewModel : NSObject
 
+@property (nonatomic, strong) NSString * text;
+- (id)initWithValues:(NSUInteger)value;
 @end

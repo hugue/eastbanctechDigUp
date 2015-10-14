@@ -315,24 +315,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYm-1f-vdd">
-                                <rect key="frame" x="318" y="881" width="132" height="123"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14G-79-dGG">
+                                <rect key="frame" x="363" y="497" width="43" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zm-9c-EDy">
+                                <rect key="frame" x="308" y="881" width="152" height="135"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="132" id="JyI-eW-m5R"/>
-                                    <constraint firstAttribute="height" constant="123" id="raF-cb-ez3"/>
+                                    <constraint firstAttribute="width" constant="152" id="9Gc-6e-cAO"/>
+                                    <constraint firstAttribute="height" constant="135" id="cWF-VR-O1Y"/>
                                 </constraints>
-                                <state key="normal" title="OK"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backToMenu:" destination="0c9-yq-Al6" eventType="touchUpInside" id="4Sl-PT-IBl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dYm-1f-vdd" firstAttribute="centerX" secondItem="9eu-bM-h9n" secondAttribute="centerX" id="Xn7-r6-g5u"/>
-                            <constraint firstItem="uP8-8D-Gpx" firstAttribute="top" secondItem="dYm-1f-vdd" secondAttribute="bottom" constant="20" id="yrZ-fU-O1l"/>
+                            <constraint firstItem="14G-79-dGG" firstAttribute="centerX" secondItem="9eu-bM-h9n" secondAttribute="centerX" id="9FX-5G-Dd3"/>
+                            <constraint firstItem="uP8-8D-Gpx" firstAttribute="top" secondItem="5zm-9c-EDy" secondAttribute="bottom" constant="8" id="GCz-2j-TkH"/>
+                            <constraint firstItem="5zm-9c-EDy" firstAttribute="centerX" secondItem="9eu-bM-h9n" secondAttribute="centerX" id="HoW-IJ-5sK"/>
+                            <constraint firstItem="14G-79-dGG" firstAttribute="centerY" secondItem="9eu-bM-h9n" secondAttribute="centerY" id="dHm-AW-zFh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NFg-r5-L1R"/>
                     <connections>
-                        <outlet property="backToMenu" destination="dYm-1f-vdd" id="3xf-LX-AAz"/>
+                        <outlet property="text" destination="14G-79-dGG" id="4y2-Rx-7OQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbd-Yw-67c" userLabel="First Responder" sceneMemberID="firstResponder"/>

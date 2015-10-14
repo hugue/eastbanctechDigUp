@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ExamModel.h"
+#import "ExamResultViewModel.h"
 #import "ExerciseViewModel.h"
 
 
@@ -19,9 +20,10 @@
 @property (nonatomic, strong) NSTimer * countDownTimer;
 @property (nonatomic) NSUInteger remainingTime;
 @property (nonatomic) NSUInteger numberOfExercises;
+@property (nonatomic, strong) NSMutableArray * results;
 
 - (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises AllowedTime:(NSUInteger)time;
-- (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
+- (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 - (void)stopExam;
 - (void)startExam;

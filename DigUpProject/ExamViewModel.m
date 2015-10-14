@@ -23,6 +23,7 @@
         self.currentExercise = exercises[0];
         self.currentExerciseIndex = 0;
         self.numberOfExercises = exercises.count;
+        self.results = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -35,10 +36,13 @@
     [self stopExam];
 }
 
-- (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
-    ExerciseViewModel * viewModel;
+- (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
+    id viewModel;
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
         viewModel = self.currentExercise;
+    }
+    else if ([segueIdentifier isEqualToString:@"examResultSegue"]) {
+        viewModel = [[ExamResultViewModel alloc] initWithValues:5];
     }
     return viewModel;
 }
@@ -65,7 +69,6 @@
     self.remainingTime -=1;
     if (self.remainingTime == 0) {
         [self stopExam];
-        NSLog(@"Time is Up");
     }
 }
 
@@ -90,7 +93,16 @@
 }
 
 - (void)examDone {
-    
+    [self stopExam];
+    for (ExerciseViewModel * exerciseViewModel in self.exercises) {
+        NSNumber * exerciseResult = @([exerciseViewModel correctionAskedDisplayed:NO]);
+        [self.results addObject:exerciseResult];
+        [exerciseViewModel.audioController releaseAudioTimer];
+    }
+}
+
+- (NSNumber *)processResults {
+    return @0;
 }
 
 @end
