@@ -212,4 +212,17 @@
     self.activeField = textField;
 }
 
+- (void)setViewModel:(ExerciseViewModel *)viewModel {
+    //Clean all references to the old view model
+    if (self.viewModel) {
+        for (MaterialView * materialView in self.materialsViews) {
+            [materialView.viewDisplayed removeFromSuperview];
+        }
+        [self.audioBar.viewDisplayed removeFromSuperview];
+        self.audioBar = nil;
+    }
+    //Set new view Model
+    self.viewModel = viewModel;
+}
+
 @end

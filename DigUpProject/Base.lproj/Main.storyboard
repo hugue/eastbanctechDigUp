@@ -430,6 +430,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="exerciseView" destination="5v7-iF-unQ" id="EyE-kN-rWg"/>
                         <outlet property="pageLabel" destination="at1-nm-5M1" id="I8N-i0-YhT"/>
                         <segue destination="0c9-yq-Al6" kind="push" identifier="examResultSegue" id="eTi-9x-4bp"/>
                     </connections>

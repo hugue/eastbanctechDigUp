@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "ExamViewModel.h"
 #import "ExerciseViewController.h"
 
@@ -18,9 +19,9 @@
 - (IBAction)showPrevious:(id)sender;
 - (IBAction)endExam:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIView * exerciseView;
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 @property (nonatomic, strong) UILabel * timeLabel;
-@property (weak, nonatomic) IBOutlet UIView * exerciseView;
 @property (strong, nonatomic) UISwipeGestureRecognizer * previousSwipeRecognizer;
 @property (strong, nonatomic) UISwipeGestureRecognizer * nextSwipeRecognizer;
 

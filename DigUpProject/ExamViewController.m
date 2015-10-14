@@ -10,6 +10,8 @@
 
 @interface ExamViewController ()
 
+@property (nonatomic, weak) ExerciseViewController * exerciseViewController;
+
 @end
 
 @implementation ExamViewController
@@ -17,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.hidesBackButton = YES;
+    //self.navigationItem.hidesBackButton = YES;
     self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     self.timeLabel.textColor = [UIColor blackColor];
     self.timeLabel.text = @"0:00";
@@ -44,9 +46,19 @@
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
     ExerciseViewController * viewController = [segue destinationViewController];
     viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
+    self.exerciseViewController = viewController;
 }
 
 - (IBAction)showNext:(id)sender {
+    //[self.viewModel selectNextExercise];
+   // [self.exerciseViewController setViewModel:nil];
+    CATransition * applicationLoadViewIn = [CATransition animation];
+    [applicationLoadViewIn setDuration:0.3];
+    [applicationLoadViewIn setType:kCATransitionPush];
+    [applicationLoadViewIn setSubtype:kCATransitionFromRight];
+    [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+    applicationLoadViewIn.delegate = self;
+    [self.exerciseView.layer addAnimation:applicationLoadViewIn forKey:kCATransitionReveal];
 }
 
 - (IBAction)showPrevious:(id)sender {
@@ -73,4 +85,7 @@
     [self.viewModel viewWillDisappear];
 }
 
+- (void)animationDidStart:(nonnull CAAnimation *)anim {
+    NSLog(@"Animation Did start");
+}
 @end

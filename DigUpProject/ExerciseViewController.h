@@ -29,7 +29,6 @@
 @interface ExerciseViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) ExerciseViewModel * viewModel;
-@property (nonatomic, strong) DragElementRecognizer * dragRecongnizer;
 @property (strong, nonatomic) NSMutableArray<MaterialView *> * materialsViews;
 @property (nonatomic, strong) AudioBarView * audioBar;
 @property (nonatomic, weak) IBOutlet UIScrollView * scrollView;
