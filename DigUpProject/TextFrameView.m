@@ -37,7 +37,8 @@
                                              documentAttributes: nil
                                              error: &htmlError];
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.viewDisplayed.attributedText = displayedText;
+            //self.viewDisplayed.attributedText = displayedText;
+            self.viewDisplayed.text = materialViewModel.material.Text;
         });
         
         if(htmlError) {
@@ -50,7 +51,7 @@
 
 -(void)applyStyle:(NSString *)style toLabel:(UILabel *)label {
     if ([style isEqualToString:@"text-u1"]) {
-        [label setFont:[UIFont fontWithName:@"ForwardSans-Bold" size:18]];
+        [label setFont:[UIFont fontWithName:@"ForwardSans-Bold" size:14]];
         label.textColor = [UIColor blueColor];
     }
     else if([style isEqualToString:@"text-number_big"]) {
@@ -58,7 +59,7 @@
         //label.textColor = [UIColor blueColor];
     }
     else if([style isEqualToString:@""]) {
-        [label setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:18]];
+        [label setFont:[UIFont fontWithName:@"ForwardSans-Regular" size:14]];
     }
 
 }
