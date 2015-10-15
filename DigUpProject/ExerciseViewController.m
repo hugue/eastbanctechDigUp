@@ -168,6 +168,27 @@
     return nil;
 }
 
+- (void)removeViewModel:(NSSet *)objects {
+    if (self.viewModel) {
+        for (MaterialView * materialView in self.materialsViews) {
+            [materialView.viewDisplayed removeFromSuperview];
+        }
+        [self.materialsViews removeAllObjects];
+        [self.viewModel.audioController stopCurrentAudio];
+        [self.audioBar.viewDisplayed removeFromSuperview];
+        self.audioBar = nil;
+    }
+}
+
+- (void)setViewModel:(ExerciseViewModel *)viewModel {
+    //Show the new view model
+    _viewModel = viewModel;
+    for (MaterialViewModel  * viewModel in self.viewModel.materialsModels) {
+        [self createMaterialViewWithModel:viewModel];
+    }
+    [self displayExercise];
+}
+
 #pragma mark UITextField delegate methods
 - (void)registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -206,27 +227,6 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.activeField = textField;
-}
-
-- (void)removeViewModel:(NSSet *)objects {
-    if (self.viewModel) {
-        for (MaterialView * materialView in self.materialsViews) {
-            [materialView.viewDisplayed removeFromSuperview];
-        }
-        [self.materialsViews removeAllObjects];
-        [self.viewModel.audioController stopCurrentAudio];
-        [self.audioBar.viewDisplayed removeFromSuperview];
-        self.audioBar = nil;
-    }
-}
-
-- (void)setViewModel:(ExerciseViewModel *)viewModel {
-    //Show the new view model
-    _viewModel = viewModel;
-    for (MaterialViewModel  * viewModel in self.viewModel.materialsModels) {
-        [self createMaterialViewWithModel:viewModel];
-    }
-    [self displayExercise];
 }
 
 @end

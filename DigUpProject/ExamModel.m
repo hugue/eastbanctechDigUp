@@ -15,7 +15,7 @@
     if (self) {
         self.allowedTime = @120;
         self.title = @"Exam";
-        self.numberOfQuestions = 25;
+        self.numberOfQuestions = @25;
     }
     return self;
 }

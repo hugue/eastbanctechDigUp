@@ -7,8 +7,11 @@
 //
 
 #import "ExamFirstViewModel.h"
+
 @interface ExamFirstViewModel ()
 @property (nonatomic, strong) NSMutableArray<ExerciseViewModel *> * exercises;
+@property (nonatomic, strong) NSMutableArray<ExerciseModel> * exercisesModel;
+
 @property (nonatomic, strong) NSMutableArray<RACSignal *> * exerciseMediasLoaded;
 @end
 
@@ -32,6 +35,7 @@
     self.exercises = [[NSMutableArray alloc] init];
 }
 
+
 - (ExamViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     ExamViewModel * examViewModel;
     if ([segueIdentifier isEqualToString:@"startExamSegue"]) {
@@ -41,29 +45,29 @@
 }
 
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
+
+    NSLog(@"Error download - %@", error);
+    
     //Create Exam here according to JSON Model
     NSError * initError;
+    //Second test
+    self.exercisesModel = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &initError];
+    //id object = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &initError];
+    NSLog(@"Error -- %@", initError);
+    self.exercises = [[NSMutableArray alloc] initWithCapacity:[self.exercisesModel count]];
+    NSLog(@"Count of exercises - %d", self.exercisesModel.count);
     
     /*Temporary Code for working without back end*/
-    ExerciseModel * exerciseModel = [[ExerciseModel alloc] initWithData:data error: &initError];
+   /* ExerciseModel * exerciseModel = [[ExerciseModel alloc] initWithData:data error: &initError];
     ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:exerciseModel WebController:self.webController mediaURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/"];
     [self.exercises addObject:exerciseViewModel];
     RACSignal * mediaLoaded = RACObserve(exerciseViewModel, mediasLoaded);
     [self.exerciseMediasLoaded addObject:mediaLoaded];
-    self.examLoaded = YES;
+    self.examLoaded = YES;*/
 }
 
 - (void)temporaryExam {
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
-    [self.webController addTaskForObject:self toURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&"];
+    [self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/exam/"];
 }
 
 @end

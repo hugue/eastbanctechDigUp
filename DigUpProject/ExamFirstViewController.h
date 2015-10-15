@@ -13,6 +13,7 @@
 @interface ExamFirstViewController : UIViewController
 
 @property (nonatomic, strong) ExamFirstViewModel * viewModel;
-
+@property (weak, nonatomic) IBOutlet UILabel *numberOfExercercisesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @end

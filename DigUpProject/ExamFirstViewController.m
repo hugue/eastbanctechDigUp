@@ -40,6 +40,9 @@
             });
         }
     }];
+    
+    self.numberOfExercercisesLabel.text = [self.viewModel.dataModel.numberOfQuestions stringValue];
+    self.durationLabel.text = [self.viewModel.dataModel.allowedTime stringValue];
 }
 
 @end

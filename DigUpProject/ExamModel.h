@@ -10,12 +10,9 @@
 
 @interface ExamModel : NSObject
 
-@property (nonatomic) NSUInteger numberOfQuestions;
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSNumber * allowedTime;
-
-@property (nonatomic, strong) NSNumber * lastPercentageCorrect;
-@property (nonatomic, strong) NSNumber * lastDuration;
 @property (nonatomic, strong) NSString * examULR;
+@property (nonatomic, strong) NSNumber * numberOfQuestions;
 
 @end

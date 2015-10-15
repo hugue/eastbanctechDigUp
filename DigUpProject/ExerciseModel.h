@@ -15,3 +15,6 @@
 @property (nonatomic, strong) NSString * exerciseType;
 
 @end
+
+@protocol ExerciseModel
+@end
