@@ -59,10 +59,14 @@
     [[RACObserve(self.viewModel, materialState) distinctUntilChanged] subscribeNext:^(id x) {
         @strongify(self)
         if ([x integerValue] == MaterialCurrentStateGoingOn) {
-            self.viewDisplayed.enabled = YES;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.viewDisplayed.enabled = YES;
+            });
         }
         else {
-            self.viewDisplayed.enabled = NO;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.viewDisplayed.enabled = NO;
+            });
         }
     }];
 

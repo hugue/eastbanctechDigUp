@@ -33,35 +33,22 @@
 }
 
 - (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
-    MaterialAnswerState isCorrect = MaterialAnswerStateIsNotCorrect;
+    MaterialAnswerState materialAnswerState = MaterialAnswerStateIsNotCorrect;
     BOOL isSelected = [self.selectedID isEqualToNumber:self.materialID];
     
     if (isSelected && self.isTrue) {
-        isCorrect = MaterialAnswerStateIsCorrect;
+        materialAnswerState = MaterialAnswerStateIsCorrect;
         if (displayEnabled) {
                 self.displayState = MaterialDisplayStateIsCorrect;
         }
     }
     else if ((isSelected && !self.isTrue) || (!isSelected && self.isTrue)) {
-        isCorrect = MaterialAnswerStateIsNotCorrect;
+        materialAnswerState = MaterialAnswerStateIsNotCorrect;
         if (displayEnabled) {
             self.displayState = MaterialDisplayStateIsNotCorrect;
         }
     }
-    return isCorrect;
-}
-
-- (void)correctionAsked {
-    if ([self.selectedID isEqualToNumber:self.materialID] && self.isTrue) {
-        self.displayState = MaterialDisplayStateIsCorrect;
-    }
-    else if (([self.selectedID isEqualToNumber:self.materialID] && (!self.isTrue)) ||
-             ((![self.selectedID isEqualToNumber:self.materialID]) && self.isTrue)) {
-        self.displayState = MaterialDisplayStateIsNotCorrect;
-    }
-    else  {
-        self.displayState = MaterialDisplayStateIsNormal;
-    }
+    return materialAnswerState;
 }
 
 - (void)solutionAsked {

@@ -27,7 +27,7 @@
 }
 
 - (void)initialize {
-    self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
+    self.currentExerciseState = ExerciseCurrentStateIsStopped;
     
     self.maxZPosition = 0;
     self.maxTargetZPosition = 0;
@@ -190,9 +190,9 @@
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
     self.currentExerciseState = ExerciseCurrentStateIsStopped;
     [self.audioController stopCurrentAudio];
-    [self.dropController correctionAskedWithDisplay:YES];
+    [self.dropController correctionAskedWithDisplay:displayCorrection];
     for (MaterialViewModel * material in self.materialsModels) {
-        [material correctionAskedWithDisplay:YES];
+        [material correctionAskedWithDisplay:displayCorrection];
     }
     return NO;
 }

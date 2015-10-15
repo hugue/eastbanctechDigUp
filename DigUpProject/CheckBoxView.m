@@ -32,7 +32,7 @@
         self.isClicked = NO;
         self.viewDisplayed = [[UIButton alloc] initWithFrame:frame];
         [self.viewDisplayed setImage:[UIImage imageNamed:@"checkbox_empty"] forState: UIControlStateNormal];
-        //self.viewDisplayed.enabled = NO;
+        self.viewDisplayed.enabled = NO;
         [self.viewDisplayed addTarget:self action:@selector(handleTap:) forControlEvents:UIControlEventTouchUpInside];
         [self applyModelToView];
     }

@@ -31,6 +31,13 @@
 - (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
         self.exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController mediaURL:self.dataModel.urlMedia];
+        @weakify(self)
+        [RACObserve(self.exerciseViewModel, mediasLoaded) subscribeNext:^(id x) {
+            @strongify(self)
+            if ([x boolValue]) {
+                self.exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsGoingOn;
+            }
+        }];
         return self.exerciseViewModel;
     }
     return nil;

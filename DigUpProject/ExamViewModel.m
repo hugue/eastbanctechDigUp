@@ -48,6 +48,9 @@
 }
 
 - (void)stopExam {
+    for (ExerciseViewModel * exerciseViewModel in self.exercises) {
+        [exerciseViewModel correctionAskedDisplayed:NO];
+    }
     [self.examTimer invalidate];
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
         exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsStopped;
