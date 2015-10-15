@@ -146,7 +146,6 @@
 		F3F987911BBE6D1300E94F60 /* ETRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987491BBE6D1300E94F60 /* ETRUtils.m */; };
 		F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987931BBE6DAE00E94F60 /* LoginViewController.m */; };
 		F3F987971BBE6E9D00E94F60 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */; };
-		F3F987991BBE877500E94F60 /* DigUpProject.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */; };
 		F3F9F1A51BC251CA005B0D5E /* CourseCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */; };
 		F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F9F1AD1BC27070005B0D5E /* CourseModel.m */; };
 		F3FCD5291BCB68FA0074F409 /* ExerciseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */; };
@@ -462,7 +461,6 @@
 		F3F987931BBE6DAE00E94F60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F3F987951BBE6E9D00E94F60 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		F3F987961BBE6E9D00E94F60 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
-		F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = DigUpProject.xcworkspace; sourceTree = "<group>"; };
 		F3F9F1A31BC251CA005B0D5E /* CourseCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCellView.h; sourceTree = "<group>"; };
 		F3F9F1A41BC251CA005B0D5E /* CourseCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCellView.m; sourceTree = "<group>"; };
 		F3F9F1AC1BC27070005B0D5E /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
@@ -582,7 +580,6 @@
 		F3ECBE611B9D452E0000A656 = {
 			isa = PBXGroup;
 			children = (
-				F3F987981BBE877500E94F60 /* DigUpProject.xcworkspace */,
 				F3F320A81BBA6B560029F565 /* exo.json */,
 				F3ECBE6C1B9D452E0000A656 /* DigUpProject */,
 				F3ECBE861B9D452E0000A656 /* DigUpProjectTests */,
@@ -1200,7 +1197,6 @@
 				8A59766F1BC38E5800AD4B12 /* CourseCellView.xib in Resources */,
 				F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */,
 				F3F320A91BBA6B560029F565 /* exo.json in Resources */,
-				F3F987991BBE877500E94F60 /* DigUpProject.xcworkspace in Resources */,
 				F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */,
 				F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */,
 				F3F986AB1BBE47B400E94F60 /* partition.pdf in Resources */,
