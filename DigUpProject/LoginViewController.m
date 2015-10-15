@@ -35,7 +35,7 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"signInSegue"]) {
         MyCoursesViewController * myCoursesViewController = [segue destinationViewController];
-        [myCoursesViewController setViewModel:self.viewModel.profileViewModel];
+        myCoursesViewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
     }
 }
 

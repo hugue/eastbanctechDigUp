@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel/JSONModel/JSONModel.h"
+#import "JSONModel.h"
 #import "TestModel.h"
 
 @interface SubcourseModel : JSONModel

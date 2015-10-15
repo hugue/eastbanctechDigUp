@@ -21,5 +21,6 @@
 
 - (BOOL)signInNow;
 - (void)viewWillAppear;
+- (MyCoursesViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 @end

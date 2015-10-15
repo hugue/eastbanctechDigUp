@@ -47,20 +47,18 @@
 }
 */
 
+- (MyCoursesViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
+    MyCoursesViewModel * coursesViewModel;
+    if ([segueIdentifier isEqualToString:@"signInSegue"]) {
+        coursesViewModel = [[MyCoursesViewModel alloc] initWithCourses:self.profile.courses WebController:self.webController];
+    }
+    return coursesViewModel;
+}
+
 - (BOOL)signInNow {
     self.webController = [[WebController alloc] init];
     [self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
-    //NSMutableArray<CourseModel *> * courses = [[NSMutableArray alloc] init];
     NSLog(@"Login - %@ and password - %@", self.login, self.password);
-   //CourseModel * course1 = [[CourseModel alloc] initWithTitle:@"Mathematics" AndDocuments:@[@"Cosinus", @"Poincarre's formula", @"Complex numbers"]];
-    //CourseModel * course2 = [[CourseModel alloc] initWithTitle:@"Litterature" AndDocuments:@[@"Balzac", @"Tolstoi"]];
-    //[courses addObject:course1];
-    //[courses addObject:course2];
-    //for (int i = 0; i < 50; i++) {
-    //    CourseModel * newCourse = [[CourseModel alloc] initWithTitle:[NSString stringWithFormat:@"Course %d", i]  AndDocuments:@[@"Hello"]];
-    //    [courses addObject:newCourse];
-    //}
-    //self.profileViewModel = [[MyCoursesViewModel alloc] initWithCourses:courses WebController:self.webController];
     return YES;
 }
 
@@ -75,8 +73,7 @@
     if (parseError) {
         NSLog(@"Error : %@", parseError);
     }
-    NSLog(@"%@", [self.profile class]);
-    NSLog(@"%@", self.profile);
+    self.profileLoaded = YES;
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel/JSONModel/JSONModel.h"
+#import "JSONModel.h"
 
 /*
  All keys are optional to make it possible to tell the difference
