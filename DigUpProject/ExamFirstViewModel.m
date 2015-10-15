@@ -45,18 +45,20 @@
 }
 
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
-
-    NSLog(@"Error download - %@", error);
     
     //Create Exam here according to JSON Model
     NSError * initError;
     //Second test
     self.exercisesModel = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &initError];
-    //id object = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &initError];
-    NSLog(@"Error -- %@", initError);
     self.exercises = [[NSMutableArray alloc] initWithCapacity:[self.exercisesModel count]];
-    NSLog(@"Count of exercises - %d", self.exercisesModel.count);
-    
+    for (NSDictionary * exerciseModelDict in self.exercisesModel) {
+        NSError * initError;
+        ExerciseModel * exerciseModel = [[ExerciseModel alloc] initWithDictionary:exerciseModelDict error:&initError];
+        ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:exerciseModel WebController:self.webController mediaURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/"];
+        [self.exercises addObject:exerciseViewModel];
+       
+    }
+    self.examLoaded = YES;
     /*Temporary Code for working without back end*/
    /* ExerciseModel * exerciseModel = [[ExerciseModel alloc] initWithData:data error: &initError];
     ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:exerciseModel WebController:self.webController mediaURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/"];

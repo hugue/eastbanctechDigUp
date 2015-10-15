@@ -37,6 +37,25 @@
     return self;
 }
 
+- (id)initWithDictionary:(NSDictionary *)dict error:(NSError *__autoreleasing *)err {
+    self = [super init];
+    if (self) {
+        NSArray<NSDictionary *> * materialsDictionaries = [dict objectForKey:@"materialsObject"];
+        self.materialsObject = [[NSMutableArray alloc] initWithCapacity:materialsDictionaries.count];
+        self.referencedModels = [[NSMutableDictionary alloc] init];
+        
+        for (NSDictionary * materialDico in materialsDictionaries) {
+            NSError * initError;
+            MaterialModel * material = [self addNewMaterialWithDictionary:materialDico];
+            if (initError) {
+                NSLog(@"Error : %@", initError);
+            }
+            [self.materialsObject addObject:material];
+        }
+    }
+    return self;
+}
+
 - (MaterialModel *) addNewMaterialWithDictionary:(NSDictionary *) materialInfo {
     //This is a reference, so look at the info in the dicionary for referenced models
     if (materialInfo[@"$ref"]) {

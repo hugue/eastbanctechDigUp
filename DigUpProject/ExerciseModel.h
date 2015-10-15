@@ -12,7 +12,7 @@
 @interface ExerciseModel : JSONModel
 
 @property (nonatomic, strong) NSMutableArray<MaterialModel *> * materialsObject;
-@property (nonatomic, strong) NSString * exerciseType;
+@property (nonatomic, strong) NSString<Optional> * exerciseType;
 
 @end
 
