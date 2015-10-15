@@ -290,10 +290,10 @@
                                 <rect key="frame" x="145" y="342" width="478" height="339"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Exercises" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-Vt-UZ2">
-                                        <rect key="frame" x="8" y="40" width="159" height="21"/>
+                                        <rect key="frame" x="8" y="40" width="178" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="159" id="Gtk-gb-amq"/>
                                             <constraint firstAttribute="height" constant="21" id="bXf-4z-ndB"/>
+                                            <constraint firstAttribute="width" constant="178" id="mBw-WR-4Po"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -369,12 +369,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14G-79-dGG">
-                                <rect key="frame" x="363" y="497" width="43" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zm-9c-EDy">
                                 <rect key="frame" x="308" y="881" width="152" height="135"/>
                                 <constraints>
@@ -386,6 +380,16 @@
                                     <action selector="backToMenu:" destination="0c9-yq-Al6" eventType="touchUpInside" id="4Sl-PT-IBl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14G-79-dGG">
+                                <rect key="frame" x="236" y="381" width="296" height="261"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="261" id="EaI-mn-fta"/>
+                                    <constraint firstAttribute="width" constant="296" id="Pcf-0b-6qD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

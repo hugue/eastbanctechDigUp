@@ -23,21 +23,27 @@
 }
 
 - (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
-    MaterialAnswerState isCorrect = MaterialAnswerStateIsNotCorrect;
+    MaterialAnswerState materialAnswerState;
 
     if (self.isSelected && self.isTrue) {
-        isCorrect = MaterialAnswerStateIsCorrect;
+        materialAnswerState = MaterialAnswerStateIsCorrect;
         if (displayEnabled) {
             self.displayState = MaterialDisplayStateIsCorrect;
         }
     }
     else if ((self.isSelected && !self.isTrue) || (!(self.isSelected) && self.isTrue)) {
-        isCorrect = MaterialAnswerStateIsNotCorrect;
+        materialAnswerState = MaterialAnswerStateIsNotCorrect;
         if (displayEnabled) {
             self.displayState = MaterialDisplayStateIsNotCorrect;
         }
     }
-    return isCorrect;
+    else if (!self.isSelected && !self.isTrue) {
+        materialAnswerState = MaterialAnswerStateIsCorrect;
+        if (displayEnabled) {
+            self.displayState = MaterialDisplayStateIsNormal;
+        }
+    }
+    return materialAnswerState;
 }
 
 

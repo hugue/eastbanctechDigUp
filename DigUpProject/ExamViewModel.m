@@ -15,15 +15,13 @@
 
 @implementation ExamViewModel
 
-- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises AllowedTime:(NSUInteger)time {
+- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises dataModel:(ExamModel *)dataModel {
     self = [super init];
     if (self) {
-        self.remainingTime = time;
+        self.remainingTime = [dataModel.allowedTime integerValue];
+        self.dataModel = dataModel;
         self.exercises = exercises;
-        self.currentExercise = exercises[0];
         self.currentExerciseIndex = 0;
-        self.numberOfExercises = exercises.count;
-        self.results = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -39,18 +37,15 @@
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     id viewModel;
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        viewModel = self.currentExercise;
+        viewModel = self.exercises[0];
     }
     else if ([segueIdentifier isEqualToString:@"examResultSegue"]) {
-        viewModel = [[ExamResultViewModel alloc] initWithValues:5];
+        viewModel = [[ExamResultViewModel alloc] initWithDataModel:self.dataModel];
     }
     return viewModel;
 }
 
 - (void)stopExam {
-    for (ExerciseViewModel * exerciseViewModel in self.exercises) {
-        [exerciseViewModel correctionAskedDisplayed:NO];
-    }
     [self.examTimer invalidate];
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
         exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsStopped;
@@ -97,15 +92,15 @@
 
 - (void)examDone {
     [self stopExam];
+    int score = 0;
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
-        NSNumber * exerciseResult = @([exerciseViewModel correctionAskedDisplayed:NO]);
-        [self.results addObject:exerciseResult];
+        if ([exerciseViewModel correctionAskedDisplayed:NO]) {
+            score = score + 1;
+        }
         [exerciseViewModel.audioController releaseAudioTimer];
     }
-}
-
-- (NSNumber *)processResults {
-    return @0;
+    float result = 100 * ((float)score/[self.dataModel.numberOfQuestions integerValue]);
+    self.dataModel.currentScore = [NSNumber numberWithFloat:result];
 }
 
 @end

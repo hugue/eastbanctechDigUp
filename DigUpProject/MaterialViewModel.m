@@ -49,7 +49,7 @@
 }
 
 - (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
-    return MaterialAnswerStateIsNotCorrect;
+    return MaterialAnswerStateIsCorrect;
 }
 
 - (void)solutionAsked {
@@ -74,7 +74,6 @@
         NSLog(@"Error upon receiving data in AudioViewModel- %@", error);
     }
     else {
-        NSLog(@"Material received");
         [self applyDataToMaterial:data];
     }
 }

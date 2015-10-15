@@ -188,13 +188,17 @@
 
 #pragma mark - Correction methods
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
+    BOOL isCorrect = YES;
     self.currentExerciseState = ExerciseCurrentStateIsStopped;
     [self.audioController stopCurrentAudio];
     [self.dropController correctionAskedWithDisplay:displayCorrection];
     for (MaterialViewModel * material in self.materialsModels) {
-        [material correctionAskedWithDisplay:displayCorrection];
+        MaterialAnswerState materialAnswerState = [material correctionAskedWithDisplay:displayCorrection];
+        if (materialAnswerState == MaterialAnswerStateIsNotCorrect) {
+            isCorrect = NO;
+        }
     }
-    return NO;
+    return isCorrect;
 }
 
 - (void)solutionAsked {

@@ -15,14 +15,13 @@
 @interface ExamViewModel : NSObject
 
 @property (nonatomic, strong) NSArray<ExerciseViewModel *> * exercises;
-@property (nonatomic, strong) ExerciseViewModel * currentExercise;
 @property (nonatomic) NSUInteger currentExerciseIndex;
 @property (nonatomic, strong) NSTimer * countDownTimer;
 @property (nonatomic) NSUInteger remainingTime;
-@property (nonatomic) NSUInteger numberOfExercises;
-@property (nonatomic, strong) NSMutableArray * results;
+//@property (nonatomic) NSUInteger numberOfExercises;
+@property (nonatomic, strong) ExamModel * dataModel;
 
-- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises AllowedTime:(NSUInteger)time;
+- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises dataModel:(ExamModel *)dataModel;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 - (void)stopExam;

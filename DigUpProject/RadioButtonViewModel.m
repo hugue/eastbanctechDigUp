@@ -33,7 +33,7 @@
 }
 
 - (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
-    MaterialAnswerState materialAnswerState = MaterialAnswerStateIsNotCorrect;
+    MaterialAnswerState materialAnswerState;
     BOOL isSelected = [self.selectedID isEqualToNumber:self.materialID];
     
     if (isSelected && self.isTrue) {
@@ -46,6 +46,12 @@
         materialAnswerState = MaterialAnswerStateIsNotCorrect;
         if (displayEnabled) {
             self.displayState = MaterialDisplayStateIsNotCorrect;
+        }
+    }
+    else if (!isSelected && !self.isTrue) {
+        materialAnswerState = MaterialAnswerStateIsCorrect;
+        if (displayEnabled) {
+            self.displayState = MaterialDisplayStateIsNormal;
         }
     }
     return materialAnswerState;

@@ -14,5 +14,7 @@
 @property (nonatomic, strong) NSNumber * allowedTime;
 @property (nonatomic, strong) NSString * examULR;
 @property (nonatomic, strong) NSNumber * numberOfQuestions;
+@property (nonatomic, strong) NSNumber * requiredScore;
+@property (nonatomic, strong) NSNumber * currentScore;
 
 @end

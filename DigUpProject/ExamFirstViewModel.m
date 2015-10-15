@@ -37,7 +37,7 @@
 - (ExamViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     ExamViewModel * examViewModel;
     if ([segueIdentifier isEqualToString:@"startExamSegue"]) {
-        examViewModel = [[ExamViewModel alloc] initWithExercises:self.exercises AllowedTime:60];
+        examViewModel = [[ExamViewModel alloc] initWithExercises:self.exercises dataModel:self.dataModel];
     }
     return examViewModel;
 }
@@ -63,14 +63,12 @@
         NSArray * values = value.allObjects;
         NSNumber * done = @YES;
         for (NSNumber * mediasLoaded in values) {
-            NSLog(@"Media Loaded - %@", mediasLoaded);
             if (![mediasLoaded boolValue]) {
                 
                 done = @NO;
-                //break;
+                break;
             }
         }
-        NSLog(@"done - %@", done);
         return done;
     }];
 }

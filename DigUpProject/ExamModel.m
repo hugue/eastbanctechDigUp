@@ -7,6 +7,9 @@
 //
 
 #import "ExamModel.h"
+@interface ExamModel ()
+
+@end
 
 @implementation ExamModel
 
@@ -15,7 +18,8 @@
     if (self) {
         self.allowedTime = @120;
         self.title = @"Exam";
-        self.numberOfQuestions = @25;
+        self.numberOfQuestions = @2;
+        self.requiredScore = @75;
     }
     return self;
 }
