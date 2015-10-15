@@ -13,9 +13,9 @@
 - (id)initWithTitle:(NSString *)testTitle {
     self = [super init];
     if (self) {
-        self.title = testTitle;
-        self.urlExercise = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&";
-        self.urlMedia = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
+        self.name = testTitle;
+        self.url = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/breeze/context/Shapes?$filter=ExerciseId%20eq%2036L&$expand=Shapes&";
+        self.mediaUrl = @"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/";
     }
     return self;
 }

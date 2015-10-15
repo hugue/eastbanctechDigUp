@@ -21,7 +21,7 @@
             TestModel * test = [[TestModel alloc] initWithTitle:[NSString stringWithFormat:@"Test %d", i]];
             [subcoursesTests addObject:test];
         }
-        self.listTests = [subcoursesTests copy];
+        self.tests = [subcoursesTests copy];
     }
     return self;
 }

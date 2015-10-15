@@ -11,10 +11,14 @@
 
 @interface TestModel : JSONModel
 
-@property (nonatomic, strong) NSString * urlExercise;
-@property (nonatomic, strong) NSString * urlMedia;
-@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString * url;
+@property (nonatomic, strong) NSString * mediaUrl;
+@property (nonatomic, strong) NSString * name;
 
 - (id)initWithTitle:(NSString *)testTitle;
 
+@end
+
+
+@protocol TestModel <NSObject>
 @end

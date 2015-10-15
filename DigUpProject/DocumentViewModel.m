@@ -24,7 +24,7 @@
 - (NSArray<CourseCellViewModel *> *)createCellViewModelsForListTests:(NSArray<TestModel *> *)listTests {
     NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
     for (TestModel * test in listTests) {
-        CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:@"CourseCellView" andLabel:test.title];
+        CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:@"CourseCellView" andLabel:test.name];
         [courseCellViewModels addObject:newCellModel];
     }
     return courseCellViewModels;
@@ -41,7 +41,7 @@
 
 - (void)configureChooseTestViewModel {
     self.chooseTestViewModel.cellIdentifier = @"CourseCellView";
-    self.chooseTestViewModel.listTests = self.currentSubcourse.listTests;
-    self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.currentSubcourse.listTests];
+    self.chooseTestViewModel.listTests = self.currentSubcourse.tests;
+    self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.currentSubcourse.tests];
 }
 @end

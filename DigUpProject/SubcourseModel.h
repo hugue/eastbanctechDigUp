@@ -14,8 +14,11 @@
 
 @property (nonatomic, strong) NSString * document;
 @property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSArray<TestModel *> * listTests;
+@property (nonatomic, strong) NSArray<TestModel> * tests;
 
 - (id)initWithTitle:(NSString *)title andDocument:(NSString *)documentTitle ;
 
+@end
+
+@protocol SubcourseModel <NSObject>
 @end

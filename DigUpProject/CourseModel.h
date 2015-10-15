@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel/JSONModel/JSONModel.h"
+#import "JSONModel.h"
 #import "SubcourseModel.h"
 #import "ExamModel.h"
 
 @interface CourseModel : JSONModel
 
 @property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSArray <SubcourseModel *> * subcourses;
+@property (nonatomic, strong) NSArray <SubcourseModel> * subcourses;
 @property (nonatomic, strong) ExamModel * exam;
 
 - (id)initWithTitle:(NSString *)title AndDocuments:(NSArray<NSString *> *)titleDocs;

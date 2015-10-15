@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "ProfileModel.h"
 #import "MyCoursesViewModel.h"
 
 @interface LoginViewModel : NSObject <DataControllerProtocol>

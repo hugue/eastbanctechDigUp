@@ -30,7 +30,7 @@
 
 - (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        self.exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController mediaURL:self.dataModel.urlMedia];
+        self.exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController mediaURL:self.dataModel.mediaUrl];
         @weakify(self)
         [RACObserve(self.exerciseViewModel, mediasLoaded) subscribeNext:^(id x) {
             @strongify(self)
@@ -51,7 +51,7 @@
 }
 
 - (void)askDataForExercise:(TestModel *)testModel {
-    NSString * exerciseURL = testModel.urlExercise;
+    NSString * exerciseURL = testModel.url;
     [self.webController addTaskForObject:self toURL:exerciseURL];
 }
 

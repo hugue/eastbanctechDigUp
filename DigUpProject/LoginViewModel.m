@@ -9,9 +9,9 @@
 #import "LoginViewModel.h"
 @interface LoginViewModel ()
 
-@property (nonatomic,strong) RACSignal * signInValidArguments;
+@property (nonatomic, strong) RACSignal * signInValidArguments;
 @property (nonatomic, strong) WebController * webController;
-@property (nonatomic, strong) NSArray<CourseModel *> * courses;
+@property (nonatomic, strong) ProfileModel * profile;
 
 @end
 
@@ -71,11 +71,12 @@
 #pragma mark - Data Controller Protocol methods
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
     NSError * parseError;
-    self.courses = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &parseError];
+    self.profile = [[ProfileModel alloc] initWithData:data error: &parseError];
     if (parseError) {
         NSLog(@"Error : %@", parseError);
     }
-    NSLog(@"%@", [self.courses class]);
+    NSLog(@"%@", [self.profile class]);
+    NSLog(@"%@", self.profile);
 }
 
 @end

@@ -19,6 +19,7 @@
 		F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */; };
 		F3893AB01BCD181000558F07 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3893AAE1BCD181000558F07 /* ExerciseViewController.m */; };
 		F3893AB31BCD1D1000558F07 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3893AB21BCD1D1000558F07 /* ExerciseViewController.xib */; };
+		F3C0F6021BCFC59900BF8688 /* ProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C0F6011BCFC59900BF8688 /* ProfileModel.m */; };
 		F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F721BA175F4005028A4 /* MaterialViewModel.m */; };
 		F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F7E1BA180E7005028A4 /* MaterialView.m */; };
 		F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F811BA1A6E6005028A4 /* TextFrameView.m */; };
@@ -212,6 +213,8 @@
 		F3893AAD1BCD181000558F07 /* ExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
 		F3893AAE1BCD181000558F07 /* ExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
 		F3893AB21BCD1D1000558F07 /* ExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseViewController.xib; sourceTree = "<group>"; };
+		F3C0F6001BCFC59900BF8688 /* ProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileModel.h; sourceTree = "<group>"; };
+		F3C0F6011BCFC59900BF8688 /* ProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileModel.m; sourceTree = "<group>"; };
 		F3E01F711BA175F4005028A4 /* MaterialViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewModel.h; sourceTree = "<group>"; };
 		F3E01F721BA175F4005028A4 /* MaterialViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewModel.m; sourceTree = "<group>"; };
 		F3E01F7D1BA180E7005028A4 /* MaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialView.h; sourceTree = "<group>"; };
@@ -536,6 +539,8 @@
 		F3E01F7A1BA17BB5005028A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F3C0F6001BCFC59900BF8688 /* ProfileModel.h */,
+				F3C0F6011BCFC59900BF8688 /* ProfileModel.m */,
 				F3F9F1AC1BC27070005B0D5E /* CourseModel.h */,
 				F3F9F1AD1BC27070005B0D5E /* CourseModel.m */,
 				F3F662FF1BC4D96B00BCE54F /* SubcourseModel.h */,
@@ -1323,6 +1328,7 @@
 				F3ECBEC41B9D546C0000A656 /* JSONModel+networking.m in Sources */,
 				F3F9877F1BBE6D1300E94F60 /* ETRCollectionViewController.m in Sources */,
 				F3F987781BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m in Sources */,
+				F3C0F6021BCFC59900BF8688 /* ProfileModel.m in Sources */,
 				F3F987601BBE6D1300E94F60 /* UIView+ETRUtils.m in Sources */,
 				F3F987911BBE6D1300E94F60 /* ETRUtils.m in Sources */,
 				F3F9875B1BBE6D1300E94F60 /* UIColor+ETRUtils.m in Sources */,
