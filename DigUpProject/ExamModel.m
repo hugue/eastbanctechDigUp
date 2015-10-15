@@ -17,7 +17,7 @@
     self = [super init];
     if (self) {
         self.allowedTime = @120;
-        self.title = @"Exam";
+        self.name = @"Exam";
         self.numberOfQuestions = @2;
         self.requiredScore = @75;
     }

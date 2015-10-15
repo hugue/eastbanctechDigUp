@@ -108,7 +108,7 @@
                         <outlet property="loginTextField" destination="MeZ-up-ipS" id="BJ3-34-5KQ"/>
                         <outlet property="passwordTextField" destination="WAh-xn-Vgb" id="8XB-Wk-SHi"/>
                         <outlet property="signInButton" destination="YMe-U4-ZDS" id="Rx9-QX-yqd"/>
-                        <segue destination="feA-6D-gZP" kind="push" identifier="SignInSegue" id="giF-WM-97x"/>
+                        <segue destination="feA-6D-gZP" kind="push" identifier="signInSegue" id="a6v-5k-nM9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eep-s1-vRR" userLabel="First Responder" sceneMemberID="firstResponder"/>

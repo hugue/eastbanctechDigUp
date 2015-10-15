@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString * password;
 @property (nonatomic, strong) RACCommand * signInCommand;
 @property (nonatomic, strong) MyCoursesViewModel * profileViewModel;
+@property (nonatomic) BOOL profileLoaded;
 
 - (BOOL)signInNow;
 - (void)viewWillAppear;

@@ -27,4 +27,12 @@
     return self;
 }
 
+- (id)initWithDictionary:(NSDictionary *)dict error:(NSError *__autoreleasing *)err {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 @end

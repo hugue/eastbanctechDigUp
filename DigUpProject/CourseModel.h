@@ -20,3 +20,6 @@
 - (id)initWithTitle:(NSString *)title AndDocuments:(NSArray<NSString *> *)titleDocs;
 
 @end
+
+@protocol CourseModel <NSObject>
+@end

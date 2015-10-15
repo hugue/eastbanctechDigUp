@@ -11,11 +11,19 @@
 
 @property (nonatomic,strong) RACSignal * signInValidArguments;
 @property (nonatomic, strong) WebController * webController;
+@property (nonatomic, strong) NSArray<CourseModel *> * courses;
 
 @end
 
 @implementation LoginViewModel
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.profileLoaded = NO;
+    }
+    return self;
+}
 /*
 - (RACCommand *)signInCommand {
     if (!self.signInCommand) {
@@ -41,17 +49,18 @@
 
 - (BOOL)signInNow {
     self.webController = [[WebController alloc] init];
-    NSMutableArray<CourseModel *> * courses = [[NSMutableArray alloc] init];
+    [self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
+    //NSMutableArray<CourseModel *> * courses = [[NSMutableArray alloc] init];
     NSLog(@"Login - %@ and password - %@", self.login, self.password);
-    CourseModel * course1 = [[CourseModel alloc] initWithTitle:@"Mathematics" AndDocuments:@[@"Cosinus", @"Poincarre's formula", @"Complex numbers"]];
-    CourseModel * course2 = [[CourseModel alloc] initWithTitle:@"Litterature" AndDocuments:@[@"Balzac", @"Tolstoi"]];
-    [courses addObject:course1];
-    [courses addObject:course2];    
-    for (int i = 0; i < 50; i++) {
-        CourseModel * newCourse = [[CourseModel alloc] initWithTitle:[NSString stringWithFormat:@"Course %d", i]  AndDocuments:@[@"Hello"]];
-        [courses addObject:newCourse];
-    }
-    self.profileViewModel = [[MyCoursesViewModel alloc] initWithCourses:courses WebController:self.webController];
+   //CourseModel * course1 = [[CourseModel alloc] initWithTitle:@"Mathematics" AndDocuments:@[@"Cosinus", @"Poincarre's formula", @"Complex numbers"]];
+    //CourseModel * course2 = [[CourseModel alloc] initWithTitle:@"Litterature" AndDocuments:@[@"Balzac", @"Tolstoi"]];
+    //[courses addObject:course1];
+    //[courses addObject:course2];
+    //for (int i = 0; i < 50; i++) {
+    //    CourseModel * newCourse = [[CourseModel alloc] initWithTitle:[NSString stringWithFormat:@"Course %d", i]  AndDocuments:@[@"Hello"]];
+    //    [courses addObject:newCourse];
+    //}
+    //self.profileViewModel = [[MyCoursesViewModel alloc] initWithCourses:courses WebController:self.webController];
     return YES;
 }
 
@@ -61,7 +70,12 @@
 
 #pragma mark - Data Controller Protocol methods
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
-    
+    NSError * parseError;
+    self.courses = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &parseError];
+    if (parseError) {
+        NSLog(@"Error : %@", parseError);
+    }
+    NSLog(@"%@", [self.courses class]);
 }
 
 @end
