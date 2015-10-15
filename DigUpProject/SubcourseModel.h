@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel/JSONModel/JSONModel.h"
 #import "TestModel.h"
 
-@interface SubcourseModel : NSObject
+@interface SubcourseModel : JSONModel
 
-@property (nonatomic, strong) NSString * documentName;
-@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString * document;
+@property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSArray<TestModel *> * listTests;
 
 - (id)initWithTitle:(NSString *)title andDocument:(NSString *)documentTitle ;

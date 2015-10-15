@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel/JSONModel/JSONModel.h"
 
-@interface ExamModel : NSObject
+@interface ExamModel : JSONModel
 
-@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSNumber * allowedTime;
-@property (nonatomic, strong) NSString * examULR;
+@property (nonatomic, strong) NSString * url;
+@property (nonatomic, strong) NSString * mediaUrl;
 @property (nonatomic, strong) NSNumber * numberOfQuestions;
 @property (nonatomic, strong) NSNumber * requiredScore;
-@property (nonatomic, strong) NSNumber * currentScore;
+
+@property (nonatomic, strong) NSNumber<Optional> * currentScore;
 
 @end

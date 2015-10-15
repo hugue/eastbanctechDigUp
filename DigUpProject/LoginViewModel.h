@@ -10,7 +10,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "MyCoursesViewModel.h"
 
-@interface LoginViewModel : NSObject
+@interface LoginViewModel : NSObject <DataControllerProtocol>
 
 @property (nonatomic, strong) NSString * login;
 @property (nonatomic, strong) NSString * password;

@@ -59,4 +59,9 @@
     self.profileViewModel = nil;
 }
 
+#pragma mark - Data Controller Protocol methods
+- (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
+    
+}
+
 @end

@@ -13,8 +13,8 @@
 - (id)initWithTitle:(NSString *)title andDocument:(NSString *)documentTitle {
     self = [super init];
     if (self) {
-        self.title = title;
-        self.documentName = documentTitle;
+        self.name = title;
+        self.document = documentTitle;
         NSMutableArray * subcoursesTests = [[NSMutableArray alloc] init];
         
         for (int i = 0; i < 50; i++) {

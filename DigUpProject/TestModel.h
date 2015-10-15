@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel/JSONModel/JSONModel.h"
 
-@interface TestModel : NSObject
+@interface TestModel : JSONModel
 
 @property (nonatomic, strong) NSString * urlExercise;
 @property (nonatomic, strong) NSString * urlMedia;

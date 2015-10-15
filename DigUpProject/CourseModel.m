@@ -13,7 +13,7 @@
 - (id)initWithTitle:(NSString *)title AndDocuments:(NSArray<NSString *> *)titlesDocs {
     self = [super init];
     if (self) {
-        self.courseTitle = title;
+        self.name = title;
         
         NSMutableArray<SubcourseModel *> * subcoursesInterm = [[NSMutableArray alloc] init];
         
