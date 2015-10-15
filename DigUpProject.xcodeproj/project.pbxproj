@@ -994,14 +994,14 @@
 				F3E01F721BA175F4005028A4 /* MaterialViewModel.m */,
 				F3F64A3B1BA6F54700B9231D /* TextInputViewModel.h */,
 				F3F64A3C1BA6F54700B9231D /* TextInputViewModel.m */,
-				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
-				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
 				F3F89E961BA30B34004648B6 /* RadioButtonViewModel.h */,
 				F3F89E971BA30B34004648B6 /* RadioButtonViewModel.m */,
-				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
-				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
 				F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */,
 				F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */,
+				F33D41021BB00A8600F5A903 /* ImageViewModel.h */,
+				F33D41031BB00A8600F5A903 /* ImageViewModel.m */,
+				F3F5A84E1BAC332400D35CA6 /* AudioViewModel.h */,
+				F3F5A84F1BAC332400D35CA6 /* AudioViewModel.m */,
 			);
 			name = ExerciseMaterialViewModels;
 			sourceTree = "<group>";

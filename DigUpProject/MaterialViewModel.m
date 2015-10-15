@@ -74,6 +74,7 @@
         NSLog(@"Error upon receiving data in AudioViewModel- %@", error);
     }
     else {
+        NSLog(@"Material received");
         [self applyDataToMaterial:data];
     }
 }

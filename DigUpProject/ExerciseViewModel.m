@@ -78,17 +78,22 @@
         }
         
     }];
-    RAC(self, mediasLoaded) = [[RACSignal combineLatest:self.downloadedMedias] map:^id(RACTuple * value) {
-                                NSArray * result = value.allObjects;
-                                NSNumber * allDownloaded = @YES;
-                                for (NSNumber * downloaded in result) {
-                                        if (![downloaded boolValue]) {
-                                            allDownloaded = @NO;
-                                            break;
-                                        }
-                                }
-                                return allDownloaded;
-                              }];
+    if (self.downloadedMedias.count == 0) {
+        self.mediasLoaded = @YES;
+    }
+    else  {
+        RAC(self, mediasLoaded) = [[RACSignal combineLatest:self.downloadedMedias] map:^id(RACTuple * value) {
+            NSArray * result = value.allObjects;
+            NSNumber * allDownloaded = @YES;
+            for (NSNumber * downloaded in result) {
+                if (![downloaded boolValue]) {
+                    allDownloaded = @NO;
+                    break;
+                }
+            }
+            return allDownloaded;
+        }];
+    }
 }
 
 - (MaterialViewModel *)createMaterialViewModelWithModel:(MaterialModel *)materialModel{
