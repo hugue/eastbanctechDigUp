@@ -22,7 +22,7 @@
         self.webController = webController;
         self.dataModel = dataModel;
         [self initialize];
-        [self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/exam/"];
+        [self.webController addTaskForObject:self toURL:dataModel.url];
     }
     return self;
 }
@@ -47,12 +47,9 @@
     //Create Exam here according to JSON Model
     NSError * parseError;
     //Second test
-    self.exercisesModel = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error: &parseError];
-    self.exercises = [[NSMutableArray alloc] initWithCapacity:[self.exercisesModel count]];
-    for (NSDictionary * exerciseModelDict in self.exercisesModel) {
-        NSError * initError;
-        ExerciseModel * exerciseModel = [[ExerciseModel alloc] initWithDictionary:exerciseModelDict error:&initError];
-        ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:exerciseModel WebController:self.webController mediaURL:@"http://dev-digup-01.dev.etr.eastbanctech.ru:81/Stream/Blob/"];
+    self.exercisesModel =(NSMutableArray<ExerciseModel> *) [ExerciseModel arrayOfModelsFromData:data error:&parseError];
+    for (ExerciseModel * exerciseModel in self.exercisesModel) {
+        ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:exerciseModel WebController:self.webController mediaURL:self.dataModel.mediaUrl];
         [self.exercises addObject:exerciseViewModel];
         RACSignal * mediaLoaded = RACObserve(exerciseViewModel, mediasLoaded);
         [self.exercisesFullyLoaded addObject:mediaLoaded];
@@ -64,7 +61,6 @@
         NSNumber * done = @YES;
         for (NSNumber * mediasLoaded in values) {
             if (![mediasLoaded boolValue]) {
-                
                 done = @NO;
                 break;
             }

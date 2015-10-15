@@ -230,7 +230,7 @@
         <!--Choose Test Table View Controller-->
         <scene sceneID="VQe-sC-uiT">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="X2Z-ZF-BXp" customClass="ChooseTestTableViewController" sceneMemberID="viewController">
+                <tableViewController id="X2Z-ZF-BXp" customClass="ChooseTestTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0y6-6K-L2G">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CourseCellView" id="Tje-N1-3Ut" customClass="CourseCellView">
-                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tje-N1-3Ut" id="uOP-9a-XbD">
                                     <rect key="frame" x="0.0" y="0.0" width="682" height="43"/>

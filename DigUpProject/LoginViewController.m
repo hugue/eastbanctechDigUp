@@ -53,7 +53,6 @@
 
 - (IBAction)signInButton:(id)sender {
     if ([self.viewModel signInNow]) {
-         //[self performSegueWithIdentifier:@"signInSegue" sender:self];
     }
 }
 
