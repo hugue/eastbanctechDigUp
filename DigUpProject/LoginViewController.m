@@ -43,17 +43,38 @@
 - (void)applyModelToView {
     RAC(self.viewModel, login) = self.loginTextField.rac_textSignal;
     RAC(self.viewModel, password) = self.passwordTextField.rac_textSignal;
-    [RACObserve(self.viewModel, profileLoaded) subscribeNext:^(id x) {
+    
+    [[RACObserve(self.viewModel, profileLoaded) distinctUntilChanged]subscribeNext:^(id x) {
         if ([x boolValue]) {
-            [self performSegueWithIdentifier:@"signInSegue" sender:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"signInSegue" sender:nil];
+            });
         }
     }];
-    //self.signInButton.rac_command = self.viewModel.signInCommand;
+    
+    @weakify(self)
+    [RACObserve(self.viewModel, currentState) subscribeNext:^(id x) {
+        @strongify(self)
+        if ([x integerValue] == LogInCurrentStateProcessing) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.loginTextField.enabled = NO;
+                self.passwordTextField.enabled = NO;
+                self.signInButton.enabled = NO;
+            });
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.loginTextField.enabled = YES;
+                self.passwordTextField.enabled = YES;
+                self.signInButton.enabled = YES;
+            });
+        }
+    }];
+    
 }
 
 - (IBAction)signInButton:(id)sender {
-    if ([self.viewModel signInNow]) {
-    }
+    [self.viewModel signInNow];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

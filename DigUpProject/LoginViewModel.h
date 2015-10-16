@@ -11,12 +11,16 @@
 #import "ProfileModel.h"
 #import "MyCoursesViewModel.h"
 
+typedef NS_ENUM(NSInteger, LogInCurrentState) {
+    LogInCurrentStateListening,
+    LogInCurrentStateProcessing
+};
+
 @interface LoginViewModel : NSObject <DataControllerProtocol>
 
 @property (nonatomic, strong) NSString * login;
 @property (nonatomic, strong) NSString * password;
-@property (nonatomic, strong) RACCommand * signInCommand;
-@property (nonatomic, strong) MyCoursesViewModel * profileViewModel;
+@property (nonatomic) enum LogInCurrentState currentState;
 @property (nonatomic) BOOL profileLoaded;
 
 - (BOOL)signInNow;

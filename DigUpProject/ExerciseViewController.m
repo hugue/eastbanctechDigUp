@@ -24,6 +24,15 @@
     [self.scrollView addGestureRecognizer:recognizer];
 }
 
+
+- (NSMutableArray<MaterialView *> *) materialsViews {
+    if (!_materialsViews) {
+        _materialsViews = [NSMutableArray new];
+    }
+    
+    return _materialsViews;
+}
+
 - (void)initialize {
     self.materialsViews = [[NSMutableArray alloc] init];
     [self registerForKeyboardNotifications];
@@ -190,6 +199,7 @@
 }
 
 #pragma mark UITextField delegate methods
+
 - (void)registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeShown:)

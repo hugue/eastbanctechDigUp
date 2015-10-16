@@ -9,7 +9,6 @@
 #import "LoginViewModel.h"
 @interface LoginViewModel ()
 
-@property (nonatomic, strong) RACSignal * signInValidArguments;
 @property (nonatomic, strong) WebController * webController;
 @property (nonatomic, strong) ProfileModel * profile;
 
@@ -20,32 +19,15 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.profileLoaded = NO;
+        [self initialize];
     }
     return self;
 }
-/*
-- (RACCommand *)signInCommand {
-    if (!self.signInCommand) {
-        NSString * login = self.login;
-        NSString * password = self.password;
-        self.signInCommand = [[RACCommand alloc] initWithEnabled:nil signalBlock:^RACSignal *(id input) {
-            //return [SubscribeViewModel postEmail:email];
-        }];
-    }
-    return self.signInCommand;
+
+- (void)initialize {
+    self.profileLoaded = NO;
+    self.currentState = LogInCurrentStateListening;
 }
-*/
-/*
-- (RACSignal *)signInValidArguments {
-    if (self.signInValidArguments) {
-        self.signInValidArguments = [RACObserve(self, email) map:^id(NSString *email) {
-            return @([email isValidEmail]);
-        }];
-    }
-    return _emailValidSignal;
-}
-*/
 
 - (MyCoursesViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     MyCoursesViewModel * coursesViewModel;
@@ -56,6 +38,7 @@
 }
 
 - (BOOL)signInNow {
+    self.currentState = LogInCurrentStateProcessing;
     self.webController = [[WebController alloc] init];
     [self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
     NSLog(@"Login - %@ and password - %@", self.login, self.password);
@@ -63,17 +46,21 @@
 }
 
 - (void)viewWillAppear {
-    self.profileViewModel = nil;
+    self.profile = nil;
+    self.profileLoaded = NO;
 }
 
 #pragma mark - Data Controller Protocol methods
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
     NSError * parseError;
-    self.profile = [[ProfileModel alloc] initWithData:data error: &parseError];
-    if (parseError) {
-        NSLog(@"Error : %@", parseError);
+    if (!self.profile) {
+        self.profile = [[ProfileModel alloc] initWithData:data error: &parseError];
+        if (parseError) {
+            NSLog(@"Error : %@", parseError);
+        }
+        self.profileLoaded = YES;
+        self.currentState = LogInCurrentStateListening;
     }
-    self.profileLoaded = YES;
 }
 
 @end
