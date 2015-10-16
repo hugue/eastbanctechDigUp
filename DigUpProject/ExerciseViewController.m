@@ -33,12 +33,19 @@
     return _materialsViews;
 }
 
-- (void)initialize {
-    self.materialsViews = [[NSMutableArray alloc] init];
-    [self registerForKeyboardNotifications];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self registerForKeyboardNotifications];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self unregisterForKeyBoardNotification];
+    [self.viewModel viewWillDisappear];
 }
 
 - (void)displayExercise {
@@ -65,11 +72,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.scrollView addSubview:self.audioBar.viewDisplayed];
     });
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.viewModel viewWillDisappear];
 }
 
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel {
@@ -210,6 +212,12 @@
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+}
+
+- (void)unregisterForKeyBoardNotification {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [center removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)keyboardWillBeShown:(NSNotification *)aNotification {

@@ -7,12 +7,19 @@
 //
 
 #import "ExamFirstViewController.h"
+@interface ExamFirstViewController ()
+@property (nonatomic, strong) UIActivityIndicatorView * spinner;
+@end
 
 @implementation ExamFirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.startButton.enabled = NO;
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.center = self.startButton.center;
+    self.spinner.hidesWhenStopped = YES;
+    [self.view addSubview:self.spinner];
     [self applyModelToView];
 }
 
@@ -31,12 +38,14 @@
         @strongify(self);
         if ([x boolValue]) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner stopAnimating];
                 self.startButton.enabled = YES;
             });
         }
         else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.startButton.enabled = NO;
+                [self.spinner startAnimating];
             });
         }
     }];

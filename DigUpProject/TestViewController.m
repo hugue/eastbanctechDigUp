@@ -7,11 +7,18 @@
 //
 
 #import "TestViewController.h"
+@interface TestViewController ()
+@property (nonatomic, strong) UIActivityIndicatorView * spinner;
+@end
 
 @implementation TestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.center = self.view.center;
+    self.spinner.hidesWhenStopped = YES;
+    [self.view addSubview:self.spinner];
     [self applyModelToView];
 }
 
@@ -22,7 +29,6 @@
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
     if ([segue.identifier isEqualToString:@"displayExerciseSegue"]) {
         ExerciseViewController * viewController = [segue destinationViewController];
-        [viewController initialize];
         viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
     }
 }
@@ -35,9 +41,21 @@
             if ([self shouldPerformSegueWithIdentifier:@"displayExerciseSegue" sender:nil]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self performSegueWithIdentifier:@"displayExerciseSegue" sender:nil];
-
                 });
             }
+        }
+    }];
+    
+    [RACObserve(self.viewModel, exerciseViewModel.mediasLoaded) subscribeNext:^(id x) {
+        if ([x boolValue]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner stopAnimating];
+            });
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner startAnimating];
+            });
         }
     }];
 }

@@ -57,18 +57,18 @@
         @strongify(self)
         if ([x integerValue] == LogInCurrentStateProcessing) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner startAnimating];
                 self.loginTextField.enabled = NO;
                 self.passwordTextField.enabled = NO;
                 self.signInButton.enabled = NO;
-                [self.spinner startAnimating];
             });
         }
         else {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner stopAnimating];
                 self.loginTextField.enabled = YES;
                 self.passwordTextField.enabled = YES;
                 self.signInButton.enabled = YES;
-                [self.spinner stopAnimating];
             });
         }
     }];
