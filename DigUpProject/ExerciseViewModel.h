@@ -51,5 +51,6 @@ typedef NS_ENUM(NSInteger, ExerciseCurrentState) {
 - (void)solutionAsked;
 
 - (void)viewWillDisappear;
+- (void)releaseThirdParty;
 
 @end

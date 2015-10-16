@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger, AudioControllerCurrentState) {
 @property (nonatomic) BOOL isNeeded;
 @property (nonatomic) enum AudioControllerCurrentState controllerState;
 
+- (void)startAudioControllerTimer;
+
 - (void)addNewAudio:(AudioViewModel *)audio;
 - (void)pauseCurrentAudio;
 - (void)playCurrentAudio;

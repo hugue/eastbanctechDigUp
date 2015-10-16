@@ -43,6 +43,11 @@
 }
 
 - (void)viewWillDisappear {
+    
+}
+
+//Call this method before deallocating to avoid memory leak from audioController
+- (void)releaseThirdParty {
     [self.audioController releaseAudioTimer];
 }
 

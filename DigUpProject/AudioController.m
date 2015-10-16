@@ -33,10 +33,12 @@
     self.isPlaying = NO;
     self.isNeeded = NO;
     self.currentAudioVolum = 1.0;
-    dispatch_async(dispatch_get_main_queue(), ^{
-       self.updatingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target:self selector:@selector(updateCurrentTime:) userInfo:nil repeats:YES];
-    });
-    
+}
+
+- (void)startAudioControllerTimer {
+    //dispatch_async(dispatch_get_main_queue(), ^{
+        self.updatingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target:self selector:@selector(updateCurrentTime:) userInfo:nil repeats:YES];
+    //});
 }
 
 
