@@ -22,7 +22,7 @@
 @property (strong, nonatomic) UISwipeGestureRecognizer * previousSwipeRecognizer;
 @property (strong, nonatomic) UISwipeGestureRecognizer * nextSwipeRecognizer;
 
-
+- (IBAction)goBack:(id)sender;
 - (IBAction)showNext:(id)sender;
 - (IBAction)showPrevious:(id)sender;
 - (IBAction)endExam:(id)sender;

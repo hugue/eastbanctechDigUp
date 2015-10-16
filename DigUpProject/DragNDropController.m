@@ -66,17 +66,27 @@
     droppedElement.currentDropTarget = nil;
 }
 
+- (void)ajustElementsZPotision:(NSUInteger)targetMaxZPosition {
+    for (MaterialViewModel * droppedElement in self.dropElements) {
+        if (droppedElement.zPosition <= targetMaxZPosition) {
+            droppedElement.zPosition = targetMaxZPosition + 1;
+        }
+    }
+}
+
 - (NSArray<NSNumber *> *)correctionAskedWithDisplay:(BOOL)displayEnabled {
     NSMutableArray * dragAndDropResults = [[NSMutableArray alloc] init];
     for (MaterialViewModel * droppedElement in self.dropElements) {
         if (droppedElement.currentDropTarget) {
             if ((droppedElement.correctDropTargetID) && [droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]){
                 [dragAndDropResults addObject:@(MaterialAnswerStateIsCorrect)];
+                droppedElement.materialState = MaterialAnswerStateIsCorrect;
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsCorrect;
                 }
             }
             else {
+                droppedElement.materialState = MaterialAnswerStateIsNotCorrect;
                 [dragAndDropResults addObject:@(MaterialAnswerStateIsNotCorrect)];
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
@@ -85,6 +95,7 @@
         }
         else {
             if (droppedElement.correctDropTargetID) {
+                droppedElement.materialState = MaterialAnswerStateIsNotCorrect;
                 [dragAndDropResults addObject:@(MaterialAnswerStateIsNotCorrect)];
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
@@ -97,20 +108,30 @@
 
 - (void)solutionAsked {
     for(MaterialViewModel * droppedElement in self.dropElements) {
-        if (droppedElement.displayState == MaterialDisplayStateIsNotCorrect) {
-            if (droppedElement.currentDropTarget) {
-                [self removeFromTargetElement:droppedElement];
+        droppedElement.materialState = MaterialAnswerStateIsCorrect;
+        if (droppedElement.currentDropTarget) {
+            if (droppedElement.correctDropTargetID) {
+                if (![droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]) {
+                    [self removeFromTargetElement:droppedElement];
+                    MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
+                    [correctTarget positionNewDraggedMaterial:droppedElement];
+                    droppedElement.currentDropTarget = correctTarget;
+                }
             }
+            else {
+                [self removeFromTargetElement:droppedElement];
+                [droppedElement resetPosition];
+            }
+        }
+        else {
             if (droppedElement.correctDropTargetID) {
                 MaterialViewModel * correctTarget = self.targetElements[droppedElement.correctDropTargetID];
                 [correctTarget positionNewDraggedMaterial:droppedElement];
-                droppedElement.displayState = MaterialDisplayStateIsNormal;
                 droppedElement.currentDropTarget = correctTarget;
             }
-            else {
-                [droppedElement resetPosition];
-                droppedElement.displayState = MaterialDisplayStateIsNormal;
-            }
+        }
+        if (droppedElement.displayState == MaterialDisplayStateIsNotCorrect) {
+            droppedElement.displayState = MaterialDisplayStateIsNormal;
         }
     }
 }

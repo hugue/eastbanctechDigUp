@@ -58,11 +58,12 @@
 }
 
 - (void)solutionAsked {
-    if (self.displayState == MaterialDisplayStateIsNotCorrect) {
-        self.displayState = MaterialDisplayStateIsNormal;
-    }
+    self.materialState = MaterialAnswerStateIsCorrect;
     if (self.isTrue) {
         self.selectedID = self.materialID;
+    }
+    if (self.displayState == MaterialDisplayStateIsNotCorrect) {
+        self.displayState = MaterialDisplayStateIsNormal;
     }
 }
 

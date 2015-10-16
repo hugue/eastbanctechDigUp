@@ -532,7 +532,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Taj-rh-SRr">
-                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="sv4-m5-jGP"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="sv4-m5-jGP">
+                            <connections>
+                                <action selector="goBack:" destination="s1O-5e-r0b" id="3WD-lB-jnS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jsB-Lu-h7D">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="miE-EG-Rfn">
                                 <rect key="frame" x="598" y="7" width="170" height="30"/>

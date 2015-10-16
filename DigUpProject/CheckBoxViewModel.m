@@ -54,9 +54,15 @@
 }
 
 - (void)solutionAsked {
+    self.materialState = MaterialAnswerStateIsCorrect;
+    if (self.isTrue) {
+        self.isSelected = YES;
+    }
+    else {
+        self.isSelected = NO;
+    }
     if (self.displayState == MaterialDisplayStateIsNotCorrect) {
         self.displayState = MaterialDisplayStateIsNormal;
-        self.isSelected = !self.isSelected;
     }
 }
 @end

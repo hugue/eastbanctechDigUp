@@ -76,7 +76,6 @@
             default:
                 break;
         }
-        
     }];
     if (self.downloadedMedias.count == 0) {
         self.mediasLoaded = @YES;
@@ -94,6 +93,7 @@
             return allDownloaded;
         }];
     }
+    [self.dropController ajustElementsZPotision:self.maxTargetZPosition];
 }
 
 - (MaterialViewModel *)createMaterialViewModelWithModel:(MaterialModel *)materialModel{
@@ -189,7 +189,6 @@
 #pragma mark - Correction methods
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
     BOOL isCorrect = YES;
-    self.currentExerciseState = ExerciseCurrentStateIsStopped;
     [self.audioController stopCurrentAudio];
     [self.dropController correctionAskedWithDisplay:displayCorrection];
     for (MaterialViewModel * material in self.materialsModels) {

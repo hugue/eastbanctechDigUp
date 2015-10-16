@@ -56,7 +56,6 @@
         if (self.scrollView.contentSize.height < self.viewModel.bottomOfView + 200) {
             self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.viewModel.bottomOfView + 200);
         }
-        
     });
     for (MaterialView * materialView in self.materialsViews) {
         dispatch_async(dispatch_get_main_queue(), ^{

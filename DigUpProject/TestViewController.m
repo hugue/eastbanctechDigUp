@@ -47,6 +47,7 @@
     }];
     
     [RACObserve(self.viewModel, exerciseViewModel.mediasLoaded) subscribeNext:^(id x) {
+        @strongify(self)
         if ([x boolValue]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.spinner stopAnimating];

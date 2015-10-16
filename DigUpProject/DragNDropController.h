@@ -19,5 +19,6 @@
 - (void)restartAsked;
 - (void)solutionAsked;
 - (NSArray<NSNumber *> *)correctionAskedWithDisplay:(BOOL)displayEnabled;
+- (void)ajustElementsZPotision:(NSUInteger)targetMaxZPosition;
 
 @end

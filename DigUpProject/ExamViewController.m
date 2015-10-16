@@ -11,6 +11,7 @@
 @interface ExamViewController ()
 
 @property (nonatomic, weak) ExerciseViewController * exerciseViewController;
+@property (nonatomic, strong) UIAlertController * backAlert;
 
 @end
 
@@ -35,6 +36,7 @@
     [self.view addGestureRecognizer:self.previousSwipeRecognizer];
     [self.view addGestureRecognizer:self.nextSwipeRecognizer];
     
+    [self configureBackAlertController];
     [self applyModelToView];
 }
 
@@ -79,6 +81,16 @@
     }
 }
 
+- (void)configureBackAlertController {
+    self.backAlert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Going back will erase all the answers given" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [self.backAlert addAction:okAction];
+    [self.backAlert addAction:cancelAction];
+}
+
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
     if ([segue.identifier isEqualToString:@"displayExerciseSegue"]) {
         ExerciseViewController * viewController = [segue destinationViewController];
@@ -88,6 +100,10 @@
         ExamResultViewController * viewController = [segue destinationViewController];
         viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
     }
+}
+
+- (IBAction)goBack:(id)sender {
+    [self presentViewController:self.backAlert animated:YES completion:nil];
 }
 
 - (IBAction)showNext:(id)sender {
@@ -118,7 +134,7 @@
     RAC (self.pageLabel, text) = [RACObserve(self, viewModel.currentExerciseIndex) map:^id(id value) {
         @strongify(self);
         NSUInteger numberPage = [value integerValue] + 1;
-        NSString * label = [NSString stringWithFormat:@"< %d/%d >",numberPage, [self.viewModel.dataModel.numberOfQuestions integerValue]];
+        NSString * label = [NSString stringWithFormat:@"< %lu/%lu >", numberPage, [self.viewModel.dataModel.numberOfQuestions integerValue]];
         return label;
     }];
     
@@ -129,6 +145,8 @@
         return label;
     }];
     
+    RACTuple * tuple = [RACTuple tupleWithObjects:self.viewModel.currentExercise, @(ExerciseChangeDirectionNull), nil];
+    [self handleChange:tuple];
     [self rac_liftSelector:@selector(handleChange:) withSignals:self.viewModel.changeCurrentExercise, nil];
 }
 @end
