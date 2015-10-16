@@ -54,7 +54,6 @@
 }
 
 - (void)solutionAsked {
-    self.materialState = MaterialAnswerStateIsCorrect;
     if (self.isTrue) {
         self.isSelected = YES;
     }

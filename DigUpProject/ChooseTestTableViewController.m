@@ -34,6 +34,7 @@
             [self performSegueWithIdentifier:@"displayTestSegue" sender:nil];
         }
     }];
+    self.title = @"Choose a Test";
 }
 
 - (void)viewWillAppear:(BOOL)animated {

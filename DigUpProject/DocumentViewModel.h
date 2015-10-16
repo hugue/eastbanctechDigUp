@@ -13,11 +13,11 @@
 
 @interface DocumentViewModel : NSObject
 
-@property (nonatomic, strong) SubcourseModel * currentSubcourse;
+@property (nonatomic, strong) SubcourseModel * dataModel;
 @property (nonatomic, strong) ChooseTestTableViewModel * chooseTestViewModel;
 @property (nonatomic, strong) WebController * webController;
 
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
-- (id)initWithSubcourse:(SubcourseModel *)subcourse webController:(WebController *)webController;
+- (id)initWithDataModel:(SubcourseModel *)dataModel webController:(WebController *)webController;
 
 @end

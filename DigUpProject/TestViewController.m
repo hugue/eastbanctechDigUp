@@ -8,14 +8,13 @@
 
 #import "TestViewController.h"
 @interface TestViewController ()
-@property (nonatomic, strong) UIActivityIndicatorView * spinner;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView * spinner;
 @end
 
 @implementation TestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.spinner.center = self.view.center;
     self.spinner.hidesWhenStopped = YES;
     [self.view addSubview:self.spinner];
@@ -59,6 +58,7 @@
             });
         }
     }];
+    self.title = self.viewModel.dataModel.name;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

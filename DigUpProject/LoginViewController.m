@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-@property (nonatomic, strong) UIActivityIndicatorView * spinner;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView * spinner;
 @end
 
 @implementation LoginViewController
@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.viewModel = [[LoginViewModel alloc] init];
-    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.spinner.center = self.view.center;
     self.spinner.hidesWhenStopped = YES;
     [self.view addSubview:self.spinner];

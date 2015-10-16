@@ -41,6 +41,7 @@
             }
         }
     }];
+    self.title = @"My Courses";
 }
 
 #pragma mark - Navigation

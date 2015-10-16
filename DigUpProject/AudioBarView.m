@@ -163,7 +163,6 @@
     //Volume Slider
     RAC(self.volumeSlider, value) = RACObserve(self.viewModel, currentAudioVolum);
     
-    
     //Add the control audio bar only if an audio file is selected
     [RACObserve(self.viewModel, currentlyPlaying) subscribeNext:^(id x) {
         @strongify(self)

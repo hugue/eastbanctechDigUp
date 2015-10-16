@@ -49,7 +49,7 @@
     else if ([segueIdentifier isEqualToString:@"viewDocumentSegue"]) {
         CourseModel * currentCourse = [self.profileCourses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
         SubcourseModel * currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
-        self.documentViewModel = [[DocumentViewModel alloc] initWithSubcourse:currentSubcourse webController:self.webController];
+        self.documentViewModel = [[DocumentViewModel alloc] initWithDataModel:currentSubcourse webController:self.webController];
         viewModel = self.documentViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"presentExamSegue"]) {

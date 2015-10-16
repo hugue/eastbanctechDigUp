@@ -26,7 +26,8 @@
 }
 
 - (void)applyModelToView {
-    NSString * documentName = self.viewModel.currentSubcourse.document;
+    self.title = self.viewModel.dataModel.name;
+    NSString * documentName = self.viewModel.dataModel.document;
     self.documentView.scalesPageToFit = YES;
     NSString *path = [[NSBundle mainBundle] pathForResource:documentName ofType:@"pdf"];
     NSURL *url = [NSURL fileURLWithPath:path];

@@ -10,10 +10,10 @@
 
 @implementation DocumentViewModel
 
-- (id)initWithSubcourse:(SubcourseModel *)subcourse webController:(WebController *)webController {
+- (id)initWithDataModel:(SubcourseModel *)dataModel webController:(WebController *)webController {
     self = [super init];
     if (self) {
-        self.currentSubcourse = subcourse;
+        self.dataModel = dataModel;
         self.webController = webController;
         self.chooseTestViewModel = [[ChooseTestTableViewModel alloc] initWithWebController:self.webController];
         [self configureChooseTestViewModel];
@@ -41,7 +41,7 @@
 
 - (void)configureChooseTestViewModel {
     self.chooseTestViewModel.cellIdentifier = @"CourseCellView";
-    self.chooseTestViewModel.listTests = self.currentSubcourse.tests;
-    self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.currentSubcourse.tests];
+    self.chooseTestViewModel.listTests = self.dataModel.tests;
+    self.chooseTestViewModel.items = [self createCellViewModelsForListTests:self.dataModel.tests];
 }
 @end

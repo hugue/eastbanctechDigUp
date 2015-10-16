@@ -8,9 +8,6 @@
 
 #import "MaterialViewModel.h"
 @interface MaterialViewModel ()
-
-@property (nonatomic, strong) NSMutableArray<MaterialViewModel *> * droppedElements;
-
 @end
 
 @implementation MaterialViewModel
@@ -31,7 +28,6 @@
         
         self.posForDraggedMaterial = self.position;
         self.currentDropTarget = nil;
-        self.droppedElements = [[NSMutableArray alloc] init];
         
         self.materialState = MaterialCurrentStateGoingOn;
     }

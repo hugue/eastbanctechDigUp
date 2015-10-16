@@ -58,7 +58,6 @@
 }
 
 - (void)solutionAsked {
-    self.materialState = MaterialAnswerStateIsCorrect;
     if (self.isTrue) {
         self.selectedID = self.materialID;
     }

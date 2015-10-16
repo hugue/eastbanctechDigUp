@@ -8,7 +8,7 @@
 
 #import "ExamFirstViewController.h"
 @interface ExamFirstViewController ()
-@property (nonatomic, strong) UIActivityIndicatorView * spinner;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView * spinner;
 @end
 
 @implementation ExamFirstViewController
@@ -16,7 +16,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.startButton.enabled = NO;
-    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.spinner.center = self.startButton.center;
     self.spinner.hidesWhenStopped = YES;
     [self.view addSubview:self.spinner];
@@ -61,6 +60,8 @@
             return @"%";
         }
     }];
+    
+    self.title = self.viewModel.dataModel.name;
 }
 
 @end

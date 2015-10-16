@@ -79,14 +79,12 @@
     for (MaterialViewModel * droppedElement in self.dropElements) {
         if (droppedElement.currentDropTarget) {
             if ((droppedElement.correctDropTargetID) && [droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]){
-                droppedElement.materialState = MaterialAnswerStateIsCorrect;
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsCorrect;
                 }
             }
             else {
                 isCorrect = NO;
-                droppedElement.materialState = MaterialAnswerStateIsNotCorrect;
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
                 }
@@ -95,7 +93,6 @@
         else {
             if (droppedElement.correctDropTargetID) {
                 isCorrect = NO;
-                droppedElement.materialState = MaterialAnswerStateIsNotCorrect;
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
                 }
@@ -107,7 +104,6 @@
 
 - (void)solutionAsked {
     for(MaterialViewModel * droppedElement in self.dropElements) {
-        droppedElement.materialState = MaterialAnswerStateIsCorrect;
         if (droppedElement.currentDropTarget) {
             if (droppedElement.correctDropTargetID) {
                 if (![droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]) {
