@@ -18,8 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationItem.hidesBackButton = YES;
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     
     self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     self.timeLabel.textColor = [UIColor blackColor];
@@ -35,19 +34,54 @@
     self.nextSwipeRecognizer.numberOfTouchesRequired = 1;
     [self.view addGestureRecognizer:self.previousSwipeRecognizer];
     [self.view addGestureRecognizer:self.nextSwipeRecognizer];
-
+    
     [self applyModelToView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)handleChange:(RACTuple *)changeParams {
+    ExerciseViewModel * viewModel = changeParams.first;
+    ExerciseChangeDirection direction = [changeParams.second integerValue];
+    switch (direction) {
+        case ExerciseChangeDirectionRight: {
+                CATransition * applicationLoadViewIn = [CATransition animation];
+                [applicationLoadViewIn setDuration:0.3];
+                [applicationLoadViewIn setType:kCATransitionPush];
+                [applicationLoadViewIn setSubtype:kCATransitionFromLeft];
+                [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+                [self.exerciseView.layer addAnimation:applicationLoadViewIn forKey:kCATransitionPush];
+                [self.exerciseViewController removeViewModel:nil];
+                [self.exerciseViewController setViewModel:viewModel];
+            }
+            break;
+        case ExerciseChangeDirectionLeft: {
+                CATransition * applicationLoadViewIn = [CATransition animation];
+                [applicationLoadViewIn setDuration:0.3];
+                [applicationLoadViewIn setType:kCATransitionPush];
+                [applicationLoadViewIn setSubtype:kCATransitionFromRight];
+                [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+                [self.exerciseView.layer addAnimation:applicationLoadViewIn forKey:kCATransitionPush];
+                [self.exerciseViewController removeViewModel:nil];
+                [self.exerciseViewController setViewModel:viewModel];
+            }
+            break;
+        case ExerciseChangeDirectionNull:
+            {
+                [self.exerciseViewController removeViewModel:nil];
+                [self.exerciseViewController setViewModel:viewModel];
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender {
     if ([segue.identifier isEqualToString:@"displayExerciseSegue"]) {
         ExerciseViewController * viewController = [segue destinationViewController];
-        viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
         self.exerciseViewController = viewController;
     }
     else if ([segue.identifier isEqualToString:@"examResultSegue"]) {
@@ -57,33 +91,11 @@
 }
 
 - (IBAction)showNext:(id)sender {
-    ExerciseViewModel * exerciseViewModel = [self.viewModel selectNextExercise];
-    
-    CATransition * applicationLoadViewIn = [CATransition animation];
-    [applicationLoadViewIn setDuration:0.3];
-    [applicationLoadViewIn setType:kCATransitionPush];
-    [applicationLoadViewIn setSubtype:kCATransitionFromRight];
-    [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
-    [self.exerciseView.layer addAnimation:applicationLoadViewIn forKey:kCATransitionPush];
-    
-    [self.exerciseViewController removeViewModel:nil];
-    [self.exerciseViewController setViewModel:exerciseViewModel];
-
+    [self.viewModel selectNextExercise];
 }
 
 - (IBAction)showPrevious:(id)sender {
-    ExerciseViewModel * exerciseViewModel = [self.viewModel selectPreviousExercise];
-    
-    CATransition * applicationLoadViewIn = [CATransition animation];
-    [applicationLoadViewIn setDuration:0.3];
-    [applicationLoadViewIn setType:kCATransitionPush];
-    [applicationLoadViewIn setSubtype:kCATransitionFromLeft];
-    [applicationLoadViewIn setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
-    [self.exerciseView.layer addAnimation:applicationLoadViewIn forKey:kCATransitionPush];
-
-    [self.exerciseViewController removeViewModel:nil];
-    [self.exerciseViewController setViewModel:exerciseViewModel];
-
+    [self.viewModel selectPreviousExercise];
 }
 
 - (IBAction)endExam:(id)sender {
@@ -103,18 +115,20 @@
 
 - (void)applyModelToView {
     @weakify(self)
-    RAC (self.pageLabel, text) = [RACObserve(self.viewModel, currentExerciseIndex) map:^id(id value) {
+    RAC (self.pageLabel, text) = [RACObserve(self, viewModel.currentExerciseIndex) map:^id(id value) {
         @strongify(self);
         NSUInteger numberPage = [value integerValue] + 1;
         NSString * label = [NSString stringWithFormat:@"< %d/%d >",numberPage, [self.viewModel.dataModel.numberOfQuestions integerValue]];
         return label;
     }];
     
-    RAC(self.timeLabel, text) = [RACObserve(self.viewModel, remainingTime) map:^id(id value) {
+    RAC(self.timeLabel, text) = [RACObserve(self, viewModel.remainingTime) map:^id(id value) {
         long minutes = floor([value integerValue]/60);
         long seconds = [value integerValue] - minutes*60;
         NSString * label = [NSString stringWithFormat:@"%lu:%02lu", minutes, seconds];
         return label;
     }];
+    
+    [self rac_liftSelector:@selector(handleChange:) withSignals:self.viewModel.changeCurrentExercise, nil];
 }
 @end

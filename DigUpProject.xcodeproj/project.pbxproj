@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		577F35BEA4DB620CEC2D7B42 /* libPods-DigUpProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6F6F49FD7004E48D0327AB /* libPods-DigUpProject.a */; };
 		8A59766F1BC38E5800AD4B12 /* CourseCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */; settings = {ASSET_TAGS = (); }; };
+		F3023F441BD0F73600393745 /* UIViewController+NavItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F3023F431BD0F73600393745 /* UIViewController+NavItem.m */; };
 		F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */; };
 		F33D41011BAFFBB200F5A903 /* CheckBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41001BAFFBB200F5A903 /* CheckBoxView.m */; };
 		F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D41031BB00A8600F5A903 /* ImageViewModel.m */; };
@@ -193,6 +194,9 @@
 		5D73C66D096650E2F90BED57 /* Pods-DigUpProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigUpProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigUpProject/Pods-DigUpProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8A59766E1BC38E5800AD4B12 /* CourseCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseCellView.xib; sourceTree = "<group>"; };
 		E67205341C11DA0471D1DCA4 /* Pods-DigUpProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigUpProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigUpProject/Pods-DigUpProject.release.xcconfig"; sourceTree = "<group>"; };
+		F3023F421BD0F73600393745 /* UIViewController+NavItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavItem.h"; sourceTree = "<group>"; };
+		F3023F431BD0F73600393745 /* UIViewController+NavItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavItem.m"; sourceTree = "<group>"; };
+		F3023F451BD0F7E200393745 /* DigUpPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigUpPrefixHeader.pch; sourceTree = "<group>"; };
 		F33D40FC1BAFFB4100F5A903 /* CheckBoxViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxViewModel.h; sourceTree = "<group>"; };
 		F33D40FD1BAFFB4100F5A903 /* CheckBoxViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBoxViewModel.m; sourceTree = "<group>"; };
 		F33D40FF1BAFFBB200F5A903 /* CheckBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxView.h; sourceTree = "<group>"; };
@@ -534,6 +538,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F3023F411BD0F6BE00393745 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F3023F421BD0F73600393745 /* UIViewController+NavItem.h */,
+				F3023F431BD0F73600393745 /* UIViewController+NavItem.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		F3E01F7A1BA17BB5005028A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +616,7 @@
 		F3ECBE6C1B9D452E0000A656 /* DigUpProject */ = {
 			isa = PBXGroup;
 			children = (
+				F3023F411BD0F6BE00393745 /* Categories */,
 				F3ECBE701B9D452E0000A656 /* AppDelegate.h */,
 				F3ECBE711B9D452E0000A656 /* AppDelegate.m */,
 				F3E01F7A1BA17BB5005028A4 /* Models */,
@@ -613,6 +627,7 @@
 				F3F986AC1BBE604800E94F60 /* Main.storyboard */,
 				F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */,
 				F3ECBE7E1B9D452E0000A656 /* Info.plist */,
+				F3023F451BD0F7E200393745 /* DigUpPrefixHeader.pch */,
 				F3F986B01BBE6D1300E94F60 /* Externals */,
 				F3ECBE6D1B9D452E0000A656 /* Supporting Files */,
 				F3ECBEA31B9D546C0000A656 /* JSONModel */,
@@ -1336,6 +1351,7 @@
 				F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */,
 				F352749A1BBE91000089FB6F /* MyCoursesViewModel.m in Sources */,
 				F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */,
+				F3023F441BD0F73600393745 /* UIViewController+NavItem.m in Sources */,
 				F3FCD5461BCBD2820074F409 /* AudioBarView.m in Sources */,
 				F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */,
 				F3F987631BBE6D1300E94F60 /* ETRCollectionChange.m in Sources */,
@@ -1533,6 +1549,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_PREFIX_HEADER = DigUpProject/DigUpPrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1556,6 +1573,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_PREFIX_HEADER = DigUpProject/DigUpPrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",

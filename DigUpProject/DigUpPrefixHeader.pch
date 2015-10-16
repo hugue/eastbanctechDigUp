@@ -1,0 +1,14 @@
+//
+//  DigUpPrefixHeader.pch
+//  DigUpProject
+//
+//  Created by hugues on 16/10/15.
+//  Copyright © 2015 hugues. All rights reserved.
+//
+
+#ifndef DigUpPrefixHeader_pch
+#define DigUpPrefixHeader_pch
+
+#import "UIViewController+NavItem.h"
+
+#endif /* DigUpPrefixHeader_pch */

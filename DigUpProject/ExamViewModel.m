@@ -22,6 +22,9 @@
         self.dataModel = dataModel;
         self.exercises = exercises;
         self.currentExerciseIndex = 0;
+        self.currentExercise = self.exercises[0];
+        self.changeCurrentExercise = [[RACSubject alloc] init];
+        [self.changeCurrentExercise sendNext:[RACTuple tupleWithObjects:self.currentExercise,@(ExerciseChangeDirectionNull), nil]];
     }
     return self;
 }
@@ -37,7 +40,7 @@
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     id viewModel;
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        viewModel = self.exercises[0];
+        viewModel = self.currentExercise;
     }
     else if ([segueIdentifier isEqualToString:@"examResultSegue"]) {
         viewModel = [[ExamResultViewModel alloc] initWithDataModel:self.dataModel];
@@ -70,24 +73,29 @@
     }
 }
 
-- (ExerciseViewModel *)selectNextExercise {
+- (void)selectNextExercise {
+    
     if (self.currentExerciseIndex < (self.exercises.count - 1)) {
         self.currentExerciseIndex += 1;
     }
     else {
         self.currentExerciseIndex = 0;
     }
-    return self.exercises[self.currentExerciseIndex];
+    self.currentExercise = self.exercises[self.currentExerciseIndex];
+    RACTuple * change = [RACTuple tupleWithObjects:self.currentExercise, @(ExerciseChangeDirectionLeft), nil];
+    [self.changeCurrentExercise sendNext:change];
 }
 
-- (ExerciseViewModel *)selectPreviousExercise {
+- (void)selectPreviousExercise {
     if (self.currentExerciseIndex > 0) {
         self.currentExerciseIndex -= 1;
     }
     else {
         self.currentExerciseIndex = (self.exercises.count - 1);
     }
-    return self.exercises[self.currentExerciseIndex];
+    self.currentExercise = self.exercises[self.currentExerciseIndex];
+    RACTuple * change = [RACTuple tupleWithObjects:self.currentExercise, @(ExerciseChangeDirectionRight), nil];
+    [self.changeCurrentExercise sendNext:change];
 }
 
 - (void)examDone {

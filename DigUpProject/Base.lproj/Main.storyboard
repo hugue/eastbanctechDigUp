@@ -127,18 +127,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pCp-gj-w5l">
-                                <rect key="frame" x="0.0" y="64" width="325" height="960"/>
-                                <animations/>
-                                <connections>
-                                    <segue destination="jq1-H0-sbe" kind="embed" identifier="coursesSegue" id="3Lx-pu-OEu"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BVh-Bn-rKD">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVh-Bn-rKD">
                                 <rect key="frame" x="333" y="64" width="435" height="960"/>
                                 <animations/>
                                 <connections>
                                     <segue destination="poc-9P-dPp" kind="embed" identifier="detailCoursesSegue" id="x7D-VX-jHY"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCp-gj-w5l">
+                                <rect key="frame" x="0.0" y="64" width="325" height="960"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="kEo-ZZ-3xs"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="jq1-H0-sbe" kind="embed" identifier="coursesSegue" id="3Lx-pu-OEu"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -529,6 +532,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Taj-rh-SRr">
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="sv4-m5-jGP"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jsB-Lu-h7D">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="miE-EG-Rfn">
                                 <rect key="frame" x="598" y="7" width="170" height="30"/>

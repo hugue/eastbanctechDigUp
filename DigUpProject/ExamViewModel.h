@@ -11,6 +11,11 @@
 #import "ExamResultViewModel.h"
 #import "ExerciseViewModel.h"
 
+typedef NS_ENUM(NSInteger, ExerciseChangeDirection) {
+    ExerciseChangeDirectionRight,
+    ExerciseChangeDirectionLeft,
+    ExerciseChangeDirectionNull
+};
 
 @interface ExamViewModel : NSObject
 
@@ -18,16 +23,17 @@
 @property (nonatomic) NSUInteger currentExerciseIndex;
 @property (nonatomic, strong) NSTimer * countDownTimer;
 @property (nonatomic) NSUInteger remainingTime;
-//@property (nonatomic) NSUInteger numberOfExercises;
+@property (nonatomic, strong) ExerciseViewModel * currentExercise;
 @property (nonatomic, strong) ExamModel * dataModel;
+@property (nonatomic, strong) RACSubject * changeCurrentExercise;
 
 - (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises dataModel:(ExamModel *)dataModel;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 - (void)stopExam;
 - (void)startExam;
-- (ExerciseViewModel *)selectNextExercise;
-- (ExerciseViewModel *)selectPreviousExercise;
+- (void)selectNextExercise;
+- (void)selectPreviousExercise;
 - (void)examDone;
 - (void)viewDidAppear;
 - (void)viewWillDisappear;
