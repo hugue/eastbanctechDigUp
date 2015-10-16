@@ -9,21 +9,23 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-
+@property (nonatomic, strong) UIActivityIndicatorView * spinner;
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.viewModel = [[LoginViewModel alloc] init];    
+    self.viewModel = [[LoginViewModel alloc] init];
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.center = self.view.center;
+    self.spinner.hidesWhenStopped = YES;
+    [self.view addSubview:self.spinner];
     [self applyModelToView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -31,8 +33,6 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"signInSegue"]) {
         MyCoursesViewController * myCoursesViewController = [segue destinationViewController];
         myCoursesViewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
@@ -60,6 +60,7 @@
                 self.loginTextField.enabled = NO;
                 self.passwordTextField.enabled = NO;
                 self.signInButton.enabled = NO;
+                [self.spinner startAnimating];
             });
         }
         else {
@@ -67,6 +68,7 @@
                 self.loginTextField.enabled = YES;
                 self.passwordTextField.enabled = YES;
                 self.signInButton.enabled = YES;
+                [self.spinner stopAnimating];
             });
         }
     }];
