@@ -190,14 +190,14 @@
 - (BOOL)correctionAskedDisplayed:(BOOL)displayCorrection {
     BOOL isCorrect = YES;
     [self.audioController stopCurrentAudio];
-    [self.dropController correctionAskedWithDisplay:displayCorrection];
+    BOOL dragNDropIsCorrect = [self.dropController correctionAskedWithDisplay:displayCorrection];
     for (MaterialViewModel * material in self.materialsModels) {
         MaterialAnswerState materialAnswerState = [material correctionAskedWithDisplay:displayCorrection];
         if (materialAnswerState == MaterialAnswerStateIsNotCorrect) {
             isCorrect = NO;
         }
     }
-    return isCorrect;
+    return (isCorrect && dragNDropIsCorrect);
 }
 
 - (void)solutionAsked {
@@ -216,7 +216,6 @@
     for (MaterialViewModel * materialViewModel in self.materialsModels) {
         [materialViewModel restartAsked];
     }
-    self.currentExerciseState = ExerciseCurrentStateIsGoingOn;
 }
 
 @end

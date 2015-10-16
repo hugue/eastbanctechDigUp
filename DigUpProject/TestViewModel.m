@@ -58,15 +58,21 @@
 #pragma - mark Correction Methods
 
 - (void)correctionAsked {
+    if (self.exerciseViewModel.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
     [self.exerciseViewModel correctionAskedDisplayed:YES];
+    }
 }
 
 - (void)solutionAsked {
-    [self.exerciseViewModel solutionAsked];
+    if (self.exerciseViewModel.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
+        [self.exerciseViewModel solutionAsked];
+    }
 }
 
 - (void)restartAsked {
-    [self.exerciseViewModel restartExerciseAsked];
+    if (self.exerciseViewModel.currentExerciseState == ExerciseCurrentStateIsGoingOn) {
+        [self.exerciseViewModel restartExerciseAsked];
+    }
 }
 
 - (void)viewWillAppear {

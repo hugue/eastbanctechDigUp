@@ -74,20 +74,19 @@
     }
 }
 
-- (NSArray<NSNumber *> *)correctionAskedWithDisplay:(BOOL)displayEnabled {
-    NSMutableArray * dragAndDropResults = [[NSMutableArray alloc] init];
+- (BOOL)correctionAskedWithDisplay:(BOOL)displayEnabled {
+    BOOL isCorrect = YES;
     for (MaterialViewModel * droppedElement in self.dropElements) {
         if (droppedElement.currentDropTarget) {
             if ((droppedElement.correctDropTargetID) && [droppedElement.currentDropTarget.materialID isEqualToNumber:droppedElement.correctDropTargetID]){
-                [dragAndDropResults addObject:@(MaterialAnswerStateIsCorrect)];
                 droppedElement.materialState = MaterialAnswerStateIsCorrect;
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsCorrect;
                 }
             }
             else {
+                isCorrect = NO;
                 droppedElement.materialState = MaterialAnswerStateIsNotCorrect;
-                [dragAndDropResults addObject:@(MaterialAnswerStateIsNotCorrect)];
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
                 }
@@ -95,15 +94,15 @@
         }
         else {
             if (droppedElement.correctDropTargetID) {
+                isCorrect = NO;
                 droppedElement.materialState = MaterialAnswerStateIsNotCorrect;
-                [dragAndDropResults addObject:@(MaterialAnswerStateIsNotCorrect)];
                 if (displayEnabled) {
                     droppedElement.displayState = MaterialDisplayStateIsNotCorrect;
                 }
             }
         }
     }
-    return dragAndDropResults;
+    return isCorrect;
 }
 
 - (void)solutionAsked {
