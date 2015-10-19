@@ -27,6 +27,7 @@
 - (void)initialize {
     self.profileLoaded = NO;
     self.currentState = LogInCurrentStateListening;
+    self.defaultApi = [[SWGDefaultApi alloc] init];
 }
 
 - (MyCoursesViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
@@ -40,7 +41,13 @@
 - (BOOL)signInNow {
     self.currentState = LogInCurrentStateProcessing;
     self.webController = [[WebController alloc] init];
-    [self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
+    //[self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
+
+    NSNumber * result = [self.defaultApi profileGetWithCompletionBlock:^(SWGUser *output, NSError *error) {
+        SWGUser * user = output;
+        NSLog(@"User profile - %@ - with error - %@", user, error);
+    }];
+    NSLog(@"result - %@", result);
     NSLog(@"Login - %@ and password - %@", self.login, self.password);
     return YES;
 }

@@ -10,6 +10,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "ProfileModel.h"
 #import "MyCoursesViewModel.h"
+#import "SWGDefaultApi.h"
 
 typedef NS_ENUM(NSInteger, LogInCurrentState) {
     LogInCurrentStateListening,
@@ -22,6 +23,7 @@ typedef NS_ENUM(NSInteger, LogInCurrentState) {
 @property (nonatomic, strong) NSString * password;
 @property (nonatomic) enum LogInCurrentState currentState;
 @property (nonatomic) BOOL profileLoaded;
+@property (nonatomic, strong) SWGDefaultApi * defaultApi;
 
 - (BOOL)signInNow;
 - (void)viewWillAppear;
