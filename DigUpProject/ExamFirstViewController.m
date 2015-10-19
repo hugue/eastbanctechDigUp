@@ -60,7 +60,6 @@
             return @"%";
         }
     }];
-    
     self.title = self.viewModel.dataModel.name;
 }
 

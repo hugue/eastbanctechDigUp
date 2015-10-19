@@ -19,8 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIView * exerciseView;
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 @property (nonatomic, strong) UILabel * timeLabel;
-@property (strong, nonatomic) UISwipeGestureRecognizer * previousSwipeRecognizer;
-@property (strong, nonatomic) UISwipeGestureRecognizer * nextSwipeRecognizer;
+//@property (strong, nonatomic) UISwipeGestureRecognizer * previousSwipeRecognizer;
+//@property (strong, nonatomic) UISwipeGestureRecognizer * nextSwipeRecognizer;
 
 - (IBAction)goBack:(id)sender;
 - (IBAction)showNext:(id)sender;

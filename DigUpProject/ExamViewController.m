@@ -27,14 +27,14 @@
     [self.navigationItem setTitleView:self.timeLabel];
     
     //Swipe gesture recognizers
-    self.previousSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPrevious:)];
-    self.nextSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNext:)];
-    self.nextSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-    self.previousSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    self.previousSwipeRecognizer.numberOfTouchesRequired = 1;
-    self.nextSwipeRecognizer.numberOfTouchesRequired = 1;
-    [self.view addGestureRecognizer:self.previousSwipeRecognizer];
-    [self.view addGestureRecognizer:self.nextSwipeRecognizer];
+    UISwipeGestureRecognizer * previousSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPrevious:)];
+    UISwipeGestureRecognizer * nextSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNext:)];
+    nextSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    previousSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    previousSwipeRecognizer.numberOfTouchesRequired = 1;
+    nextSwipeRecognizer.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:previousSwipeRecognizer];
+    [self.view addGestureRecognizer:nextSwipeRecognizer];
     
     [self configureBackAlertController];
     [self applyModelToView];
@@ -83,8 +83,11 @@
 
 - (void)configureBackAlertController {
     self.backAlert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Going back will erase all the answers given" preferredStyle:UIAlertControllerStyleAlert];
+    @weakify(self);
     UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
         [self.navigationController popViewControllerAnimated:YES];
+        [self.viewModel goBack];
     }];
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     [self.backAlert addAction:okAction];
@@ -149,4 +152,5 @@
     [self handleChange:tuple];
     [self rac_liftSelector:@selector(handleChange:) withSignals:self.viewModel.changeCurrentExercise, nil];
 }
+
 @end

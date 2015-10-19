@@ -48,6 +48,13 @@
     return viewModel;
 }
 
+- (void)goBack {
+    [self stopExam];
+    for (ExerciseViewModel * exerciseViewModel in self.exercises) {
+        [exerciseViewModel restartExerciseAsked];
+    }
+}
+
 - (void)stopExam {
     [self.examTimer invalidate];
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
@@ -105,7 +112,6 @@
         if ([exerciseViewModel correctionAskedDisplayed:NO]) {
             score = score + 1;
         }
-        [exerciseViewModel.audioController releaseAudioTimer];
         [exerciseViewModel restartExerciseAsked];
     }
     float result = 100 * ((float)score/[self.dataModel.numberOfQuestions integerValue]);

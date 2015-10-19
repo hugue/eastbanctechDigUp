@@ -33,12 +33,13 @@
     self.isPlaying = NO;
     self.isNeeded = NO;
     self.currentAudioVolum = 1.0;
+    [self startAudioControllerTimer];
 }
 
 - (void)startAudioControllerTimer {
-    //dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         self.updatingTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 target:self selector:@selector(updateCurrentTime:) userInfo:nil repeats:YES];
-    //});
+    });
 }
 
 
@@ -100,11 +101,8 @@
 }
 
 - (void)updateCurrentTime:(NSTimer *)timer {
-    if (self.currentlyPlaying.audioPlayer.isPlaying) {
+    if (self.isPlaying) {
         self.currentAudioTime = self.currentlyPlaying.audioPlayer.currentTime;
-    }
-    else if (!self.currentlyPlaying.audioPlayer.isPlaying) {
-        self.isPlaying = NO;
     }
 }
 
@@ -123,8 +121,8 @@
 }
 
 - (void)playCurrentAudio {
-    [self.currentlyPlaying.audioPlayer play];
     self.isPlaying = YES;
+    [self.currentlyPlaying.audioPlayer play];
 }
 
 - (void)playPauseChangedOnView {

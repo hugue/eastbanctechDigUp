@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, ExerciseChangeDirection) {
 
 - (void)stopExam;
 - (void)startExam;
+- (void)goBack;
 - (void)selectNextExercise;
 - (void)selectPreviousExercise;
 - (void)examDone;

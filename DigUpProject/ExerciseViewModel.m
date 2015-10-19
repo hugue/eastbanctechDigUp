@@ -51,6 +51,10 @@
     [self.audioController releaseAudioTimer];
 }
 
+- (void)dealloc {
+    [self.audioController releaseAudioTimer];
+}
+
 - (void)parseExercise {
     if (self.currentExercise == nil) {
         NSLog(@"Error, no exercise found");
@@ -70,6 +74,7 @@
                 for (materialViewModel in self.materialsModels) {
                     materialViewModel.materialState = MaterialCurrentStateStopped;
                 }
+                [self.audioController stopCurrentAudio];
                 self.audioController.controllerState = AudioControllerCurrentStateStopped;
                 break;
             case ExerciseCurrentStateIsGoingOn:
