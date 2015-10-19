@@ -25,22 +25,25 @@
 		F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F7E1BA180E7005028A4 /* MaterialView.m */; };
 		F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F811BA1A6E6005028A4 /* TextFrameView.m */; };
 		F3E01F851BA1B294005028A4 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F841BA1B294005028A4 /* ImageView.m */; };
+		F3E9B6A51BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B68C1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m */; };
+		F3E9B6A61BD4F66C00ED81E2 /* SWGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B68E1BD4F66C00ED81E2 /* SWGApiClient.m */; };
+		F3E9B6A71BD4F66C00ED81E2 /* SWGConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6901BD4F66C00ED81E2 /* SWGConfiguration.m */; };
+		F3E9B6A81BD4F66C00ED81E2 /* SWGCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6921BD4F66C00ED81E2 /* SWGCourse.m */; };
+		F3E9B6A91BD4F66C00ED81E2 /* SWGDefaultApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6941BD4F66C00ED81E2 /* SWGDefaultApi.m */; };
+		F3E9B6AA1BD4F66C00ED81E2 /* SWGExam.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6961BD4F66C00ED81E2 /* SWGExam.m */; };
+		F3E9B6AB1BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6981BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m */; };
+		F3E9B6AC1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B69A1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m */; };
+		F3E9B6AD1BD4F66C00ED81E2 /* SWGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B69C1BD4F66C00ED81E2 /* SWGObject.m */; };
+		F3E9B6AE1BD4F66C00ED81E2 /* SWGQueryParamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B69E1BD4F66C00ED81E2 /* SWGQueryParamCollection.m */; };
+		F3E9B6AF1BD4F66C00ED81E2 /* SWGSubcourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6A01BD4F66C00ED81E2 /* SWGSubcourse.m */; };
+		F3E9B6B01BD4F66C00ED81E2 /* SWGTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6A21BD4F66C00ED81E2 /* SWGTest.m */; };
+		F3E9B6B11BD4F66C00ED81E2 /* SWGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6A41BD4F66C00ED81E2 /* SWGUser.m */; };
 		F3ECBE6F1B9D452E0000A656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE6E1B9D452E0000A656 /* main.m */; };
 		F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE711B9D452E0000A656 /* AppDelegate.m */; };
 		F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE791B9D452E0000A656 /* Assets.xcassets */; };
 		F3ECBE7D1B9D452E0000A656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE7B1B9D452E0000A656 /* LaunchScreen.storyboard */; };
 		F3ECBE881B9D452E0000A656 /* DigUpProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE871B9D452E0000A656 /* DigUpProjectTests.m */; };
 		F3ECBE931B9D452E0000A656 /* DigUpProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE921B9D452E0000A656 /* DigUpProjectUITests.m */; };
-		F3ECBEBD1B9D546C0000A656 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEA61B9D546C0000A656 /* JSONModel.m */; };
-		F3ECBEBE1B9D546C0000A656 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEA81B9D546C0000A656 /* JSONModelArray.m */; };
-		F3ECBEBF1B9D546C0000A656 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEAA1B9D546C0000A656 /* JSONModelClassProperty.m */; };
-		F3ECBEC01B9D546C0000A656 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEAC1B9D546C0000A656 /* JSONModelError.m */; };
-		F3ECBEC11B9D546C0000A656 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEAF1B9D546C0000A656 /* NSArray+JSONModel.m */; };
-		F3ECBEC21B9D546C0000A656 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEB31B9D546C0000A656 /* JSONAPI.m */; };
-		F3ECBEC31B9D546C0000A656 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEB51B9D546C0000A656 /* JSONHTTPClient.m */; };
-		F3ECBEC41B9D546C0000A656 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEB71B9D546C0000A656 /* JSONModel+networking.m */; };
-		F3ECBEC51B9D546C0000A656 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEBA1B9D546C0000A656 /* JSONKeyMapper.m */; };
-		F3ECBEC61B9D546C0000A656 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBEBC1B9D546C0000A656 /* JSONValueTransformer.m */; };
 		F3ECBECC1B9D64EE0000A656 /* MaterialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */; };
 		F3ECBECF1B9D814B0000A656 /* ExerciseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBECE1B9D814B0000A656 /* ExerciseModel.m */; };
 		F3F1E0A61BC67115001AFA62 /* ExamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0A51BC67115001AFA62 /* ExamModel.m */; };
@@ -226,6 +229,32 @@
 		F3E01F811BA1A6E6005028A4 /* TextFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFrameView.m; sourceTree = "<group>"; };
 		F3E01F831BA1B294005028A4 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
 		F3E01F841BA1B294005028A4 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
+		F3E9B68B1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+ISO8601.h"; sourceTree = "<group>"; };
+		F3E9B68C1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+ISO8601.m"; sourceTree = "<group>"; };
+		F3E9B68D1BD4F66C00ED81E2 /* SWGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGApiClient.h; sourceTree = "<group>"; };
+		F3E9B68E1BD4F66C00ED81E2 /* SWGApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGApiClient.m; sourceTree = "<group>"; };
+		F3E9B68F1BD4F66C00ED81E2 /* SWGConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGConfiguration.h; sourceTree = "<group>"; };
+		F3E9B6901BD4F66C00ED81E2 /* SWGConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGConfiguration.m; sourceTree = "<group>"; };
+		F3E9B6911BD4F66C00ED81E2 /* SWGCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGCourse.h; sourceTree = "<group>"; };
+		F3E9B6921BD4F66C00ED81E2 /* SWGCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGCourse.m; sourceTree = "<group>"; };
+		F3E9B6931BD4F66C00ED81E2 /* SWGDefaultApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGDefaultApi.h; sourceTree = "<group>"; };
+		F3E9B6941BD4F66C00ED81E2 /* SWGDefaultApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGDefaultApi.m; sourceTree = "<group>"; };
+		F3E9B6951BD4F66C00ED81E2 /* SWGExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGExam.h; sourceTree = "<group>"; };
+		F3E9B6961BD4F66C00ED81E2 /* SWGExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGExam.m; sourceTree = "<group>"; };
+		F3E9B6971BD4F66C00ED81E2 /* SWGJSONRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGJSONRequestSerializer.h; sourceTree = "<group>"; };
+		F3E9B6981BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGJSONRequestSerializer.m; sourceTree = "<group>"; };
+		F3E9B6991BD4F66C00ED81E2 /* SWGJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGJSONResponseSerializer.h; sourceTree = "<group>"; };
+		F3E9B69A1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGJSONResponseSerializer.m; sourceTree = "<group>"; };
+		F3E9B69B1BD4F66C00ED81E2 /* SWGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGObject.h; sourceTree = "<group>"; };
+		F3E9B69C1BD4F66C00ED81E2 /* SWGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGObject.m; sourceTree = "<group>"; };
+		F3E9B69D1BD4F66C00ED81E2 /* SWGQueryParamCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGQueryParamCollection.h; sourceTree = "<group>"; };
+		F3E9B69E1BD4F66C00ED81E2 /* SWGQueryParamCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGQueryParamCollection.m; sourceTree = "<group>"; };
+		F3E9B69F1BD4F66C00ED81E2 /* SWGSubcourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGSubcourse.h; sourceTree = "<group>"; };
+		F3E9B6A01BD4F66C00ED81E2 /* SWGSubcourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGSubcourse.m; sourceTree = "<group>"; };
+		F3E9B6A11BD4F66C00ED81E2 /* SWGTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGTest.h; sourceTree = "<group>"; };
+		F3E9B6A21BD4F66C00ED81E2 /* SWGTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGTest.m; sourceTree = "<group>"; };
+		F3E9B6A31BD4F66C00ED81E2 /* SWGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGUser.h; sourceTree = "<group>"; };
+		F3E9B6A41BD4F66C00ED81E2 /* SWGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGUser.m; sourceTree = "<group>"; };
 		F3ECBE6A1B9D452E0000A656 /* DigUpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigUpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ECBE6E1B9D452E0000A656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3ECBE701B9D452E0000A656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -239,27 +268,6 @@
 		F3ECBE8E1B9D452E0000A656 /* DigUpProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigUpProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ECBE921B9D452E0000A656 /* DigUpProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigUpProjectUITests.m; sourceTree = "<group>"; };
 		F3ECBE941B9D452E0000A656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3ECBEA51B9D546C0000A656 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
-		F3ECBEA61B9D546C0000A656 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
-		F3ECBEA71B9D546C0000A656 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
-		F3ECBEA81B9D546C0000A656 /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
-		F3ECBEA91B9D546C0000A656 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
-		F3ECBEAA1B9D546C0000A656 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
-		F3ECBEAB1B9D546C0000A656 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
-		F3ECBEAC1B9D546C0000A656 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
-		F3ECBEAE1B9D546C0000A656 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
-		F3ECBEAF1B9D546C0000A656 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
-		F3ECBEB01B9D546C0000A656 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
-		F3ECBEB21B9D546C0000A656 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
-		F3ECBEB31B9D546C0000A656 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
-		F3ECBEB41B9D546C0000A656 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
-		F3ECBEB51B9D546C0000A656 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
-		F3ECBEB61B9D546C0000A656 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
-		F3ECBEB71B9D546C0000A656 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
-		F3ECBEB91B9D546C0000A656 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
-		F3ECBEBA1B9D546C0000A656 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
-		F3ECBEBB1B9D546C0000A656 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
-		F3ECBEBC1B9D546C0000A656 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		F3ECBECA1B9D64EE0000A656 /* MaterialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialModel.h; sourceTree = "<group>"; };
 		F3ECBECB1B9D64EE0000A656 /* MaterialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialModel.m; sourceTree = "<group>"; };
 		F3ECBECD1B9D814B0000A656 /* ExerciseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseModel.h; sourceTree = "<group>"; };
@@ -590,6 +598,39 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		F3E9B68A1BD4F66C00ED81E2 /* SwaggerClient */ = {
+			isa = PBXGroup;
+			children = (
+				F3E9B68B1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.h */,
+				F3E9B68C1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m */,
+				F3E9B68D1BD4F66C00ED81E2 /* SWGApiClient.h */,
+				F3E9B68E1BD4F66C00ED81E2 /* SWGApiClient.m */,
+				F3E9B68F1BD4F66C00ED81E2 /* SWGConfiguration.h */,
+				F3E9B6901BD4F66C00ED81E2 /* SWGConfiguration.m */,
+				F3E9B6911BD4F66C00ED81E2 /* SWGCourse.h */,
+				F3E9B6921BD4F66C00ED81E2 /* SWGCourse.m */,
+				F3E9B6931BD4F66C00ED81E2 /* SWGDefaultApi.h */,
+				F3E9B6941BD4F66C00ED81E2 /* SWGDefaultApi.m */,
+				F3E9B6951BD4F66C00ED81E2 /* SWGExam.h */,
+				F3E9B6961BD4F66C00ED81E2 /* SWGExam.m */,
+				F3E9B6971BD4F66C00ED81E2 /* SWGJSONRequestSerializer.h */,
+				F3E9B6981BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m */,
+				F3E9B6991BD4F66C00ED81E2 /* SWGJSONResponseSerializer.h */,
+				F3E9B69A1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m */,
+				F3E9B69B1BD4F66C00ED81E2 /* SWGObject.h */,
+				F3E9B69C1BD4F66C00ED81E2 /* SWGObject.m */,
+				F3E9B69D1BD4F66C00ED81E2 /* SWGQueryParamCollection.h */,
+				F3E9B69E1BD4F66C00ED81E2 /* SWGQueryParamCollection.m */,
+				F3E9B69F1BD4F66C00ED81E2 /* SWGSubcourse.h */,
+				F3E9B6A01BD4F66C00ED81E2 /* SWGSubcourse.m */,
+				F3E9B6A11BD4F66C00ED81E2 /* SWGTest.h */,
+				F3E9B6A21BD4F66C00ED81E2 /* SWGTest.m */,
+				F3E9B6A31BD4F66C00ED81E2 /* SWGUser.h */,
+				F3E9B6A41BD4F66C00ED81E2 /* SWGUser.m */,
+			);
+			path = SwaggerClient;
+			sourceTree = "<group>";
+		};
 		F3ECBE611B9D452E0000A656 = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +657,7 @@
 		F3ECBE6C1B9D452E0000A656 /* DigUpProject */ = {
 			isa = PBXGroup;
 			children = (
+				F3E9B68A1BD4F66C00ED81E2 /* SwaggerClient */,
 				F3023F411BD0F6BE00393745 /* Categories */,
 				F3ECBE701B9D452E0000A656 /* AppDelegate.h */,
 				F3ECBE711B9D452E0000A656 /* AppDelegate.m */,
@@ -630,7 +672,6 @@
 				F3023F451BD0F7E200393745 /* DigUpPrefixHeader.pch */,
 				F3F986B01BBE6D1300E94F60 /* Externals */,
 				F3ECBE6D1B9D452E0000A656 /* Supporting Files */,
-				F3ECBEA31B9D546C0000A656 /* JSONModel */,
 				F3FA7EFF1BAFC26100432037 /* Ressources */,
 			);
 			path = DigUpProject;
@@ -660,66 +701,6 @@
 				F3ECBE941B9D452E0000A656 /* Info.plist */,
 			);
 			path = DigUpProjectUITests;
-			sourceTree = "<group>";
-		};
-		F3ECBEA31B9D546C0000A656 /* JSONModel */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECBEA41B9D546C0000A656 /* JSONModel */,
-				F3ECBEAD1B9D546C0000A656 /* JSONModelCategories */,
-				F3ECBEB01B9D546C0000A656 /* JSONModelLib.h */,
-				F3ECBEB11B9D546C0000A656 /* JSONModelNetworking */,
-				F3ECBEB81B9D546C0000A656 /* JSONModelTransformations */,
-			);
-			path = JSONModel;
-			sourceTree = "<group>";
-		};
-		F3ECBEA41B9D546C0000A656 /* JSONModel */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECBEA51B9D546C0000A656 /* JSONModel.h */,
-				F3ECBEA61B9D546C0000A656 /* JSONModel.m */,
-				F3ECBEA71B9D546C0000A656 /* JSONModelArray.h */,
-				F3ECBEA81B9D546C0000A656 /* JSONModelArray.m */,
-				F3ECBEA91B9D546C0000A656 /* JSONModelClassProperty.h */,
-				F3ECBEAA1B9D546C0000A656 /* JSONModelClassProperty.m */,
-				F3ECBEAB1B9D546C0000A656 /* JSONModelError.h */,
-				F3ECBEAC1B9D546C0000A656 /* JSONModelError.m */,
-			);
-			path = JSONModel;
-			sourceTree = "<group>";
-		};
-		F3ECBEAD1B9D546C0000A656 /* JSONModelCategories */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECBEAE1B9D546C0000A656 /* NSArray+JSONModel.h */,
-				F3ECBEAF1B9D546C0000A656 /* NSArray+JSONModel.m */,
-			);
-			path = JSONModelCategories;
-			sourceTree = "<group>";
-		};
-		F3ECBEB11B9D546C0000A656 /* JSONModelNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECBEB21B9D546C0000A656 /* JSONAPI.h */,
-				F3ECBEB31B9D546C0000A656 /* JSONAPI.m */,
-				F3ECBEB41B9D546C0000A656 /* JSONHTTPClient.h */,
-				F3ECBEB51B9D546C0000A656 /* JSONHTTPClient.m */,
-				F3ECBEB61B9D546C0000A656 /* JSONModel+networking.h */,
-				F3ECBEB71B9D546C0000A656 /* JSONModel+networking.m */,
-			);
-			path = JSONModelNetworking;
-			sourceTree = "<group>";
-		};
-		F3ECBEB81B9D546C0000A656 /* JSONModelTransformations */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECBEB91B9D546C0000A656 /* JSONKeyMapper.h */,
-				F3ECBEBA1B9D546C0000A656 /* JSONKeyMapper.m */,
-				F3ECBEBB1B9D546C0000A656 /* JSONValueTransformer.h */,
-				F3ECBEBC1B9D546C0000A656 /* JSONValueTransformer.m */,
-			);
-			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 		F3F89E901BA30670004648B6 /* TaskControllers */ = {
@@ -1275,20 +1256,23 @@
 				F3F987531BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m in Sources */,
 				F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */,
 				F3F987811BBE6D1300E94F60 /* ETRSearchResults.m in Sources */,
-				F3ECBEC01B9D546C0000A656 /* JSONModelError.m in Sources */,
 				F3F9877B1BBE6D1300E94F60 /* ETRStaticCellModel.m in Sources */,
-				F3ECBEC11B9D546C0000A656 /* NSArray+JSONModel.m in Sources */,
+				F3E9B6AF1BD4F66C00ED81E2 /* SWGSubcourse.m in Sources */,
 				F3FCD5391BCBCD780074F409 /* ExamFirstViewController.m in Sources */,
-				F3ECBEBF1B9D546C0000A656 /* JSONModelClassProperty.m in Sources */,
+				F3E9B6B11BD4F66C00ED81E2 /* SWGUser.m in Sources */,
 				F3F987591BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m in Sources */,
+				F3E9B6A61BD4F66C00ED81E2 /* SWGApiClient.m in Sources */,
 				F3F9874D1BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m in Sources */,
+				F3E9B6A51BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m in Sources */,
 				F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */,
 				F3F9874B1BBE6D1300E94F60 /* ETRActionSheet.m in Sources */,
 				F3F1E0AF1BC6977D001AFA62 /* WebController.m in Sources */,
 				F3F987651BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m in Sources */,
+				F3E9B6AD1BD4F66C00ED81E2 /* SWGObject.m in Sources */,
 				F3F987691BBE6D1300E94F60 /* ETRCollectionChangeItems.m in Sources */,
 				F3FCD5321BCB6A130074F409 /* TestViewController.m in Sources */,
 				F3F987611BBE6D1300E94F60 /* UIViewController+ETRUtils.m in Sources */,
+				F3E9B6AB1BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m in Sources */,
 				F3F9878A1BBE6D1300E94F60 /* ETRRACAdditions.m in Sources */,
 				F3FCD53C1BCBCD890074F409 /* ExamResultViewController.m in Sources */,
 				F3F987551BBE6D1300E94F60 /* NSMutableString+ETRUtils.m in Sources */,
@@ -1302,7 +1286,7 @@
 				F3F987621BBE6D1300E94F60 /* ETRCGUtils.m in Sources */,
 				F3F9876C1BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m in Sources */,
 				F3F9876E1BBE6D1300E94F60 /* ETRCollectionChangeSections.m in Sources */,
-				F3ECBEC51B9D546C0000A656 /* JSONKeyMapper.m in Sources */,
+				F3E9B6AE1BD4F66C00ED81E2 /* SWGQueryParamCollection.m in Sources */,
 				F3F987871BBE6D1300E94F60 /* ETRPromise.m in Sources */,
 				F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */,
 				F3F987721BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m in Sources */,
@@ -1316,6 +1300,7 @@
 				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
 				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
 				F3F1E0A91BC678CF001AFA62 /* ExamViewController.m in Sources */,
+				F3E9B6A81BD4F66C00ED81E2 /* SWGCourse.m in Sources */,
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
 				F3F987501BBE6D1300E94F60 /* NSError+ETRUtils.m in Sources */,
 				F3F987671BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m in Sources */,
@@ -1325,18 +1310,18 @@
 				F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */,
 				F3F1E0A61BC67115001AFA62 /* ExamModel.m in Sources */,
 				F3F987821BBE6D1300E94F60 /* ETRTableViewCell.m in Sources */,
+				F3E9B6AA1BD4F66C00ED81E2 /* SWGExam.m in Sources */,
 				F3F9875F1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m in Sources */,
 				F3E01F851BA1B294005028A4 /* ImageView.m in Sources */,
 				F3F9875A1BBE6D1300E94F60 /* UICollectionView+ETRUtils.m in Sources */,
 				F3F9876B1BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.m in Sources */,
 				F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */,
-				F3ECBEBE1B9D546C0000A656 /* JSONModelArray.m in Sources */,
+				F3E9B6AC1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m in Sources */,
 				F3F9875D1BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.m in Sources */,
 				F3F987761BBE6D1300E94F60 /* ETRCollectionUtils.m in Sources */,
 				F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */,
 				F3F987511BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.m in Sources */,
 				F3F987571BBE6D1300E94F60 /* NSString+ETRUtils.m in Sources */,
-				F3ECBEC41B9D546C0000A656 /* JSONModel+networking.m in Sources */,
 				F3F9877F1BBE6D1300E94F60 /* ETRCollectionViewController.m in Sources */,
 				F3F987781BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m in Sources */,
 				F3C0F6021BCFC59900BF8688 /* ProfileModel.m in Sources */,
@@ -1356,6 +1341,7 @@
 				F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */,
 				F3F987631BBE6D1300E94F60 /* ETRCollectionChange.m in Sources */,
 				F3F987881BBE6D1300E94F60 /* ETRResolvablePromise.m in Sources */,
+				F3E9B6A71BD4F66C00ED81E2 /* SWGConfiguration.m in Sources */,
 				F3F987841BBE6D1300E94F60 /* ETRImagePickerController.m in Sources */,
 				F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */,
 				F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */,
@@ -1384,23 +1370,21 @@
 				F3F1E0AC1BC67905001AFA62 /* ExamViewModel.m in Sources */,
 				F3F987661BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m in Sources */,
 				F3F987851BBE6D1300E94F60 /* ETRKVO.m in Sources */,
-				F3ECBEC21B9D546C0000A656 /* JSONAPI.m in Sources */,
 				F3F987711BBE6D1300E94F60 /* ETRHidingCollectionModel.m in Sources */,
 				F352749D1BBE9C990089FB6F /* CoursesTableViewModel.m in Sources */,
 				F3F9878F1BBE6D1300E94F60 /* ETRStoryboardSegue.m in Sources */,
 				F3F9877E1BBE6D1300E94F60 /* ETRCollectionViewCell.m in Sources */,
 				F3F64A3D1BA6F54700B9231D /* TextInputViewModel.m in Sources */,
+				F3E9B6B01BD4F66C00ED81E2 /* SWGTest.m in Sources */,
 				F3F9875C1BBE6D1300E94F60 /* UIImage+ETRUtils.m in Sources */,
 				F3F987801BBE6D1300E94F60 /* ETRReuseIdentifierMatching.m in Sources */,
-				F3ECBEC61B9D546C0000A656 /* JSONValueTransformer.m in Sources */,
 				F3F987741BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.m in Sources */,
 				F35274971BBE8F430089FB6F /* MyCoursesViewController.m in Sources */,
 				F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */,
+				F3E9B6A91BD4F66C00ED81E2 /* SWGDefaultApi.m in Sources */,
 				F3F9878C1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m in Sources */,
 				F3F9874C1BBE6D1300E94F60 /* ETRAlertView.m in Sources */,
 				F3893AB01BCD181000558F07 /* ExerciseViewController.m in Sources */,
-				F3ECBEC31B9D546C0000A656 /* JSONHTTPClient.m in Sources */,
-				F3ECBEBD1B9D546C0000A656 /* JSONModel.m in Sources */,
 				F3F987681BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m in Sources */,
 				F3F987731BBE6D1300E94F60 /* ETRProxyCollectionModel.m in Sources */,
 				F3F987861BBE6D1300E94F60 /* ETRLazyPromise.m in Sources */,

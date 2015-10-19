@@ -1,15 +1,52 @@
 PODS:
+  - AFNetworking (2.6.1):
+    - AFNetworking/NSURLConnection (= 2.6.1)
+    - AFNetworking/NSURLSession (= 2.6.1)
+    - AFNetworking/Reachability (= 2.6.1)
+    - AFNetworking/Security (= 2.6.1)
+    - AFNetworking/Serialization (= 2.6.1)
+    - AFNetworking/UIKit (= 2.6.1)
+  - AFNetworking/NSURLConnection (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.1)
+  - AFNetworking/Security (2.6.1)
+  - AFNetworking/Serialization (2.6.1)
+  - AFNetworking/UIKit (2.6.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - ISO8601 (0.3.0)
+  - JSONModel (1.1.0)
   - ReactiveCocoa (2.1.8):
     - ReactiveCocoa/Core (= 2.1.8)
     - ReactiveCocoa/no-arc (= 2.1.8)
   - ReactiveCocoa/Core (2.1.8):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.8)
+  - SwaggerClient (1.0.0):
+    - AFNetworking (~> 2.3)
+    - ISO8601 (~> 0.3)
+    - JSONModel (~> 1.1)
 
 DEPENDENCIES:
+  - JSONModel
   - ReactiveCocoa (= 2.1.8)
+  - SwaggerClient (from `~/Documents/DigUpProject/SwaggerClient`)
+
+EXTERNAL SOURCES:
+  SwaggerClient:
+    :path: ~/Documents/DigUpProject/SwaggerClient
 
 SPEC CHECKSUMS:
+  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  ISO8601: 8d8a22d5edf0554a1cf75bac028c76c1dc0ffaef
+  JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   ReactiveCocoa: f89f2e009a87951b50321bf9feb958823fcc617e
+  SwaggerClient: 7366181eda2f455fbae32801a668648f1a931592
 
 COCOAPODS: 0.38.2

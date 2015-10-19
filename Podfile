@@ -4,6 +4,8 @@
 target 'DigUpProject' do
 
 pod 'ReactiveCocoa', '2.1.8'
+pod 'JSONModel'
+pod "SwaggerClient", :path => "~/Documents/DigUpProject/SwaggerClient"
 
 end
 

@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ISO8601.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSONModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-DigUpProject.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1CEEAAECC963E1F35FC0A47C7F9573FC</key>
+		<key>114D4E805453605FB1E7F0A2FC4EF7D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>50764692ABF63A312B41B00429E42EC5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ABD2F649F12C78FA8FE4B832FBA13956</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B43E6F18AE72B99E4FDC52B1E820C9FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE77C2203E950F253891734E076127F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
