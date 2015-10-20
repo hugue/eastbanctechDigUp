@@ -14,7 +14,7 @@
 
 @interface ChooseTestTableViewModel : ETRSimpleCollectionModel
 
-@property (nonatomic, strong) NSArray<TestModel *> * listTests;
+@property (nonatomic, strong) NSArray<SWGTest *> * listTests;
 @property (nonatomic, strong) NSString * cellIdentifier;
 
 @property (nonatomic, strong) NSNumber * selectedCell;

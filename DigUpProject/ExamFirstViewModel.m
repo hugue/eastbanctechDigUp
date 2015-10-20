@@ -20,6 +20,17 @@
     self = [super init];
     if (self) {
         self.webController = webController;
+        //self.dataModel = dataModel;
+        [self initialize];
+        [self.webController addTaskForObject:self toURL:dataModel.url];
+    }
+    return self;
+}
+
+- (id)initWithSWGExam:(SWGExam *)dataModel WebController:(WebController *)webController {
+    self = [super init];
+    if (self) {
+        self.webController = webController;
         self.dataModel = dataModel;
         [self initialize];
         [self.webController addTaskForObject:self toURL:dataModel.url];

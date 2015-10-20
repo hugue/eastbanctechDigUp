@@ -32,7 +32,7 @@
     [RACObserve(self.viewModel, detailCoursesViewModel.selectedCell) subscribeNext:^(id x) {
         @strongify(self)
         if (x) {
-            CourseModel * currentCourse = [self.viewModel.profileCourses objectAtIndex:[self.viewModel.coursesViewModel.selectedCell integerValue]];
+            SWGCourse * currentCourse = [self.viewModel.courses objectAtIndex:[self.viewModel.coursesViewModel.selectedCell integerValue]];
             if ([x integerValue] < currentCourse.subcourses.count) {
                 [self performSegueWithIdentifier:@"viewDocumentSegue" sender:nil];
             }

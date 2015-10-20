@@ -9,8 +9,19 @@
 #import "DocumentViewModel.h"
 
 @implementation DocumentViewModel
-
+/*
 - (id)initWithDataModel:(SubcourseModel *)dataModel webController:(WebController *)webController {
+    self = [super init];
+    if (self) {
+        //self.dataModel = dataModel;
+        self.webController = webController;
+        self.chooseTestViewModel = [[ChooseTestTableViewModel alloc] initWithWebController:self.webController];
+        [self configureChooseTestViewModel];
+    }
+    return self;
+}
+*/
+- (id)initWithSWGSubcourse:(SWGSubcourse *)dataModel webController:(WebController *)webController {
     self = [super init];
     if (self) {
         self.dataModel = dataModel;
@@ -23,7 +34,7 @@
 
 - (NSArray<CourseCellViewModel *> *)createCellViewModelsForListTests:(NSArray<TestModel *> *)listTests {
     NSMutableArray<CourseCellViewModel *> * courseCellViewModels = [[NSMutableArray alloc] init];
-    for (TestModel * test in listTests) {
+    for (SWGTest * test in listTests) {
         CourseCellViewModel * newCellModel = [[CourseCellViewModel alloc] initWithIdentifier:@"CourseCellView" andLabel:test.name];
         [courseCellViewModels addObject:newCellModel];
     }

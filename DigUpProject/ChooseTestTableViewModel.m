@@ -9,7 +9,7 @@
 #import "ChooseTestTableViewModel.h"
 @interface ChooseTestTableViewModel ()
 
-@property (nonatomic, strong) TestModel * dataModel;
+@property (nonatomic, strong) SWGTest * dataModel;
 
 @end
 
@@ -27,7 +27,7 @@
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     id viewModel = nil;
     if ([segueIdentifier isEqualToString:@"displayTestSegue"]) {
-        viewModel = [[TestViewModel alloc] initWithDataModel:self.dataModel WebController:self.webController];
+        viewModel = [[TestViewModel alloc] initWithSWGTest:self.dataModel WebController:self.webController];
     }
     return viewModel;
 }

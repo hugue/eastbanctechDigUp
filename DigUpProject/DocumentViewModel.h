@@ -10,14 +10,16 @@
 #import "CoursesTableViewModel.h"
 #import "ChooseTestTableViewModel.h"
 #import "SubcourseModel.h"
+#import "SwaggerClient/SWGDefaultApi.h"
 
 @interface DocumentViewModel : NSObject
 
-@property (nonatomic, strong) SubcourseModel * dataModel;
+//@property (nonatomic, strong) SubcourseModel * dataModel;
 @property (nonatomic, strong) ChooseTestTableViewModel * chooseTestViewModel;
 @property (nonatomic, strong) WebController * webController;
+@property (nonatomic, strong) SWGSubcourse * dataModel;
 
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
-- (id)initWithDataModel:(SubcourseModel *)dataModel webController:(WebController *)webController;
-
+//- (id)initWithDataModel:(SubcourseModel *)dataModel webController:(WebController *)webController;
+- (id)initWithSWGSubcourse:(SWGSubcourse *)dataModel webController:(WebController *)webController;
 @end

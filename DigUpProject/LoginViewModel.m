@@ -10,7 +10,8 @@
 @interface LoginViewModel ()
 
 @property (nonatomic, strong) WebController * webController;
-@property (nonatomic, strong) ProfileModel * profile;
+//@property (nonatomic, strong) ProfileModel * profile;
+@property (nonatomic, strong) SWGUser * user;
 
 @end
 
@@ -33,7 +34,8 @@
 - (MyCoursesViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     MyCoursesViewModel * coursesViewModel;
     if ([segueIdentifier isEqualToString:@"signInSegue"]) {
-        coursesViewModel = [[MyCoursesViewModel alloc] initWithCourses:self.profile.courses WebController:self.webController];
+        //coursesViewModel = [[MyCoursesViewModel alloc] initWithCourses:self.profile.courses WebController:self.webController];
+        coursesViewModel = [[MyCoursesViewModel alloc] initWithSWGCourses:self.user.courses WebController:self.webController];
     }
     return coursesViewModel;
 }
@@ -43,19 +45,23 @@
     self.webController = [[WebController alloc] init];
     NSLog(@"default api - %@", self.defaultApi.apiClient);
     //[self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
+    @weakify(self)
     NSNumber * result = [self.defaultApi profileGetWithCompletionBlock:^(SWGUser *output, NSError *error) {
-        NSLog(@"User profile - %@ - with error - %@", output, error);
+        @strongify(self)
+        self.user = output;
+        self.profileLoaded = YES;
     }];
     NSLog(@"result - %@", result);
     return YES;
 }
 
 - (void)viewWillAppear {
-    self.profile = nil;
+    self.user = nil;
     self.profileLoaded = NO;
 }
 
 #pragma mark - Data Controller Protocol methods
+/*
 - (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
     NSError * parseError;
     if (!self.profile) {
@@ -66,6 +72,6 @@
         self.profileLoaded = YES;
         self.currentState = LogInCurrentStateListening;
     }
-}
+}*/
 
 @end
