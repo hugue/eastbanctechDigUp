@@ -18,7 +18,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"name", @"url", @"mediaUrl"];
+  NSArray *optionalProperties = @[@"mediaUrl"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -25,19 +25,6 @@
 		F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F7E1BA180E7005028A4 /* MaterialView.m */; };
 		F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F811BA1A6E6005028A4 /* TextFrameView.m */; };
 		F3E01F851BA1B294005028A4 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E01F841BA1B294005028A4 /* ImageView.m */; };
-		F3E9B6A51BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B68C1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m */; };
-		F3E9B6A61BD4F66C00ED81E2 /* SWGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B68E1BD4F66C00ED81E2 /* SWGApiClient.m */; };
-		F3E9B6A71BD4F66C00ED81E2 /* SWGConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6901BD4F66C00ED81E2 /* SWGConfiguration.m */; };
-		F3E9B6A81BD4F66C00ED81E2 /* SWGCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6921BD4F66C00ED81E2 /* SWGCourse.m */; };
-		F3E9B6A91BD4F66C00ED81E2 /* SWGDefaultApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6941BD4F66C00ED81E2 /* SWGDefaultApi.m */; };
-		F3E9B6AA1BD4F66C00ED81E2 /* SWGExam.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6961BD4F66C00ED81E2 /* SWGExam.m */; };
-		F3E9B6AB1BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6981BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m */; };
-		F3E9B6AC1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B69A1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m */; };
-		F3E9B6AD1BD4F66C00ED81E2 /* SWGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B69C1BD4F66C00ED81E2 /* SWGObject.m */; };
-		F3E9B6AE1BD4F66C00ED81E2 /* SWGQueryParamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B69E1BD4F66C00ED81E2 /* SWGQueryParamCollection.m */; };
-		F3E9B6AF1BD4F66C00ED81E2 /* SWGSubcourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6A01BD4F66C00ED81E2 /* SWGSubcourse.m */; };
-		F3E9B6B01BD4F66C00ED81E2 /* SWGTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6A21BD4F66C00ED81E2 /* SWGTest.m */; };
-		F3E9B6B11BD4F66C00ED81E2 /* SWGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E9B6A41BD4F66C00ED81E2 /* SWGUser.m */; };
 		F3ECBE6F1B9D452E0000A656 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE6E1B9D452E0000A656 /* main.m */; };
 		F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECBE711B9D452E0000A656 /* AppDelegate.m */; };
 		F3ECBE7A1B9D452E0000A656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3ECBE791B9D452E0000A656 /* Assets.xcassets */; };
@@ -51,6 +38,19 @@
 		F3F1E0AC1BC67905001AFA62 /* ExamViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */; };
 		F3F1E0AF1BC6977D001AFA62 /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F1E0AE1BC6977D001AFA62 /* WebController.m */; };
 		F3F320A91BBA6B560029F565 /* exo.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F320A81BBA6B560029F565 /* exo.json */; };
+		F3F558561BD6033600C657BA /* JSONValueTransformer+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5583D1BD6033600C657BA /* JSONValueTransformer+ISO8601.m */; };
+		F3F558571BD6033600C657BA /* SWGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5583F1BD6033600C657BA /* SWGApiClient.m */; };
+		F3F558581BD6033600C657BA /* SWGConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558411BD6033600C657BA /* SWGConfiguration.m */; };
+		F3F558591BD6033600C657BA /* SWGCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558431BD6033600C657BA /* SWGCourse.m */; };
+		F3F5585A1BD6033600C657BA /* SWGDefaultApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558451BD6033600C657BA /* SWGDefaultApi.m */; };
+		F3F5585B1BD6033600C657BA /* SWGExam.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558471BD6033600C657BA /* SWGExam.m */; };
+		F3F5585C1BD6033600C657BA /* SWGJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558491BD6033600C657BA /* SWGJSONRequestSerializer.m */; };
+		F3F5585D1BD6033600C657BA /* SWGJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5584B1BD6033600C657BA /* SWGJSONResponseSerializer.m */; };
+		F3F5585E1BD6033600C657BA /* SWGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5584D1BD6033600C657BA /* SWGObject.m */; };
+		F3F5585F1BD6033600C657BA /* SWGQueryParamCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5584F1BD6033600C657BA /* SWGQueryParamCollection.m */; };
+		F3F558601BD6033600C657BA /* SWGSubcourse.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558511BD6033600C657BA /* SWGSubcourse.m */; };
+		F3F558611BD6033600C657BA /* SWGTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558531BD6033600C657BA /* SWGTest.m */; };
+		F3F558621BD6033600C657BA /* SWGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F558551BD6033600C657BA /* SWGUser.m */; };
 		F3F570761BB2BC5E00EAD4A3 /* ForwardSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */; };
 		F3F570771BB2BC6600EAD4A3 /* ForwardSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */; };
 		F3F596191BC3C7A2007928CB /* DocumentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F596181BC3C7A2007928CB /* DocumentViewModel.m */; };
@@ -229,32 +229,6 @@
 		F3E01F811BA1A6E6005028A4 /* TextFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFrameView.m; sourceTree = "<group>"; };
 		F3E01F831BA1B294005028A4 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
 		F3E01F841BA1B294005028A4 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
-		F3E9B68B1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+ISO8601.h"; sourceTree = "<group>"; };
-		F3E9B68C1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+ISO8601.m"; sourceTree = "<group>"; };
-		F3E9B68D1BD4F66C00ED81E2 /* SWGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGApiClient.h; sourceTree = "<group>"; };
-		F3E9B68E1BD4F66C00ED81E2 /* SWGApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGApiClient.m; sourceTree = "<group>"; };
-		F3E9B68F1BD4F66C00ED81E2 /* SWGConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGConfiguration.h; sourceTree = "<group>"; };
-		F3E9B6901BD4F66C00ED81E2 /* SWGConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGConfiguration.m; sourceTree = "<group>"; };
-		F3E9B6911BD4F66C00ED81E2 /* SWGCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGCourse.h; sourceTree = "<group>"; };
-		F3E9B6921BD4F66C00ED81E2 /* SWGCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGCourse.m; sourceTree = "<group>"; };
-		F3E9B6931BD4F66C00ED81E2 /* SWGDefaultApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGDefaultApi.h; sourceTree = "<group>"; };
-		F3E9B6941BD4F66C00ED81E2 /* SWGDefaultApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGDefaultApi.m; sourceTree = "<group>"; };
-		F3E9B6951BD4F66C00ED81E2 /* SWGExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGExam.h; sourceTree = "<group>"; };
-		F3E9B6961BD4F66C00ED81E2 /* SWGExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGExam.m; sourceTree = "<group>"; };
-		F3E9B6971BD4F66C00ED81E2 /* SWGJSONRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGJSONRequestSerializer.h; sourceTree = "<group>"; };
-		F3E9B6981BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGJSONRequestSerializer.m; sourceTree = "<group>"; };
-		F3E9B6991BD4F66C00ED81E2 /* SWGJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGJSONResponseSerializer.h; sourceTree = "<group>"; };
-		F3E9B69A1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGJSONResponseSerializer.m; sourceTree = "<group>"; };
-		F3E9B69B1BD4F66C00ED81E2 /* SWGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGObject.h; sourceTree = "<group>"; };
-		F3E9B69C1BD4F66C00ED81E2 /* SWGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGObject.m; sourceTree = "<group>"; };
-		F3E9B69D1BD4F66C00ED81E2 /* SWGQueryParamCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGQueryParamCollection.h; sourceTree = "<group>"; };
-		F3E9B69E1BD4F66C00ED81E2 /* SWGQueryParamCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGQueryParamCollection.m; sourceTree = "<group>"; };
-		F3E9B69F1BD4F66C00ED81E2 /* SWGSubcourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGSubcourse.h; sourceTree = "<group>"; };
-		F3E9B6A01BD4F66C00ED81E2 /* SWGSubcourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGSubcourse.m; sourceTree = "<group>"; };
-		F3E9B6A11BD4F66C00ED81E2 /* SWGTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGTest.h; sourceTree = "<group>"; };
-		F3E9B6A21BD4F66C00ED81E2 /* SWGTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGTest.m; sourceTree = "<group>"; };
-		F3E9B6A31BD4F66C00ED81E2 /* SWGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGUser.h; sourceTree = "<group>"; };
-		F3E9B6A41BD4F66C00ED81E2 /* SWGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGUser.m; sourceTree = "<group>"; };
 		F3ECBE6A1B9D452E0000A656 /* DigUpProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigUpProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ECBE6E1B9D452E0000A656 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3ECBE701B9D452E0000A656 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -281,6 +255,32 @@
 		F3F1E0AD1BC6977D001AFA62 /* WebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebController.h; sourceTree = "<group>"; };
 		F3F1E0AE1BC6977D001AFA62 /* WebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebController.m; sourceTree = "<group>"; };
 		F3F320A81BBA6B560029F565 /* exo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exo.json; path = DigUpProject/exo.json; sourceTree = "<group>"; };
+		F3F5583C1BD6033600C657BA /* JSONValueTransformer+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+ISO8601.h"; sourceTree = "<group>"; };
+		F3F5583D1BD6033600C657BA /* JSONValueTransformer+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+ISO8601.m"; sourceTree = "<group>"; };
+		F3F5583E1BD6033600C657BA /* SWGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGApiClient.h; sourceTree = "<group>"; };
+		F3F5583F1BD6033600C657BA /* SWGApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGApiClient.m; sourceTree = "<group>"; };
+		F3F558401BD6033600C657BA /* SWGConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGConfiguration.h; sourceTree = "<group>"; };
+		F3F558411BD6033600C657BA /* SWGConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGConfiguration.m; sourceTree = "<group>"; };
+		F3F558421BD6033600C657BA /* SWGCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGCourse.h; sourceTree = "<group>"; };
+		F3F558431BD6033600C657BA /* SWGCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGCourse.m; sourceTree = "<group>"; };
+		F3F558441BD6033600C657BA /* SWGDefaultApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGDefaultApi.h; sourceTree = "<group>"; };
+		F3F558451BD6033600C657BA /* SWGDefaultApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGDefaultApi.m; sourceTree = "<group>"; };
+		F3F558461BD6033600C657BA /* SWGExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGExam.h; sourceTree = "<group>"; };
+		F3F558471BD6033600C657BA /* SWGExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGExam.m; sourceTree = "<group>"; };
+		F3F558481BD6033600C657BA /* SWGJSONRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGJSONRequestSerializer.h; sourceTree = "<group>"; };
+		F3F558491BD6033600C657BA /* SWGJSONRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGJSONRequestSerializer.m; sourceTree = "<group>"; };
+		F3F5584A1BD6033600C657BA /* SWGJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGJSONResponseSerializer.h; sourceTree = "<group>"; };
+		F3F5584B1BD6033600C657BA /* SWGJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGJSONResponseSerializer.m; sourceTree = "<group>"; };
+		F3F5584C1BD6033600C657BA /* SWGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGObject.h; sourceTree = "<group>"; };
+		F3F5584D1BD6033600C657BA /* SWGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGObject.m; sourceTree = "<group>"; };
+		F3F5584E1BD6033600C657BA /* SWGQueryParamCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGQueryParamCollection.h; sourceTree = "<group>"; };
+		F3F5584F1BD6033600C657BA /* SWGQueryParamCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGQueryParamCollection.m; sourceTree = "<group>"; };
+		F3F558501BD6033600C657BA /* SWGSubcourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGSubcourse.h; sourceTree = "<group>"; };
+		F3F558511BD6033600C657BA /* SWGSubcourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGSubcourse.m; sourceTree = "<group>"; };
+		F3F558521BD6033600C657BA /* SWGTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGTest.h; sourceTree = "<group>"; };
+		F3F558531BD6033600C657BA /* SWGTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGTest.m; sourceTree = "<group>"; };
+		F3F558541BD6033600C657BA /* SWGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGUser.h; sourceTree = "<group>"; };
+		F3F558551BD6033600C657BA /* SWGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWGUser.m; sourceTree = "<group>"; };
 		F3F570741BB2B84200EAD4A3 /* ForwardSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Regular.otf"; sourceTree = "<group>"; };
 		F3F570751BB2B84A00EAD4A3 /* ForwardSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ForwardSans-Bold.otf"; sourceTree = "<group>"; };
 		F3F596171BC3C7A2007928CB /* DocumentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentViewModel.h; sourceTree = "<group>"; };
@@ -598,39 +598,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		F3E9B68A1BD4F66C00ED81E2 /* SwaggerClient */ = {
-			isa = PBXGroup;
-			children = (
-				F3E9B68B1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.h */,
-				F3E9B68C1BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m */,
-				F3E9B68D1BD4F66C00ED81E2 /* SWGApiClient.h */,
-				F3E9B68E1BD4F66C00ED81E2 /* SWGApiClient.m */,
-				F3E9B68F1BD4F66C00ED81E2 /* SWGConfiguration.h */,
-				F3E9B6901BD4F66C00ED81E2 /* SWGConfiguration.m */,
-				F3E9B6911BD4F66C00ED81E2 /* SWGCourse.h */,
-				F3E9B6921BD4F66C00ED81E2 /* SWGCourse.m */,
-				F3E9B6931BD4F66C00ED81E2 /* SWGDefaultApi.h */,
-				F3E9B6941BD4F66C00ED81E2 /* SWGDefaultApi.m */,
-				F3E9B6951BD4F66C00ED81E2 /* SWGExam.h */,
-				F3E9B6961BD4F66C00ED81E2 /* SWGExam.m */,
-				F3E9B6971BD4F66C00ED81E2 /* SWGJSONRequestSerializer.h */,
-				F3E9B6981BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m */,
-				F3E9B6991BD4F66C00ED81E2 /* SWGJSONResponseSerializer.h */,
-				F3E9B69A1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m */,
-				F3E9B69B1BD4F66C00ED81E2 /* SWGObject.h */,
-				F3E9B69C1BD4F66C00ED81E2 /* SWGObject.m */,
-				F3E9B69D1BD4F66C00ED81E2 /* SWGQueryParamCollection.h */,
-				F3E9B69E1BD4F66C00ED81E2 /* SWGQueryParamCollection.m */,
-				F3E9B69F1BD4F66C00ED81E2 /* SWGSubcourse.h */,
-				F3E9B6A01BD4F66C00ED81E2 /* SWGSubcourse.m */,
-				F3E9B6A11BD4F66C00ED81E2 /* SWGTest.h */,
-				F3E9B6A21BD4F66C00ED81E2 /* SWGTest.m */,
-				F3E9B6A31BD4F66C00ED81E2 /* SWGUser.h */,
-				F3E9B6A41BD4F66C00ED81E2 /* SWGUser.m */,
-			);
-			path = SwaggerClient;
-			sourceTree = "<group>";
-		};
 		F3ECBE611B9D452E0000A656 = {
 			isa = PBXGroup;
 			children = (
@@ -657,7 +624,7 @@
 		F3ECBE6C1B9D452E0000A656 /* DigUpProject */ = {
 			isa = PBXGroup;
 			children = (
-				F3E9B68A1BD4F66C00ED81E2 /* SwaggerClient */,
+				F3F5583B1BD6033600C657BA /* SwaggerClient */,
 				F3023F411BD0F6BE00393745 /* Categories */,
 				F3ECBE701B9D452E0000A656 /* AppDelegate.h */,
 				F3ECBE711B9D452E0000A656 /* AppDelegate.m */,
@@ -701,6 +668,39 @@
 				F3ECBE941B9D452E0000A656 /* Info.plist */,
 			);
 			path = DigUpProjectUITests;
+			sourceTree = "<group>";
+		};
+		F3F5583B1BD6033600C657BA /* SwaggerClient */ = {
+			isa = PBXGroup;
+			children = (
+				F3F5583C1BD6033600C657BA /* JSONValueTransformer+ISO8601.h */,
+				F3F5583D1BD6033600C657BA /* JSONValueTransformer+ISO8601.m */,
+				F3F5583E1BD6033600C657BA /* SWGApiClient.h */,
+				F3F5583F1BD6033600C657BA /* SWGApiClient.m */,
+				F3F558401BD6033600C657BA /* SWGConfiguration.h */,
+				F3F558411BD6033600C657BA /* SWGConfiguration.m */,
+				F3F558421BD6033600C657BA /* SWGCourse.h */,
+				F3F558431BD6033600C657BA /* SWGCourse.m */,
+				F3F558441BD6033600C657BA /* SWGDefaultApi.h */,
+				F3F558451BD6033600C657BA /* SWGDefaultApi.m */,
+				F3F558461BD6033600C657BA /* SWGExam.h */,
+				F3F558471BD6033600C657BA /* SWGExam.m */,
+				F3F558481BD6033600C657BA /* SWGJSONRequestSerializer.h */,
+				F3F558491BD6033600C657BA /* SWGJSONRequestSerializer.m */,
+				F3F5584A1BD6033600C657BA /* SWGJSONResponseSerializer.h */,
+				F3F5584B1BD6033600C657BA /* SWGJSONResponseSerializer.m */,
+				F3F5584C1BD6033600C657BA /* SWGObject.h */,
+				F3F5584D1BD6033600C657BA /* SWGObject.m */,
+				F3F5584E1BD6033600C657BA /* SWGQueryParamCollection.h */,
+				F3F5584F1BD6033600C657BA /* SWGQueryParamCollection.m */,
+				F3F558501BD6033600C657BA /* SWGSubcourse.h */,
+				F3F558511BD6033600C657BA /* SWGSubcourse.m */,
+				F3F558521BD6033600C657BA /* SWGTest.h */,
+				F3F558531BD6033600C657BA /* SWGTest.m */,
+				F3F558541BD6033600C657BA /* SWGUser.h */,
+				F3F558551BD6033600C657BA /* SWGUser.m */,
+			);
+			path = SwaggerClient;
 			sourceTree = "<group>";
 		};
 		F3F89E901BA30670004648B6 /* TaskControllers */ = {
@@ -1256,23 +1256,19 @@
 				F3F987531BBE6D1300E94F60 /* NSMutableDictionary+ETRUtils.m in Sources */,
 				F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */,
 				F3F987811BBE6D1300E94F60 /* ETRSearchResults.m in Sources */,
+				F3F5585F1BD6033600C657BA /* SWGQueryParamCollection.m in Sources */,
 				F3F9877B1BBE6D1300E94F60 /* ETRStaticCellModel.m in Sources */,
-				F3E9B6AF1BD4F66C00ED81E2 /* SWGSubcourse.m in Sources */,
 				F3FCD5391BCBCD780074F409 /* ExamFirstViewController.m in Sources */,
-				F3E9B6B11BD4F66C00ED81E2 /* SWGUser.m in Sources */,
 				F3F987591BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m in Sources */,
-				F3E9B6A61BD4F66C00ED81E2 /* SWGApiClient.m in Sources */,
 				F3F9874D1BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m in Sources */,
-				F3E9B6A51BD4F66C00ED81E2 /* JSONValueTransformer+ISO8601.m in Sources */,
 				F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */,
 				F3F9874B1BBE6D1300E94F60 /* ETRActionSheet.m in Sources */,
 				F3F1E0AF1BC6977D001AFA62 /* WebController.m in Sources */,
 				F3F987651BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m in Sources */,
-				F3E9B6AD1BD4F66C00ED81E2 /* SWGObject.m in Sources */,
 				F3F987691BBE6D1300E94F60 /* ETRCollectionChangeItems.m in Sources */,
 				F3FCD5321BCB6A130074F409 /* TestViewController.m in Sources */,
 				F3F987611BBE6D1300E94F60 /* UIViewController+ETRUtils.m in Sources */,
-				F3E9B6AB1BD4F66C00ED81E2 /* SWGJSONRequestSerializer.m in Sources */,
+				F3F5585E1BD6033600C657BA /* SWGObject.m in Sources */,
 				F3F9878A1BBE6D1300E94F60 /* ETRRACAdditions.m in Sources */,
 				F3FCD53C1BCBCD890074F409 /* ExamResultViewController.m in Sources */,
 				F3F987551BBE6D1300E94F60 /* NSMutableString+ETRUtils.m in Sources */,
@@ -1286,11 +1282,11 @@
 				F3F987621BBE6D1300E94F60 /* ETRCGUtils.m in Sources */,
 				F3F9876C1BBE6D1300E94F60 /* ETRCollectionChangeSectionInsert.m in Sources */,
 				F3F9876E1BBE6D1300E94F60 /* ETRCollectionChangeSections.m in Sources */,
-				F3E9B6AE1BD4F66C00ED81E2 /* SWGQueryParamCollection.m in Sources */,
 				F3F987871BBE6D1300E94F60 /* ETRPromise.m in Sources */,
 				F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */,
 				F3F987721BBE6D1300E94F60 /* ETROuterUnionCollectionModel.m in Sources */,
 				F3F596191BC3C7A2007928CB /* DocumentViewModel.m in Sources */,
+				F3F558611BD6033600C657BA /* SWGTest.m in Sources */,
 				F3ECBE721B9D452E0000A656 /* AppDelegate.m in Sources */,
 				F3F987971BBE6E9D00E94F60 /* LoginViewModel.m in Sources */,
 				F3E01F821BA1A6E6005028A4 /* TextFrameView.m in Sources */,
@@ -1300,36 +1296,39 @@
 				F33D41041BB00A8600F5A903 /* ImageViewModel.m in Sources */,
 				F3F5A84B1BAC030300D35CA6 /* DragElementRecognizer.m in Sources */,
 				F3F1E0A91BC678CF001AFA62 /* ExamViewController.m in Sources */,
-				F3E9B6A81BD4F66C00ED81E2 /* SWGCourse.m in Sources */,
 				F3F64A431BA6FAED00B9231D /* RectangleView.m in Sources */,
 				F3F987501BBE6D1300E94F60 /* NSError+ETRUtils.m in Sources */,
 				F3F987671BBE6D1300E94F60 /* ETRCollectionChangeItemMove.m in Sources */,
 				F3F5962E1BC3ED68007928CB /* ChooseTestTableViewModel.m in Sources */,
+				F3F558561BD6033600C657BA /* JSONValueTransformer+ISO8601.m in Sources */,
 				F3F9876D1BBE6D1300E94F60 /* ETRCollectionChangeSectionReload.m in Sources */,
 				F3F987641BBE6D1300E94F60 /* ETRCollectionChangeBatch.m in Sources */,
 				F3F64A3A1BA68A5100B9231D /* RadioButtonsController.m in Sources */,
 				F3F1E0A61BC67115001AFA62 /* ExamModel.m in Sources */,
 				F3F987821BBE6D1300E94F60 /* ETRTableViewCell.m in Sources */,
-				F3E9B6AA1BD4F66C00ED81E2 /* SWGExam.m in Sources */,
 				F3F9875F1BBE6D1300E94F60 /* UITableViewCell+ETRUtils.m in Sources */,
 				F3E01F851BA1B294005028A4 /* ImageView.m in Sources */,
 				F3F9875A1BBE6D1300E94F60 /* UICollectionView+ETRUtils.m in Sources */,
 				F3F9876B1BBE6D1300E94F60 /* ETRCollectionChangeSectionDelete.m in Sources */,
 				F3E01F7F1BA180E7005028A4 /* MaterialView.m in Sources */,
-				F3E9B6AC1BD4F66C00ED81E2 /* SWGJSONResponseSerializer.m in Sources */,
+				F3F5585D1BD6033600C657BA /* SWGJSONResponseSerializer.m in Sources */,
 				F3F9875D1BBE6D1300E94F60 /* UIRefreshControl+ETRUtils.m in Sources */,
 				F3F987761BBE6D1300E94F60 /* ETRCollectionUtils.m in Sources */,
 				F33D40FE1BAFFB4100F5A903 /* CheckBoxViewModel.m in Sources */,
 				F3F987511BBE6D1300E94F60 /* NSFetchedResultsController+ETRUtils.m in Sources */,
+				F3F558571BD6033600C657BA /* SWGApiClient.m in Sources */,
 				F3F987571BBE6D1300E94F60 /* NSString+ETRUtils.m in Sources */,
 				F3F9877F1BBE6D1300E94F60 /* ETRCollectionViewController.m in Sources */,
 				F3F987781BBE6D1300E94F60 /* ETRFetchedResultsCollectionModel.m in Sources */,
 				F3C0F6021BCFC59900BF8688 /* ProfileModel.m in Sources */,
+				F3F558621BD6033600C657BA /* SWGUser.m in Sources */,
 				F3F987601BBE6D1300E94F60 /* UIView+ETRUtils.m in Sources */,
 				F3F987911BBE6D1300E94F60 /* ETRUtils.m in Sources */,
 				F3F9875B1BBE6D1300E94F60 /* UIColor+ETRUtils.m in Sources */,
 				F3F89E981BA30B34004648B6 /* RadioButtonViewModel.m in Sources */,
+				F3F558601BD6033600C657BA /* SWGSubcourse.m in Sources */,
 				F3F987751BBE6D1300E94F60 /* ETRCollectionModel.m in Sources */,
+				F3F5585C1BD6033600C657BA /* SWGJSONRequestSerializer.m in Sources */,
 				F3FCD5291BCB68FA0074F409 /* ExerciseViewModel.m in Sources */,
 				F3F663011BC4D96B00BCE54F /* SubcourseModel.m in Sources */,
 				F3F9875E1BBE6D1300E94F60 /* UITableView+ETRUtils.m in Sources */,
@@ -1341,7 +1340,6 @@
 				F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */,
 				F3F987631BBE6D1300E94F60 /* ETRCollectionChange.m in Sources */,
 				F3F987881BBE6D1300E94F60 /* ETRResolvablePromise.m in Sources */,
-				F3E9B6A71BD4F66C00ED81E2 /* SWGConfiguration.m in Sources */,
 				F3F987841BBE6D1300E94F60 /* ETRImagePickerController.m in Sources */,
 				F3E01F731BA175F4005028A4 /* MaterialViewModel.m in Sources */,
 				F3F987941BBE6DAE00E94F60 /* LoginViewController.m in Sources */,
@@ -1368,6 +1366,8 @@
 				F3F64A401BA6F56400B9231D /* TextInputView.m in Sources */,
 				F3F987581BBE6D1300E94F60 /* NSTimer+ETRUtils.m in Sources */,
 				F3F1E0AC1BC67905001AFA62 /* ExamViewModel.m in Sources */,
+				F3F558581BD6033600C657BA /* SWGConfiguration.m in Sources */,
+				F3F558591BD6033600C657BA /* SWGCourse.m in Sources */,
 				F3F987661BBE6D1300E94F60 /* ETRCollectionChangeItemInsert.m in Sources */,
 				F3F987851BBE6D1300E94F60 /* ETRKVO.m in Sources */,
 				F3F987711BBE6D1300E94F60 /* ETRHidingCollectionModel.m in Sources */,
@@ -1375,18 +1375,18 @@
 				F3F9878F1BBE6D1300E94F60 /* ETRStoryboardSegue.m in Sources */,
 				F3F9877E1BBE6D1300E94F60 /* ETRCollectionViewCell.m in Sources */,
 				F3F64A3D1BA6F54700B9231D /* TextInputViewModel.m in Sources */,
-				F3E9B6B01BD4F66C00ED81E2 /* SWGTest.m in Sources */,
 				F3F9875C1BBE6D1300E94F60 /* UIImage+ETRUtils.m in Sources */,
 				F3F987801BBE6D1300E94F60 /* ETRReuseIdentifierMatching.m in Sources */,
 				F3F987741BBE6D1300E94F60 /* ETRProxyItemsCollectionModel.m in Sources */,
 				F35274971BBE8F430089FB6F /* MyCoursesViewController.m in Sources */,
 				F3F5A8481BABCACB00D35CA6 /* DragNDropController.m in Sources */,
-				F3E9B6A91BD4F66C00ED81E2 /* SWGDefaultApi.m in Sources */,
 				F3F9878C1BBE6D1300E94F60 /* ETRStoryboardModalSegue.m in Sources */,
 				F3F9874C1BBE6D1300E94F60 /* ETRAlertView.m in Sources */,
+				F3F5585A1BD6033600C657BA /* SWGDefaultApi.m in Sources */,
 				F3893AB01BCD181000558F07 /* ExerciseViewController.m in Sources */,
 				F3F987681BBE6D1300E94F60 /* ETRCollectionChangeItemReload.m in Sources */,
 				F3F987731BBE6D1300E94F60 /* ETRProxyCollectionModel.m in Sources */,
+				F3F5585B1BD6033600C657BA /* SWGExam.m in Sources */,
 				F3F987861BBE6D1300E94F60 /* ETRLazyPromise.m in Sources */,
 				F3F5A8531BAC37D800D35CA6 /* AudioView.m in Sources */,
 			);

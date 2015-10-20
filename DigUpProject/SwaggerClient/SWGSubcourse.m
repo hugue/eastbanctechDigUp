@@ -18,7 +18,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"name", @"document", @"tests"];
+  NSArray *optionalProperties = @[@"tests"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

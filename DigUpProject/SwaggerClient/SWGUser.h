@@ -15,7 +15,7 @@
 
 @interface SWGUser : SWGObject
 
-/* Login under which the user is registered in data base [optional]
+/* Login under which the user is registered in data base 
  */
 @property(nonatomic) NSString* userName;
 /* An array of all the courses this user has access to [optional]

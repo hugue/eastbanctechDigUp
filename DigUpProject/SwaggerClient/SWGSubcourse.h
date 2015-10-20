@@ -17,7 +17,7 @@
 
 
 @property(nonatomic) NSString* name;
-/* URL where the pdf document for this subcourse can be found [optional]
+/* URL indicating where the pdf document for this subcourse can be found 
  */
 @property(nonatomic) NSString* document;
 

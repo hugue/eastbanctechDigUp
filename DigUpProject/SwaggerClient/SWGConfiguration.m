@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"http://demo5748745.mockable.io";
+        self.host = @"https://demo5748745.mockable.io";
         self.username = @"";
         self.password = @"";
         self.tempFolderPath = nil;
