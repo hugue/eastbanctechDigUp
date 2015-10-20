@@ -9,18 +9,7 @@
 #import "DocumentViewModel.h"
 
 @implementation DocumentViewModel
-/*
-- (id)initWithDataModel:(SubcourseModel *)dataModel webController:(WebController *)webController {
-    self = [super init];
-    if (self) {
-        //self.dataModel = dataModel;
-        self.webController = webController;
-        self.chooseTestViewModel = [[ChooseTestTableViewModel alloc] initWithWebController:self.webController];
-        [self configureChooseTestViewModel];
-    }
-    return self;
-}
-*/
+
 - (id)initWithSWGSubcourse:(SWGSubcourse *)dataModel webController:(WebController *)webController {
     self = [super init];
     if (self) {

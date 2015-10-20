@@ -71,7 +71,7 @@ static SWGDefaultApi* singletonAPI = nil;
 
 ///
 /// 
-/// Get the user's profile in JSON format
+/// Get the user s profile in JSON format
 ///  @returns SWGUser*
 ///
 -(NSNumber*) profileGetWithCompletionBlock: 
@@ -140,6 +140,81 @@ static SWGDefaultApi* singletonAPI = nil;
                                       completionBlock: ^(id data, NSError *error) {
                   
                   completionBlock((SWGUser*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Testing how to post data on mockable
+///  @returns NSString*
+///
+-(NSNumber*) testPostPostWithCompletionBlock: 
+        (void (^)(NSString* output, NSError* error))completionBlock { 
+        
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/testPost"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SWGApiClient selectHeaderAccept:@[]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SWGApiClient selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"NSString*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((NSString*)data, error);
               }
           ];
 }

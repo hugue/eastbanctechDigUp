@@ -13,18 +13,6 @@
 
 @implementation TestViewModel
 
-/*
-- (id)initWithDataModel:(TestModel *)dataModel WebController:(WebController *)webController {
-    self = [super init];
-    if (self) {
-        [self initialize];
-        self.webController = webController;
-        self.dataModel = dataModel;
-        [self askDataForExercise:self.dataModel];
-    }
-    return self;
-}
-*/
 - (id)initWithSWGTest:(SWGTest *)dataModel WebController:(WebController *)webController {
     self = [super init];
     if (self) {

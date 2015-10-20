@@ -22,13 +22,26 @@
 ///
 ///
 /// 
-/// Get the user's profile in JSON format
+/// Get the user s profile in JSON format
 ///
 /// 
 ///
 /// @return SWGUser*
 -(NSNumber*) profileGetWithCompletionBlock :
     (void (^)(SWGUser* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Testing how to post data on mockable
+///
+/// 
+///
+/// @return NSString*
+-(NSNumber*) testPostPostWithCompletionBlock :
+    (void (^)(NSString* output, NSError* error))completionBlock;
     
 
 

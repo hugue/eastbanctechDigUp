@@ -18,8 +18,6 @@
 @interface MyCoursesViewModel : NSObject
 
 @property (nonatomic, strong) NSString * selectedCourse;
-
-//@property (nonatomic, strong) NSArray<CourseModel *> * profileCourses;
 @property (nonatomic, strong) NSArray<SWGCourse *> * courses;
 
 @property (nonatomic, strong) CoursesTableViewModel * coursesViewModel;
@@ -28,7 +26,6 @@
 @property (nonatomic, strong) ExamFirstViewModel * examFirstViewModel;
 @property (nonatomic, strong) WebController * webController;
 
-- (id)initWithCourses:(NSArray<CourseModel *> *)courses WebController:(WebController *)webController;
 - (id)initWithSWGCourses:(NSArray<SWGCourse *> *)courses WebController:(WebController *)webController;
 - (void)observeSubModels;
 - (id)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;

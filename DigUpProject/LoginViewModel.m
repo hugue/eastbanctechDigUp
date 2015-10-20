@@ -10,7 +10,6 @@
 @interface LoginViewModel ()
 
 @property (nonatomic, strong) WebController * webController;
-//@property (nonatomic, strong) ProfileModel * profile;
 @property (nonatomic, strong) SWGUser * user;
 
 @end
@@ -34,7 +33,6 @@
 - (MyCoursesViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     MyCoursesViewModel * coursesViewModel;
     if ([segueIdentifier isEqualToString:@"signInSegue"]) {
-        //coursesViewModel = [[MyCoursesViewModel alloc] initWithCourses:self.profile.courses WebController:self.webController];
         coursesViewModel = [[MyCoursesViewModel alloc] initWithSWGCourses:self.user.courses WebController:self.webController];
     }
     return coursesViewModel;
@@ -50,6 +48,7 @@
         @strongify(self)
         self.user = output;
         self.profileLoaded = YES;
+        self.currentState = LogInCurrentStateListening;
     }];
     NSLog(@"result - %@", result);
     return YES;

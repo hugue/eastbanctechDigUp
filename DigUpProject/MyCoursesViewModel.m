@@ -12,23 +12,6 @@
 @end
 
 @implementation MyCoursesViewModel
-/*
-- (id)initWithCourses:(NSArray<CourseModel *> *)courses WebController:(WebController *)webController {
-    self = [super init];
-    if (self) {
-        self.webController = webController;
-        NSMutableArray<NSString *> * coursesNames = [[NSMutableArray alloc] init];
-        self.profileCourses = [courses copy];
-        
-        for (CourseModel * course in courses) {
-            [coursesNames addObject:course.name];
-        }
-        self.coursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:coursesNames];
-        self.detailCoursesViewModel = [[CoursesTableViewModel alloc] initWithCellIdentifier:@"CourseCellView" andItems:nil];
-        [self observeSubModels];
-    }
-    return self;
-}*/
 
 - (id)initWithSWGCourses:(NSArray<SWGCourse *> *)courses WebController:(WebController *)webController {
     self = [super init];
@@ -64,10 +47,6 @@
         viewModel = self.detailCoursesViewModel;
     }
     else if ([segueIdentifier isEqualToString:@"viewDocumentSegue"]) {
-       /* CourseModel * currentCourse = [self.profileCourses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
-        SubcourseModel * currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
-        self.documentViewModel = [[DocumentViewModel alloc] initWithDataModel:currentSubcourse webController:self.webController];
-        viewModel = self.documentViewModel;*/
         SWGCourse * currentCourse = [self.courses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
         SWGSubcourse * currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
         self.documentViewModel = [[DocumentViewModel alloc] initWithSWGSubcourse:currentSubcourse webController:self.webController];
