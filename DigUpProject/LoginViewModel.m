@@ -41,14 +41,12 @@
 - (BOOL)signInNow {
     self.currentState = LogInCurrentStateProcessing;
     self.webController = [[WebController alloc] init];
+    NSLog(@"default api - %@", self.defaultApi.apiClient);
     //[self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
-
     NSNumber * result = [self.defaultApi profileGetWithCompletionBlock:^(SWGUser *output, NSError *error) {
-        SWGUser * user = output;
-        NSLog(@"User profile - %@ - with error - %@", user, error);
+        NSLog(@"User profile - %@ - with error - %@", output, error);
     }];
     NSLog(@"result - %@", result);
-    NSLog(@"Login - %@ and password - %@", self.login, self.password);
     return YES;
 }
 
