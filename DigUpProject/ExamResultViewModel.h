@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "ExamModel.h"
+#import "SwaggerClient/SWGDefaultApi.h"
 
 @interface ExamResultViewModel : NSObject
 
 @property (nonatomic, strong) NSString * text;
-@property (nonatomic, strong) ExamModel * dataModel;
+@property (nonatomic, strong) SWGExam * dataModel;
 
-- (id)initWithDataModel:(ExamModel *)dataModel;
+- (id)initWithSWGExam:(SWGExam *)dataModel;
 
 @end

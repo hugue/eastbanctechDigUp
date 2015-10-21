@@ -10,12 +10,12 @@
 
 @implementation ExamResultViewModel
 
-- (id)initWithDataModel:(ExamModel *)dataModel {
+- (id)initWithSWGExam:(SWGExam *)dataModel {
     self = [super init];
     if (self) {
         self.dataModel = dataModel;
-        BOOL success = ([self.dataModel.currentScore doubleValue] >= [self.dataModel.requiredScore doubleValue]);
-        self.text = [self createTextFor:success];
+        //BOOL success = ([self.dataModel.currentScore doubleValue] >= [self.dataModel.requiredScore doubleValue]);
+        self.text = [self createTextFor:YES];
     }
     return self;
 }
@@ -23,10 +23,10 @@
 - (NSString *)createTextFor:(BOOL)success  {
     NSString * text;
     if (success) {
-        text = [NSString stringWithFormat:@"Congratulations ! You passed the test with %@%% of good answers. Cick \"OK\" to go back the exam presentation screen.", self.dataModel.currentScore];
+        //text = [NSString stringWithFormat:@"Congratulations ! You passed the test with %@%% of good answers. Cick \"OK\" to go back the exam presentation screen.", self.dataModel.currentScore];
     }
     else {
-        text = [NSString stringWithFormat:@"Unfortunately you got only %@%% of good answers instead of the %@ required to pass this exam. Read the document again and then come back to pass the exam. Click on \"OK\" to go back to the exam presentation screen", self.dataModel.currentScore, self.dataModel.requiredScore];
+        //text = [NSString stringWithFormat:@"Unfortunately you got only %@%% of good answers instead of the %@ required to pass this exam. Read the document again and then come back to pass the exam. Click on \"OK\" to go back to the exam presentation screen", self.dataModel.currentScore, self.dataModel.requiredScore];
     }
     return text;
 }

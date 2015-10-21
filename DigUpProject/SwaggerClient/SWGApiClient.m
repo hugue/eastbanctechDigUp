@@ -311,11 +311,11 @@ static void (^reachabilityChangeBlock)(int);
                                  range:NSMakeRange(0, [class length])];
 
     if (match) {
-        NSArray *dataArray = data;
+        id dataArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         innerType = [class substringWithRange:[match rangeAtIndex:1]];
 
         resultArray = [NSMutableArray arrayWithCapacity:[dataArray count]];
-        [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [dataArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 [resultArray addObject:[self deserialize:obj class:innerType]];
             }
         ];
@@ -397,8 +397,13 @@ static void (^reachabilityChangeBlock)(int);
    // model
     Class ModelClass = NSClassFromString(class);
     if ([ModelClass instancesRespondToSelector:@selector(initWithDictionary:error:)]) {
-        id object = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        return [[ModelClass alloc] initWithDictionary:object error:nil];
+        NSLog(@"Class of data - %@", [data class]);
+        NSLog(@"Data - %@", data);
+        if ([[data class] isSubclassOfClass:[NSData class]]) {
+            id object = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            return [[ModelClass alloc] initWithDictionary:object error:nil];
+        }
+        return [[ModelClass alloc] initWithDictionary:data error:nil];
     }
 
     return nil;

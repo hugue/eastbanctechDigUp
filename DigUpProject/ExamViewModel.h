@@ -24,7 +24,6 @@ typedef NS_ENUM(NSInteger, ExerciseChangeDirection) {
 @property (nonatomic, strong) NSTimer * countDownTimer;
 @property (nonatomic) NSUInteger remainingTime;
 @property (nonatomic, strong) ExerciseViewModel * currentExercise;
-//@property (nonatomic, strong) ExamModel * dataModel;
 @property (nonatomic, strong) SWGExam * dataModel;
 @property (nonatomic, strong) RACSubject * changeCurrentExercise;
 

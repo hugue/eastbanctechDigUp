@@ -43,7 +43,7 @@
         viewModel = self.currentExercise;
     }
     else if ([segueIdentifier isEqualToString:@"examResultSegue"]) {
-        viewModel = [[ExamResultViewModel alloc] initWithDataModel:self.dataModel];
+        viewModel = [[ExamResultViewModel alloc] initWithSWGExam:self.dataModel];
     }
     return viewModel;
 }
