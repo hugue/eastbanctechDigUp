@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, LogInCurrentState) {
     LogInCurrentStateProcessing
 };
 
-@interface LoginViewModel : NSObject <DataControllerProtocol>
+@interface LoginViewModel : NSObject
 
 @property (nonatomic, strong) NSString * login;
 @property (nonatomic, strong) NSString * password;

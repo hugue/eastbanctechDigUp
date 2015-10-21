@@ -19,7 +19,9 @@
         [self initialize];
         self.webController = webController;
         self.dataModel = dataModel;
+        @weakify(self)
         [self.defaultApi exerciseExerciseNameGetWithCompletionBlock:self.dataModel.url completionHandler:^(SWGExercise *output, NSError *error) {
+            @strongify(self)
             self.exerciseModel = output;
             self.exerciseLoaded = @YES;
         }];

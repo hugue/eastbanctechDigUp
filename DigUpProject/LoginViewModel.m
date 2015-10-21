@@ -42,7 +42,6 @@
     self.currentState = LogInCurrentStateProcessing;
     self.webController = [[WebController alloc] init];
     NSLog(@"default api - %@", self.defaultApi.apiClient);
-    //[self.webController addTaskForObject:self toURL:@"https://demo5748745.mockable.io/profile"];
     @weakify(self)
     NSNumber * result = [self.defaultApi profileGetWithCompletionBlock:^(SWGUser *output, NSError *error) {
         @strongify(self)
@@ -58,19 +57,5 @@
     self.user = nil;
     self.profileLoaded = NO;
 }
-
-#pragma mark - Data Controller Protocol methods
-/*
-- (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
-    NSError * parseError;
-    if (!self.profile) {
-        self.profile = [[ProfileModel alloc] initWithData:data error: &parseError];
-        if (parseError) {
-            NSLog(@"Error : %@", parseError);
-        }
-        self.profileLoaded = YES;
-        self.currentState = LogInCurrentStateListening;
-    }
-}*/
 
 @end
