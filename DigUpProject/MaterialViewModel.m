@@ -12,19 +12,19 @@
 
 @implementation MaterialViewModel
 
-- (id)initWithModel:(MaterialModel *)materialModel {
+- (id)initWithSWGMaterial:(SWGMaterial *)materialModel {
     self = [super init];
     if (self) {
         self.material = materialModel;
-        self.materialID = materialModel.Id;
+        self.materialID = materialModel.handlingId;
         self.displayState = MaterialDisplayStateIsNormal;
-        self.correctDropTargetID = self.material.DropTargetId;
+        self.correctDropTargetID = self.material.dropTargetId;
         
         self.position = CGPointMake([materialModel.X floatValue], [materialModel.Y floatValue]);
         self.zPosition = [materialModel.Z integerValue];
         
-        self.materialHeight = [self.material.Height floatValue];
-        self.materialWidth = [self.material.Width floatValue];
+        self.materialHeight = [self.material.height floatValue];
+        self.materialWidth = [self.material.width floatValue];
         
         self.posForDraggedMaterial = self.position;
         self.currentDropTarget = nil;
@@ -59,7 +59,7 @@
 }
 
 - (NSString *)makeDownloadURLFormURL:(NSString *)url {
-    NSString * downloadURL = [NSString stringWithFormat:@"%@%@", url, self.material.BlobId];
+    NSString * downloadURL = [NSString stringWithFormat:@"%@%@", url, self.material.blobId];
     return downloadURL;
 }
 

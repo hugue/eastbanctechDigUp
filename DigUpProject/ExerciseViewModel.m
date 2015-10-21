@@ -10,22 +10,24 @@
 
 @interface ExerciseViewModel()
 @property (nonatomic, strong) NSMutableArray<RACSignal *> * downloadedMedias;
+@property (nonatomic, strong) NSArray<SWGMaterial *> * dereferencedMaterials;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, SWGMaterial *> * referencedMaterials;
 @end
 
 @implementation ExerciseViewModel
 
-- (id)initWithDataModel:(ExerciseModel *)exerciseModel WebController:(WebController *)webController mediaURL:(NSString *)mediaurl {
+- (id)initWithSWGExercise:(SWGExercise *)exerciseModel WebController:(WebController *)webController mediaUrl:(NSString *)mediaurl {
     self = [super init];
     if (self) {
         [self initialize];
         self.webController = webController;
         self.currentExercise = exerciseModel;
         self.mediaURL = mediaurl;
-        [self parseExercise];
+        self.dereferencedMaterials = [self analyseReferencedMaterials:self.currentExercise.materials];
+        [self parseExerciseWithMaterials:self.dereferencedMaterials];
     }
     return self;
 }
-
 - (void)initialize {
     self.currentExerciseState = ExerciseCurrentStateIsStopped;
     
@@ -38,7 +40,7 @@
     self.materialsModels = [[NSMutableArray alloc] init];
     self.dropController = [[DragNDropController alloc] init];
     self.audioController = [[AudioController alloc] init];
-    
+    self.referencedMaterials = [[NSMutableDictionary alloc] init];
     self.downloadedMedias = [[NSMutableArray alloc] init];
 }
 
@@ -55,14 +57,14 @@
     [self.audioController releaseAudioTimer];
 }
 
-- (void)parseExercise {
+- (void)parseExerciseWithMaterials:(NSArray<SWGMaterial *> *)materials {
     if (self.currentExercise == nil) {
         NSLog(@"Error, no exercise found");
         return;
     }
-    NSUInteger numberMaterials = self.currentExercise.materialsObject.count;
+    NSUInteger numberMaterials = materials.count;
     for (int i = 0; i < numberMaterials; i++) {
-        MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:self.currentExercise.materialsObject[i]];
+        MaterialViewModel * materialViewModel = [self createMaterialViewModelWithModel:materials[i]];
         [self.materialsModels addObject:materialViewModel];
     }
     @weakify(self)
@@ -106,15 +108,15 @@
     [self.dropController ajustElementsZPotision:self.maxTargetZPosition];
 }
 
-- (MaterialViewModel *)createMaterialViewModelWithModel:(MaterialModel *)materialModel{
+- (MaterialViewModel *)createMaterialViewModelWithModel:(SWGMaterial *)materialModel{
     
-    NSString * type = materialModel.Type;
+    NSString * type = materialModel.type;
     MaterialViewModel * materialViewModel;
     if ([type isEqualToString:@"Text"]) {
-        materialViewModel = [[MaterialViewModel alloc] initWithModel:materialModel];
+        materialViewModel = [[MaterialViewModel alloc] initWithSWGMaterial:materialModel];
     }
     else if ([type isEqualToString:@"RadioButton"]) {
-        RadioButtonViewModel * buttonViewModel = [[RadioButtonViewModel alloc] initWithModel:materialModel];
+        RadioButtonViewModel * buttonViewModel = [[RadioButtonViewModel alloc] initWithSWGMaterial:materialModel];
         RadioButtonsController * newButtonController;
         
         //First button created for that group ID
@@ -132,10 +134,10 @@
         return buttonViewModel;
     }
     else if ([type isEqualToString:@"Rectangle"]) {
-        materialViewModel = [[MaterialViewModel alloc] initWithModel:materialModel];
+        materialViewModel = [[MaterialViewModel alloc] initWithSWGMaterial:materialModel];
     }
     else if ([type isEqualToString:@"Image"]) {
-        ImageViewModel * imageViewModel = [[ImageViewModel alloc] initWithModel:materialModel];
+        ImageViewModel * imageViewModel = [[ImageViewModel alloc] initWithSWGMaterial:materialModel];
         [self.webController addTaskForObject:imageViewModel toURL:[imageViewModel makeDownloadURLFormURL:self.mediaURL]];
         RACSignal * imageLoadedSignal = RACObserve(imageViewModel, imageLoaded);
         [self.downloadedMedias addObject:imageLoadedSignal];
@@ -144,10 +146,10 @@
         return imageViewModel;
     }
     else if ([type isEqualToString:@"InputField"]) {
-        materialViewModel = [[TextInputViewModel alloc] initWithModel:materialModel];
+        materialViewModel = [[TextInputViewModel alloc] initWithSWGMaterial:materialModel];
     }
     else if ([type isEqualToString:@"Audio"]) {
-        AudioViewModel * audioViewModel = [[AudioViewModel alloc] initWithModel:materialModel];
+        AudioViewModel * audioViewModel = [[AudioViewModel alloc] initWithSWGMaterial:materialModel];
         [self.audioController addNewAudio:audioViewModel];
         [self.webController addTaskForObject:audioViewModel toURL:[audioViewModel makeDownloadURLFormURL:self.mediaURL]];
         RACSignal * audioLoadedSignal = RACObserve(audioViewModel, audioLoaded);
@@ -157,7 +159,7 @@
         return audioViewModel;
     }
     else if([type isEqualToString:@"CheckBox"]) {
-        materialViewModel = [[CheckBoxViewModel alloc] initWithModel:materialModel];
+        materialViewModel = [[CheckBoxViewModel alloc] initWithSWGMaterial:materialModel];
     }
     
     else {
@@ -181,13 +183,13 @@
 }
 
 - (void)processDragNDropElement:(MaterialViewModel *) materialViewModel {
-    if ([materialViewModel.material.Behavior isEqualToString:@"DropTarget"]){
+    if ([materialViewModel.material.behavior isEqualToString:@"DropTarget"]){
         [self.dropController.targetElements setObject:materialViewModel forKey:materialViewModel.materialID];
         if (self.maxTargetZPosition < materialViewModel.zPosition) {
             self.maxTargetZPosition = materialViewModel.zPosition;
         }
     }
-    else if([materialViewModel.material.Behavior isEqualToString:@"DropElement"]) {
+    else if([materialViewModel.material.behavior isEqualToString:@"DropElement"]) {
         [self.dropController.dropElements addObject:materialViewModel];
     }
     
@@ -226,6 +228,44 @@
     for (MaterialViewModel * materialViewModel in self.materialsModels) {
         [materialViewModel restartAsked];
     }
+}
+
+- (NSArray<SWGMaterial *> *)analyseReferencedMaterials:(NSArray<SWGMaterial *> *)materials {
+    NSMutableArray * allMaterials = [[NSMutableArray alloc] init];
+    for (SWGMaterial * material in materials) {
+        //This is a reference
+        if (material.ref) {
+            SWGMaterial * referencedMaterial = [self.referencedMaterials objectForKey:material.ref];
+            [self createReferencedMaterials:referencedMaterial];
+            [allMaterials addObject:referencedMaterial];
+        }
+        else {
+            [self createReferencedMaterials:material];
+            [allMaterials addObject:material];
+        }
+    }
+    return allMaterials;
+}
+
+- (void)createReferencedMaterials:(SWGMaterial *)material {
+    //If this material creates other materials, register it in the dictionary so we know were to look at when we find the references
+    if (material.dropElements) {
+        for(SWGMaterial * referencedMaterial in material.dropElements) {
+            //If this is not a reference but a real model, store it
+            if(referencedMaterial.id) {
+                [self.referencedMaterials setObject:referencedMaterial forKey:referencedMaterial.id];
+                [self createReferencedMaterials:referencedMaterial];
+            }
+        }
+    }
+    else if(material.dropTarget) {
+        //If this is not a reference but a real model, store it
+        if(material.dropTarget.id) {
+            [self.referencedMaterials setObject:material.dropTarget forKey:material.dropTarget.id];
+            [self createReferencedMaterials:material.dropTarget];
+        }
+    }
+
 }
 
 @end

@@ -15,8 +15,10 @@
 #import "SWGUser.h"
 #import "SWGCourse.h"
 #import "SWGSubcourse.h"
-#import "SWGTest.h"
 #import "SWGExam.h"
+#import "SWGTest.h"
+#import "SWGExercise.h"
+#import "SWGMaterial.h"
 
 
 @class SWGConfiguration;

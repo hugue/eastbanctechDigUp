@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "SWGExercise.h"
 #import "SWGUser.h"
 #import "SWGObject.h"
 #import "SWGApiClient.h"
@@ -22,7 +23,22 @@
 ///
 ///
 /// 
-/// Get the user s profile in JSON format
+/// Getting a test
+///
+/// @param exerciseName Name of the exercise to fetch
+/// 
+///
+/// @return SWGExercise*
+-(NSNumber*) exerciseExerciseNameGetWithCompletionBlock :(NSString*) exerciseName 
+    
+    completionHandler: (void (^)(SWGExercise* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Getting the profile of this user in JSON
 ///
 /// 
 ///
@@ -35,7 +51,7 @@
 ///
 ///
 /// 
-/// Testing how to post data on mockable
+/// 
 ///
 /// 
 ///

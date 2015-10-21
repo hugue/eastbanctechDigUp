@@ -20,7 +20,7 @@
 - (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
-        self.textStyle = self.viewModel.material.Style;
+        self.textStyle = self.viewModel.material.style;
         
        CGRect  frame =  CGRectMake( self.viewModel.position.x,
                                     self.viewModel.position.y,
@@ -32,19 +32,19 @@
         
         NSError * htmlError;
         NSAttributedString * displayedText = [[NSAttributedString alloc]
-                                             initWithData: [materialViewModel.material.Text dataUsingEncoding:NSUTF8StringEncoding]
+                                             initWithData: [materialViewModel.material.text dataUsingEncoding:NSUTF8StringEncoding]
                                              options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
                                              documentAttributes: nil
                                              error: &htmlError];
         dispatch_async(dispatch_get_main_queue(), ^{
             //self.viewDisplayed.attributedText = displayedText;
-            self.viewDisplayed.text = materialViewModel.material.Text;
+            self.viewDisplayed.text = materialViewModel.material.text;
         });
         
         if(htmlError) {
             NSLog(@"Unable to parse label text: %@", htmlError);
         }
-        [self applyStyle:self.viewModel.material.Style toLabel:self.viewDisplayed];
+        [self applyStyle:self.textStyle toLabel:self.viewDisplayed];
     }
     return self;
 }

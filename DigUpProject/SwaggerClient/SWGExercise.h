@@ -7,17 +7,17 @@
  * Do not edit the class manually.
  */
 
-#import "SWGCourse.h"
+#import "SWGMaterial.h"
 
 
-@protocol SWGUser
+@protocol SWGExercise
 @end
 
-@interface SWGUser : SWGObject
+@interface SWGExercise : SWGObject
 
 
-@property(nonatomic) NSString* userName;
+@property(nonatomic) NSString* exerciseType;
 
-@property(nonatomic) NSArray<SWGCourse>* courses;
+@property(nonatomic) NSArray<SWGMaterial>* materials;
 
 @end

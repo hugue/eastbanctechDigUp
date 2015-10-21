@@ -1,6 +1,6 @@
-#import "SWGTest.h"
+#import "SWGExercise.h"
 
-@implementation SWGTest
+@implementation SWGExercise
 
 /**
  * Maps json key to property name.
@@ -8,7 +8,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"name": @"name", @"url": @"url", @"mediaUrl": @"mediaUrl" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"exerciseType": @"exerciseType", @"materials": @"materials" }];
 }
 
 /**
@@ -18,7 +18,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"name", @"url", @"mediaUrl"];
+  NSArray *optionalProperties = @[@"exerciseType", @"materials"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

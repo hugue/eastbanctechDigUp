@@ -15,7 +15,7 @@
 
 @implementation ExamViewModel
 
-- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises dataModel:(ExamModel *)dataModel {
+- (id)initWithExercises:(NSArray<ExerciseViewModel *> *)exercises dataModel:(SWGExam *)dataModel {
     self = [super init];
     if (self) {
         self.remainingTime = [dataModel.allowedTime integerValue];
@@ -115,7 +115,8 @@
         [exerciseViewModel restartExerciseAsked];
     }
     float result = 100 * ((float)score/[self.dataModel.numberOfQuestions integerValue]);
-    self.dataModel.currentScore = [NSNumber numberWithFloat:result];
+    NSLog(@"score - %f", result);
+    //self.dataModel.currentScore = [NSNumber numberWithFloat:result];
 }
 
 @end

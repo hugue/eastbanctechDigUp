@@ -13,7 +13,7 @@
 @end
 
 @implementation RadioButtonViewModel
-
+/*
 - (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
@@ -21,6 +21,18 @@
         self.isTrue = [self.material.Value  isEqualToString:@"true"];
         
         self.groupID = self.material.Text;
+        self.selectedID = @0;
+    }
+    return self;
+}
+*/
+- (id)initWithSWGMaterial:(SWGMaterial *)materialModel {
+    self = [super initWithSWGMaterial:materialModel];
+    
+    if (self) {
+        self.isTrue = [self.material.value  isEqualToString:@"true"];
+        
+        self.groupID = self.material.text;
         self.selectedID = @0;
     }
     return self;

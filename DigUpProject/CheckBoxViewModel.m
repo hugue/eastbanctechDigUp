@@ -9,7 +9,7 @@
 #import "CheckBoxViewModel.h"
 
 @implementation CheckBoxViewModel
-
+/*
 - (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
@@ -17,6 +17,18 @@
         self.isTrue = [self.material.Value  isEqualToString:@"true"];
         
         self.groupID = self.material.Text;
+        self.isSelected = NO;
+    }
+    return self;
+}*/
+
+- (id)initWithSWGMaterial:(SWGMaterial *)materialModel {
+    self = [super initWithSWGMaterial:materialModel];
+    
+    if (self) {
+        self.isTrue = [self.material.value  isEqualToString:@"true"];
+        
+        self.groupID = self.material.text;
         self.isSelected = NO;
     }
     return self;
@@ -45,8 +57,6 @@
     }
     return materialAnswerState;
 }
-
-
 
 - (void)restartAsked {
     [super restartAsked];

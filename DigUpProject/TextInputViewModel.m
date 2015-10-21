@@ -14,7 +14,7 @@
 @end
 
 @implementation TextInputViewModel
-
+/*
 - (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
@@ -23,12 +23,21 @@
         
     }
     return self;
+}*/
+
+- (id)initWithSWGMaterial:(SWGMaterial *)swgMaterial {
+    self = [super initWithSWGMaterial:swgMaterial];
+    
+    if (self) {
+        [self initialize];
+    }
+    return self;
 }
 - (void)initialize {
-    self.answer = self.material.Value;
+    self.answer = self.material.value;
     NSError * error;
-    if (self.material.Text) {
-        NSData * answerData = [self.material.Text dataUsingEncoding:NSUTF8StringEncoding];
+    if (self.material.text) {
+        NSData * answerData = [self.material.text dataUsingEncoding:NSUTF8StringEncoding];
         self.answerInfo = [NSJSONSerialization JSONObjectWithData:answerData options:kNilOptions error:&error];
     }
 }

@@ -11,6 +11,7 @@
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "MaterialModel.h"
 #import "DataControllerProtocol.h"
+#import "SWGDefaultApi.h"
 
 
 typedef NS_ENUM(NSInteger, MaterialDisplayState) {
@@ -33,7 +34,8 @@ typedef NS_ENUM(NSInteger, MaterialAnswerState) {
 
 @interface MaterialViewModel : NSObject <DataControllerProtocol>
 
-@property (nonatomic, strong) MaterialModel * material;
+//@property (nonatomic, strong) MaterialModel * material;
+@property (nonatomic, strong) SWGMaterial * material;
 @property (nonatomic) NSNumber * materialID;
 
 @property (nonatomic) CGPoint position;
@@ -48,7 +50,8 @@ typedef NS_ENUM(NSInteger, MaterialAnswerState) {
 @property (nonatomic, weak) MaterialViewModel * currentDropTarget;
 @property (nonatomic, strong) NSNumber  * correctDropTargetID;
 
-- (id)initWithModel:(MaterialModel *)materialModel;
+//- (id)initWithModel:(MaterialModel *)materialModel;
+- (id)initWithSWGMaterial:(SWGMaterial *)materialModel;
 - (void)positionNewDraggedMaterial:(MaterialViewModel *)draggedMaterial;
 - (void)resetPosition;
 

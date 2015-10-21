@@ -10,8 +10,18 @@
 
 @implementation AudioViewModel
 
+/*
 - (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
+    
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}*/
+
+- (id)initWithSWGMaterial:(SWGMaterial *)materialModel {
+    self = [super initWithSWGMaterial:materialModel];
     
     if (self) {
         [self initialize];
@@ -22,10 +32,10 @@
 - (void)initialize {
     self.selectedID = @0;
     self.audioLoaded = @NO;
-    self.blobID = self.material.BlobId;
+    self.blobID = self.material.blobId;
     self.audioData = nil;
-    self.showAudioSymbol = [self.material.Show boolValue];
-    self.autoPlay = [self.material.Autoplay boolValue];
+    self.showAudioSymbol = [self.material.show boolValue];
+    self.autoPlay = [self.material.autoplay boolValue];
 }
 
 - (void)audioSelectedOnView {

@@ -17,8 +17,7 @@
 
 
 @property(nonatomic) NSString* name;
-/* URL indicating where the pdf document for this subcourse can be found 
- */
+
 @property(nonatomic) NSString* document;
 
 @property(nonatomic) NSArray<SWGTest>* tests;

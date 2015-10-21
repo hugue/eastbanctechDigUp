@@ -10,7 +10,7 @@
 
 @implementation ImageViewModel
 
-
+/*
 - (id)initWithModel:(MaterialModel *)materialModel {
     self = [super initWithModel:materialModel];
     
@@ -18,11 +18,19 @@
         [self initialize];
     }
     return self;
-}
+}*/
 
+- (id)initWithSWGMaterial:(SWGMaterial *)materialModel {
+    self = [super initWithSWGMaterial:materialModel];
+    
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
 - (void)initialize {
     self.imageLoaded = @NO;
-    self.BlobID = self.material.BlobId;
+    self.BlobID = self.material.blobId;
     self.imageData = nil;
 }
 

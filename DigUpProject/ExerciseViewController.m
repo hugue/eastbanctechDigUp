@@ -74,7 +74,7 @@
 }
 
 - (void)createMaterialViewWithModel:(MaterialViewModel *)materialViewModel {
-    NSString * type = materialViewModel.material.Type;
+    NSString * type = materialViewModel.material.type;
     
     if ([type isEqualToString:@"Text"]) {
         TextFrameView * textLabel = [[TextFrameView alloc] initWithViewModel: materialViewModel];
@@ -170,7 +170,7 @@
 - (MaterialView *)touchIsOnDraggableMaterial:(UITouch *)touch {
     CGPoint locationTouch = [touch locationInView:self.scrollView];
     for (MaterialView * element in self.materialsViews) {
-        if ([element.viewModel.material.Behavior isEqualToString:@"DropElement"] &&
+        if ([element.viewModel.material.behavior isEqualToString:@"DropElement"] &&
             CGRectContainsPoint(element.viewDisplayed.frame, locationTouch)) {
             return element;
         }

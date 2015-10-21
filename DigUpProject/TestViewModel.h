@@ -13,14 +13,15 @@
 #import "SwaggerClient/SWGDefaultApi.h"
 
 
-@interface TestViewModel : NSObject <DataControllerProtocol>
+@interface TestViewModel : NSObject
 
 @property (nonatomic, strong) SWGTest * dataModel;
 @property (nonatomic, strong) NSData * dataTest;
 @property (nonatomic, strong) WebController * webController;
-@property (nonatomic, strong) ExerciseModel * exerciseModel;
+@property (nonatomic, strong) SWGExercise * exerciseModel;
 @property (nonatomic, strong) NSNumber * exerciseLoaded;
 @property (nonatomic, strong) ExerciseViewModel * exerciseViewModel;
+@property (nonatomic, strong) SWGDefaultApi * defaultApi;
 
 - (id)initWithSWGTest:(SWGTest *)dataModel WebController:(WebController *)webController;
 - (id)prepareForSegueWithIdentifier:(NSString *)identifier;

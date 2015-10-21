@@ -63,7 +63,7 @@
 }
 
 - (void)applyBaseModelToView {
-    if ([self.viewModel.material.Behavior isEqualToString:@"DropElement"]) {
+    if ([self.viewModel.material.behavior isEqualToString:@"DropElement"]) {
         [self configureDropElement];
     }    
     @weakify(self)

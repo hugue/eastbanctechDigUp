@@ -1,5 +1,6 @@
 #import "SWGDefaultApi.h"
 #import "SWGQueryParamCollection.h"
+#import "SWGExercise.h"
 #import "SWGUser.h"
 
 
@@ -71,7 +72,93 @@ static SWGDefaultApi* singletonAPI = nil;
 
 ///
 /// 
-/// Get the user s profile in JSON format
+/// Getting a test
+///  @param exerciseName Name of the exercise to fetch
+///
+///  @returns SWGExercise*
+///
+-(NSNumber*) exerciseExerciseNameGetWithCompletionBlock: (NSString*) exerciseName
+        
+        completionHandler: (void (^)(SWGExercise* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter 'exerciseName' is set
+    if (exerciseName == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `exerciseName` when calling `exerciseExerciseNameGet`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/exercise/{exerciseName}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (exerciseName != nil) {
+        pathParams[@"exerciseName"] = exerciseName;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SWGApiClient selectHeaderAccept:@[]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SWGApiClient selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"GET"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SWGExercise*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SWGExercise*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Getting the profile of this user in JSON
 ///  @returns SWGUser*
 ///
 -(NSNumber*) profileGetWithCompletionBlock: 
@@ -146,7 +233,7 @@ static SWGDefaultApi* singletonAPI = nil;
 
 ///
 /// 
-/// Testing how to post data on mockable
+/// 
 ///  @returns NSString*
 ///
 -(NSNumber*) testPostPostWithCompletionBlock: 

@@ -18,7 +18,7 @@
 - (id)initWithViewModel:(MaterialViewModel *)materialViewModel; {
     self = [super initWithViewModel: materialViewModel];
     if (self) {
-        self.style = self.viewModel.material.Style;
+        self.style = self.viewModel.material.style;
         CGRect  frame =  CGRectMake(self.viewModel.position.x,
                                     self.viewModel.position.y,
                                     self.viewModel.materialWidth,
@@ -30,7 +30,7 @@
         
 
         //Add the dashed border if is a target
-        if ([self.viewModel.material.Behavior isEqualToString:@"DropTarget"]) {
+        if ([self.viewModel.material.behavior isEqualToString:@"DropTarget"]) {
             self.specialBorder = [CAShapeLayer layer];
             self.specialBorder.strokeColor = [UIColor colorWithRed:67/255.0f green:37/255.0f blue:83/255.0f alpha:1].CGColor;
             self.specialBorder.fillColor = nil;

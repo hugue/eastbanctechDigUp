@@ -15,7 +15,7 @@
 @end
 
 @implementation ExamFirstViewModel
-
+/*
 - (id)initWithDataModel:(ExamModel *)dataModel WebController:(WebController *)webController {
     self = [super init];
     if (self) {
@@ -26,7 +26,7 @@
     }
     return self;
 }
-
+*/
 - (id)initWithSWGExam:(SWGExam *)dataModel WebController:(WebController *)webController {
     self = [super init];
     if (self) {
@@ -59,8 +59,9 @@
     NSError * parseError;
     //Second test
     self.exercisesModel =(NSMutableArray<ExerciseModel> *) [ExerciseModel arrayOfModelsFromData:data error:&parseError];
-    for (ExerciseModel * exerciseModel in self.exercisesModel) {
-        ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:exerciseModel WebController:self.webController mediaURL:self.dataModel.mediaUrl];
+    for (SWGExercise * exerciseModel in self.exercisesModel) {
+        //ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithSWGExercise:exerciseModel WebController:self.webController mediaURL:self.dataModel.mediaUrl];
+        ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithSWGExercise:exerciseModel WebController:self.webController mediaUrl:self.dataModel.mediaUrl];
         [self.exercises addObject:exerciseViewModel];
         RACSignal * mediaLoaded = RACObserve(exerciseViewModel, mediasLoaded);
         [self.exercisesFullyLoaded addObject:mediaLoaded];

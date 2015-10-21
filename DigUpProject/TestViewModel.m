@@ -19,18 +19,22 @@
         [self initialize];
         self.webController = webController;
         self.dataModel = dataModel;
-        [self askDataForExercise:self.dataModel];
+        [self.defaultApi exerciseExerciseNameGetWithCompletionBlock:self.dataModel.url completionHandler:^(SWGExercise *output, NSError *error) {
+            self.exerciseModel = output;
+            self.exerciseLoaded = @YES;
+        }];
     }
     return self;
 }
 
 - (void)initialize {
     self.exerciseLoaded = @NO;
+    self.defaultApi = [[SWGDefaultApi alloc] init];
 }
 
 - (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
     if ([segueIdentifier isEqualToString:@"displayExerciseSegue"]) {
-        self.exerciseViewModel = [[ExerciseViewModel alloc] initWithDataModel:self.exerciseModel WebController:self.webController mediaURL:self.dataModel.mediaUrl];
+        self.exerciseViewModel =[[ExerciseViewModel alloc] initWithSWGExercise:self.exerciseModel WebController:self.webController mediaUrl:self.dataModel.mediaUrl];
         @weakify(self)
         [RACObserve(self.exerciseViewModel, mediasLoaded) subscribeNext:^(id x) {
             @strongify(self)
@@ -48,11 +52,6 @@
         return [self.exerciseLoaded boolValue];
     }
     return NO;
-}
-
-- (void)askDataForExercise:(SWGTest *)testModel {
-    NSString * exerciseURL = testModel.url;
-    [self.webController addTaskForObject:self toURL:exerciseURL];
 }
 
 #pragma - mark Correction Methods
@@ -76,22 +75,6 @@
 }
 
 - (void)viewWillAppear {
-}
-
-#pragma mark - DataControllerProtocol methods
-
-- (void)didReceiveData:(nullable NSData *)data withError:(nullable NSError *)error {
-    if (error) {
-        NSLog(@"Error upon reciving exercise in TestViewModel - %@", error);
-    }
-    else {
-        NSError * initError;
-        self.exerciseModel = [[ExerciseModel alloc] initWithData:data error: &initError];
-        self.exerciseLoaded = @YES;
-        if(error) {
-            NSLog(@"Error upon parsing exercise - %@", error);
-        }
-    }
 }
 
 @end
