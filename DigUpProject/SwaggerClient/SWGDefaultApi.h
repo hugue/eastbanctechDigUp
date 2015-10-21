@@ -23,6 +23,19 @@
 ///
 ///
 /// 
+/// Getting exam
+///
+/// 
+///
+/// @return NSArray<SWGExercise>*
+-(NSNumber*) examGetWithCompletionBlock :
+    (void (^)(NSArray<SWGExercise>* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
 /// Getting a test
 ///
 /// @param exerciseName Name of the exercise to fetch

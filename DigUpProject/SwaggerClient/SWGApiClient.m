@@ -398,7 +398,7 @@ static void (^reachabilityChangeBlock)(int);
     Class ModelClass = NSClassFromString(class);
     if ([ModelClass instancesRespondToSelector:@selector(initWithDictionary:error:)]) {
         id object = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        NSLog(@"Class of Object - %@", object);
+        NSLog(@"class of object - %@", [object class]);
         return [[ModelClass alloc] initWithDictionary:object error:nil];
     }
 

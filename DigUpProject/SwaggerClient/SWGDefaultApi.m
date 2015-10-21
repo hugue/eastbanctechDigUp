@@ -72,6 +72,81 @@ static SWGDefaultApi* singletonAPI = nil;
 
 ///
 /// 
+/// Getting exam
+///  @returns NSArray<SWGExercise>*
+///
+-(NSNumber*) examGetWithCompletionBlock: 
+        (void (^)(NSArray<SWGExercise>* output, NSError* error))completionBlock { 
+        
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/exam"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SWGApiClient selectHeaderAccept:@[]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SWGApiClient selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"GET"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"NSArray<SWGExercise>*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((NSArray<SWGExercise>*)data, error);
+              }
+          ];
+}
+
+///
+/// 
 /// Getting a test
 ///  @param exerciseName Name of the exercise to fetch
 ///

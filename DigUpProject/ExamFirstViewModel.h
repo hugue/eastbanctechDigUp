@@ -12,13 +12,12 @@
 #import "WebController.h"
 #import "SwaggerClient/SWGDefaultApi.h"
 
-@interface ExamFirstViewModel : NSObject <DataControllerProtocol>
-//@property (nonatomic, strong) ExamModel * dataModel;
+@interface ExamFirstViewModel : NSObject
 @property (nonatomic, strong) WebController * webController;
 @property (nonatomic) BOOL examLoaded;
 @property (nonatomic, strong) SWGExam * dataModel;
+@property (nonatomic, strong) SWGDefaultApi * defaultApi;
 
-//- (id)initWithDataModel:(ExamModel *)dataModel WebController:(WebController *)webController;
 - (id)initWithSWGExam:(SWGExam *)dataModel WebController:(WebController *)webController;
 - (ExamViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
