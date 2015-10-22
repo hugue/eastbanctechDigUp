@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField * passwordTextField;
 @property (strong, nonatomic) LoginViewModel * viewModel;
 @property (weak, nonatomic) IBOutlet UIButton * signInButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)signInButton:(id)sender;
 
