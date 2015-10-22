@@ -1,17 +1,17 @@
 //
-//  ExamFirstViewController.h
+//  ExamStartViewController.h
 //  DigUpProject
 //
-//  Created by hugues on 12/10/15.
+//  Created by hugues on 22/10/15.
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ExamFirstViewModel.h"
+#import "ExamStartViewModel.h"
 #import "ExamViewController.h"
 
-@interface ExamFirstViewController : UIViewController
-@property (nonatomic, strong) ExamFirstViewModel * viewModel;
+@interface ExamStartViewController : UIViewController
+@property (nonatomic, strong) ExamStartViewModel * viewModel;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfExercercisesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;

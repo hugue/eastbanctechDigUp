@@ -11,7 +11,7 @@
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "CoursesTableViewModel.h"
 #import "DocumentViewModel.h"
-#import "ExamFirstViewModel.h"
+#import "ExamStartViewModel.h"
 #import "CourseModel.h"
 #import "SwaggerClient/SWGDefaultApi.h"
 
@@ -23,7 +23,7 @@
 @property (nonatomic, strong) CoursesTableViewModel * coursesViewModel;
 @property (nonatomic, strong) CoursesTableViewModel * detailCoursesViewModel;
 @property (nonatomic, strong) DocumentViewModel * documentViewModel;
-@property (nonatomic, strong) ExamFirstViewModel * examFirstViewModel;
+@property (nonatomic, strong) ExamStartViewModel * examStartViewModel;
 @property (nonatomic, strong) WebController * webController;
 
 - (id)initWithSWGCourses:(NSArray<SWGCourse *> *)courses WebController:(WebController *)webController;

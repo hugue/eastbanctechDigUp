@@ -51,13 +51,12 @@
         SWGSubcourse * currentSubcourse = [currentCourse.subcourses objectAtIndex:[self.detailCoursesViewModel.selectedCell integerValue]];
         self.documentViewModel = [[DocumentViewModel alloc] initWithSWGSubcourse:currentSubcourse webController:self.webController];
         viewModel = self.documentViewModel;
-        
     }
     else if ([segueIdentifier isEqualToString:@"presentExamSegue"]) {
         SWGCourse * currentCourse = [self.courses objectAtIndex:[self.coursesViewModel.selectedCell integerValue]];
         SWGExam * examModel = currentCourse.exam;
-        self.examFirstViewModel = [[ExamFirstViewModel alloc] initWithSWGExam:examModel WebController:self.webController];
-        viewModel = self.examFirstViewModel;
+        self.examStartViewModel = [[ExamStartViewModel alloc] initWithSWGExam:examModel WebController:self.webController];
+        viewModel = self.examStartViewModel;
     }
     return viewModel;
 
@@ -85,7 +84,7 @@
 
 - (void)viewWillAppear {
     self.documentViewModel = nil;
-    self.examFirstViewModel = nil;
+    self.examStartViewModel = nil;
 }
 
 @end

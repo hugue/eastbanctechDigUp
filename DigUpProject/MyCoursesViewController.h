@@ -10,7 +10,7 @@
 #import "MyCoursesViewModel.h"
 #import "CoursesTableViewController.h"
 #import "DocumentViewController.h"
-#import "ExamViewController.h"
+#import "ExamStartViewController.h"
 
 @interface MyCoursesViewController : UIViewController
 

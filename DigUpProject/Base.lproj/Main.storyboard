@@ -277,10 +277,10 @@
             </objects>
             <point key="canvasLocation" x="3851" y="485"/>
         </scene>
-        <!--Exam First View Controller-->
+        <!--Exam Start View Controller-->
         <scene sceneID="8e7-9z-o6c">
             <objects>
-                <viewController id="FNH-Xs-6CJ" customClass="ExamFirstViewController" sceneMemberID="viewController">
+                <viewController id="FNH-Xs-6CJ" customClass="ExamStartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTZ-xf-h76"/>
                         <viewControllerLayoutGuide type="bottom" id="eI4-3V-tsf"/>
@@ -407,11 +407,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="k55-F6-Kco"/>
                     <connections>
-                        <outlet property="durationLabel" destination="SYw-wx-ibd" id="dJs-Cx-Wha"/>
-                        <outlet property="lastDurationLabel" destination="1Lx-L0-K5A" id="zOL-tH-d7N"/>
-                        <outlet property="lastScoreLabel" destination="8Oo-wg-4Do" id="1fc-0R-KNE"/>
-                        <outlet property="numberOfExercercisesLabel" destination="Hnf-Vy-vEE" id="GcE-FV-foz"/>
-                        <outlet property="spinner" destination="RK4-1c-Jh0" id="oIy-aN-b4W"/>
+                        <outlet property="durationLabel" destination="SYw-wx-ibd" id="gyf-xf-JEm"/>
+                        <outlet property="lastDurationLabel" destination="1Lx-L0-K5A" id="GNp-wJ-9R0"/>
+                        <outlet property="lastScoreLabel" destination="8Oo-wg-4Do" id="95n-MB-PSn"/>
+                        <outlet property="numberOfExercercisesLabel" destination="Hnf-Vy-vEE" id="EYl-2H-XxI"/>
+                        <outlet property="spinner" destination="RK4-1c-Jh0" id="bZZ-Gr-4qL"/>
                         <outlet property="startButton" destination="Ac5-aF-wF8" id="YSr-E1-dyt"/>
                         <segue destination="s1O-5e-r0b" kind="push" identifier="startExamSegue" id="TwZ-lt-brE"/>
                     </connections>

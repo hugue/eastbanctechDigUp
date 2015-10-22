@@ -1,20 +1,20 @@
 //
-//  ExamFirstViewModel.m
+//  ExamStartViewModel.m
 //  DigUpProject
 //
-//  Created by hugues on 12/10/15.
+//  Created by hugues on 22/10/15.
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
-#import "ExamFirstViewModel.h"
+#import "ExamStartViewModel.h"
 
-@interface ExamFirstViewModel ()
+@interface ExamStartViewModel ()
 @property (nonatomic, strong) NSMutableArray<ExerciseViewModel *> * exercises;
 @property (nonatomic, strong) NSArray<SWGExercise> * exercisesModel;
 @property (nonatomic, strong) NSMutableArray<RACSignal *> * exercisesFullyLoaded;
 @end
 
-@implementation ExamFirstViewModel
+@implementation ExamStartViewModel
 
 - (id)initWithSWGExam:(SWGExam *)dataModel WebController:(WebController *)webController {
     self = [super init];
@@ -60,7 +60,7 @@
         RACSignal * mediaLoaded = RACObserve(exerciseViewModel, mediasLoaded);
         [self.exercisesFullyLoaded addObject:mediaLoaded];
     }
-
+    
     @weakify(self)
     RAC(self, loadingState) = [[RACSignal combineLatest:self.exercisesFullyLoaded] map:^id(RACTuple * value) {
         @strongify(self)

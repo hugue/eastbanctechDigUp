@@ -20,6 +20,8 @@
 		F35274A31BBEC0790089FB6F /* CourseCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F35274A21BBEC0790089FB6F /* CourseCellViewModel.m */; };
 		F3893AB01BCD181000558F07 /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3893AAE1BCD181000558F07 /* ExerciseViewController.m */; };
 		F3893AB31BCD1D1000558F07 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3893AB21BCD1D1000558F07 /* ExerciseViewController.xib */; };
+		F399FEB81BD9021C006EBDA1 /* ExamStartViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F399FEB71BD9021C006EBDA1 /* ExamStartViewModel.m */; };
+		F399FEBB1BD90289006EBDA1 /* ExamStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399FEBA1BD90289006EBDA1 /* ExamStartViewController.m */; };
 		F3B9EBBB1BD8EC6600C01255 /* JSONValueTransformer+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B9EB9A1BD8EC6600C01255 /* JSONValueTransformer+ISO8601.m */; };
 		F3B9EBBC1BD8EC6600C01255 /* SWGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B9EB9C1BD8EC6600C01255 /* SWGApiClient.m */; };
 		F3B9EBBD1BD8EC6600C01255 /* SWGConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B9EB9E1BD8EC6600C01255 /* SWGConfiguration.m */; };
@@ -159,9 +161,7 @@
 		F3FCD5291BCB68FA0074F409 /* ExerciseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5281BCB68FA0074F409 /* ExerciseViewModel.m */; };
 		F3FCD52F1BCB69E60074F409 /* TestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD52E1BCB69E60074F409 /* TestViewModel.m */; };
 		F3FCD5321BCB6A130074F409 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5311BCB6A130074F409 /* TestViewController.m */; };
-		F3FCD5391BCBCD780074F409 /* ExamFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */; };
 		F3FCD53C1BCBCD890074F409 /* ExamResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */; };
-		F3FCD5401BCBCDFB0074F409 /* ExamFirstViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */; };
 		F3FCD5431BCBCE100074F409 /* ExamResultViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */; };
 		F3FCD5461BCBD2820074F409 /* AudioBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FCD5451BCBD2820074F409 /* AudioBarView.m */; };
 /* End PBXBuildFile section */
@@ -223,6 +223,10 @@
 		F3893AAD1BCD181000558F07 /* ExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
 		F3893AAE1BCD181000558F07 /* ExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
 		F3893AB21BCD1D1000558F07 /* ExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseViewController.xib; sourceTree = "<group>"; };
+		F399FEB61BD9021C006EBDA1 /* ExamStartViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamStartViewModel.h; sourceTree = "<group>"; };
+		F399FEB71BD9021C006EBDA1 /* ExamStartViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamStartViewModel.m; sourceTree = "<group>"; };
+		F399FEB91BD90289006EBDA1 /* ExamStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamStartViewController.h; sourceTree = "<group>"; };
+		F399FEBA1BD90289006EBDA1 /* ExamStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamStartViewController.m; sourceTree = "<group>"; };
 		F3B9EB991BD8EC6600C01255 /* JSONValueTransformer+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+ISO8601.h"; sourceTree = "<group>"; };
 		F3B9EB9A1BD8EC6600C01255 /* JSONValueTransformer+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+ISO8601.m"; sourceTree = "<group>"; };
 		F3B9EB9B1BD8EC6600C01255 /* SWGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWGApiClient.h; sourceTree = "<group>"; };
@@ -495,12 +499,8 @@
 		F3FCD52E1BCB69E60074F409 /* TestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewModel.m; sourceTree = "<group>"; };
 		F3FCD5301BCB6A130074F409 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		F3FCD5311BCB6A130074F409 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		F3FCD5371BCBCD780074F409 /* ExamFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamFirstViewController.h; sourceTree = "<group>"; };
-		F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamFirstViewController.m; sourceTree = "<group>"; };
 		F3FCD53A1BCBCD890074F409 /* ExamResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultViewController.h; sourceTree = "<group>"; };
 		F3FCD53B1BCBCD890074F409 /* ExamResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamResultViewController.m; sourceTree = "<group>"; };
-		F3FCD53E1BCBCDFB0074F409 /* ExamFirstViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamFirstViewModel.h; sourceTree = "<group>"; };
-		F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamFirstViewModel.m; sourceTree = "<group>"; };
 		F3FCD5411BCBCE100074F409 /* ExamResultViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultViewModel.h; sourceTree = "<group>"; };
 		F3FCD5421BCBCE100074F409 /* ExamResultViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamResultViewModel.m; sourceTree = "<group>"; };
 		F3FCD5441BCBD2820074F409 /* AudioBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioBarView.h; sourceTree = "<group>"; };
@@ -1077,8 +1077,8 @@
 		F3FCD5361BCBCD540074F409 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
-				F3FCD5371BCBCD780074F409 /* ExamFirstViewController.h */,
-				F3FCD5381BCBCD780074F409 /* ExamFirstViewController.m */,
+				F399FEB91BD90289006EBDA1 /* ExamStartViewController.h */,
+				F399FEBA1BD90289006EBDA1 /* ExamStartViewController.m */,
 				F3F1E0A71BC678CF001AFA62 /* ExamViewController.h */,
 				F3F1E0A81BC678CF001AFA62 /* ExamViewController.m */,
 				F3FCD53A1BCBCD890074F409 /* ExamResultViewController.h */,
@@ -1090,8 +1090,8 @@
 		F3FCD53D1BCBCDAC0074F409 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
-				F3FCD53E1BCBCDFB0074F409 /* ExamFirstViewModel.h */,
-				F3FCD53F1BCBCDFB0074F409 /* ExamFirstViewModel.m */,
+				F399FEB61BD9021C006EBDA1 /* ExamStartViewModel.h */,
+				F399FEB71BD9021C006EBDA1 /* ExamStartViewModel.m */,
 				F3F1E0AA1BC67905001AFA62 /* ExamViewModel.h */,
 				F3F1E0AB1BC67905001AFA62 /* ExamViewModel.m */,
 				F3FCD5411BCBCE100074F409 /* ExamResultViewModel.h */,
@@ -1277,12 +1277,12 @@
 				F3F9F1AE1BC27070005B0D5E /* CourseModel.m in Sources */,
 				F3F987811BBE6D1300E94F60 /* ETRSearchResults.m in Sources */,
 				F3F9877B1BBE6D1300E94F60 /* ETRStaticCellModel.m in Sources */,
-				F3FCD5391BCBCD780074F409 /* ExamFirstViewController.m in Sources */,
 				F3F987591BBE6D1300E94F60 /* UIActivityIndicatorView+ETRUtils.m in Sources */,
 				F3F9874D1BBE6D1300E94F60 /* ETRCollectionModel+Flatten.m in Sources */,
 				F3F89E891BA28880004648B6 /* RadioButtonView.m in Sources */,
 				F3F9874B1BBE6D1300E94F60 /* ETRActionSheet.m in Sources */,
 				F3B9EBCA1BD8EC6600C01255 /* SWGTest.m in Sources */,
+				F399FEBB1BD90289006EBDA1 /* ExamStartViewController.m in Sources */,
 				F3F1E0AF1BC6977D001AFA62 /* WebController.m in Sources */,
 				F3F987651BBE6D1300E94F60 /* ETRCollectionChangeItemDelete.m in Sources */,
 				F3F987691BBE6D1300E94F60 /* ETRCollectionChangeItems.m in Sources */,
@@ -1357,6 +1357,7 @@
 				F352749A1BBE91000089FB6F /* MyCoursesViewModel.m in Sources */,
 				F3F5A8501BAC332400D35CA6 /* AudioViewModel.m in Sources */,
 				F3023F441BD0F73600393745 /* UIViewController+NavItem.m in Sources */,
+				F399FEB81BD9021C006EBDA1 /* ExamStartViewModel.m in Sources */,
 				F3FCD5461BCBD2820074F409 /* AudioBarView.m in Sources */,
 				F3F5A8591BAC41FE00D35CA6 /* AudioController.m in Sources */,
 				F3F987631BBE6D1300E94F60 /* ETRCollectionChange.m in Sources */,
@@ -1372,7 +1373,6 @@
 				F3F987901BBE6D1300E94F60 /* ETRStringDecorator.m in Sources */,
 				F3F987831BBE6D1300E94F60 /* ETRTableViewController.m in Sources */,
 				F3B9EBC31BD8EC6600C01255 /* SWGInlineResponse200.m in Sources */,
-				F3FCD5401BCBCDFB0074F409 /* ExamFirstViewModel.m in Sources */,
 				F3ECBE6F1B9D452E0000A656 /* main.m in Sources */,
 				F3F9876A1BBE6D1300E94F60 /* ETRCollectionChangeReload.m in Sources */,
 				F3F9877C1BBE6D1300E94F60 /* ETRStaticCollectionModel.m in Sources */,

@@ -52,7 +52,7 @@
         viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];        
     }
     else if ([segue.identifier isEqualToString:@"presentExamSegue"]) {
-        ExamViewController * viewController = [segue destinationViewController];
+        ExamStartViewController * viewController = [segue destinationViewController];
         viewController.viewModel = [self.viewModel prepareForSegueWithIdentifier:segue.identifier];
     }
     else {

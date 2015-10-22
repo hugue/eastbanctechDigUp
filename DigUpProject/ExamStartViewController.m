@@ -1,18 +1,19 @@
 //
-//  ExamFirstViewController.m
+//  ExamStartViewController.m
 //  DigUpProject
 //
-//  Created by hugues on 12/10/15.
+//  Created by hugues on 22/10/15.
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
-#import "ExamFirstViewController.h"
-@interface ExamFirstViewController ()
+#import "ExamStartViewController.h"
+
+@interface ExamStartViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView * spinner;
 @property (nonatomic, strong) UIAlertController * alert;
 @end
 
-@implementation ExamFirstViewController
+@implementation ExamStartViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,7 +59,7 @@
     
     self.numberOfExercercisesLabel.text = [self.viewModel.dataModel.numberOfQuestions stringValue];
     self.durationLabel.text = [self.viewModel.dataModel.allowedTime stringValue];
-
+    
     RAC(self.lastScoreLabel, text) = [RACObserve(self, viewModel.dataModel.lastScore) map:^id(NSNumber * value) {
         if (value) {
             return [NSString stringWithFormat:@"%@%%", [value stringValue]];

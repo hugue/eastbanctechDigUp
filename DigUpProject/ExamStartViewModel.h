@@ -1,8 +1,8 @@
 //
-//  ExamFirstViewModel.h
+//  ExamStartViewModel.h
 //  DigUpProject
 //
-//  Created by hugues on 12/10/15.
+//  Created by hugues on 22/10/15.
 //  Copyright © 2015 hugues. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, ExamLoadingState) {
     ExamLoadingStateStopped
 };
 
-@interface ExamFirstViewModel : NSObject
+@interface ExamStartViewModel : NSObject
 @property (nonatomic, strong) WebController * webController;
 @property (nonatomic) BOOL examLoaded;
 @property (nonatomic) enum ExamLoadingState loadingState;
@@ -28,3 +28,4 @@ typedef NS_ENUM(NSInteger, ExamLoadingState) {
 - (ExamViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier;
 
 @end
+
