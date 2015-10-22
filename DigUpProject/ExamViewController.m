@@ -137,7 +137,7 @@
     RAC (self.pageLabel, text) = [RACObserve(self, viewModel.currentExerciseIndex) map:^id(id value) {
         @strongify(self);
         NSUInteger numberPage = [value integerValue] + 1;
-        NSString * label = [NSString stringWithFormat:@"< %lu/%lu >", numberPage, [self.viewModel.dataModel.numberOfQuestions integerValue]];
+        NSString * label = [NSString stringWithFormat:@"< %d/%d >", numberPage, [self.viewModel.dataModel.numberOfQuestions integerValue]];
         return label;
     }];
     

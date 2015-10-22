@@ -12,6 +12,10 @@
 #import "TestModel.h"
 #import "SwaggerClient/SWGDefaultApi.h"
 
+typedef NS_ENUM(NSInteger, TestLoadingState) {
+    TestLoadingStateGoingOn,
+    TestLoadingStateStopped
+};
 
 @interface TestViewModel : NSObject
 
@@ -19,7 +23,8 @@
 @property (nonatomic, strong) NSData * dataTest;
 @property (nonatomic, strong) WebController * webController;
 @property (nonatomic, strong) SWGExercise * exerciseModel;
-@property (nonatomic, strong) NSNumber * exerciseLoaded;
+@property (nonatomic) enum TestLoadingState loadingState;
+@property (nonatomic) BOOL exerciseLoaded;
 @property (nonatomic, strong) ExerciseViewModel * exerciseViewModel;
 @property (nonatomic, strong) SWGDefaultApi * defaultApi;
 

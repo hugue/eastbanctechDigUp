@@ -9,6 +9,7 @@
 #import "ExamFirstViewController.h"
 @interface ExamFirstViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView * spinner;
+@property (nonatomic, strong) UIAlertController * alert;
 @end
 
 @implementation ExamFirstViewController
@@ -18,7 +19,7 @@
     self.startButton.enabled = NO;
     self.spinner.center = self.startButton.center;
     self.spinner.hidesWhenStopped = YES;
-    [self.view addSubview:self.spinner];
+    [self configureAlert];
     [self applyModelToView];
 }
 
@@ -33,15 +34,21 @@
 
 - (void)applyModelToView {
     @weakify(self)
-    [RACObserve(self.viewModel, examLoaded) subscribeNext:^(id x) {
-        @strongify(self);
-        if ([x boolValue]) {
+    [RACObserve(self, viewModel.loadingState) subscribeNext:^(id x) {
+        @strongify(self)
+        if ([x integerValue] == ExamLoadingStateStopped) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.spinner stopAnimating];
-                self.startButton.enabled = YES;
+                if (self.viewModel.examLoaded) {
+                    self.startButton.enabled = YES;
+                }
+                else {
+                    self.startButton.enabled = NO;
+                    [self presentViewController:self.alert animated:YES completion:nil];
+                }
             });
         }
-        else {
+        else if ([x integerValue] == ExamLoadingStateGoingOn) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.startButton.enabled = NO;
                 [self.spinner startAnimating];
@@ -61,6 +68,12 @@
         }
     }];*/
     self.title = self.viewModel.dataModel.name;
+}
+
+- (void)configureAlert {
+    self.alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Couldn't download the exam. Check your connection and try again" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [self.alert addAction:okAction];
 }
 
 @end

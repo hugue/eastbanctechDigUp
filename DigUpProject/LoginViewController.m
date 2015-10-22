@@ -19,7 +19,6 @@
     self.viewModel = [[LoginViewModel alloc] init];
     self.spinner.center = self.view.center;
     self.spinner.hidesWhenStopped = YES;
-    [self.view addSubview:self.spinner];
     [self applyModelToView];
 }
 

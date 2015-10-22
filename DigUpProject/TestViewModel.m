@@ -23,15 +23,21 @@
         [self.defaultApi exerciseExerciseNameGetWithCompletionBlock:self.dataModel.url completionHandler:^(SWGExercise *output, NSError *error) {
             @strongify(self)
             self.exerciseModel = output;
-            self.exerciseLoaded = @YES;
+            if (!_exerciseModel) {
+                self.loadingState = TestLoadingStateStopped;
+            }
+            else {
+                self.exerciseLoaded = YES;
+            }
         }];
     }
     return self;
 }
 
 - (void)initialize {
-    self.exerciseLoaded = @NO;
+    self.exerciseLoaded = NO;
     self.defaultApi = [[SWGDefaultApi alloc] init];
+    self.loadingState = TestLoadingStateGoingOn;
 }
 
 - (ExerciseViewModel *)prepareForSegueWithIdentifier:(NSString *)segueIdentifier {
@@ -41,6 +47,7 @@
         [RACObserve(self.exerciseViewModel, mediasLoaded) subscribeNext:^(id x) {
             @strongify(self)
             if ([x boolValue]) {
+                self.loadingState = TestLoadingStateStopped;
                 self.exerciseViewModel.currentExerciseState = ExerciseCurrentStateIsGoingOn;
             }
         }];
@@ -51,7 +58,7 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier {
     if ([identifier isEqualToString:@"displayExerciseSegue"]) {
-        return [self.exerciseLoaded boolValue];
+        return self.exerciseLoaded;
     }
     return NO;
 }

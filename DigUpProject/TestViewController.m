@@ -9,6 +9,7 @@
 #import "TestViewController.h"
 @interface TestViewController ()
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView * spinner;
+@property (nonatomic, strong) UIAlertController * alert;
 @end
 
 @implementation TestViewController
@@ -17,7 +18,7 @@
     [super viewDidLoad];
     self.spinner.center = self.view.center;
     self.spinner.hidesWhenStopped = YES;
-    [self.view addSubview:self.spinner];
+    [self configureAlert];
     [self applyModelToView];
 }
 
@@ -45,16 +46,19 @@
         }
     }];
     
-    [RACObserve(self.viewModel, exerciseViewModel.mediasLoaded) subscribeNext:^(id x) {
+    [RACObserve(self, viewModel.loadingState) subscribeNext:^(id x) {
         @strongify(self)
-        if ([x boolValue]) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.spinner stopAnimating];
-            });
-        }
-        else {
+        if ([x integerValue] == TestLoadingStateGoingOn) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.spinner startAnimating];
+            });
+        }
+        else if ([x integerValue] == TestLoadingStateStopped) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner stopAnimating];
+                if (!self.viewModel.exerciseLoaded) {
+                    [self presentViewController:self.alert animated:YES completion:nil];
+                }
             });
         }
     }];
@@ -82,5 +86,16 @@
 - (IBAction)correctionAsked:(id)sender {
     [self.viewModel correctionAsked];
 }
+
+- (void)configureAlert {
+    self.alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Couldn't download the exercise. Check your connection and try again" preferredStyle:UIAlertControllerStyleAlert];
+    @weakify(self)
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [self.alert addAction:okAction];
+}
+
 
 @end

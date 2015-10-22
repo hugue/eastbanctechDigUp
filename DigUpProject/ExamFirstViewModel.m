@@ -34,6 +34,7 @@
 
 - (void)initialize {
     self.examLoaded = NO;
+    self.loadingState = ExamLoadingStateGoingOn;
     self.exercisesFullyLoaded = [[NSMutableArray alloc] init];
     self.exercises = [[NSMutableArray alloc] init];
     self.defaultApi = [[SWGDefaultApi alloc] init];
@@ -49,23 +50,36 @@
 }
 
 - (void)createExamFromModel {
+    if (!_exercisesModel) {
+        NSLog(@"Couldn't download the exam");
+        self.loadingState = ExamLoadingStateStopped;
+        return;
+    }
     for (SWGExercise * exerciseModel in self.exercisesModel) {
         ExerciseViewModel * exerciseViewModel = [[ExerciseViewModel alloc] initWithSWGExercise:exerciseModel WebController:self.webController mediaUrl:self.dataModel.mediaUrl];
         [self.exercises addObject:exerciseViewModel];
         RACSignal * mediaLoaded = RACObserve(exerciseViewModel, mediasLoaded);
         [self.exercisesFullyLoaded addObject:mediaLoaded];
     }
-    
-    RAC(self, examLoaded) = [[RACSignal combineLatest:self.exercisesFullyLoaded] map:^id(RACTuple * value) {
+
+    @weakify(self)
+    RAC(self, loadingState) = [[RACSignal combineLatest:self.exercisesFullyLoaded] map:^id(RACTuple * value) {
+        @strongify(self)
         NSArray * values = value.allObjects;
-        NSNumber * done = @YES;
+        BOOL done = YES;
         for (NSNumber * mediasLoaded in values) {
             if (![mediasLoaded boolValue]) {
-                done = @NO;
+                done = NO;
                 break;
             }
         }
-        return done;
+        if (done) {
+            self.examLoaded = YES;
+            return @(ExamLoadingStateStopped);
+        }
+        else {
+            return @(ExamLoadingStateGoingOn);
+        }
     }];
 }
 
