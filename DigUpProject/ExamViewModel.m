@@ -109,14 +109,15 @@
     [self stopExam];
     int score = 0;
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
+        NSLog(@"exercise - %@", exerciseViewModel.materialsModels);
         if ([exerciseViewModel correctionAskedDisplayed:NO]) {
+            NSLog(@"exercise - %@", exerciseViewModel);
             score = score + 1;
         }
         [exerciseViewModel restartExerciseAsked];
     }
     float result = 100 * ((float)score/[self.dataModel.numberOfQuestions integerValue]);
-    NSLog(@"score - %f", result);
-    //self.dataModel.currentScore = [NSNumber numberWithFloat:result];
+    self.dataModel.lastScore = [NSNumber numberWithFloat:result];
 }
 
 @end

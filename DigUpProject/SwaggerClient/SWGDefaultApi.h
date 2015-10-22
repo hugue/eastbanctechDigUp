@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "SWGExercise.h"
+#import "SWGError.h"
 #import "SWGUser.h"
 #import "SWGObject.h"
 #import "SWGApiClient.h"

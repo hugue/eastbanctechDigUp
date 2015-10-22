@@ -12,6 +12,7 @@
  * Do not edit the class manually.
  */
 
+#import "SWGError.h"
 #import "SWGUser.h"
 #import "SWGCourse.h"
 #import "SWGSubcourse.h"

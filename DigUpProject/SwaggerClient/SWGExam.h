@@ -27,4 +27,6 @@
 
 @property(nonatomic) NSNumber* numberOfQuestions;
 
+@property(nonatomic) NSNumber* lastScore;
+
 @end

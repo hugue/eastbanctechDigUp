@@ -14,16 +14,6 @@
 @end
 
 @implementation TextInputViewModel
-/*
-- (id)initWithModel:(MaterialModel *)materialModel {
-    self = [super initWithModel:materialModel];
-    
-    if (self) {
-        [self initialize];
-        
-    }
-    return self;
-}*/
 
 - (id)initWithSWGMaterial:(SWGMaterial *)swgMaterial {
     self = [super initWithSWGMaterial:swgMaterial];
@@ -44,6 +34,9 @@
 
 - (MaterialAnswerState)correctionAskedWithDisplay:(BOOL)displayEnabled {
     MaterialAnswerState isCorrect = MaterialAnswerStateIsNotCorrect;
+    if (!self.givenAnswer) {
+        self.givenAnswer = @"";
+    }
     for (NSDictionary * possibleAnswer in self.answerInfo[@"answers"]) {
         BOOL isMatching = NO;
         if (![possibleAnswer[@"caseSensitive"] boolValue]) {
@@ -52,6 +45,7 @@
         else {
             isMatching = [self.givenAnswer isEqualToString:possibleAnswer[@"value"]];
         }
+        NSLog(@"Possible answer - %@", possibleAnswer[@"value"]);
         if (isMatching) {
             if ([possibleAnswer[@"rang"] integerValue] == 1) {
                 isCorrect = MaterialAnswerStateIsCorrect;

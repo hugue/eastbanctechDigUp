@@ -24,7 +24,6 @@
                                     self.viewModel.materialWidth,
                                     self.viewModel.materialHeight);
         self.viewDisplayed = [[UIImageView alloc] initWithFrame:frame];
-        
         [self applyModelToView];
     }
     return self;

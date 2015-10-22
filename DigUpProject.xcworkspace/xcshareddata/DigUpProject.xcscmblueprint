@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D52BB660E7731990A08401FBEB7B8FF060424F39",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EADE0278B06D046C5E9F9F34EBE2CC552077E407" : 0,
+    "D52BB660E7731990A08401FBEB7B8FF060424F39" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "61D65489-647B-4E37-AA16-20EB4F1D9227",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EADE0278B06D046C5E9F9F34EBE2CC552077E407" : "DigUpProject\/Externals\/",
+    "D52BB660E7731990A08401FBEB7B8FF060424F39" : "DigUpProject\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DigUpProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DigUpProject.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/gitlab.eastbanctech.ru:11022\/DigUp\/DigUpProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D52BB660E7731990A08401FBEB7B8FF060424F39"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/gitlab.eastbanctech.ru:11022\/v.yelagin\/ios-utils.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EADE0278B06D046C5E9F9F34EBE2CC552077E407"
+    }
+  ]
+}

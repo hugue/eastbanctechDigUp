@@ -58,15 +58,15 @@
     
     self.numberOfExercercisesLabel.text = [self.viewModel.dataModel.numberOfQuestions stringValue];
     self.durationLabel.text = [self.viewModel.dataModel.allowedTime stringValue];
-/*
-    RAC(self.lastScoreLabel, text) = [RACObserve(self.viewModel.dataModel, currentScore) map:^id(NSNumber * value) {
+
+    RAC(self.lastScoreLabel, text) = [RACObserve(self, viewModel.dataModel.lastScore) map:^id(NSNumber * value) {
         if (value) {
             return [NSString stringWithFormat:@"%@%%", [value stringValue]];
         }
         else {
             return @"%";
         }
-    }];*/
+    }];
     self.title = self.viewModel.dataModel.name;
 }
 

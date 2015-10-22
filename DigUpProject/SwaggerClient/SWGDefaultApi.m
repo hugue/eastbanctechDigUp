@@ -1,6 +1,7 @@
 #import "SWGDefaultApi.h"
 #import "SWGQueryParamCollection.h"
 #import "SWGExercise.h"
+#import "SWGError.h"
 #import "SWGUser.h"
 
 

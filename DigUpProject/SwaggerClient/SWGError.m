@@ -1,6 +1,6 @@
-#import "SWGExam.h"
+#import "SWGError.h"
 
-@implementation SWGExam
+@implementation SWGError
 
 /**
  * Maps json key to property name.
@@ -8,7 +8,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"name": @"name", @"url": @"url", @"mediaUrl": @"mediaUrl", @"allowedTime": @"allowedTime", @"requiredScore": @"requiredScore", @"numberOfQuestions": @"numberOfQuestions", @"lastScore": @"lastScore" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"code": @"code", @"message": @"message" }];
 }
 
 /**
@@ -18,7 +18,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"name", @"url", @"mediaUrl", @"allowedTime", @"requiredScore", @"numberOfQuestions", @"lastScore"];
+  NSArray *optionalProperties = @[@"code", @"message"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
