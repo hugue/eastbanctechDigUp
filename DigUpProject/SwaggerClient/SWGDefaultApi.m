@@ -3,6 +3,7 @@
 #import "SWGExercise.h"
 #import "SWGError.h"
 #import "SWGUser.h"
+#import "SWGExam.h"
 
 
 @interface SWGDefaultApi ()
@@ -310,12 +311,20 @@ static SWGDefaultApi* singletonAPI = nil;
 ///
 /// 
 /// 
+///  @param examResult The new model of exam, updated results
+///
 ///  @returns NSString*
 ///
--(NSNumber*) testPostPostWithCompletionBlock: 
-        (void (^)(NSString* output, NSError* error))completionBlock { 
+-(NSNumber*) testPostPostWithCompletionBlock: (SWGExam*) examResult
+        
+        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock { 
         
 
+    
+    // verify the required parameter 'examResult' is set
+    if (examResult == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `examResult` when calling `testPostPost`"];
+    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/testPost"];
@@ -359,7 +368,7 @@ static SWGDefaultApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
-    
+    bodyParam = examResult;
     
 
     

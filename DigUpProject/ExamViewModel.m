@@ -109,9 +109,7 @@
     [self stopExam];
     int score = 0;
     for (ExerciseViewModel * exerciseViewModel in self.exercises) {
-        NSLog(@"exercise - %@", exerciseViewModel.materialsModels);
         if ([exerciseViewModel correctionAskedDisplayed:NO]) {
-            NSLog(@"exercise - %@", exerciseViewModel);
             score = score + 1;
         }
         [exerciseViewModel restartExerciseAsked];

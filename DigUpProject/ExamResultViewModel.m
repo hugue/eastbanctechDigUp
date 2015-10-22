@@ -14,6 +14,10 @@
     self = [super init];
     if (self) {
         self.dataModel = dataModel;
+        self.defaultApi = [[SWGDefaultApi alloc] init];
+        [self.defaultApi testPostPostWithCompletionBlock:self.dataModel completionHandler:^(NSString *output, NSError *error) {
+            NSLog(@"output - %@", output);
+        }];
         BOOL result = ([self.dataModel.lastScore doubleValue] >= [self.dataModel.requiredScore doubleValue]);
         self.text = [self createTextFor:result];
     }

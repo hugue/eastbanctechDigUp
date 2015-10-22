@@ -45,7 +45,6 @@
         else {
             isMatching = [self.givenAnswer isEqualToString:possibleAnswer[@"value"]];
         }
-        NSLog(@"Possible answer - %@", possibleAnswer[@"value"]);
         if (isMatching) {
             if ([possibleAnswer[@"rang"] integerValue] == 1) {
                 isCorrect = MaterialAnswerStateIsCorrect;

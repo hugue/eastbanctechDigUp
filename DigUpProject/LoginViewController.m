@@ -41,15 +41,16 @@
     RAC(self.viewModel, login) = self.loginTextField.rac_textSignal;
     RAC(self.viewModel, password) = self.passwordTextField.rac_textSignal;
     
+    @weakify(self)
     [[RACObserve(self.viewModel, profileLoaded) distinctUntilChanged]subscribeNext:^(id x) {
         if ([x boolValue]) {
+            @strongify(self)
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self performSegueWithIdentifier:@"signInSegue" sender:nil];
             });
         }
     }];
     
-    @weakify(self)
     [RACObserve(self.viewModel, currentState) subscribeNext:^(id x) {
         @strongify(self)
         if ([x integerValue] == LogInCurrentStateProcessing) {

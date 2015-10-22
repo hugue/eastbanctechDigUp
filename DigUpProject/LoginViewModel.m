@@ -41,15 +41,13 @@
 - (BOOL)signInNow {
     self.currentState = LogInCurrentStateProcessing;
     self.webController = [[WebController alloc] init];
-    NSLog(@"default api - %@", self.defaultApi.apiClient);
     @weakify(self)
-    NSNumber * result = [self.defaultApi profileGetWithCompletionBlock:^(SWGUser *output, NSError *error) {
+    [self.defaultApi profileGetWithCompletionBlock:^(SWGUser *output, NSError *error) {
         @strongify(self)
         self.user = output;
         self.profileLoaded = YES;
         self.currentState = LogInCurrentStateListening;
     }];
-    NSLog(@"result - %@", result);
     return YES;
 }
 

@@ -278,12 +278,19 @@ static void (^reachabilityChangeBlock)(int);
 
 #pragma mark - Deserialize methods
 
-- (id) deserialize:(id) data class:(NSString *) class {
+- (id) deserialize:(id) inputData class:(NSString *) class {
     NSRegularExpression *regexp = nil;
     NSTextCheckingResult *match = nil;
     NSMutableArray *resultArray = nil;
     NSMutableDictionary *resultDict = nil;
     NSString *innerType = nil;
+    id data;
+    if ([inputData isKindOfClass:[NSData class]]) {
+        data = [NSJSONSerialization JSONObjectWithData:inputData options:kNilOptions error:nil];
+    }
+    else {
+        data = inputData;
+    }
 
     // return nil if data is nil or class is nil
     if (!data || !class) {
@@ -311,11 +318,11 @@ static void (^reachabilityChangeBlock)(int);
                                  range:NSMakeRange(0, [class length])];
 
     if (match) {
-        NSArray * dataArray =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        NSArray *dataArray = data;
         innerType = [class substringWithRange:[match rangeAtIndex:1]];
 
         resultArray = [NSMutableArray arrayWithCapacity:[dataArray count]];
-        [dataArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 [resultArray addObject:[self deserialize:obj class:innerType]];
             }
         ];
@@ -397,11 +404,6 @@ static void (^reachabilityChangeBlock)(int);
    // model
     Class ModelClass = NSClassFromString(class);
     if ([ModelClass instancesRespondToSelector:@selector(initWithDictionary:error:)]) {
-        NSLog(@"class of data- %@", [data class]);
-        if ([[data class] isSubclassOfClass:[NSData class]]) {
-            id object = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-            return [[ModelClass alloc] initWithDictionary:object error:nil];
-        }
         return [[ModelClass alloc] initWithDictionary:data error:nil];
     }
 

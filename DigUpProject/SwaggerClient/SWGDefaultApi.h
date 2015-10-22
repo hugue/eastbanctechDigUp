@@ -2,6 +2,7 @@
 #import "SWGExercise.h"
 #import "SWGError.h"
 #import "SWGUser.h"
+#import "SWGExam.h"
 #import "SWGObject.h"
 #import "SWGApiClient.h"
 
@@ -67,11 +68,13 @@
 /// 
 /// 
 ///
+/// @param examResult The new model of exam, updated results
 /// 
 ///
 /// @return NSString*
--(NSNumber*) testPostPostWithCompletionBlock :
-    (void (^)(NSString* output, NSError* error))completionBlock;
+-(NSNumber*) testPostPostWithCompletionBlock :(SWGExam*) examResult 
+    
+    completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
     
 
 

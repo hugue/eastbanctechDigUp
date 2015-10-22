@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSString * text;
 @property (nonatomic, strong) SWGExam * dataModel;
+@property (nonatomic, strong) SWGDefaultApi * defaultApi;
 
 - (id)initWithSWGExam:(SWGExam *)dataModel;
 
