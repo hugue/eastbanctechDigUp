@@ -51,7 +51,6 @@
 
 - (void)createExamFromModel {
     if (!_exercisesModel) {
-        NSLog(@"Couldn't download the exam");
         self.loadingState = ExamLoadingStateStopped;
         return;
     }

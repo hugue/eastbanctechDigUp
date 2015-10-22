@@ -291,7 +291,7 @@ static void (^reachabilityChangeBlock)(int);
     else {
         data = inputData;
     }
-
+    
     // return nil if data is nil or class is nil
     if (!data || !class) {
         return nil;

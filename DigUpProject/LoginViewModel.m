@@ -8,10 +8,8 @@
 
 #import "LoginViewModel.h"
 @interface LoginViewModel ()
-
 @property (nonatomic, strong) WebController * webController;
 @property (nonatomic, strong) SWGUser * user;
-
 @end
 
 @implementation LoginViewModel

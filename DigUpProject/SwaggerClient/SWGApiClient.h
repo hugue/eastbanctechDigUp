@@ -20,6 +20,7 @@
 #import "SWGTest.h"
 #import "SWGExercise.h"
 #import "SWGMaterial.h"
+#import "SWGInlineResponse200.h"
 
 
 @class SWGConfiguration;

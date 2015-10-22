@@ -3,6 +3,7 @@
 #import "SWGExercise.h"
 #import "SWGError.h"
 #import "SWGUser.h"
+#import "SWGInlineResponse200.h"
 #import "SWGExam.h"
 
 
@@ -313,11 +314,11 @@ static SWGDefaultApi* singletonAPI = nil;
 /// 
 ///  @param examResult The new model of exam, updated results
 ///
-///  @returns NSString*
+///  @returns SWGInlineResponse200*
 ///
 -(NSNumber*) testPostPostWithCompletionBlock: (SWGExam*) examResult
         
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SWGInlineResponse200* output, NSError* error))completionBlock { 
         
 
     
@@ -383,10 +384,10 @@ static SWGDefaultApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSString*"
+                                         responseType: @"SWGInlineResponse200*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSString*)data, error);
+                  completionBlock((SWGInlineResponse200*)data, error);
               }
           ];
 }
